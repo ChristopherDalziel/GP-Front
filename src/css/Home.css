@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.load {
+  animation: slide 2s;
+}
+.slider {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 95vh;
+  animation: slide 30s infinite;
+}
+.content {
+  color: #fff;
+  width: 100%;
+  height: 95vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.principal {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  letter-spacing: 5px;
+  text-align: center;
+}
+.principal h1 {
+  font-size: 70px;
+  margin-bottom: 20px;
+}
+
+@keyframes slide {
+  0% {
+    background-image: url("../assets/1.jpeg");
+  }
+  20% {
+    background-image: url("../assets/2.jpeg");
+  }
+  20.01% {
+    background-image: url("../assets/3.jpeg");
+  }
+  40% {
+    background-image: url("../assets/4.jpeg");
+  }
+  40.01% {
+    background-image: url("../assets/5.jpeg");
+  }
+  60% {
+    background-image: url("../assets/6.jpeg");
+  }
+  60.01% {
+    background-image: url("../assets/3.jpeg");
+  }
+  80% {
+    background-image: url("../assets/4.jpeg");
+  }
+  80.01% {
+    background-image: url("../assets/5.jpeg");
+  }
+  100% {
+    background-image: url("../assets/6.jpeg");
+  }
+}
+
+button {
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  color: black;
+}
+
+button:hover {
+  color: white;
+  background: black;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+  text-decoration: none;
+}

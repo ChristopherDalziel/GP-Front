@@ -1,12 +1,12 @@
 .nav {
-	padding-top: 8px;
-	height: 10%;
-	width: 100%;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	text-transform: uppercase;
-	font-size: 14px;
+  padding-top: 8px;
+  height: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 .nav ul {
@@ -20,20 +20,20 @@
 
 /* Position and spacing for Navigation bar links */
 .nav ul li a {
-	padding: 3px 0px;
-	margin: 0 28px;
-	position: relative;
-	letter-spacing: 2px;
+  padding: 3px 0px;
+  margin: 0 28px;
+  position: relative;
+  letter-spacing: 2px;
   color: black;
   text-decoration: none;
 }
 
 /* Navigation bar add background and change font cover on hover */
 .nav ul li a:hover {
-	color: white;
-	background: black;
-	-webkit-transition: background 0.3s ease-in-out;
-	-moz-transition: background 0.3s ease-in-out;
+  color: white;
+  background: black;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;
   text-decoration: none;
 }
