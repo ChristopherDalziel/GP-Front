@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Nav from "../components/Nav";
 import "../css/Home.css";
 
@@ -8,12 +9,14 @@ class Home extends React.Component {
       <>
         <Nav />
         <div class="slider">
-          <div class="load"></div>
+          <div class="imageChange"></div>
           <div class="content">
-            <div class="principal">
-              <h1>General Practice</h1>
+            <div class="hero">
+              <h1>Klinic Doctor Leong</h1>
               <p>
-                <button>Contact Us</button>
+                <Link to="/contact">
+                  <button>Contact Us</button>
+                </Link>
                 <button>Book Now</button>
               </p>
             </div>
