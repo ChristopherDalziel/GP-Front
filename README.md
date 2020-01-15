@@ -32,7 +32,7 @@ Hosting:
   * Netlify to host the front end content  
 
 ## R2 - Dataflow diagram  
-![Data Flow Diagram](../Docs/data_flow_diagram.svg)  
+![Data Flow Diagram](./Docs/data_flow_diagram.svg)  
 
 ## R3 - Application Architecture Diagram  
 ![Application Architecture Diagram]  
@@ -42,32 +42,34 @@ Hosting:
 
 #### Home Page
 
-![](../Docs/wireframes/Homepage.png)
+![](./Docs/wireframes/Homepage.png)
 
 #### About The Clinic Page
 
-![](../Docs/wireframes/Aboutclinicpage.png)
+![](./Docs/wireframes/Aboutclinicpage.png)
 
 #### Patient Sign Up Page
 
-![](../Docs/wireframes/Aboutclinicpage.png)
+![](./Docs/wireframes/Aboutclinicpage.png)
 
 #### Patient Profile Page
 
-![](../Docs/wireframes/Profilepage.png)
+![](./Docs/wireframes/Profilepage.png)
 
 #### Make A Booking Page
 
-![](../Docs/wireframes/Createabookingpage.png)
+![](./Docs/wireframes/Createabookingpage.png)
 
 #### Contact Clinic Page
 
-![](../Docs/wireframes/Contactpage.png)
+![](./Docs/wireframes/Contactpage.png)
 
 #### Admin Booking Management Page
 
-![](../Docs/wireframes/Adminbookingmanagementpage.png)
+![](./Docs/wireframes/Adminbookingmanagementpage.png)
 
 #### Admin Edit Clinic Information Page
 
-![](../Docs/wireframes/Admineditpage.png)
+![](./Docs/wireframes/Admineditpage.png)  
+
+## R6 - Project Management
