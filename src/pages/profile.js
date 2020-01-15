@@ -1,17 +1,17 @@
 import React from "react";
 import Nav from "../components/Nav";
 
-import "../css/Contact.css";
+import "../css/Profile.css";
 
-class Contact extends React.Component {
+class Profile extends React.Component {
   render() {
     return (
       <>
         <Nav />
-        <p>contact us page</p>;
+        <p>patient profile page</p>;
       </>
     );
   }
 }
 
-export default Contact;
+export default Profile;
