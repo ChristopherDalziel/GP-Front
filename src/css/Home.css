@@ -2,9 +2,11 @@
   margin: 0;
   padding: 0;
 }
-.load {
+
+.imageChange {
   animation: slide 2s;
 }
+
 .slider {
   background-repeat: no-repeat;
   background-size: cover;
@@ -13,13 +15,15 @@
   height: 95vh;
   animation: slide 30s infinite;
 }
+
 .content {
   color: #fff;
   width: 100%;
   height: 95vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.principal {
+
+.hero {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -27,7 +31,8 @@
   letter-spacing: 5px;
   text-align: center;
 }
-.principal h1 {
+
+.hero h1 {
   font-size: 70px;
   margin-bottom: 20px;
 }
