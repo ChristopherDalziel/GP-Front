@@ -11,7 +11,7 @@ class Home extends React.Component {
           <div class="imageChange"></div>
           <div class="content">
             <div class="hero">
-              <h1>General Practice</h1>
+              <h1>Klinic Doctor Leong</h1>
               <p>
                 <button>Contact Us</button>
                 <button>Book Now</button>
