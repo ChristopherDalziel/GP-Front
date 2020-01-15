@@ -8,9 +8,9 @@ class Home extends React.Component {
       <>
         <Nav />
         <div class="slider">
-          <div class="load"></div>
+          <div class="imageChange"></div>
           <div class="content">
-            <div class="principal">
+            <div class="hero">
               <h1>General Practice</h1>
               <p>
                 <button>Contact Us</button>
