@@ -8,10 +8,10 @@ class Home extends React.Component {
       <>
         <Nav />
         <div class="slider">
-          <div class="load"></div>
+          <div class="imageChange"></div>
           <div class="content">
-            <div class="principal">
-              <h1>General Practice</h1>
+            <div class="hero">
+              <h1>Klinic Doctor Leong</h1>
               <p>
                 <button>Contact Us</button>
                 <button>Book Now</button>
