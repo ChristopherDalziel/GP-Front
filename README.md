@@ -35,8 +35,9 @@ Hosting:
 ![Data Flow Diagram](./Docs/data_flow_diagram.svg)  
 
 ## R3 - Application Architecture Diagram  
-![Application Architecture Diagram]  
+![Application Architecture Diagram](./Docs/application_architecture_diagram.svg)  
 
+## R4 - User Stories
 
 ## R5 - Wireframes
 
@@ -72,4 +73,16 @@ Hosting:
 
 ![](./Docs/wireframes/Admineditpage.png)  
 
-## R6 - Project Management
+## R6 - Project Management  
+
+### Trello Screenshots  
+
+![](./Docs/trello_screenshots/1.png)  
+
+![](./Docs/trello_screenshots/2.png)  
+
+![](./Docs/trello_screenshots/3.png)  
+
+![](./Docs/trello_screenshots/4.png)  
+
+
