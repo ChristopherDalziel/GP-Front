@@ -47,9 +47,11 @@ Hosting:
 
 ## R5 - Wireframes
 
-## Figma Protoype Example
+### Figma Protoype Example
 
 [Prototype Example](https://www.figma.com/proto/DfgmSwycMitQGgsmjiohfW/T2A3?node-id=141%3A0&scaling=contain)
+
+![](./Docs/wireframes/prototype.gif)
 
 #### Figma Prototyping Paths
 
