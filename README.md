@@ -105,6 +105,10 @@ Hosting:
 
 ![](./Docs/wireframes/Contact-Mock.png)
 
+# Sitemap
+
+![Sitemap](./Docs/sitemap.png)
+
 ## R6 - Project Management
 
 ### Trello Screenshots
