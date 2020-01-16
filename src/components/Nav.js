@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "../css/Nav.css";
 
@@ -10,12 +10,6 @@ function Nav({ user }) {
       <ul>
         <li>
           <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About Us</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact Us</Link>
         </li>
         {/* If the user IS an admin */}
         {isAdmin ? (
@@ -46,6 +40,18 @@ function Nav({ user }) {
             </li>
           </>
         )}
+        <li>
+          <Link to="/about">About Us</Link>
+        </li>
+        <li>
+          <Link to="/services">Services</Link>
+        </li>
+        <li>
+          <Link to="/vaccines">Vaccines</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact Us</Link>
+        </li>
       </ul>
     </div>
   );
