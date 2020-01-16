@@ -17,15 +17,13 @@ function Nav({ user }) {
         <li>
           <Link to="/contact">Contact Us</Link>
         </li>
-        {/* If the user is an admin */}
+        {/* If the user IS an admin */}
         {isAdmin ? (
           <li>
             <Link to="/">ADMIN FUNCTION</Link>
           </li>
-        ) : null}
-        <li>
-          <Link to="/contact">Contact Us</Link>
-        </li>
+        ) : // If user IS NOT an admin
+        null}
         {user ? (
           // If there IS a user do this
           <>
