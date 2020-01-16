@@ -45,6 +45,8 @@ Hosting:
 
 ## R4 - User Stories
 
+![Application Architecture Diagram](./Docs/user_story.png)
+
 ## R5 - Wireframes
 
 ### Figma Protoype Example
