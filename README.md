@@ -45,6 +45,8 @@ Hosting:
 
 ## R4 - User Stories
 
+![Application Architecture Diagram](./Docs/user_story.png)
+
 ## R5 - Wireframes
 
 ### Figma Protoype Example
@@ -102,6 +104,10 @@ Hosting:
 #### Contact Page
 
 ![](./Docs/wireframes/Contact-Mock.png)
+
+# Sitemap
+
+![Sitemap](./Docs/sitemap.png)
 
 ## R6 - Project Management
 
