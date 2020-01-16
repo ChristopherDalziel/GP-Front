@@ -6,6 +6,7 @@ class Signup extends React.Component {
   render() {
     return (
       <>
+        <Nav />
         <p>Signup page</p>
       </>
     );
