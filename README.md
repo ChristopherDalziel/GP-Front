@@ -51,15 +51,15 @@ Hosting:
 
 [Prototype Example](https://www.figma.com/proto/DfgmSwycMitQGgsmjiohfW/T2A3?node-id=141%3A0&scaling=contain)
 
-![](./Docs/wireframes/prototype.gif)
+![Prototyping Gif](./Docs/wireframes/prototype.gif)
 
 #### Figma Prototyping Paths
 
-![](./Docs/wireframes/Wireframe-Prototype-Paths.png)
+![Prototyping Path](./Docs/wireframes/Wireframe-Prototype-Paths.png)
 
 #### Home Page
 
-![](./Docs/wireframes/Homepage.png)
+![Homepage](./Docs/wireframes/Homepage.png)
 
 #### About The Clinic Page
 
@@ -67,7 +67,7 @@ Hosting:
 
 #### Patient Sign Up Page
 
-![](./Docs/wireframes/Aboutclinicpage.png)
+![](./Docs/wireframes/Signuppage.png)
 
 #### Patient Profile Page
 
