@@ -1,5 +1,5 @@
-describe("My First Test", function() {
-  it("Visits the Homepage", function() {
+describe("Nav Functionality Testing", function() {
+  it("Clicks all links", function() {
     cy.visit("localhost:3000");
 
     cy.contains("Home").click();

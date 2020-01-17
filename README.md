@@ -105,6 +105,16 @@ Hosting:
 
 ![](./Docs/wireframes/Contact-Mock.png)
 
+## New Pages Added After Speaking With Client
+
+#### Services Page
+
+![](./Docs/wireframes/Servicespage.png)
+
+#### Vaccines Page
+
+![](./Docs/wireframes/Vaccinespage.png)
+
 # Sitemap
 
 ![Sitemap](./Docs/sitemap.png)
@@ -119,12 +129,12 @@ Hosting:
 
 ![](./Docs/trello_screenshots/3.png)
 
-![](./Docs/trello_screenshots/4.png)  
+![](./Docs/trello_screenshots/4.png)
 
-![](./Docs/trello_screenshots/5.png)  
+![](./Docs/trello_screenshots/5.png)
 
 ### GANTT Chart for timeline planning
 
-![Gantt Chart](./Docs/gantt_screenshots.png)  
+![Gantt Chart](./Docs/gantt_screenshots.png)
 
 [GANTT Chart - Excel Document](./Docs/Gantt_Chart.xlsx)
