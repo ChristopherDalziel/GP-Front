@@ -33,7 +33,9 @@
 }
 
 .hero h1 {
+  font-family: 'Roboto', sans-serif;
   font-size: 70px;
+  font-weight: 2000;
   margin-bottom: 20px;
 }
 
@@ -71,13 +73,14 @@
 }
 
 button {
+  font-family: 'Raleway', sans-serif;
   border: none;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 15px;
   cursor: pointer;
   letter-spacing: 2px;
   color: black;
