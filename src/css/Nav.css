@@ -28,12 +28,39 @@
   text-decoration: none;
 }
 
-/* Navigation bar add background and change font cover on hover */
+/* On hover text colour change */
 .nav ul li a:hover {
+  color: #293b98;
+}
+
+.nav ul li a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #293b98;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+/* Expands line under link */
+.nav ul li a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+/* Navigation bar add background and change font cover on hover */
+/* .nav ul li a:hover {
   color: white;
   background: black;
   -webkit-transition: background 0.3s ease-in-out;
   -moz-transition: background 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;
   text-decoration: none;
-}
+} */
