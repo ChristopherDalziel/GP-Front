@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../css/Nav.css";
 
+// User to be imported from the schema later..
 function Nav({ user }) {
   const isAdmin = user && user.role === "admin";
 
@@ -48,6 +49,9 @@ function Nav({ user }) {
         </li>
         <li>
           <Link to="/vaccines">Vaccines</Link>
+        </li>
+        <li>
+          <Link to="/booking">Book Now</Link>
         </li>
         <li>
           <Link to="/contact">Contact Us</Link>
