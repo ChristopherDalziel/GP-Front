@@ -9,12 +9,12 @@ function Nav({ user }) {
   return (
     <div className="nav">
       <ul>
-        <li>
+        <li className="one">
           <Link to="/">Home</Link>
         </li>
         {/* If the user IS an admin */}
         {isAdmin ? (
-          <li>
+          <li className="two">
             <Link to="/">ADMIN FUNCTION</Link>
           </li>
         ) : // If user IS NOT an admin
