@@ -58,6 +58,7 @@
   transform: scaleX(1);
 }
 
+/* Old CSS if we want to revert before end of the project */
 /* Navigation bar add background and change font cover on hover */
 /* .nav ul li a:hover {
   color: white;
