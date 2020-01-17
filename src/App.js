@@ -7,7 +7,7 @@ import Profile from "./pages/profile";
 import About from "./pages/about";
 
 import SignUp from "./pages/signup";
-import SignIn from "./pages/login";
+import SignIn from "./pages/sigIn";
 import Vaccines from "./pages/vaccines";
 import Services from "./pages/services";
 import Booking from "./pages/booking";
