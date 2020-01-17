@@ -34,7 +34,7 @@ function Nav({ user }) {
           // If there IS NOT a user do this
           <>
             <li>
-              <Link to="/login">Login</Link>
+              <Link to="/signin">Sign In</Link>
             </li>
             <li>
               <Link to="/signup">Sign Up</Link>
