@@ -7,6 +7,7 @@
   align-items: center;
   text-transform: uppercase;
   font-size: 14px;
+ 
 }
 
 .nav ul {
@@ -20,11 +21,13 @@
 
 /* Position and spacing for Navigation bar links */
 .nav ul li a {
+  font-family: 'Raleway', sans-serif;
   padding: 3px 0px;
   margin: 0 28px;
   position: relative;
   letter-spacing: 2px;
   color: black;
+  font-size: 17px;
   text-decoration: none;
 }
 
@@ -55,6 +58,7 @@
   transform: scaleX(1);
 }
 
+/* Old CSS if we want to revert before end of the project */
 /* Navigation bar add background and change font cover on hover */
 /* .nav ul li a:hover {
   color: white;

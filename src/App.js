@@ -5,8 +5,9 @@ import Home from "./pages/home";
 import Contact from "./pages/contact";
 import Profile from "./pages/profile";
 import About from "./pages/about";
-import Signup from "./pages/signup";
-import Login from "./pages/login";
+
+import SignUp from "./pages/signup";
+import SignIn from "./pages/signIn";
 import Vaccines from "./pages/vaccines";
 import Services from "./pages/services";
 import Booking from "./pages/booking";
@@ -18,8 +19,8 @@ class App extends React.Component {
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/signup" component={Signup} />
-            <Route path="/login" component={Login} />
+            <Route path="/signup" component={SignUp} />
+            <Route path="/signin" component={SignIn} />
             <Route path="/contact" component={Contact} />
             <Route path="/profile" component={Profile} />
             <Route path="/about" component={About} />
