@@ -49,17 +49,19 @@ Hosting:
 
 ## R5 - Wireframes
 
-## Figma Protoype Example
+### Figma Protoype Example
 
 [Prototype Example](https://www.figma.com/proto/DfgmSwycMitQGgsmjiohfW/T2A3?node-id=141%3A0&scaling=contain)
 
+![Prototyping Gif](./Docs/wireframes/prototype.gif)
+
 #### Figma Prototyping Paths
 
-![](./Docs/wireframes/Wireframe-Prototype-Paths.png)
+![Prototyping Path](./Docs/wireframes/Wireframe-Prototype-Paths.png)
 
 #### Home Page
 
-![](./Docs/wireframes/Homepage.png)
+![Homepage](./Docs/wireframes/Homepage.png)
 
 #### About The Clinic Page
 
@@ -67,7 +69,7 @@ Hosting:
 
 #### Patient Sign Up Page
 
-![](./Docs/wireframes/Aboutclinicpage.png)
+![](./Docs/wireframes/Signuppage.png)
 
 #### Patient Profile Page
 
@@ -103,6 +105,20 @@ Hosting:
 
 ![](./Docs/wireframes/Contact-Mock.png)
 
+## New Pages Added After Speaking With Client
+
+#### Services Page
+
+![](./Docs/wireframes/Servicespage.png)
+
+#### Vaccines Page
+
+![](./Docs/wireframes/Vaccinespage.png)
+
+# Sitemap
+
+![Sitemap](./Docs/sitemap.png)
+
 ## R6 - Project Management
 
 ### Trello Screenshots
@@ -114,4 +130,11 @@ Hosting:
 ![](./Docs/trello_screenshots/3.png)
 
 ![](./Docs/trello_screenshots/4.png)
+
 ![](./Docs/trello_screenshots/5.png)
+
+### GANTT Chart for timeline planning
+
+![Gantt Chart](./Docs/gantt_screenshots.png)
+
+[GANTT Chart - Excel Document](./Docs/Gantt_Chart.xlsx)
