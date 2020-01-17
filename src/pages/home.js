@@ -12,7 +12,7 @@ class Home extends React.Component {
           <div class="imageChange"></div>
           <div class="content">
             <div class="hero">
-              <h1>Klinic Doctor Leong</h1>
+              <h1>Klinik Doctor Leong</h1>
               <p>
                 <Link to="/contact">
                   <button>Contact Us</button>
