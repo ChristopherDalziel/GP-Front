@@ -8,7 +8,20 @@ class About extends React.Component {
     return (
       <>
         <Nav />
-        <p>about the clinic page</p>;
+        <div className="about">
+          <div className="container">
+            <div className="imageAbout">
+              <p>Where employee cards will go</p>
+            </div>
+            <div className="content-about">
+              <div>
+                <h1>About Us</h1>
+                <h5>Klinik</h5>
+                <p>This is where info about the clinic will go</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </>
     );
   }
