@@ -1,0 +1,42 @@
+.vaccines {
+  width: 100%;
+  height: 95vh;
+}
+
+.vaccines .containerVaccines {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+}
+
+.containerVaccineCards {
+  /* float: right; */
+  display: flex;
+  flex-direction: column;
+}
+
+.imageVaccines {
+  width: 50%;
+  height: 100%;
+  background-image: url(../assets/sign-in.jpg);
+  background-size: cover;
+}
+
+.vaccineCards h3 {
+  padding: 10px;
+  text-align: center;
+}
+
+.vaccines p {
+  padding: 2.5px 10px;
+}
+
+.vaccineCards {
+  margin-top: 7vh;
+  margin-left: 10vh;
+  box-sizing: border-box;
+  height: 20vh;
+  width: 40vw;
+  background: #e1eeff;
+}
