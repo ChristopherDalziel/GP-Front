@@ -8,7 +8,26 @@ class Profile extends React.Component {
     return (
       <>
         <Nav />
-        <p>patient profile page</p>;
+        <div className="profile">
+          <div className="container-booking">
+            <div className="booking-card">
+              <h3>Appointment</h3>
+              <p>Booking info..</p>
+              <button>Cancel</button>
+            </div>
+            <div className="booking-card">
+              <h3>Appointment</h3>
+              <p>Booking info..</p>
+              <button>Cancel</button>
+            </div>
+          </div>
+          <div className="container-profile">
+            <div className="content-profile">
+              <h3>Patient Info</h3>
+              <p>...</p>
+            </div>
+          </div>
+        </div>
       </>
     );
   }
