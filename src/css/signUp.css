@@ -19,6 +19,7 @@
   height: 100%;
   background-image: url(../assets/sign-up.jpg);
   background-size: contain;
+  /* background-repeat: no-repeat; */
 }
 
 .signUp .image img {
