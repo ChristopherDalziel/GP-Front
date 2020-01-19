@@ -17,11 +17,24 @@
   background-size: cover;
 }
 
-/* Playing with moving the text to the base of the screen */
-.imageAbout p {
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
+.employeeCard {
+  float: left;
+  text-align: center;
+  margin-top: 55vh;
+  margin-left: 7.5vw;
+  box-sizing: border-box;
+  height: 36vh;
+  width: 25vh;
+  background: #e1eeff;
+}
+
+.employeeCard img {
+  padding-top: 10px;
+  height: 150px;
+}
+
+.employeeAbout {
+  padding-top: 1vh;
 }
 
 .about .image img {
