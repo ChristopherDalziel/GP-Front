@@ -1,32 +1,29 @@
-
-
-.signIn{
+.signIn {
   width: 100%;
   height: 95vh;
-
 }
 
-.signIn .container{
+.signIn .container {
   width: inherit;
   height: inherit;
   display: flex;
   flex-direction: row;
 }
 
-.image{
+.imageSignIn {
   width: 50%;
   height: 100%;
-  background-image: url(../assets/contact-bg.jpeg);
+  background-image: url(../assets/sign-in.jpg);
   background-size: cover;
 }
 
-.signIn .image img{
+.signIn .image img {
   width: 100%;
   height: 100%;
 }
 
-.content-signin{
-  margin-top:10vh;
+.content-signin {
+  margin-top: 10vh;
   margin-left: 10vh;
   box-sizing: border-box;
   padding-left: 10vh;
@@ -34,42 +31,40 @@
   height: 65vh;
   width: 40vw;
   background: #e1eeff;
-  
 }
-.signIn h1{
-  font-family: 'Raleway', sans-serif;
+.signIn h1 {
+  font-family: "Raleway", sans-serif;
   margin-bottom: 30px;
 }
 
-.content-signin input{
+.content-signin input {
   box-sizing: border-box;
-  padding-left:40px;
+  padding-left: 40px;
   font-size: 12px;
-  margin-top:10px;
-  width:30vw;
+  margin-top: 10px;
+  width: 30vw;
   height: 40px;
-  border:none;
+  border: none;
   margin-bottom: 4vh;
-
 }
-.signIn h5{
+.signIn h5 {
   margin-bottom: 20px;
   font-size: 20px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
-.signIn .label{
-  font-family: 'Raleway', sans-serif;
+.signIn .label {
+  font-family: "Raleway", sans-serif;
   color: #398ffc;
 }
 
-.signIn button{
-  font-family: 'Raleway', sans-serif;
-  margin-top:10px;
+.signIn button {
+  font-family: "Raleway", sans-serif;
+  margin-top: 10px;
   font-size: 18px;
-  color:white;
-  padding:0;
-  margin:0;
+  color: white;
+  padding: 0;
+  margin: 0;
   background: #398ffc;
   height: 4vh;
   width: 30vw;
@@ -77,35 +72,29 @@
 }
 
 .input-wrapper1 {
-  display:inline-block;
+  display: inline-block;
   position: relative;
 }
 .input-wrapper1:after {
   font-size: 22px;
-  font-family: 'FontAwesome';
-  content: '\f007';
+  font-family: "FontAwesome";
+  content: "\f007";
   position: absolute;
   left: 10px;
-  top:35px;
-  color:#398ffc;
+  top: 35px;
+  color: #398ffc;
 }
-
-
-
 
 .input-wrapper2 {
   position: relative;
 }
 
-
 .input-wrapper2:after {
   font-size: 25px;
-  font-family: 'FontAwesome';
-  content: '\f023';
+  font-family: "FontAwesome";
+  content: "\f023";
   position: absolute;
   left: 10px;
-  top:35px;
-  color:#398ffc;
+  top: 35px;
+  color: #398ffc;
 }
-
-

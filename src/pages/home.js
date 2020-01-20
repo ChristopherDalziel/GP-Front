@@ -8,10 +8,10 @@ class Home extends React.Component {
     return (
       <>
         <Nav />
-        <div class="slider">
-          <div class="imageChange"></div>
-          <div class="content">
-            <div class="hero">
+        <div className="slider">
+          <div className="imageChange"></div>
+          <div className="content">
+            <div className="hero">
               <h1>Klinik Doctor Leong</h1>
               <p>
                 <Link to="/contact">

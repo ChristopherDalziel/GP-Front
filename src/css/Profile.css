@@ -1,0 +1,57 @@
+.profile {
+  width: 100%;
+  height: 95vh;
+}
+
+.content-profile {
+  margin-top: 10vh;
+  margin-left: 6vw;
+  box-sizing: border-box;
+  padding-left: 15vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  height: 75vh;
+  width: 40vw;
+  background: #e1eeff;
+}
+
+.profile .container-profile {
+  width: 50vw;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+}
+
+.container-booking {
+  width: 50vw;
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-card h3 {
+  padding: 10px;
+  text-align: center;
+}
+
+.profile p {
+  padding: 2.5px 10px;
+}
+
+.booking-card {
+  width: 50%;
+  height: 100%;
+}
+
+.booking-card {
+  margin-top: 7vh;
+  margin-left: 10vh;
+  box-sizing: border-box;
+  height: 20vh;
+  width: 40vw;
+  background: #e1eeff;
+}
+
+.container-booking button {
+  float: right;
+}

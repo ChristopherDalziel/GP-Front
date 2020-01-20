@@ -1,0 +1,165 @@
+.signUp {
+  width: 100%;
+  height: 95vh;
+}
+
+.signUp .container {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+}
+
+/* .height-container-right {
+  height: 10px;
+} */
+
+.imageSignUp {
+  width: 50%;
+  height: 100%;
+  background-image: url(../assets/sign-up.jpg);
+  background-size: contain;
+  /* background-repeat: no-repeat; */
+}
+
+.signUp .image img {
+  width: 100%;
+  height: 100%;
+}
+
+.content-signUp {
+  margin-top: 10vh;
+  margin-left: 10vh;
+  box-sizing: border-box;
+  padding-left: 10vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  height: 75vh;
+  width: 40vw;
+  background: #e1eeff;
+  overflow: scroll;
+}
+
+.signUp h1 {
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 30px;
+}
+
+.content-signUp input {
+  box-sizing: border-box;
+  padding-left: 40px;
+  font-size: 12px;
+  margin-top: 10px;
+  width: 30vw;
+  height: 40px;
+  border: none;
+  margin-bottom: 4vh;
+}
+
+.signUp h5 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+}
+
+.signUp .label {
+  font-family: "Raleway", sans-serif;
+  color: #398ffc;
+}
+
+.signUp button {
+  font-family: "Raleway", sans-serif;
+  margin-top: 10px;
+  font-size: 18px;
+  color: white;
+  padding: 0;
+  margin: 0;
+  background: #398ffc;
+  height: 4vh;
+  width: 30vw;
+  /* border:1px solid #398ffc; */
+}
+
+.input-wrapper-1 {
+  display: inline-block;
+  position: relative;
+}
+.input-wrapper-1:after {
+  font-size: 22px;
+  font-family: "FontAwesome";
+  content: "\f007";
+  position: absolute;
+  left: 10px;
+  top: 35px;
+  color: #398ffc;
+}
+
+.input-wrapper-2 {
+  position: relative;
+}
+
+.input-wrapper-2:after {
+  font-size: 25px;
+  font-family: "FontAwesome";
+  content: "\f023";
+  position: absolute;
+  left: 10px;
+  top: 35px;
+  color: #398ffc;
+}
+
+.input-wrapper-3 {
+  position: relative;
+}
+
+.input-wrapper-3:after {
+  font-size: 25px;
+  font-family: "FontAwesome";
+  content: "\f023";
+  position: absolute;
+  left: 10px;
+  top: 35px;
+  color: #398ffc;
+}
+
+.input-wrapper-4 {
+  position: relative;
+}
+
+.input-wrapper-4:after {
+  font-size: 25px;
+  font-family: "FontAwesome";
+  content: "\f023";
+  position: absolute;
+  left: 10px;
+  top: 35px;
+  color: #398ffc;
+}
+
+.input-wrapper-5 {
+  position: relative;
+}
+
+.input-wrapper-5:after {
+  font-size: 25px;
+  font-family: "FontAwesome";
+  content: "\f023";
+  position: absolute;
+  left: 10px;
+  top: 35px;
+  color: #398ffc;
+}
+
+.input-wrapper-6 {
+  position: relative;
+}
+
+.input-wrapper-6:after {
+  font-size: 25px;
+  font-family: "FontAwesome";
+  content: "\f023";
+  position: absolute;
+  left: 10px;
+  top: 35px;
+  color: #398ffc;
+}

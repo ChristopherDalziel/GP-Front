@@ -133,6 +133,10 @@ Hosting:
 
 ![](./Docs/trello_screenshots/5.png)
 
+![](./Docs/trello_screenshots/6.png)
+
+![](./Docs/trello_screenshots/7.png)
+
 ### GANTT Chart for timeline planning
 
 ![Gantt Chart](./Docs/gantt_screenshots.png)

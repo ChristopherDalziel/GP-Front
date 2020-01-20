@@ -1,0 +1,59 @@
+.about {
+  width: 100%;
+  height: 95vh;
+}
+
+.about .container {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+}
+
+.imageAbout {
+  width: 50%;
+  height: 50%;
+  background-image: url(../assets/front-desk.jpg);
+  background-size: cover;
+}
+
+.employeeCard {
+  float: left;
+  text-align: center;
+  margin-top: 55vh;
+  margin-left: 7.5vw;
+  box-sizing: border-box;
+  height: 36vh;
+  width: 25vh;
+  background: #e1eeff;
+}
+
+.employeeCard img {
+  padding-top: 10px;
+  height: 150px;
+}
+
+.employeeAbout {
+  padding-top: 1vh;
+}
+
+.about .image img {
+  width: 100%;
+  height: 100%;
+}
+
+.content-about {
+  margin-top: 10vh;
+  margin-left: 10vh;
+  box-sizing: border-box;
+  padding-left: 10vh;
+  padding-top: 10vh;
+  height: 65vh;
+  width: 40vw;
+  background: #e1eeff;
+}
+
+.about h1 {
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 30px;
+}
