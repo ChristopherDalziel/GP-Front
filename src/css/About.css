@@ -1,59 +1,117 @@
-.about {
-  width: 100%;
+
+
+.about{
+  width: 100vw;
   height: 95vh;
 }
+.about-us .intro{
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+  
+}
+.about-infor{
+  width: 50%;
+  height: 350px;
+}
 
-.about .container {
-  width: inherit;
+.about-us .intro .about-image{
+  width: 50%;
   height: inherit;
+}
+
+.about-image{
+  background-image: url('../assets/5.jpeg');
+  background-size: cover;
+}
+.about-infor{
+  box-sizing: border-box;
+  padding-left:100px;
+  padding-right: 100px;
+  padding-top:60px;
+  text-align: center;
+  background: #e1eeff
+}
+
+.about-infor h1{
+  color:#398ffc;
+  margin-bottom: 20px;
+}
+.about-infor p{
+  margin-bottom: 10px;
+  font-family: "Raleway", sans-serif;
+}
+
+.doctors{
+  box-sizing: border-box;
+  padding:100px;
+  padding-bottom: 40px;
+  padding-top:40px;
+  height: 50%;
+  width: 100vw;
   display: flex;
   flex-direction: row;
 }
 
-.imageAbout {
-  width: 50%;
-  height: 50%;
-  background-image: url(../assets/front-desk.jpg);
-  background-size: cover;
+.doctor-card{
+  padding:20px;
+  width: 30%;
+  margin-right: 50px;
 }
 
-.employeeCard {
-  float: left;
-  text-align: center;
-  margin-top: 55vh;
-  margin-left: 7.5vw;
-  box-sizing: border-box;
-  height: 36vh;
-  width: 25vh;
-  background: #e1eeff;
+.doctor-card img{
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  height: 300px;
+  width: 300px;
 }
 
-.employeeCard img {
-  padding-top: 10px;
-  height: 150px;
-}
-
-.employeeAbout {
-  padding-top: 1vh;
-}
-
-.about .image img {
-  width: 100%;
-  height: 100%;
-}
-
-.content-about {
-  margin-top: 10vh;
-  margin-left: 10vh;
-  box-sizing: border-box;
-  padding-left: 10vh;
-  padding-top: 10vh;
-  height: 65vh;
-  width: 40vw;
-  background: #e1eeff;
-}
-
-.about h1 {
+.doctor-card h3{
+  margin-top:15px;
+  margin-bottom: 10px;
   font-family: "Raleway", sans-serif;
-  margin-bottom: 30px;
+  
 }
+
+.doctor-card h4{
+  margin-bottom: 10px;
+  font-family: "Raleway", sans-serif;
+  
+}
+
+.doctor-card p{
+  font-size: 14px;
+  text-align:justify;
+  font-family: "Raleway", sans-serif;
+  
+}
+
+.doc-infors{
+  
+  box-sizing: border-box;
+  text-align: center;
+  padding-top:30px;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+.doc-infors h1{
+  color:#398ffc;
+  margin-bottom: 20px;
+}
+.doc-infors p{
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
