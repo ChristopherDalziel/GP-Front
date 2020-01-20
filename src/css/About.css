@@ -2,7 +2,7 @@
 
 .about{
   width: 100vw;
-  height: 100vh;
+  height: 95vh;
 }
 .about-us .intro{
   width: 100%;
@@ -45,6 +45,8 @@
 .doctors{
   box-sizing: border-box;
   padding:100px;
+  padding-bottom: 40px;
+  padding-top:40px;
   height: 50%;
   width: 100vw;
   display: flex;
@@ -52,15 +54,62 @@
 }
 
 .doctor-card{
+  padding:20px;
   width: 30%;
   margin-right: 50px;
 }
 
 .doctor-card img{
-  height: 50px;
-  width: 50px;
-
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  height: 300px;
+  width: 300px;
 }
+
+.doctor-card h3{
+  margin-top:15px;
+  margin-bottom: 10px;
+  font-family: "Raleway", sans-serif;
+  
+}
+
+.doctor-card h4{
+  margin-bottom: 10px;
+  font-family: "Raleway", sans-serif;
+  
+}
+
+.doctor-card p{
+  font-size: 14px;
+  text-align:justify;
+  font-family: "Raleway", sans-serif;
+  
+}
+
+.doc-infors{
+  
+  box-sizing: border-box;
+  text-align: center;
+  padding-top:30px;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+.doc-infors h1{
+  color:#398ffc;
+  margin-bottom: 20px;
+}
+.doc-infors p{
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
 
 
 
