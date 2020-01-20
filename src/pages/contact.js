@@ -1,10 +1,15 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
 import Nav from "../components/Nav";
+import axios from "axios";
 
 import "../css/Contact.css";
 
 class Contact extends React.Component {
+  handleSubmit = values => {
+    axios.post(values);
+  };
+
   render() {
     return (
       <>
@@ -13,11 +18,12 @@ class Contact extends React.Component {
           <div className="container">
             <div className="imageContact"></div>
             <div className="content-contact">
-              <form onSubmit={this.props.handleSubmit}>
+              <form onSubmit={this.handleSubmit}>
                 <div>
                   <label className="input-wrapper--1" htmlFor="name">
-                    First Name
+                    Name
                   </label>
+                  <br></br>
                   <Field name="name" component="input" type="text" />
                 </div>
                 <div>
@@ -48,29 +54,6 @@ class Contact extends React.Component {
             </div>
           </div>
         </div>
-
-        {/* Should be using redux?? */}
-        {/* <Nav />
-        <div className="contact">
-          <div className="container">
-            <div className="imageContact">
-              <div className="content-contact">
-                <div>
-                  <h1>Contact Us</h1>
-                  <div className="input-wrapper--1">
-                    <label>Name</label> <br />
-                    <input
-                      type="text"
-                      placeholder="Enter Name"
-                      name="name"
-                      required
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </>
     );
   }

@@ -5,7 +5,6 @@ import Home from "./pages/home";
 import Contact from "./pages/contact";
 import Profile from "./pages/profile";
 import About from "./pages/about";
-
 import SignUp from "./pages/signup";
 import SignIn from "./pages/signIn";
 import Vaccines from "./pages/vaccines";
