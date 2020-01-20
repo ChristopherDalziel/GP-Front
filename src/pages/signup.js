@@ -1,19 +1,45 @@
 import React, { Fragment, useState} from "react";
 import Nav from "../components/Nav";
 import "../css/signUp.css";
+import axios from 'axios'
 
 const SignUp =() =>{
 
-  const [formData,setFormData]=useState({
+  const [formData,setFormData] = useState({
     firstName:'',
-    lasrtName:'',
+    lastName:'',
     email:'',
     phone:'',
     password:'',
     password2:''
   });
 
-  const {firstName,lasrtName,email,phone,password,password2}= formData
+  const {firstName,lastName,email,phone,password,password2}= formData
+
+  const onChange=(e)=>setFormData({
+    ...formData,[e.target.name]: e.target.value
+  })
+
+  const onSubmit =  async e=> {
+    e.preventDefault()
+    if(password !== password2){
+      console.log('password not match');
+      
+    }else{
+      // console.log(formData); 
+      const newUser ={firstName,lastName, email, phone, password,password2}
+      try{
+        const body=JSON.stringify(newUser)
+        const res =await axios.post('/register', body)
+        console.log(res.data);
+        
+      }catch(err){
+        console.error(err.response.data)
+      }
+
+    }
+  }
+
 
   return (
     <Fragment>
@@ -25,13 +51,15 @@ const SignUp =() =>{
             <div>
               <h1>New to Klinic Doctor Leong?</h1>
               <h1>Sign UP Now</h1>
-              <form action="">
+              <form onSubmit={e => onSubmit(e)}>
                 <div className="input-wrapper-1">
                   <label>First Name</label> <br />
                   <input
                     type="text"
-                    placeholder="Enter Username"
+                    placeholder="Enter First Name"
                     name="firstName"
+                    value={firstName}
+                    onChange={e=>onChange(e)}
                     required
                   />
                 </div>
@@ -40,8 +68,10 @@ const SignUp =() =>{
                   <br />
                   <input
                     type="text"
-                    placeholder="Enter Password"
-                    name="pslasrtNamew"
+                    placeholder="Enter Last Name"
+                    name="lastName"
+                    value={lastName}
+                    onChange={e=>onChange(e)}
                     required
                   />
                 </div>
@@ -50,8 +80,10 @@ const SignUp =() =>{
                   <br />
                   <input
                     type="text"
-                    placeholder="Enter Password"
+                    placeholder="Enter you Email"
                     name="email"
+                    value={email}
+                    onChange={e=>onChange(e)}
                     required
                   />
                 </div>
@@ -60,8 +92,10 @@ const SignUp =() =>{
                   <br />
                   <input
                     type="text"
-                    placeholder="Enter Password"
+                    placeholder="Enter your Phone Number"
                     name="phone"
+                    value={phone}
+                    onChange={e=>onChange(e)}
                     required
                   />
                 </div>
@@ -70,8 +104,10 @@ const SignUp =() =>{
                   <br />
                   <input
                     type="password"
-                    placeholder="Enter Password"
+                    placeholder="Enter the Password"
                     name="password"
+                    value={password}
+                    onChange={e=>onChange(e)}
                     required
                   />
                 </div>
@@ -80,8 +116,10 @@ const SignUp =() =>{
                   <br />
                   <input
                     type="password"
-                    placeholder="Enter Password"
+                    placeholder="confirm the Password"
                     name="password2"
+                    value={password2}
+                    onChange={e=>onChange(e)}
                     required
                   />
                 </div>
