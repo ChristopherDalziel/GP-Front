@@ -27,7 +27,7 @@ const SignUp =() =>{
       
     }else{
       // console.log(formData); 
-      const newUser ={firstName,lastName, email, phone, password,password2}
+      const newUser ={firstName,lastName, email, phone, password, password2}
       try{
         const body=JSON.stringify(newUser)
         const res =await axios.post('/register', body)
