@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import Nav from "../components/Nav";
+
 import "../css/signUp.css";
 
 function signUp() {
