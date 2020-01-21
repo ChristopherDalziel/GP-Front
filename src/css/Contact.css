@@ -28,10 +28,13 @@
   box-sizing: border-box;
   padding-left: 10vh;
   padding-top: 10vh;
+  padding-bottom: 10vh;
   height: 75vh;
   width: 40vw;
   background: #e1eeff;
+  overflow: scroll;
 }
+
 .signIn h1 {
   font-family: "Raleway", sans-serif;
   margin-bottom: 30px;
@@ -69,7 +72,6 @@
   background: #398ffc;
   height: 4vh;
   width: 30vw;
-  /* border:1px solid #398ffc; */
 }
 
 .input-wrapper--1 {
@@ -130,4 +132,26 @@
 
 #message {
   height: 80px;
+}
+
+/* Toggle CSS */
+
+.info-container {
+  margin-top: 10px;
+  padding: 1vh;
+  height: 10vh;
+  width: 29vw;
+  background-color: #c4d7ed;
+}
+
+.info-container-opening-hours {
+  margin-top: 10px;
+  padding: 1vh;
+  height: 20vh;
+  width: 29vw;
+  background-color: #c4d7ed;
+}
+
+.info-container-opening-hours ul li {
+  list-style-type: none;
 }
