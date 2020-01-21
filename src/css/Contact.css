@@ -12,14 +12,12 @@
 
 .imageContact {
   width: 50%;
-  height: 100%;
-  background-image: url(../assets/sign-in.jpg);
-  background-size: cover;
+  height: 95vh;
 }
 
 .contact .image img {
   width: 100%;
-  height: 100%;
+  height: 95vh;
 }
 
 .content-contact {
