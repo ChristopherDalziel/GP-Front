@@ -1,31 +1,36 @@
 import React from "react";
-import DatePicker from "react-datepicker";
- 
+import ReactDatePicker from "react-datepicker";
+
 import "react-datepicker/dist/react-datepicker.css";
 
-class SelectDateTime extends React.Component {
+class DatePicker extends React.Component {
   state = {
     startDate: new Date()
   };
- 
-  handleDateChange = (date) => {
-    console.log(date)
-    this.setState({
-      startDate: date
-    });
+
+  handleChange = date => {
+    this.setState({ startDate: date });
+    this.props.input.onChange(date);
   };
- 
+
   render() {
+    const { touched, error } = this.props;
     return (
-      <DatePicker
-        selected={this.state.date}
-        onChange={this.handleChange}
-        showTimeSelect
-        dateFormat="Pp"
-        placeholderText='Click to select'
-      />
+      <div>
+        <ReactDatePicker
+          selected={this.state.startDate}
+          onChange={this.handleChange}
+          locale="en-GB"
+          showTimeSelect
+          timeFormat="hh:mm aa"
+          timeIntervals={15}
+          dateFormat="dd-MMMM-yyyy hh:mm aa"
+          placeholderText="Click to select"
+        />
+        {touched && error && <span className="error_field">{error}</span>}
+      </div>
     );
   }
 }
 
-export default SelectDateTime;
+export default DatePicker;
