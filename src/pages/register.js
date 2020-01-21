@@ -1,4 +1,5 @@
 import React, { Fragment, useState} from "react";
+import {Link} from 'react-router-dom'
 import Nav from "../components/Nav";
 import "../css/signUp.css";
 import axios from 'axios';
@@ -129,10 +130,10 @@ const Register =() =>{
                   />
                 </div>
                 <button type="submit">Sign Up</button>
-
-              </form>
-
-              
+                <h4>Already have an account? 
+                  <Link to="signin"> Sign In Here</Link>
+                </h4>
+              </form> 
             </div>
           </div>
         </div>
