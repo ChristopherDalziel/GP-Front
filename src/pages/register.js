@@ -2,12 +2,9 @@ import React, { Fragment, useState} from "react";
 import {Link} from 'react-router-dom'
 import Nav from "../components/Nav";
 import "../css/signUp.css";
-// import axios from 'axios';
-import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
-import{setAlert} from '../actions/alert'
+import axios from 'axios';
 
-const Register =({setAlert}) =>{
+const Register =() =>{
 
   const [formData,setFormData] = useState({
     firstName:'',
@@ -27,29 +24,28 @@ const Register =({setAlert}) =>{
   const onSubmit =  async e => {
     e.preventDefault()
     if(password !== password2){
-      setAlert('Password do not mastch', 'danger')
+      console.log('password not match');
       
     }else{
-      console.log('Success');
-      
-      // const newUser ={firstName,lastName, email, phone, password,password2}
-      // try{
-      //   const config = {
-      //     headers:{
-      //       'content-type':"application/json"
-      //     } 
-      //   }
-      //   const body=JSON.stringify(newUser)
-      //   console.log(body)
+      const newUser ={firstName,lastName, email, phone, password,password2}
+      try{
+        const config = {
+          headers:{
+            'content-type':"application/json"
+          } 
+        }
+        const body=JSON.stringify(newUser)
+        console.log(body)
 
-      //   const res = await axios.post('http://localhost:5000/users/register', body, config)
-      //   console.log(res.data);
+        const res = await axios.post('http://localhost:5000/users/register', body, config)
+        console.log(res.data);
         
-      // }catch(err){
-      //   console.log(err.message)
-      // }
+      }catch(err){
+        console.log(err.message)
+      }
     }
   }
+
 
   return (
     <Fragment>
@@ -144,10 +140,6 @@ const Register =({setAlert}) =>{
       </div>
     </Fragment>
   );
-};
-
-Register.prototype= {
-  setAlert: PropTypes.func.isRequired
 }
 
-export default connect(null, {setAlert})(Register);
+export default Register;
