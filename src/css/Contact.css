@@ -1,18 +1,34 @@
 .contact {
   width: 100%;
-  height: 95vh;
+  height: 90vh;
 }
 
-.contact .container {
+.contact .container-main {
   width: inherit;
   height: inherit;
   display: flex;
   flex-direction: row;
 }
 
-.imageContact {
+/* Map container */
+.container-one {
+  float: left;
   width: 50%;
-  height: 95vh;
+  height: 90vh;
+  z-index: 1;
+}
+
+/* Contact info container */
+.container-two {
+  float: right;
+  width: 50%;
+  z-index: 1;
+}
+
+/* Overrides GoogleAPI inline styling */
+.google-map > div > div {
+  width: 50%;
+  height: 87vh !important;
 }
 
 .contact .image img {
@@ -20,13 +36,21 @@
   height: 95vh;
 }
 
+.address-holder {
+  padding: 1vh;
+  width: inherit;
+  height: 5vh;
+  background-color: #c4d7ed;
+}
+
 .content-contact {
+  width: 50%;
   margin-top: 10vh;
   margin-left: 10vh;
   box-sizing: border-box;
   padding-left: 10vh;
   padding-top: 10vh;
-  padding-bottom: 10vh;
+  padding-bottom: 4vh;
   height: 75vh;
   width: 40vw;
   background: #e1eeff;
@@ -76,6 +100,7 @@
   display: inline-block;
   position: relative;
 }
+
 .input-wrapper--1:after {
   font-size: 22px;
   font-family: "FontAwesome";
@@ -133,7 +158,6 @@
 }
 
 /* Toggle CSS */
-
 .info-container {
   margin-top: 10px;
   padding: 1vh;
