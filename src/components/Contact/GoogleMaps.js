@@ -5,8 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const mapStyles = {
-  width: "50%",
-  height: "90%"
+  width: "50%"
 };
 
 export class MapContainer extends Component {
@@ -14,7 +13,7 @@ export class MapContainer extends Component {
     super(props);
 
     this.state = {
-      stores: [{ latitude: 3.079274, longitude: 101.58071 }]
+      stores: [{ latitude: 3.079274, longitude: 101.58071 }] // This is the 'marked' position on the map thats later called in displayMarkers
     };
   }
 
@@ -38,9 +37,9 @@ export class MapContainer extends Component {
     return (
       <Map
         google={this.props.google}
-        zoom={17}
+        zoom={17} // This zooms in closer to the position stated in initialCenter
         style={mapStyles}
-        initialCenter={{ lat: 3.080886, lng: 101.580569 }}
+        initialCenter={{ lat: 3.080886, lng: 101.580569 }} // This sets where the map is positioned upon page load
       >
         {this.displayMarkers()}
       </Map>
