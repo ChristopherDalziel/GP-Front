@@ -1,10 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import axios from "axios";
-import dotenv from "dotenv";
 
 import Home from "./pages/home";
-import Contact from "./pages/contact";
+import ContactForm from "./pages/contact";
 import Profile from "./pages/profile";
 import About from "./pages/about";
 import Register from "./pages/register";
@@ -13,23 +11,7 @@ import Vaccines from "./pages/vaccines";
 import Services from "./pages/services";
 import Booking from "./pages/booking";
 
-dotenv.config();
-
-async function handleFormSubmit(values) {
-  values.preventDefault();
-  const { name, contactNumber, email, message } = values;
-  try {
-    const res = await axios.post(process.env.REACT_APP_BACKEND_URL + "/send", {
-      name,
-      contactNumber,
-      email,
-      message
-    });
-    console.log(res);
-  } catch (err) {
-    console.log(err.message);
-  }
-}
+import emailSubmit from "./components/emailSubmit";
 
 class App extends React.Component {
   render() {
@@ -42,7 +24,7 @@ class App extends React.Component {
             <Route path="/signIn" component={SignIn} />
             <Route
               path="/contact"
-              render={() => <Contact handleFormSubmit={handleFormSubmit} />}
+              render={() => <ContactForm onSubmit={emailSubmit} />}
             />
             <Route path="/profile" component={Profile} />
             <Route path="/about" component={About} />
