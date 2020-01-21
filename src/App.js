@@ -11,7 +11,9 @@ import Vaccines from "./pages/vaccines";
 import Services from "./pages/services";
 import Booking from "./pages/booking";
 
+
 import emailSubmit from "./components/emailSubmit";
+
 
 class App extends React.Component {
   render() {
@@ -30,7 +32,7 @@ class App extends React.Component {
             <Route path="/about" component={About} />
             <Route path="/vaccines" component={Vaccines} />
             <Route path="/services" component={Services} />
-            <Route path="/booking" component={Booking} />
+            <Route path="/booking" component={Booking}/>
           </Switch>
         </BrowserRouter>
       </>
