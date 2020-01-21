@@ -1,9 +1,13 @@
 import React, { Fragment, useState} from "react";
+import {Link} from 'react-router-dom'
 import Nav from "../components/Nav";
 import "../css/signUp.css";
 import axios from 'axios';
 
-const Register =() =>{
+import {connect} from 'react-redux'
+import{setAlert} from '../actions/alert'
+
+const Register =(props) =>{
 
   const [formData,setFormData] = useState({
     firstName:'',
@@ -26,39 +30,26 @@ const Register =() =>{
       console.log('password not match');
       
     }else{
-      // console.log(formData); 
-      const newUser ={firstName,lastName, email, phone, password}
-      try{
-        // const config = {
-        //   headers:{
-        //     'content-type':"application/json"
-        //   } 
-        // }
-     
-        // const body=JSON.stringify(newUser)
-        // console.log(body)
 
-        const res = await axios.post('http://localhost:5000/users/register', newUser)
-        // debugger;
-        console.log(res.data);
+      
+      // const newUser ={firstName,lastName, email, phone, password,password2}
+      // try{
+      //   const config = {
+      //     headers:{
+      //       'content-type':"application/json"
+      //     } 
+      //   }
+      //   const body=JSON.stringify(newUser)
+      //   console.log(body)
+
+      //   const res = await axios.post('http://localhost:5000/users/register', body, config)
+      //   console.log(res.data);
         
-      }catch(err){
-        console.log(err.message)
-      }
+      // }catch(err){
+      //   console.log(err.message)
+      // }
     }
   }
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault()
-//     axios.post('https://localhost:5000/users/register', formData)
-//       .then(function (response) {
-//           console.log(response)
-//       })
-//       .catch(function (error) {
-//           console.log(error)
-//       }) 
-// }
-
 
   return (
     <Fragment>
@@ -143,10 +134,10 @@ const Register =() =>{
                   />
                 </div>
                 <button type="submit">Sign Up</button>
-
-              </form>
-
-              
+                <h4>Already have an account? 
+                  <Link to="signin"> Sign In Here</Link>
+                </h4>
+              </form> 
             </div>
           </div>
         </div>
@@ -155,4 +146,4 @@ const Register =() =>{
   );
 }
 
-export default Register;
+export default connect(null, {setAlert})(Register);

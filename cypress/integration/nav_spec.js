@@ -3,6 +3,8 @@ describe("Nav Functionality Testing", function() {
     cy.visit("localhost:3000");
 
     cy.contains("Home").click();
+    // eq = equalto
+    cy.location("pathname").should("eq", "/");
     cy.contains("About Us").click();
     cy.contains("Login").click();
     cy.contains("Sign Up").click();
