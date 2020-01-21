@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import Nav from "../components/Nav";
 import "../css/signUp.css";
 import axios from 'axios';
+// import {register} from '../actions/auth'
 
 const Register =() =>{
 
@@ -27,6 +28,8 @@ const Register =() =>{
       console.log('password not match');
       
     }else{
+      console.log('success');
+      
       const newUser ={firstName,lastName, email, phone, password,password2}
       try{
         const config = {
@@ -38,6 +41,7 @@ const Register =() =>{
         console.log(body)
 
         const res = await axios.post('http://localhost:5000/users/register', body, config)
+        
         console.log(res.data);
         
       }catch(err){
@@ -142,4 +146,4 @@ const Register =() =>{
   );
 }
 
-export default Register;
+export default Register

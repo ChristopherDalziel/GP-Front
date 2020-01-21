@@ -17,11 +17,13 @@ const SignIn = () => {
     ...formData,[e.target.name]: e.target.value
   })
 
-  const onSubmit =  async e => {
+  const onSubmit =  async e => { 
     e.preventDefault()
-    console.log("success");
-    
+    console.log('is-success');
+   
   }
+
+  
   return (
     <Fragment>
       <Nav />
