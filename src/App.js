@@ -12,8 +12,6 @@ import Services from "./pages/services";
 import Booking from "./pages/booking";
 import emailSubmit from "./components/emailSubmit";
 
-
-
 class App extends React.Component {
   render() {
     return (
