@@ -26,20 +26,17 @@ const Register =() =>{
       console.log('password not match');
       
     }else{
-      // console.log(formData); 
-      const newUser ={firstName,lastName, email, phone, password}
+      const newUser ={firstName,lastName, email, phone, password,password2}
       try{
-        // const config = {
-        //   headers:{
-        //     'content-type':"application/json"
-        //   } 
-        // }
-     
-        // const body=JSON.stringify(newUser)
-        // console.log(body)
+        const config = {
+          headers:{
+            'content-type':"application/json"
+          } 
+        }
+        const body=JSON.stringify(newUser)
+        console.log(body)
 
-        const res = await axios.post('http://localhost:5000/users/register', newUser)
-        // debugger;
+        const res = await axios.post('http://localhost:5000/users/register', body, config)
         console.log(res.data);
         
       }catch(err){
@@ -47,17 +44,6 @@ const Register =() =>{
       }
     }
   }
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault()
-//     axios.post('https://localhost:5000/users/register', formData)
-//       .then(function (response) {
-//           console.log(response)
-//       })
-//       .catch(function (error) {
-//           console.log(error)
-//       }) 
-// }
 
 
   return (
