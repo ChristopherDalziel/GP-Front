@@ -12,7 +12,6 @@ import Services from "./pages/services";
 import Booking from "./pages/booking";
 import emailSubmit from "./components/emailSubmit";
 
-import Alert from './components/alert'
 
 
 class App extends React.Component {
@@ -22,7 +21,7 @@ class App extends React.Component {
           <BrowserRouter>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Alert/>
+        
               <Route path="/register" component={Register} />
               <Route path="/signIn" component={SignIn} />
               <Route
