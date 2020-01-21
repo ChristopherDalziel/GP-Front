@@ -76,5 +76,4 @@ class BookingForm extends React.Component {
 }
 
 BookingForm = reduxForm({ form: "booking", validate })(BookingForm);
-
 export default BookingForm;
