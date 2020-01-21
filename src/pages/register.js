@@ -1,11 +1,13 @@
 import React, { Fragment, useState} from "react";
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 import Nav from "../components/Nav";
 import "../css/signUp.css";
 import axios from 'axios';
-// import {register} from '../actions/auth'
+import {register} from '../actions/auth'
+import PropTypes from 'prop-types'
 
-const Register =() =>{
+const Register =({register}) =>{
 
   const [formData,setFormData] = useState({
     firstName:'',
@@ -28,25 +30,26 @@ const Register =() =>{
       console.log('password not match');
       
     }else{
-      console.log('success');
+      register({firstName,lastName,email,phone,password})
+      // console.log('success');
       
-      const newUser ={firstName,lastName, email, phone, password,password2}
-      try{
-        const config = {
-          headers:{
-            'content-type':"application/json"
-          } 
-        }
-        const body=JSON.stringify(newUser)
-        console.log(body)
+      // const newUser ={firstName,lastName, email, phone, password,password2}
+      // try{
+      //   const config = {
+      //     headers:{
+      //       'content-type':"application/json"
+      //     } 
+      //   }
+      //   const body=JSON.stringify(newUser)
+      //   console.log(body)
 
-        const res = await axios.post('http://localhost:5000/users/register', body, config)
+      //   const res = await axios.post('http://localhost:5000/users/register', body, config)
         
-        console.log(res.data);
+        // console.log(res.data);
         
-      }catch(err){
-        console.log(err.message)
-      }
+      // }catch(err){
+      //   console.log(err.message)
+      // }
     }
   }
 
@@ -146,4 +149,9 @@ const Register =() =>{
   );
 }
 
-export default Register
+Register.propTypes={
+  register: PropTypes.func.isRequired
+
+}
+
+export default connect(null, {register})(Register)
