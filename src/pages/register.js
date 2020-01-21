@@ -2,12 +2,12 @@ import React, { Fragment, useState} from "react";
 import {Link} from 'react-router-dom'
 import Nav from "../components/Nav";
 import "../css/signUp.css";
-import axios from 'axios';
-
+// import axios from 'axios';
+import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import{setAlert} from '../actions/alert'
 
-const Register =(props) =>{
+const Register =({setAlert}) =>{
 
   const [formData,setFormData] = useState({
     firstName:'',
@@ -27,10 +27,10 @@ const Register =(props) =>{
   const onSubmit =  async e => {
     e.preventDefault()
     if(password !== password2){
-      console.log('password not match');
+      setAlert('Password do not mastch', 'danger')
       
     }else{
-
+      console.log('Success');
       
       // const newUser ={firstName,lastName, email, phone, password,password2}
       // try{
@@ -144,6 +144,10 @@ const Register =(props) =>{
       </div>
     </Fragment>
   );
+};
+
+Register.prototype= {
+  setAlert: PropTypes.func.isRequired
 }
 
 export default connect(null, {setAlert})(Register);
