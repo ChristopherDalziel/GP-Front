@@ -21,7 +21,6 @@ async function handleSubmit(values) {
       email,
       message
     });
-    console.log(res);
   } catch (err) {
     console.log(err.message);
   }
