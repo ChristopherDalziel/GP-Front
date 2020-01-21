@@ -1,6 +1,5 @@
-import React from "react";
+import React , {useEffect} from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-
 import Home from "./pages/home";
 import Contact from "./pages/contact";
 import Profile from "./pages/profile";
@@ -11,8 +10,20 @@ import Vaccines from "./pages/vaccines";
 import Services from "./pages/services";
 import Booking from "./pages/booking";
 
-class App extends React.Component {
-  render() {
+import {loadUser} from './actions/auth'
+import setAuthToken from "./utils/setAuthToken";
+import store from './store'
+
+if(localStorage.token){
+  setAuthToken(localStorage.token)
+}
+
+const App =()=> {
+
+  useEffect(()=>{
+    store.dispatch(loadUser())
+  },[])
+ 
     return (
       <>
         <BrowserRouter>
@@ -31,7 +42,7 @@ class App extends React.Component {
       </>
 
     );
-  }
+  
 }
 
 export default App;

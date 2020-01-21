@@ -1,9 +1,12 @@
 import React, { Fragment,useState } from "react";
+import {connect} from 'react-redux'
+import PropTypes from 'prop-types'
+import {login} from '../actions/auth'
 import {Link} from 'react-router-dom'
 import Nav from "../components/Nav";
 import "../css/signIn.css";
 
-const SignIn = () => { 
+const SignIn = ({login}) => { 
 
   const [formData,setFormData] = useState({
     email:'',
@@ -17,11 +20,14 @@ const SignIn = () => {
     ...formData,[e.target.name]: e.target.value
   })
 
-  const onSubmit =  async e => {
+  const onSubmit =  async e => { 
     e.preventDefault()
-    console.log("success");
-    
+    console.log('is-success');
+    login({email,password})
+   
   }
+
+  
   return (
     <Fragment>
       <Nav />
@@ -69,4 +75,8 @@ const SignIn = () => {
     </Fragment>
   );
 }
-export default SignIn;
+
+login.prototype={
+  login: PropTypes.func.isRequired
+}
+export default connect(null, {login})(SignIn)
