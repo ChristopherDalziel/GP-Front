@@ -13,7 +13,7 @@
 .imageBooking {
   width: 50%;
   height: 100%;
-  background-image: url(../assets/sign-in.jpg);
+  background-image: url(../assets/booking.jpg);
   background-size: cover;
 }
 
@@ -29,7 +29,7 @@
   padding-left: 10vh;
   padding-top: 10vh;
   padding-bottom: 4vh;
-  height: 75vh;
+  height: 77vh;
   width: 40vw;
   background: #e1eeff;
   overflow: scroll;
@@ -60,7 +60,7 @@
   color: #398ffc;
 }
 
-/* .booking button {
+.bookingButton {
   font-family: "Raleway", sans-serif;
   margin-top: 10px;
   font-size: 18px;
@@ -70,7 +70,7 @@
   background: #398ffc;
   height: 4vh;
   width: 30vw;
-} */
+}
 
 .input-wrapper---1 {
   display: inline-block;
@@ -86,6 +86,20 @@
   color: #398ffc;
 }
 
+.input-wrapper---2 {
+  position: relative;
+}
+
+.input-wrapper---2:after {
+  font-size: 25px;
+  font-family: "FontAwesome";
+  content: "\f0e0";
+  position: absolute;
+  left: 10px;
+  top: 35px;
+  color: #398ffc;
+}
+
 .input-wrapper---3 {
   position: relative;
 }
@@ -93,7 +107,35 @@
 .input-wrapper---3:after {
   font-size: 25px;
   font-family: "FontAwesome";
+  content: "\f095";
+  position: absolute;
+  left: 10px;
+  top: 35px;
+  color: #398ffc;
+}
+
+.input-wrapper---4 {
+  position: relative;
+}
+
+.input-wrapper---4:after {
+  font-size: 25px;
+  font-family: "FontAwesome";
   content: "\f073";
+  position: absolute;
+  left: 10px;
+  top: 35px;
+  color: #398ffc;
+}
+
+.input-wrapper---5 {
+  position: relative;
+}
+
+.input-wrapper---5:after {
+  font-size: 25px;
+  font-family: "FontAwesome";
+  content: "\f086";
   position: absolute;
   left: 10px;
   top: 35px;

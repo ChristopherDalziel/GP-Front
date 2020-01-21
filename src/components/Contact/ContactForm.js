@@ -35,7 +35,7 @@ class ContactForm extends React.Component {
             <Field name="contact_number" component="input" type="text" />
           </div>
           <div>
-            <label className="input-wrapper--2" htmlFor="subject">
+            <label className="input-wrapper--2-5" htmlFor="subject">
               Subject
               <br></br>
             </label>
