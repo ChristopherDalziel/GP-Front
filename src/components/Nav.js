@@ -37,7 +37,7 @@ function Nav({ user }) {
               <Link to="/signin">Sign In</Link>
             </li>
             <li>
-              <Link to="/signup">Sign Up</Link>
+              <Link to="/register">Sign Up</Link>
             </li>
           </>
         )}
