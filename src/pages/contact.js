@@ -13,19 +13,31 @@ class Contact extends React.Component {
           <div className="container">
             <div className="imageContact"></div>
             <div className="content-contact">
-              <form onSubmit={this.props.handleFormSubmit}>
+              <form onSubmit={this.props.handleSubmit}>
                 <div>
-                  <label className="input-wrapper--1" htmlFor="name">
-                    Name
+                  <label className="input-wrapper--1" htmlFor="first_name">
+                    First Name
                   </label>
-                  <br></br>
-                  <Field name="name" component="input" type="text" />
+                  <Field name="first_name" component="input" type="text" />
                 </div>
                 <div>
-                  <label className="input-wrapper--2" htmlFor="contactNumber">
+                  <label className="input-wrapper--1" htmlFor="last_name">
+                    Last Name
+                  </label>
+                  <Field name="last_name" component="input" type="text" />
+                </div>
+                <div>
+                  <label className="input-wrapper--2" htmlFor="contact_number">
                     Contact Number
                   </label>
-                  <Field name="contactNumber" component="input" type="text" />
+                  <Field name="contact_number" component="input" type="text" />
+                </div>
+                <div>
+                  <label className="input-wrapper--2" htmlFor="subject">
+                    Subject
+                    <br></br>
+                  </label>
+                  <Field name="subject" component="input" type="text" />
                 </div>
                 <div>
                   <label className="input-wrapper--3" htmlFor="email">

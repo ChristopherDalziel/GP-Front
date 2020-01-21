@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Nav from "../components/Nav";
+
 import "../css/Home.css";
 
 class Home extends React.Component {
@@ -17,7 +18,9 @@ class Home extends React.Component {
                 <Link to="/contact">
                   <button>Contact Us</button>
                 </Link>
-                <button>Book Now</button>
+                <Link to="/booking">
+                  <button>Book Now</button>
+                </Link>
               </p>
             </div>
           </div>
