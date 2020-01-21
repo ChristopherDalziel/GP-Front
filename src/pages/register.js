@@ -27,7 +27,7 @@ const Register =() =>{
       
     }else{
       // console.log(formData); 
-      const newUser ={firstName,lastName, email, phone, password}
+      const newUser ={firstName,lastName, email, phone, password,password2}
       try{
         // const config = {
         //   headers:{
