@@ -5,6 +5,12 @@ import Nav from "../components/Nav";
 import "../css/Contact.css";
 
 class Contact extends React.Component {
+  handleSubmit = () => {
+    this.props.handleSubmit();
+    console.log(this.props.reset);
+    this.props.reset();
+  };
+
   render() {
     return (
       <>
@@ -13,7 +19,7 @@ class Contact extends React.Component {
           <div className="container">
             <div className="imageContact"></div>
             <div className="content-contact">
-              <form onSubmit={this.props.handleSubmit}>
+              <form onSubmit={this.handleSubmit}>
                 <div>
                   <label className="input-wrapper--1" htmlFor="first_name">
                     First Name
