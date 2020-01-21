@@ -4,7 +4,10 @@ import Nav from "../components/Nav";
 import "../css/signUp.css";
 import axios from 'axios';
 
-const Register =() =>{
+import {connect} from 'react-redux'
+import{setAlert} from '../actions/alert'
+
+const Register =(props) =>{
 
   const [formData,setFormData] = useState({
     firstName:'',
@@ -27,25 +30,26 @@ const Register =() =>{
       console.log('password not match');
       
     }else{
-      const newUser ={firstName,lastName, email, phone, password,password2}
-      try{
-        const config = {
-          headers:{
-            'content-type':"application/json"
-          } 
-        }
-        const body=JSON.stringify(newUser)
-        console.log(body)
 
-        const res = await axios.post('http://localhost:5000/users/register', body, config)
-        console.log(res.data);
+      
+      // const newUser ={firstName,lastName, email, phone, password,password2}
+      // try{
+      //   const config = {
+      //     headers:{
+      //       'content-type':"application/json"
+      //     } 
+      //   }
+      //   const body=JSON.stringify(newUser)
+      //   console.log(body)
+
+      //   const res = await axios.post('http://localhost:5000/users/register', body, config)
+      //   console.log(res.data);
         
-      }catch(err){
-        console.log(err.message)
-      }
+      // }catch(err){
+      //   console.log(err.message)
+      // }
     }
   }
-
 
   return (
     <Fragment>
@@ -142,4 +146,4 @@ const Register =() =>{
   );
 }
 
-export default Register;
+export default connect(null, {setAlert})(Register);
