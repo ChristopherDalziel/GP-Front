@@ -1,9 +1,9 @@
 import React, { Fragment, useState} from "react";
 import Nav from "../components/Nav";
 import "../css/signUp.css";
-import axios from 'axios'
+import axios from 'axios';
 
-const SignUp =() =>{
+const Register =() =>{
 
   const [formData,setFormData] = useState({
     firstName:'',
@@ -20,25 +20,44 @@ const SignUp =() =>{
     ...formData,[e.target.name]: e.target.value
   })
 
-  const onSubmit =  async e=> {
+  const onSubmit =  async e => {
     e.preventDefault()
     if(password !== password2){
       console.log('password not match');
       
     }else{
       // console.log(formData); 
-      const newUser ={firstName,lastName, email, phone, password, password2}
+      const newUser ={firstName,lastName, email, phone, password}
       try{
-        const body=JSON.stringify(newUser)
-        const res =await axios.post('/register', body)
+        // const config = {
+        //   headers:{
+        //     'content-type':"application/json"
+        //   } 
+        // }
+     
+        // const body=JSON.stringify(newUser)
+        // console.log(body)
+
+        const res = await axios.post('http://localhost:5000/users/register', newUser)
+        // debugger;
         console.log(res.data);
         
       }catch(err){
-        console.error(err.response.data)
+        console.log(err.message)
       }
-
     }
   }
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault()
+//     axios.post('https://localhost:5000/users/register', formData)
+//       .then(function (response) {
+//           console.log(response)
+//       })
+//       .catch(function (error) {
+//           console.log(error)
+//       }) 
+// }
 
 
   return (
@@ -136,4 +155,4 @@ const SignUp =() =>{
   );
 }
 
-export default SignUp;
+export default Register;

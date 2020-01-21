@@ -7,7 +7,7 @@ import Home from "./pages/home";
 import Contact from "./pages/contact";
 import Profile from "./pages/profile";
 import About from "./pages/about";
-import SignUp from "./pages/signup";
+import Register from "./pages/register";
 import SignIn from "./pages/signIn";
 import Vaccines from "./pages/vaccines";
 import Services from "./pages/services";
@@ -38,7 +38,7 @@ class App extends React.Component {
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/signup" component={SignUp} />
+            <Route path="/register" component={Register} />
             <Route path="/signIn" component={SignIn} />
             <Route
               path="/contact"
