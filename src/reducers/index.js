@@ -4,6 +4,5 @@ import alert from './alert'
 
 
 export default combineReducers({
-  alert,
-  
+  alert
 });
