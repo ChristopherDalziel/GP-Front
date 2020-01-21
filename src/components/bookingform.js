@@ -1,15 +1,11 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-import SelectDateTime from "./datepicker";
-import DatePicker, { registerLocale, setDefaultLocale } from "react-datepicker";
+import { registerLocale} from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import normalizePhone from "./normalizePhone";
 import enGB from "date-fns/locale/en-GB";
+import DatePicker from "./datepicker";
 registerLocale("en-GB", enGB);
-
-// import {format, compareAsc} from 'date-fns/esm'
-// import { enGB} from 'date-fns/locale'
-// registerLocale('enGB', enGB)
 
 function validate(values) {
   let errors = {};
@@ -34,12 +30,6 @@ function validate(values) {
 class BookingForm extends React.Component {
   state = {
     startDate: new Date()
-  };
-
-  handleChange = date => {
-    this.setState({
-      startDate: date
-    });
   };
 
   render() {
@@ -68,19 +58,10 @@ class BookingForm extends React.Component {
         </div>
         <div>
           <label htmlFor="datetime">Appointment Time</label>
-          <DatePicker
-            selected={this.state.startDate}
-            onChange={this.handleChange}
-            locale="en-GB"
-            showTimeSelect
-            timeFormat="hh:mm aa"
-            timeIntervals={15}
-            dateFormat="dd-MMMM-yyyy hh:mm aa"
-            placeholderText="Click to select"
-          />
+          <Field name="datetime" component={DatePicker} />
         </div>
         <div>
-          <label htmlFor="firstName">Comments</label>
+          <label htmlFor="comments">Comments</label>
           <Field name="comments" component="input" type="text" />
         </div>
         <button
