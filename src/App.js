@@ -10,19 +10,11 @@ import Vaccines from "./pages/vaccines";
 import Services from "./pages/services";
 import Booking from "./pages/booking";
 
-import {loadUser} from './actions/auth'
-import setAuthToken from "./utils/setAuthToken";
-import store from './store'
 
-if(localStorage.token){
-  setAuthToken(localStorage.token)
-}
+
 
 const App =()=> {
 
-  useEffect(()=>{
-    store.dispatch(loadUser())
-  },[])
  
     return (
       <>
