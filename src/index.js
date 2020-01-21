@@ -6,8 +6,6 @@ import { Provider } from "react-redux";
 import App from "./App";
 // import * as serviceWorker from "./serviceWorker";
 
-// TESTING NEW BRANCH
-
 render(
   <Provider store={store}>
     <App />
