@@ -1,18 +1,11 @@
 import React from "react";
-import { Field, reduxForm, formValueSelector } from "redux-form";
-import { connect } from "react-redux";
-import SelectDateTime from "./datepicker";
-import PropTypes from "prop-types";
-import { registerLocale, setDefaultLocale } from "react-datepicker";
+import { Field, reduxForm } from "redux-form";
+import { registerLocale} from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import normalizePhone from "./normalizePhone";
 import enGB from "date-fns/locale/en-GB";
 import DatePicker from "./datepicker";
 registerLocale("en-GB", enGB);
-
-// import {format, compareAsc} from 'date-fns/esm'
-// import { enGB} from 'date-fns/locale'
-// registerLocale('enGB', enGB)
 
 function validate(values) {
   let errors = {};
@@ -83,36 +76,5 @@ class BookingForm extends React.Component {
 }
 
 BookingForm = reduxForm({ form: "booking", validate })(BookingForm);
-// const selector = formValueSelector('booking');
-// BookingForm = connect(state => {
-//   const datetimeValue = selector(state, 'datetime')
-//   return {
-//     datetimeValue,
-//   }
-// })(BookingForm);
-const selector = formValueSelector("booking"); // <-- same as form name
-BookingForm = connect(state => {
-  // // can select values individually
-  // const hasEmailValue = selector(state, 'hasEmail');
-  // const favoriteColorValue = selector(state, 'favoriteColor');
-  // or together as a group
-  const { firstName, lastName, email, phone, datetime, comments } = selector(
-    state,
-    "firstName",
-    "lastName",
-    "email",
-    "phone",
-    "datetime",
-    "comments"
-  );
-  return {
-    firstName,
-    lastName,
-    email,
-    phone,
-    datetime,
-    comments
-  };
-})(BookingForm);
 
 export default BookingForm;
