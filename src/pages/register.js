@@ -29,16 +29,16 @@ const Register =() =>{
       // console.log(formData); 
       const newUser ={firstName,lastName, email, phone, password,password2}
       try{
-        // const config = {
-        //   headers:{
-        //     'content-type':"application/json"
-        //   } 
-        // }
+        const config = {
+          headers:{
+            'content-type':"application/json"
+          } 
+        }
      
-        // const body=JSON.stringify(newUser)
-        // console.log(body)
+        const body=JSON.stringify(newUser)
+        console.log(body)
 
-        const res = await axios.post('http://localhost:5000/users/register', newUser)
+        const res = await axios.post('http://localhost:5000/users/register', body, config)
         // debugger;
         console.log(res.data);
         
