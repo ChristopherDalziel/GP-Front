@@ -118,7 +118,21 @@
 .input-wrapper--2:after {
   font-size: 25px;
   font-family: "FontAwesome";
-  content: "\f007";
+  content: "\f095";
+  position: absolute;
+  left: 10px;
+  top: 35px;
+  color: #398ffc;
+}
+
+.input-wrapper--2-5 {
+  position: relative;
+}
+
+.input-wrapper--2-5:after {
+  font-size: 25px;
+  font-family: "FontAwesome";
+  content: "\f0c9";
   position: absolute;
   left: 10px;
   top: 35px;
