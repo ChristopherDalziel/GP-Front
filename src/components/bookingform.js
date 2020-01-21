@@ -1,3 +1,4 @@
+import "../css/Booking.css";
 import React from "react";
 import { Field, reduxForm } from "redux-form";
 import { registerLocale} from "react-datepicker";
@@ -36,19 +37,27 @@ class BookingForm extends React.Component {
     return (
       <form onSubmit={this.props.handleSubmit}>
         <div>
-          <label htmlFor="firstName">First Name</label>
+          <label className="input-wrapper---1" htmlFor="firstName">
+            First Name
+          </label>
           <Field name="firstName" component="input" type="text" />
         </div>
         <div>
-          <label htmlFor="lastName">Last Name</label>
+          <label className="input-wrapper---1" htmlFor="lastName">
+            Last Name
+          </label>
           <Field name="lastName" component="input" type="text" />
         </div>
         <div>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">
+            Email<br></br>
+          </label>
           <Field name="email" component="input" type="email" />
         </div>
         <div>
-          <label htmlFor="phone">Phone Number</label>
+          <label className="input-wrapper---2" htmlFor="phone">
+            Phone Number
+          </label>
           <Field
             name="phone"
             component="input"
