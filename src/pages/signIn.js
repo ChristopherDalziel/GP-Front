@@ -25,7 +25,6 @@ const SignIn = () => {
    
   }
 
-  
   return (
     <Fragment>
       <Nav />
@@ -38,10 +37,10 @@ const SignIn = () => {
               <h5>Welcome Back!</h5>
               <form action="" onSubmit={e => onSubmit(e)}>
                 <div className="input-wrapper1">
-                    <label>Username</label> <br />
+                    <label>Email</label> <br />
                     <input
                       type="text"
-                      placeholder="Enter Username"
+                      placeholder="Enter Email"
                       name="email"
                       value={email}
                       onChange={e=>onChange(e)}
