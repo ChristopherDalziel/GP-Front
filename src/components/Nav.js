@@ -56,6 +56,9 @@ function Nav({ user }) {
         <li>
           <Link to="/contact">Contact Us</Link>
         </li>
+
+
+    
       </ul>
     </div>
   );
