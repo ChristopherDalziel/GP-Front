@@ -8,6 +8,7 @@ import enGB from "date-fns/locale/en-GB";
 import DatePicker from "./datepicker";
 registerLocale("en-GB", enGB);
 
+//form validation
 function validate(values) {
   let errors = {};
 
@@ -67,6 +68,7 @@ class BookingForm extends React.Component {
         </div>
         <div className="input-wrapper---4">
           <label htmlFor="datetime">Appointment Time</label>
+        {/* using the DatePicker component to input the date and time into this field */}
           <Field
             className="input-wrapper---3"
             name="datetime"

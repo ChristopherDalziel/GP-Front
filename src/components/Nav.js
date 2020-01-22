@@ -2,9 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../css/Nav.css";
 
+function logout (e, history) {
+  e.preventDefault();
+  localStorage.removeItem('token');
+  history.push('/login');
+}
+
 // User to be imported from the schema later..
-function Nav({ user }) {
-  const isAdmin = user && user.role === "admin";
+function Nav(props) {
+  const user = props.user
+
+  const isAdmin = user && user.admin === true;
 
   return (
     <div className="nav">
@@ -30,16 +38,16 @@ function Nav({ user }) {
               <Link to="/logout">Logout</Link>
             </li>
           </>
-        ) : (
-          // If there IS NOT a user do this
+      ) : (
+          /* // If there IS NOT a user do this */
           <>
             <li>
-              <Link to="/signin">Sign In</Link>
+              <Link to="/signin">Log In</Link>
             </li>
             <li>
               <Link to="/register">Sign Up</Link>
             </li>
-          </>
+          </> 
         )}
         <li>
           <Link to="/about">About Us</Link>

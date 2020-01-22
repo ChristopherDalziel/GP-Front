@@ -1,77 +1,77 @@
 import React, { Fragment,useState } from "react";
-// import PropTypes from 'prop-types'
-// import {login} from '../actions/auth'
-import {Link} from 'react-router-dom'
+import axios from 'axios';
+import { setLocalStorage } from '../utils/local-storage';
+import {Link} from 'react-router-dom';
+import EmailVerificationForm from '../components/emailverificationform';
+import LoginForm from '../components/loginform';
 import Nav from "../components/Nav";
 import "../css/signIn.css";
 
-const SignIn = () => { 
+const SignIn = (props) => { 
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [error, setError] = useState(null);
+  const [passwordReset, setPasswordReset] = useState(false)
 
-  const [formData,setFormData] = useState({
-    email:'',
-    password:''
-    
-  });
-
-  const {email,password}= formData
-
-  const onChange=(e)=>setFormData({
-    ...formData,[e.target.name]: e.target.value
-  })
-
-  const onSubmit =  async e => { 
-    e.preventDefault()
-    console.log('is-success');
-   
+const onSubmitLoginForm = async(e) => {
+  console.log({email, password})
+  try {
+    e.preventDefault();
+    const response = await axios.post(process.env.REACT_APP_BACKEND_URL + '/users/login', {
+      email,
+      password
+    } )
+    console.log(response.data)
+    setLocalStorage(response.data)
+    props.history.push('/')
+  } catch(err) {
+    setError({
+      msg: err.message
+    })
   }
+}
 
-  
+const onSubmitEmailVerificationForm = async (e) => {
+  try {
+    e.preventDefault();
+    setError({
+      msg: 'An email has been sent with a link to reset your password'
+    })
+    await axios.put(process.env.REACT_APP_BACKEND_URL + '/mail/forgotten-password', {
+      email
+    })
+  } catch (err) {
+    console.log(err.message)
+  }
+}
+
+if (passwordReset) {
   return (
-    <Fragment>
+    <EmailVerificationForm 
+      onSubmitEmailVerificationForm={onSubmitEmailVerificationForm}
+      setEmail={setEmail}
+      error={error}
+    />
+  )
+} else {
+  return ( 
+    <>
       <Nav />
-      <div className="signIn">
-        <div className="container">
-          <div className="imageSignIn"></div>
-          <div className="content-signin">
-            <div>
-              <h1>Sign In Here</h1>
-              <h5>Welcome Back!</h5>
-              <form action="" onSubmit={e => onSubmit(e)}>
-                <div className="input-wrapper1">
-                    <label>Username</label> <br />
-                    <input
-                      type="text"
-                      placeholder="Enter Username"
-                      name="email"
-                      value={email}
-                      onChange={e=>onChange(e)}
-                      required
-                    />
-                  </div>
-                  <div className="input-wrapper2">
-                    <label>Password</label>
-                    <br />
-                    <input
-                      type="password"
-                      placeholder="Enter Password"
-                      name="password"
-                      value={password}
-                      onChange={e=>onChange(e)}
-                      minLength="6"
-                      required
-                    />
-                  </div>
-                  <button type="submit">Sign In</button>
-                  <h4>Already have an account? 
-                    <Link to="register"> Sign Up Here</Link>
-                  </h4>
-              </form>  
-            </div>
-          </div>
-        </div>
+        <div>
+        <LoginForm 
+          onSubmitLoginForm={onSubmitLoginForm}
+          setEmail={setEmail}
+          error={error}
+          setPassword={setPassword}
+          setPasswordReset={setPasswordReset}
+        />
+        <h4>Don't have an account? 
+        <Link to="register"> Sign Up Here</Link>
+        </h4>
       </div>
-    </Fragment>
-  );
+    </>
+   )
+  }
 }
 
 export default SignIn
