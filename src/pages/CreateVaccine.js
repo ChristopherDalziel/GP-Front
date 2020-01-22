@@ -7,9 +7,9 @@ class CreateVaccine extends React.Component {
   submit(vaccineData) {
     console.log(vaccineData);
     axios
-      .post(process.env.REACT_APP_BACKEND_URL + "/vaccine/create", vaccineData)
+      .post(process.env.REACT_APP_BACKEND_URL + "/vaccines/create", vaccineData)
       .then(res => {
-        window.location.replace("/");
+        window.location.replace("/vaccines");
       })
       .catch(error => {
         console.log("There was an error!" + error);
