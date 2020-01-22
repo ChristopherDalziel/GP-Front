@@ -17,12 +17,14 @@ const onSubmitLoginForm = async(e) => {
   console.log({email, password})
   try {
     e.preventDefault();
+    //response should come back with a token if successful
     const response = await axios.post(process.env.REACT_APP_BACKEND_URL + '/users/login', {
       email,
       password
     } )
-    console.log(response.data)
+    //storing token in local storage
     setLocalStorage(response.data)
+    //redirecting back to previous page
     props.history.push('/')
   } catch(err) {
     setError({

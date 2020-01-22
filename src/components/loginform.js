@@ -17,6 +17,7 @@ export default ({
           type="email"
           name="email"
           id="email"
+          //changing the state of email to input value
           onChange={(e) => setEmail(e.target.value)} />
       </div>
       <div>
@@ -25,6 +26,7 @@ export default ({
           type="password"
           name="password"
           id="password"
+          //changing the state of password to input value
           onChange={(e) => setPassword(e.target.value)} />
       </div>
       <div>

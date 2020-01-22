@@ -1,17 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "../css/Nav.css";
+import Axios from "axios";
 
 function logout (e, history) {
   e.preventDefault();
   localStorage.removeItem('token');
-  history.push('/login');
+
 }
 
 // User to be imported from the schema later..
 function Nav(props) {
-  const user = props.user
 
+  let token = localStorage.getItem('token');
+  async function getUser(token) {
+    let response = await Axios.get(process.env.REACT_APP_BACKEND_URL + `/users/find-user/${token}`)
+    console.log(response.data)
+    return response.data
+  }
+
+  const user = getUser(token);
+  console.log(user)
+  
   const isAdmin = user && user.admin === true;
 
   return (
@@ -35,7 +45,7 @@ function Nav(props) {
             </li>
             <li>
               {/* onClick Logout function */}
-              <Link to="/logout">Logout</Link>
+              <Link to="/" onClick={logout}>Logout</Link>
             </li>
           </>
       ) : (
