@@ -1,8 +1,17 @@
-import React from 'react'
-
+import React,{useState} from 'react'
 import '../../css/staff.css'
+import ImageUploader from 'react-images-upload';
 
 const  AddStaff=()=>{
+
+  const [pictures, setPicture]=useState([])
+
+  
+  const onDrop=(picture) =>{
+    this.setPicture({
+       pictires: pictures.concat(picture)
+    });
+}
   return (
     <div className="add_staff">
       <div>
@@ -21,9 +30,17 @@ const  AddStaff=()=>{
             <textarea
               rows="5" cols="33"
               placeholder="Enter the Staff Information"
-              name="content"
+              name="contentText"
             />
           </div>
+          <ImageUploader
+                withIcon={true}
+                withPreview={true}
+                imgExtension={['.jpg', '.gif', '.png', '.gif']}
+                maxFileSize={5242880}
+                onChange={onDrop}
+            
+            />
           <button type="submit">Sign Up</button>
 
         </form> 
