@@ -11,7 +11,6 @@
 }
 
 .containerVaccineCards {
-  /* float: right; */
   display: flex;
   flex-direction: column;
 }
@@ -36,7 +35,35 @@
   margin-top: 7vh;
   margin-left: 10vh;
   box-sizing: border-box;
-  height: 20vh;
+  height: 75vh;
   width: 40vw;
   background: #e1eeff;
 }
+
+.another {
+  width: 30vw;
+  margin: auto;
+}
+
+.productContainer {
+  display: flex;
+  transition: all 0.3s ease-in-out;
+  border: black solid 2px;
+  margin: 3px;
+}
+
+.productItem img {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+}
+
+.productContainer:hover {
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+  transform: translate3d(0px, -1px, 0px);
+}
+
+/* .productItem {
+  margin: auto;
+  padding: 5px;
+} */

@@ -1,6 +1,5 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-import axios from "axios";
 
 class CreateVaccineForm extends React.Component {
   render() {
@@ -15,11 +14,11 @@ class CreateVaccineForm extends React.Component {
               <Field name="brand" component="input" type="text" />
             </div>
             <div>
-              <label htmlFor="price">Vaccine Description:</label>
+              <label htmlFor="description">Vaccine Description:</label>
               <Field name="description" component="input" type="text" />
             </div>
             <div>
-              <label htmlFor="description">Vaccine Manufacturer:</label>
+              <label htmlFor="manufacturer">Vaccine Manufacturer:</label>
               <Field name="manufacturer" component="input" type="text" />
             </div>
             <button type="submit">Submit</button>
