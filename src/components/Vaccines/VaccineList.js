@@ -8,7 +8,7 @@ class VaccineList extends React.Component {
 
   async componentDidMount() {
     const response = await fetch(
-      process.env.REACT_APP_BACKEND_URL + "/vaccines"
+      process.env.REACT_APP_BACKEND_URL + "/vaccine"
     );
     const data = await response.json();
     this.setState({
