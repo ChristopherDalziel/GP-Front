@@ -4,10 +4,9 @@ import { Field, reduxForm } from "redux-form";
 import "../../css/Contact.css";
 
 class ContactForm extends React.Component {
-  handleSubmit = () => {
-    debugger;
+  handleSubmit = e => {
+    e.preventDefault();
     this.props.handleSubmit();
-    console.log(this.props.reset);
     this.props.reset();
   };
 

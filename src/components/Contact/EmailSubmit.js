@@ -13,7 +13,7 @@ async function handleSubmit(values) {
     message
   } = values;
   try {
-    const res = await axios.post(process.env.REACT_APP_BACKEND_URL + "/send", {
+    await axios.post(process.env.REACT_APP_BACKEND_URL + "/mail/send", {
       first_name,
       last_name,
       contact_number,
