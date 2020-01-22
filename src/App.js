@@ -1,4 +1,4 @@
-import React , {useEffect} from "react";
+import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Contact from "./pages/contact";
@@ -9,32 +9,27 @@ import SignIn from "./pages/signIn";
 import Vaccines from "./pages/vaccines";
 import Services from "./pages/services";
 import Booking from "./pages/booking";
+import CreateVaccine from "./pages/CreateVaccine";
 
-
-
-
-const App =()=> {
-
- 
-    return (
-      <>
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/register" component={Register} />
-            <Route path="/signIn" component={SignIn} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/profile" component={Profile} />
-            <Route path="/about" component={About} />
-            <Route path="/vaccines" component={Vaccines} />
-            <Route path="/services" component={Services} />
-            <Route path="/booking" component={Booking} />
-          </Switch>
-        </BrowserRouter>
-      </>
-
-    );
-  
-}
+const App = () => {
+  return (
+    <>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/register" component={Register} />
+          <Route path="/signIn" component={SignIn} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/about" component={About} />
+          <Route path="/vaccines" component={Vaccines} />
+          <Route path="/services" component={Services} />
+          <Route path="/booking" component={Booking} />
+          <Route path="/vaccine/create" component={CreateVaccine} />
+        </Switch>
+      </BrowserRouter>
+    </>
+  );
+};
 
 export default App;

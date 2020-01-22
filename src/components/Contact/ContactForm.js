@@ -4,10 +4,9 @@ import { Field, reduxForm } from "redux-form";
 import "../../css/Contact.css";
 
 class ContactForm extends React.Component {
-  handleSubmit = () => {
-    debugger;
+  handleSubmit = e => {
+    e.preventDefault();
     this.props.handleSubmit();
-    console.log(this.props.reset);
     this.props.reset();
   };
 
@@ -35,7 +34,7 @@ class ContactForm extends React.Component {
             <Field name="contact_number" component="input" type="text" />
           </div>
           <div>
-            <label className="input-wrapper--2" htmlFor="subject">
+            <label className="input-wrapper--2-5" htmlFor="subject">
               Subject
               <br></br>
             </label>

@@ -10,6 +10,7 @@ class DatePicker extends React.Component {
 
   handleChange = date => {
     this.setState({ startDate: date });
+    //sending the date value to redux form store
     this.props.input.onChange(date);
   };
 
@@ -24,7 +25,7 @@ class DatePicker extends React.Component {
           showTimeSelect
           timeFormat="hh:mm aa"
           timeIntervals={15}
-          dateFormat="dd-MMMM-yyyy hh:mm aa"
+          dateFormat="dd MMMM yyyy hh:mm aa"
           placeholderText="Click to select"
         />
         {touched && error && <span className="error_field">{error}</span>}

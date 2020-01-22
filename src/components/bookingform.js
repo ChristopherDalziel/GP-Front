@@ -1,13 +1,14 @@
 import "../css/Booking.css";
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-import { registerLocale} from "react-datepicker";
+import { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import normalizePhone from "./normalizePhone";
 import enGB from "date-fns/locale/en-GB";
 import DatePicker from "./datepicker";
 registerLocale("en-GB", enGB);
 
+//form validation
 function validate(values) {
   let errors = {};
 
@@ -49,13 +50,13 @@ class BookingForm extends React.Component {
           <Field name="lastName" component="input" type="text" />
         </div>
         <div>
-          <label htmlFor="email">
-            Email<br></br>
+          <label className="input-wrapper---2" htmlFor="email">
+            Email <br></br>
           </label>
           <Field name="email" component="input" type="email" />
         </div>
         <div>
-          <label className="input-wrapper---2" htmlFor="phone">
+          <label className="input-wrapper---3" htmlFor="phone">
             Phone Number
           </label>
           <Field
@@ -65,15 +66,23 @@ class BookingForm extends React.Component {
             normalize={normalizePhone}
           />
         </div>
-        <div>
+        <div className="input-wrapper---4">
           <label htmlFor="datetime">Appointment Time</label>
-          <Field name="datetime" component={DatePicker} />
+        {/* using the DatePicker component to input the date and time into this field */}
+          <Field
+            className="input-wrapper---3"
+            name="datetime"
+            component={DatePicker}
+          />
         </div>
         <div>
-          <label htmlFor="comments">Comments</label>
+          <label className="input-wrapper---5" htmlFor="comments">
+            Comments
+          </label>
           <Field name="comments" component="input" type="text" />
         </div>
         <button
+          className="bookingButton"
           type="submit"
           disabled={this.props.pristine || this.props.submitting}
         >
