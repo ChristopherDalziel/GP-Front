@@ -29,6 +29,6 @@ class CreateVaccineForm extends React.Component {
   }
 }
 
-CreateVaccineForm = reduxForm({ form: "createVaccineForm" })(CreateVaccineForm);
+CreateVaccineForm = reduxForm({ form: "CreateVaccineForm" })(CreateVaccineForm);
 
 export default CreateVaccineForm;

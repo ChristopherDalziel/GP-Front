@@ -1,7 +1,6 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { setLocalStorage } from "../utils/local-storage";
-import { Link } from "react-router-dom";
 import EmailVerificationForm from "../components/emailverificationform";
 import LoginForm from "../components/loginform";
 import Nav from "../components/Nav";

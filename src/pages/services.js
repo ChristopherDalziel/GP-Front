@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "../components/Nav";
+import ServiceList from "../components/Services/serviceList";
 
 import "../css/Services.css";
 
@@ -8,7 +9,16 @@ class Services extends React.Component {
     return (
       <>
         <Nav />
-        <p>What services do we offer</p>
+        <div className="services">
+          <div className="containerServices">
+            <div className="imageServices"></div>
+            <div className="containerServicesCards">
+              <div className="servicesCards">
+                <ServiceList />
+              </div>
+            </div>
+          </div>
+        </div>
       </>
     );
   }
