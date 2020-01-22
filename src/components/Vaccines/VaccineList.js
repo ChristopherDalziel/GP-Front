@@ -1,6 +1,6 @@
 import React from "react";
-import "./ProductList.css";
 import axios from "axios";
+import "../../css/Vaccines.css";
 
 class VaccineList extends React.Component {
   state = {
@@ -22,8 +22,6 @@ class VaccineList extends React.Component {
     const { data } = this.state;
 
     function deleteVaccine(id) {
-      console.log(id);
-      console.log(process.env.REACT_APP_BACKEND_URL + `/vaccines/delete/${id}`);
       axios
         .delete(process.env.REACT_APP_BACKEND_URL + `/vaccines/delete/${id}`)
         .then(response => {
@@ -42,6 +40,7 @@ class VaccineList extends React.Component {
                   <div className="productContainer">
                     <div className="productItem" key={index}>
                       <h3>Brand: {vaccine.brand}</h3>
+                      <img></img>
                       <p>Description: {vaccine.description}</p>
                       <p>Manufacturer {vaccine.manufacturer}</p>
                       <button
