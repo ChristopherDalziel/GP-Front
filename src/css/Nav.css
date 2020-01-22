@@ -58,6 +58,45 @@
   transform: scaleX(1);
 }
 
+.dropdown{
+position:relative;
+display:inline-block;
+}
+
+.dropdown-content{
+padding:10px;
+cursor: pointer;
+width:120px;
+background: #e1eeff;
+position:absolute;
+display:none;
+}
+
+.dropdown-content a{
+width: 120;
+display: inline-block;
+margin-bottom: 8px;
+text-decoration: none;
+font-size: 15px;
+color:black;
+font-family: "Raleway", sans-serif;
+}
+
+
+/* a:hover{
+background: #398ffc;
+} */
+
+.dropdown span{
+font-size: 17px;
+font-family: "Raleway", sans-serif;
+}
+
+.dropdown:hover .dropdown-content{
+display:block;
+}
+
+
 /* Old CSS if we want to revert before end of the project */
 /* Navigation bar add background and change font cover on hover */
 /* .nav ul li a:hover {

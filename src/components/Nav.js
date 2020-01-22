@@ -64,6 +64,22 @@ function Nav(props) {
         <li>
           <Link to="/contact">Contact Us</Link>
         </li>
+
+
+          {/* // this is the links when login as a admin(temporarily put here) */}
+          
+          <div className="dropdown">
+          <span>welcome back!</span>
+          <div className="dropdown-content">
+          <Link to="/contact">Users</Link> <br/>
+          <Link to="/staff">Staffs</Link> <br/>
+          <Link to="/contact">Services</Link> <br/>
+          <Link to="/contact">VACCINES</Link>
+          </div>
+          </div>
+
+
+    
       </ul>
     </div>
   );
