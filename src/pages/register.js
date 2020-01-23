@@ -1,56 +1,64 @@
-import React, { Fragment, useState} from "react";
-import {Link} from 'react-router-dom'
+import React, { Fragment, useState } from "react";
+import { Link } from "react-router-dom";
 // import {connect} from 'react-redux'
 import Nav from "../components/Nav";
-import "../css/signUp.css";
-import axios from 'axios';
+import "../css/register.css";
+import axios from "axios";
 // import {register} from '../actions/auth'
 // import PropTypes from 'prop-types'
 
-const Register =() =>{
-
-  const [formData,setFormData] = useState({
-    firstName:'',
-    lastName:'',
-    email:'',
-    phone:'',
-    password:'',
-    password2:''
+const Register = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    password: "",
+    password2: ""
   });
 
-  const {firstName,lastName,email,phone,password,password2}= formData
+  const { firstName, lastName, email, phone, password, password2 } = formData;
 
-  const onChange=(e)=>setFormData({
-    ...formData,[e.target.name]: e.target.value
-  })
+  const onChange = e =>
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
 
-  const onSubmit =  async e => {
-    e.preventDefault()
-    if(password !== password2){
-      console.log('password not match');
-      
-    }else{
-      
-      const newUser ={firstName,lastName, email, phone, password,password2}
-      try{
+  const onSubmit = async e => {
+    e.preventDefault();
+    if (password !== password2) {
+      console.log("password not match");
+    } else {
+      const newUser = {
+        firstName,
+        lastName,
+        email,
+        phone,
+        password,
+        password2
+      };
+      try {
         const config = {
-          headers:{
-            'content-type':"application/json"
-          } 
-        }
-        const body=JSON.stringify(newUser)
-        console.log(body)
+          headers: {
+            "content-type": "application/json"
+          }
+        };
+        const body = JSON.stringify(newUser);
+        console.log(body);
 
-        const res = await axios.post('http://localhost:5000/users/register', body, config)
-        
+        const res = await axios.post(
+          "http://localhost:5000/users/register",
+          body,
+          config
+        );
+
         console.log(res.data);
-        
-      }catch(err){
-        console.log(err.message)
+      } catch (err) {
+        console.log(err.message);
       }
     }
-  }
-
+  };
 
   return (
     <Fragment>
@@ -70,7 +78,7 @@ const Register =() =>{
                     placeholder="Enter First Name"
                     name="firstName"
                     value={firstName}
-                    onChange={e=>onChange(e)}
+                    onChange={e => onChange(e)}
                     required
                   />
                 </div>
@@ -82,7 +90,7 @@ const Register =() =>{
                     placeholder="Enter Last Name"
                     name="lastName"
                     value={lastName}
-                    onChange={e=>onChange(e)}
+                    onChange={e => onChange(e)}
                     required
                   />
                 </div>
@@ -94,7 +102,7 @@ const Register =() =>{
                     placeholder="Enter you Email"
                     name="email"
                     value={email}
-                    onChange={e=>onChange(e)}
+                    onChange={e => onChange(e)}
                     required
                   />
                 </div>
@@ -106,7 +114,7 @@ const Register =() =>{
                     placeholder="Enter your Phone Number"
                     name="phone"
                     value={phone}
-                    onChange={e=>onChange(e)}
+                    onChange={e => onChange(e)}
                     required
                   />
                 </div>
@@ -118,7 +126,7 @@ const Register =() =>{
                     placeholder="Enter the Password"
                     name="password"
                     value={password}
-                    onChange={e=>onChange(e)}
+                    onChange={e => onChange(e)}
                     required
                   />
                 </div>
@@ -130,23 +138,22 @@ const Register =() =>{
                     placeholder="confirm the Password"
                     name="password2"
                     value={password2}
-                    onChange={e=>onChange(e)}
+                    onChange={e => onChange(e)}
                     required
                   />
                 </div>
                 <button type="submit">Sign Up</button>
-                <h4>Already have an account? 
+                <h4>
+                  Already have an account?
                   <Link to="signin"> Sign In Here</Link>
                 </h4>
-              </form> 
+              </form>
             </div>
           </div>
         </div>
       </div>
     </Fragment>
   );
-}
+};
 
-
-
-export default Register
+export default Register;

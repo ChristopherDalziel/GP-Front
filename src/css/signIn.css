@@ -68,15 +68,14 @@
   background: #398ffc;
   height: 4vh;
   width: 30vw;
-  /* border:1px solid #398ffc; */
 }
 
 .input-wrapper1 {
-  display: inline-block;
   position: relative;
 }
+
 .input-wrapper1:after {
-  font-size: 22px;
+  font-size: 25px;
   font-family: "FontAwesome";
   content: "\f007";
   position: absolute;

@@ -8,12 +8,11 @@ import Nav from "../components/Nav";
 import "../css/signIn.css";
 
 
-
 const SignIn = (props) => { 
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [error, setError] = useState(null);
-  const [passwordReset, setPasswordReset] = useState(false)
+  const [passwordReset, setPasswordReset] = useState(false);
 
 
 const onSubmitLoginForm = async(e) => {
@@ -38,49 +37,48 @@ const onSubmitLoginForm = async(e) => {
   }
 }
 
-const onSubmitEmailVerificationForm = async (e) => {
-  try {
-    e.preventDefault();
-    setError({
-      msg: 'An email has been sent with a link to reset your password'
-    })
-    await axios.put(process.env.REACT_APP_BACKEND_URL + '/mail/forgotten-password', {
-      email
-    })
-  } catch (err) {
-    console.log(err.message)
-  }
-}
+  const onSubmitEmailVerificationForm = async e => {
+    try {
+      e.preventDefault();
+      setError({
+        msg: "An email has been sent with a link to reset your password"
+      });
+      await axios.put(
+        process.env.REACT_APP_BACKEND_URL + "/mail/forgotten-password",
+        {
+          email
+        }
+      );
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
 
-if (passwordReset) {
-  return (
-    <EmailVerificationForm 
-      onSubmitEmailVerificationForm={onSubmitEmailVerificationForm}
-      setEmail={setEmail}
-      error={error}
-    />
-  )
-} else {
-  return ( 
-    <>
-      <Nav />
+  if (passwordReset) {
+    return (
+      <EmailVerificationForm
+        onSubmitEmailVerificationForm={onSubmitEmailVerificationForm}
+        setEmail={setEmail}
+        error={error}
+      />
+    );
+  } else {
+    return (
+      <>
+        <Nav />
         <div>
-        <LoginForm 
-          onSubmitLoginForm={onSubmitLoginForm}
-          setEmail={setEmail}
-          error={error}
-          setPassword={setPassword}
-          setPasswordReset={setPasswordReset}
-        />
-        <h4>Don't have an account? 
-        <Link to="register"> Sign Up Here</Link>
-        </h4>
-      </div>
-    </>
-   )
+          <LoginForm
+            onSubmitLoginForm={onSubmitLoginForm}
+            setEmail={setEmail}
+            error={error}
+            setPassword={setPassword}
+            setPasswordReset={setPasswordReset}
+          />
+        </div>
+      </>
+    );
   }
-
 
 }
 
-export default SignIn
+export default SignIn;
