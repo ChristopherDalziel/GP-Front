@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Contact from "./pages/contact";
+import ResetPassword from "./pages/ResetPassword";
 import Profile from "./pages/profile";
 import About from "./pages/about";
 import Register from "./pages/register";
@@ -21,6 +22,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route path="/register" component={Register} />
           <Route path="/signIn" component={SignIn} />
+          <Route path="/:passwordToken/reset-password" component={ResetPassword} />
           <Route path="/contact" component={Contact} />
           <Route path="/profile" component={Profile} />
           <Route path="/about" component={About} />

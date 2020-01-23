@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Redirect, withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "../css/Nav.css";
 
 
@@ -22,7 +22,7 @@ const Nav = (props) => {
 
 function getAdminStatus() {
   let adminVal= sessionStorage.getItem("admin");
-  if (adminVal == 'true') {
+  if (adminVal === 'true') {
     adminVal = true
   } else {
     adminVal = false
@@ -32,7 +32,7 @@ function getAdminStatus() {
 
 function getLoggedInStatus() {
   let loggedInVal= sessionStorage.getItem("loggedIn");
-  if (loggedInVal == 'true') {
+  if (loggedInVal === 'true') {
     loggedInVal = true
   } else {
     loggedInVal = false

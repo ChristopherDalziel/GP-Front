@@ -1,18 +1,20 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Redirect} from 'react-router-dom';
+import Nav from "../components/Nav";
 import {setLocalStorage} from '../utils/local-storage';
 import {checkPasswordToken} from '../utils/token';
-import PasswordResetForm from '../components/passwordresetform';
+import PasswordResetForm from '../components/PasswordResetForm';
 
-function ResetPassword (props) {
+const ResetPassword = (props) => {
   const [password, setPassword] = useState(null);
   const [user, setUser] = useState({
     auth: false,
     loading: true
   })
 
-  const token = props.match.params.checkPasswordToken
+  const token = props.match.params.passwordToken
+  // console.log(token);
 
   useEffect(() => {
     checkPasswordToken(token, setUser)
@@ -34,11 +36,14 @@ function ResetPassword (props) {
   if (user.loading) {
     return null
   } else if (!user.auth) {
-    return <Redirect to="/login" />
+    return (<h4>Password Reset Failed</h4>)
   } else {
     return (
+    <>
+      <Nav />
       <PasswordResetForm onSubmitPasswordResetForm={onSubmitPasswordResetForm}
       setPassword={setPassword} />
+    </>
     )
   }
 }

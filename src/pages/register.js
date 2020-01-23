@@ -17,6 +17,7 @@ const Register = (props) => {
     password: "",
     password2: ""
   });
+  const [error, setError] = useState(null);
 
   const { firstName, lastName, email, phone, password, password2 } = formData;
 
@@ -29,7 +30,7 @@ const Register = (props) => {
   const onSubmit = async e => {
     e.preventDefault();
     if (password !== password2) {
-      console.log("Passwords do not match");
+      setError (<h3 className="error"> "Passwords do not match"</h3>)  
     } else {
       const newUser = {
         firstName,
@@ -40,7 +41,7 @@ const Register = (props) => {
       };
       try {
         console.log(newUser);
-        const response = await axios.post( process.env.REACT_APP_BACKEND_URL + '/users/register',
+        await axios.post( process.env.REACT_APP_BACKEND_URL + '/users/register',
           newUser).then((response) => {
             console.log(response.data)
             setLocalStorage(response.data)
@@ -137,7 +138,12 @@ const Register = (props) => {
                     required
                   />
                 </div>
+                <div>
+                  {error}
+                </div>
+                <div>
                 <button type="submit">Sign Up</button>
+                </div>
                 <h4>
                   Already have an account?
                   <Link to="signin"> Sign In Here</Link>
