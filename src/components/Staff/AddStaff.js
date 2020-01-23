@@ -1,10 +1,26 @@
-import React from 'react'
-
+import React, {Component} from 'react'
 import '../../css/staff.css'
+import ImageUploader from 'react-images-upload';
+import axios from 'axios'
 
-const  AddStaff=()=>{
-  return (
-    <div className="add_staff">
+
+ class AddStaff extends Component {
+   constructor(props) {
+     super(props)
+   
+     this.state = {
+     
+     }
+    
+   }
+
+   
+  
+   
+  render() {
+    return (
+
+      <div className="add_staff">
       <div>
         <h1>Add a new Staff Here</h1>
         <form >
@@ -21,16 +37,29 @@ const  AddStaff=()=>{
             <textarea
               rows="5" cols="33"
               placeholder="Enter the Staff Information"
-              name="content"
+              name="contentText"
             />
           </div>
-          <button type="submit">Sign Up</button>
+          <form onSubmit={this.submitFile}>
+            <input label='upload file' type='file' onChange={this.handleFileUpload} />
+            <button type='submit'>Send</button>
+          </form>
+          <button type="submit">Submit</button>
 
         </form> 
       </div>
     </div>
-    
-  )
+      
+    )
+  }
 }
 
 export default AddStaff
+
+
+
+
+    
+
+
+    
