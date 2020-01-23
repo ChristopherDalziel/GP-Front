@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import Nav from "../components/Nav";
 import "../css/register.css";
 import axios from "axios";
+import { setLocalStorage, getAdminStatus } from '../utils/local-storage';
 // import {register} from '../actions/auth'
 // import PropTypes from 'prop-types'
 
-const Register = () => {
+const Register = (props) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -16,6 +17,7 @@ const Register = () => {
     password: "",
     password2: ""
   });
+  const [error, setError] = useState(null);
 
   const { firstName, lastName, email, phone, password, password2 } = formData;
 
@@ -28,32 +30,26 @@ const Register = () => {
   const onSubmit = async e => {
     e.preventDefault();
     if (password !== password2) {
-      console.log("password not match");
+      setError (<h3 className="error"> "Passwords do not match"</h3>)  
     } else {
       const newUser = {
         firstName,
         lastName,
         email,
         phone,
-        password,
-        password2
+        password
       };
       try {
-        const config = {
-          headers: {
-            "content-type": "application/json"
-          }
-        };
-        const body = JSON.stringify(newUser);
-        console.log(body);
-
-        const res = await axios.post(
-          "http://localhost:5000/users/register",
-          body,
-          config
-        );
-
-        console.log(res.data);
+        console.log(newUser);
+        await axios.post( process.env.REACT_APP_BACKEND_URL + '/users/register',
+          newUser).then((response) => {
+            console.log(response.data)
+            setLocalStorage(response.data)
+            getAdminStatus(response.data)
+            //redirecting back to previous page
+            props.history.push('/')
+            window.location.reload(false)
+          })
       } catch (err) {
         console.log(err.message);
       }
@@ -142,7 +138,12 @@ const Register = () => {
                     required
                   />
                 </div>
+                <div>
+                  {error}
+                </div>
+                <div>
                 <button type="submit">Sign Up</button>
+                </div>
                 <h4>
                   Already have an account?
                   <Link to="signin"> Sign In Here</Link>

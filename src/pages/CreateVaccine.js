@@ -1,5 +1,5 @@
 import React from "react";
-import CreateVaccineForm from "../components/Vaccines/CreateVaccineForm";
+import VaccineForm from "../components/Vaccines/VaccineForm";
 import Nav from "../components/Nav";
 import axios from "axios";
 
@@ -15,12 +15,12 @@ class CreateVaccine extends React.Component {
         console.log("There was an error!" + error);
       });
   }
-
   render() {
     return (
       <>
         <Nav />
-        <CreateVaccineForm onSubmit={this.submit} />
+        <h1>Create Vaccine</h1>
+        <VaccineForm onSubmit={this.submit} {...this.props} />
       </>
     );
   }
