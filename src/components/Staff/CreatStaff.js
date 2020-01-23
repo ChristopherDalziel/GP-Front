@@ -15,11 +15,9 @@ import axios from 'axios'
     this.onChangeName = this.onChangeName.bind(this);
     this.onChangeContentText = this.onChangeContentText.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-
   }
 
    // SEND STAFF DATA 
-
   onChangeName(e) {
     this.setState({name: e.target.value})
   }
@@ -34,34 +32,33 @@ import axios from 'axios'
       name: this.state.name,
       contentText: this.state.contentText,
     };
-    axios.post('http://localhost:4000/students/create-student', staffObject)
-      .then(res => console.log(res.data));
+    axios.post('http://localhost:5000/admin/add_staff', staffObject)
+      .then(res => 
+        console.log(res.data));
 
-    this.setState({ name: '', email: '' })
+    this.setState({ name: '', contentText: '' })
   }
 
- 
+  // AWS
+  // submitFile = (event) => {
+  //   event.preventDefault();
+  //   const formData = new FormData();
+  //   formData.append('file', this.state.file[0]);
+  //   axios.post(process.env.REACT_APP_BACKEND_URL + '/admin/upload_image', formData, {
+  //     headers: {
+  //       'Content-Type': 'multipart/form-data'
+  //     }
+  //   }).then(response => {
+  //     // handle your response;
+  //   }).catch(error => {
+  //     console.log(error)
+  //     // handle your error
+  //   });
+  // }
 
-
-  //AWS
-  submitFile = (event) => {
-    event.preventDefault();
-    const formData = new FormData();
-    formData.append('file', this.state.file[0]);
-    axios.post(`http://localhost:5000/admin/upload_image`, formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    }).then(response => {
-      // handle your response;
-    }).catch(error => {
-      // handle your error
-    });
-  }
-
-  handleFileUpload = (event) => {
-    this.setState({file: event.target.files});
-  }
+  // handleFileUpload = (event) => {
+  //   this.setState({file: event.target.files});
+  // }
    
   render() {
     return (
@@ -87,12 +84,11 @@ import axios from 'axios'
               onChange={this.onChangeContentText}
             />
           </div>
-          <div onSubmit={this.submitFile}>
+          {/* <div onSubmit={this.submitFile}>
             <input label='upload file' type='file' className="upload-image" onChange={this.handleFileUpload} />
             <button type='submit' className="upload">Upload Image</button>
-          </div>
+          </div> */}
              <button type="submit" onSubmit={this.onSubmit}>Submit</button>
-
         </form> 
       </div>
     </div>

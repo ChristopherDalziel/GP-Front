@@ -16,6 +16,7 @@ class EditVaccine extends React.Component {
     });
   }
 
+
   async updateVaccine(id, updatedVaccine, history) {
     try {
       await axios.put(
@@ -28,6 +29,7 @@ class EditVaccine extends React.Component {
     }
   }
 
+  
   render() {
     const { vaccineData } = this.state;
     return vaccineData ? (
