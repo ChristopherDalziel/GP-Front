@@ -1,54 +1,91 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "../css/Nav.css";
 
-function logout (e, history) {
-  e.preventDefault();
-  localStorage.removeItem('token');
-  history.push('/login');
+
+const logout = (e) => {
+  e.preventDefault()
+  sessionStorage.removeItem('token');
+  sessionStorage.removeItem('admin');
+  sessionStorage.removeItem('loggedIn');
+  window.location.reload(false)
 }
 
 // User to be imported from the schema later..
-function Nav(props) {
-  const user = props.user
+function Nav() {
+  
+  // let admin = localStorage.getItem("admin")
 
-  const isAdmin = user && user.admin === true;
+function getAdminStatus() {
+  let adminVal= sessionStorage.getItem("admin");
+  if (adminVal == 'true') {
+    adminVal = true
+  } else {
+    adminVal = false
+  }
+  return adminVal
+}
+
+function getLoggedInStatus() {
+  let loggedInVal= sessionStorage.getItem("loggedIn");
+  if (loggedInVal == 'true') {
+    loggedInVal = true
+  } else {
+    loggedInVal = false
+  }
+  return loggedInVal
+}
+
+let admin = getAdminStatus();
+let loggedIn = getLoggedInStatus();
+
+  const loggedInItems = () => {
+    return ( 
+      <>
+      <li>
+        <Link to="/logout" onClick={logout}>Logout</Link>
+      </li>
+      { admin ? adminItems() : userItems() }
+      </>
+    )
+  }
+
+  const loggedOutItems = () => {
+    return (
+      <>
+        <li>
+        <Link to="/signin">Log In</Link>
+        </li>
+        <li>
+          <Link to="/register">Sign Up</Link>
+        </li>
+      </>
+    )
+  }
+
+  const userItems = () => {
+    return (
+      <li>
+      <Link to="/profile">Profile</Link>
+      </li>
+    )
+  }
+
+  const adminItems = () => {
+    return (
+      <li className="two">
+      <Link to="/admin_dashboard">Admin Dashboard</Link>
+    </li>
+    )
+  }
 
   return (
     <div className="nav">
       <ul>
         <li className="one">
           <Link to="/">Home</Link>
-        </li>
-        {/* If the user IS an admin */}
-        {isAdmin ? (
-          <li className="two">
-            <Link to="/">ADMIN FUNCTION</Link>
-          </li>
-        ) : // If user IS NOT an admin
-        null}
-        {user ? (
-          // If there IS a user do this
-          <>
-            <li>
-              <Link to="/profile">Profile</Link>
-            </li>
-            <li>
-              {/* onClick Logout function */}
-              <Link to="/logout">Logout</Link>
-            </li>
-          </>
-      ) : (
-          /* // If there IS NOT a user do this */
-          <>
-            <li>
-              <Link to="/signin">Log In</Link>
-            </li>
-            <li>
-              <Link to="/register">Sign Up</Link>
-            </li>
-          </> 
-        )}
+        </li>       
+        {loggedIn ? loggedInItems() : loggedOutItems()}
         <li>
           <Link to="/about">About Us</Link>
         </li>
@@ -63,23 +100,7 @@ function Nav(props) {
         </li>
         <li>
           <Link to="/contact">Contact Us</Link>
-        </li>
-
-
-          {/* // this is the links when login as a admin(temporarily put here) */}
-          
-          <div className="dropdown">
-          <span>welcome back!</span>
-          <div className="dropdown-content">
-          <Link to="/contact">Users</Link> <br/>
-          <Link to="/staff">Staffs</Link> <br/>
-          <Link to="/contact">Services</Link> <br/>
-          <Link to="/contact">VACCINES</Link>
-          </div>
-          </div>
-
-
-    
+        </li>  
       </ul>
     </div>
   );

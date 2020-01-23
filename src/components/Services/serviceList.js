@@ -1,15 +1,15 @@
 import React from "react";
 import axios from "axios";
-import "../../css/Vaccines.css";
+import "../../css/Services.css";
 
-class VaccineList extends React.Component {
+class serviceList extends React.Component {
   state = {
     data: null
   };
 
   async componentDidMount() {
     const response = await fetch(
-      process.env.REACT_APP_BACKEND_URL + "/vaccines"
+      process.env.REACT_APP_BACKEND_URL + "/services"
     );
     const data = await response.json();
     this.setState({
@@ -21,31 +21,30 @@ class VaccineList extends React.Component {
   render() {
     const { data } = this.state;
 
-    function deleteVaccine(id) {
+    function deleteService(id) {
       axios
-        .delete(process.env.REACT_APP_BACKEND_URL + `/vaccines/delete/${id}`)
+        .delete(process.env.REACT_APP_BACKEND_URL + `/services/delete/${id}`)
         .then(response => {
-          window.location.replace("/vaccines");
+          window.location.replace("/services");
           console.log(response.data);
         });
     }
 
     return (
       <div className="pageContainer">
-        <h1>Vaccines:</h1>
+        <h1>Services:</h1>
         {data
-          ? data.map((vaccine, index) => {
+          ? data.map((service, index) => {
               return (
                 <div className="another">
                   <div className="productContainer">
                     <div className="productItem" key={index}>
-                      <h3>Brand: {vaccine.brand}</h3>
+                      <h3>Brand: {service.serviceName}</h3>
                       <img></img>
-                      <p>Description: {vaccine.description}</p>
-                      <p>Manufacturer {vaccine.manufacturer}</p>
+                      <p>Description: {service.serviceDescription}</p>
                       <button
                         onClick={() => {
-                          deleteVaccine(vaccine._id);
+                          deleteService(service._id);
                         }}
                       >
                         delete
@@ -61,4 +60,4 @@ class VaccineList extends React.Component {
   }
 }
 
-export default VaccineList;
+export default serviceList;
