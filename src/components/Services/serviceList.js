@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
 import "../../css/Services.css";
 
 class serviceList extends React.Component {
@@ -49,6 +51,9 @@ class serviceList extends React.Component {
                       >
                         delete
                       </button>
+                      <Link to={"/service/edit/" + service._id}>
+                        <button>Edit</button>
+                      </Link>
                     </div>
                   </div>
                 </div>
