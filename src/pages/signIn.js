@@ -1,8 +1,7 @@
-import React, { Fragment,useState } from "react";
+import React, { useState } from "react";
 import axios from 'axios';
 import { setLocalStorage, getAdminStatus } from '../utils/local-storage';
-import {Link, Redirect} from 'react-router-dom';
-import EmailVerificationForm from '../components/emailverificationform';
+import EmailVerificationForm from '../components/EmailVerificationForm';
 import LoginForm from '../components/loginform';
 import Nav from "../components/Nav";
 import "../css/signIn.css";
@@ -16,7 +15,6 @@ const SignIn = (props) => {
 
 
 const onSubmitLoginForm = async(e) => {
-  console.log({email, password})
   try {
     e.preventDefault();
     //response should return a token if successful
@@ -37,6 +35,7 @@ const onSubmitLoginForm = async(e) => {
   }
 }
 
+//if the password reset form is submitted
   const onSubmitEmailVerificationForm = async e => {
     try {
       e.preventDefault();
@@ -44,7 +43,7 @@ const onSubmitLoginForm = async(e) => {
         msg: "An email has been sent with a link to reset your password"
       });
       await axios.put(
-        process.env.REACT_APP_BACKEND_URL + "/mail/forgotten-password",
+        process.env.REACT_APP_BACKEND_URL + "/mail/reset-password",
         {
           email
         }
@@ -56,11 +55,17 @@ const onSubmitLoginForm = async(e) => {
 
   if (passwordReset) {
     return (
-      <EmailVerificationForm
-        onSubmitEmailVerificationForm={onSubmitEmailVerificationForm}
-        setEmail={setEmail}
-        error={error}
-      />
+      <>
+      <Nav />
+        <div>
+          <EmailVerificationForm
+            onSubmitEmailVerificationForm={onSubmitEmailVerificationForm}
+            setEmail={setEmail}
+            error={error}
+          />
+        </div>
+      </>
+
     );
   } else {
     return (

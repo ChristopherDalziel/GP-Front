@@ -1,5 +1,4 @@
 import React from "react";
-import {getFormValues} from 'redux-form';
 import Nav from "../components/Nav";
 import BookingForm from "../components/bookingform";
 

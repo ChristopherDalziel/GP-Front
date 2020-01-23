@@ -43,7 +43,7 @@ export default ({
               <button>Submit</button>
             </div>
           </form>
-          <Link to="/login" onClick={() => setPasswordReset(true)}>
+          <Link to="/signin" onClick={() => setPasswordReset(true)}>
             Forgot your password?
           </Link>
           {error ? <h4>{error.msg}</h4> : null}
