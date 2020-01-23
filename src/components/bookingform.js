@@ -1,6 +1,7 @@
 import "../css/Booking.css";
 import React from "react";
 import { Field, reduxForm } from "redux-form";
+
 import { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import normalizePhone from "./normalizePhone";
@@ -31,7 +32,7 @@ function validate(values) {
 
 class BookingForm extends React.Component {
   state = {
-    startDate: new Date()
+    startDate: new Date(new Date().getTime()+(1*24*60*60*1000)),
   };
 
   render() {
@@ -63,7 +64,6 @@ class BookingForm extends React.Component {
             name="phone"
             component="input"
             type="text"
-            normalize={normalizePhone}
           />
         </div>
         <div className="input-wrapper---4">
@@ -93,5 +93,5 @@ class BookingForm extends React.Component {
   }
 }
 
-BookingForm = reduxForm({ form: "booking", validate })(BookingForm);
+BookingForm = reduxForm({ form: "booking", enableReinitialize: true, validate })(BookingForm);
 export default BookingForm;

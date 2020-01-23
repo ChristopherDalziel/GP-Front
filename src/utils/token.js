@@ -19,6 +19,7 @@ export const checkToken = async (token, setUser) => {
   }
   }
 
+  //checking that the password token is valid
   export const checkPasswordToken = async (token, setUser) => {
     try {
       await axios.get(process.env.REACT_APP_BACKEND_URL + '/users/check-password-token', {
