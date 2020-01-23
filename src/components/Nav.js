@@ -1,20 +1,24 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, withRouter } from "react-router-dom";
 import "../css/Nav.css";
 
 
-const logout = (e) => {
-  e.preventDefault()
-  sessionStorage.removeItem('token');
-  sessionStorage.removeItem('admin');
-  sessionStorage.removeItem('loggedIn');
-  window.location.reload(false)
-}
+
 
 // User to be imported from the schema later..
-function Nav() {
+const Nav = (props) => {
   
   // let admin = localStorage.getItem("admin")
+
+  const logout = (e) => {
+    e.preventDefault()
+    
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('admin');
+    sessionStorage.removeItem('loggedIn');
+    props.history.push("/")
+    window.location.reload(false)
+  }
 
 function getAdminStatus() {
   let adminVal= sessionStorage.getItem("admin");
@@ -106,4 +110,4 @@ let loggedIn = getLoggedInStatus();
   );
 }
 
-export default Nav;
+export default withRouter(Nav);
