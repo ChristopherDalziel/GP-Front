@@ -1,11 +1,13 @@
 import React, { Fragment,useState } from "react";
 import axios from 'axios';
-import { setLocalStorage } from '../utils/local-storage';
-import {Link} from 'react-router-dom';
+import { setLocalStorage, getAdminStatus } from '../utils/local-storage';
+import {Link, Redirect} from 'react-router-dom';
 import EmailVerificationForm from '../components/emailverificationform';
 import LoginForm from '../components/loginform';
 import Nav from "../components/Nav";
 import "../css/signIn.css";
+
+
 
 const SignIn = (props) => { 
   const [email, setEmail] = useState(null);
@@ -13,19 +15,22 @@ const SignIn = (props) => {
   const [error, setError] = useState(null);
   const [passwordReset, setPasswordReset] = useState(false)
 
+
 const onSubmitLoginForm = async(e) => {
   console.log({email, password})
   try {
     e.preventDefault();
-    //response should come back with a token if successful
+    //response should return a token if successful
     const response = await axios.post(process.env.REACT_APP_BACKEND_URL + '/users/login', {
       email,
       password
     } )
     //storing token in local storage
     setLocalStorage(response.data)
+    getAdminStatus(response.data)
     //redirecting back to previous page
     props.history.push('/')
+    window.location.reload(false)
   } catch(err) {
     setError({
       msg: err.message
@@ -74,6 +79,8 @@ if (passwordReset) {
     </>
    )
   }
+
+
 }
 
 export default SignIn
