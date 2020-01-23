@@ -1,14 +1,26 @@
 import React from "react";
-import { Field, reduxForm } from "redux-form";
+import { connect } from "react-redux";
+import { Field, reduxForm, getFormValues } from "redux-form";
 
-class CreateVaccineForm extends React.Component {
+class VaccineForm extends React.Component {
+  onSubmitFunc = (e, props) => {
+    e.preventDefault();
+    if (this.props.match.path === "/vaccine/edit/:id") {
+      this.props.onEditFormSubmit(
+        this.props.match.params.id,
+        this.props.formValues,
+        this.props.history
+      );
+    } else {
+      this.props.handleSubmit();
+    }
+  };
+
   render() {
     return (
       <>
-        <h1>Create New Vaccine:</h1>
-
         <div>
-          <form onSubmit={this.props.handleSubmit}>
+          <form onSubmit={e => this.onSubmitFunc(e, this.props)}>
             <div>
               <label htmlFor="name">Vaccine Brand:</label>
               <Field name="brand" component="input" type="text" />
@@ -29,6 +41,10 @@ class CreateVaccineForm extends React.Component {
   }
 }
 
-CreateVaccineForm = reduxForm({ form: "CreateVaccineForm" })(CreateVaccineForm);
+VaccineForm = reduxForm({
+  form: "VaccineForm"
+})(VaccineForm);
 
-export default CreateVaccineForm;
+export default connect(state => ({
+  formValues: getFormValues("VaccineForm")(state)
+}))(VaccineForm);

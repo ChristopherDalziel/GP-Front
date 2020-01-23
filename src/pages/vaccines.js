@@ -18,6 +18,7 @@ class Vaccines extends React.Component {
               </div>
             </div>
           </div>
+          x
         </div>
       </>
     );
