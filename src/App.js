@@ -10,7 +10,14 @@ import SignIn from "./pages/signIn";
 import Vaccines from "./pages/vaccines";
 import Services from "./pages/services";
 import Booking from "./pages/booking";
+
+//Satff
 import Staff from "./pages/staff";
+import StaffList from './components/Staff/StaffList'
+import EditStaff from './components/Staff/EditStaff'
+import CreatStaff from './components/Staff/CreatStaff'
+
+//vaccine
 import CreateVaccine from "./pages/CreateVaccine";
 import EditVaccine from "./pages/EditVaccine";
 import CreateService from "./pages/CreateService";
@@ -36,7 +43,12 @@ const App = () => {
           <Route path="/vaccines" component={Vaccines} />
           <Route path="/services" component={Services} />
           <Route path="/booking" component={Booking} />
+
           <Route path="/staff" component={Staff} />
+          <Route path="/admin/staff" component={StaffList} />
+          <Route path="/admin/add_staff" component={CreatStaff} />
+          <Route path="/admin/edit_staff/:id" component={EditStaff} />
+
           <Route path="/vaccine/create" component={CreateVaccine} />
           <Route path="/vaccine/edit/:id" component={EditVaccine} />
           <Route path="/service/create" component={CreateService} />

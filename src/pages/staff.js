@@ -1,7 +1,9 @@
 import React from 'react'
 import Nav from '../components/Nav'
 import '../css/staff.css'
-import AddStaff from '../components/Staff/AddStaff'
+import StaffList from '../components/Staff/StaffList'
+
+
 
 
 const  Staff=()=>{
@@ -10,13 +12,10 @@ const  Staff=()=>{
       <Nav/>
       <div className="staffs">
         <div className="staff-infor">
-
-          <h1>Staff Management Board</h1>
-
+           <StaffList/>
         </div>
+      
 
-        <AddStaff/>
-        
       </div>
 
     </>

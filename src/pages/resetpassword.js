@@ -4,7 +4,7 @@ import {Redirect} from 'react-router-dom';
 import Nav from "../components/Nav";
 import {setLocalStorage} from '../utils/local-storage';
 import {checkPasswordToken} from '../utils/token';
-import PasswordResetForm from '../components/PasswordResetForm';
+import PasswordResetForm from '../components/PasswordResetForm.js';
 
 const ResetPassword = (props) => {
   const [password, setPassword] = useState(null);
@@ -25,8 +25,8 @@ const ResetPassword = (props) => {
       e.preventDefault();
       const response = await axios.put(process.env.REACT_APP_BACKEND_URL + '/users/reset-password', {
         token, password
-      })
-      setLocalStorage(response.data)
+      }) //sending token and new password to back end
+      setLocalStorage(response.data) //storing the new token
       props.history.push('/')
     } catch (err) {
       console.log(err.message)

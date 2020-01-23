@@ -25,6 +25,7 @@ class DatePicker extends React.Component {
           showTimeSelect
           timeFormat="hh:mm aa"
           timeIntervals={15}
+          minDate={new Date(new Date().getTime()+(1*24*60*60*1000))}
           dateFormat="dd MMMM yyyy hh:mm aa"
           placeholderText="Click to select"
         />

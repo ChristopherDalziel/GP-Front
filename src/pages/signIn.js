@@ -36,7 +36,7 @@ const SignIn = props => {
     }
   };
 
-  //if the password reset form is submitted
+//if the password reset form is submitted
   const onSubmitEmailVerificationForm = async e => {
     try {
       e.preventDefault();
