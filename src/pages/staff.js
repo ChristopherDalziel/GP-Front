@@ -10,13 +10,9 @@ const  Staff=()=>{
       <Nav/>
       <div className="staffs">
         <div className="staff-infor">
-
           <h1>Staff Management Board</h1>
-
         </div>
-
-        <AddStaff/>
-        
+        <AddStaff/>  
       </div>
 
     </>
