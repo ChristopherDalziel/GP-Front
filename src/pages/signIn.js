@@ -30,7 +30,7 @@ const onSubmitLoginForm = async(e) => {
     window.location.reload(false)
   } catch(err) {
     setError({
-      msg: err.message
+      msg: 'Incorrect Username or password'
     })
   }
 }
