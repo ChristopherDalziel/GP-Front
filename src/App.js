@@ -12,6 +12,7 @@ import Booking from "./pages/booking";
 import Staff from "./pages/staff";
 import CreateVaccine from "./pages/CreateVaccine";
 import CreateService from "./pages/CreateService";
+import EditVaccine from "./pages/EditVaccine";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/booking" component={Booking} />
           <Route path="/staff" component={Staff} />
           <Route path="/vaccine/create" component={CreateVaccine} />
+          <Route path="/vaccine/edit/:id" component={EditVaccine} />
           <Route path="/service/create" component={CreateService} />
         </Switch>
       </BrowserRouter>

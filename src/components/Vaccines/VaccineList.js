@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "../../css/Vaccines.css";
 
@@ -50,6 +51,9 @@ class VaccineList extends React.Component {
                       >
                         delete
                       </button>
+                      <Link to={"/vaccine/edit/" + vaccine._id}>
+                        <button>Edit</button>
+                      </Link>
                     </div>
                   </div>
                 </div>
