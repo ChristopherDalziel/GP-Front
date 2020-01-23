@@ -4,7 +4,7 @@ import {Redirect} from 'react-router-dom';
 import Nav from "../components/Nav";
 import {setLocalStorage} from '../utils/local-storage';
 import {checkPasswordToken} from '../utils/token';
-import PasswordResetForm from '../components/PasswordResetForm';
+import PasswordResetForm from '../components/PasswordResetForm.js';
 
 const ResetPassword = (props) => {
   const [password, setPassword] = useState(null);
