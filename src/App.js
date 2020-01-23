@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Contact from "./pages/contact";
-import ResetPassword from "./pages/ResetPassword";
+import ResetPassword from "./pages/resetpassword";
 import Profile from "./pages/profile";
 import About from "./pages/about";
 import Register from "./pages/register";
@@ -16,6 +16,8 @@ import EditVaccine from "./pages/EditVaccine";
 import CreateService from "./pages/CreateService";
 import EditService from "./pages/EditService";
 
+import AdminServices from "./pages/admin/AdminServices"
+
 const App = () => {
   return (
     <>
@@ -24,7 +26,10 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route path="/register" component={Register} />
           <Route path="/signIn" component={SignIn} />
-          <Route path="/:passwordToken/reset-password" component={ResetPassword} />
+          <Route
+            path="/:passwordToken/reset-password"
+            component={ResetPassword}
+          />
           <Route path="/contact" component={Contact} />
           <Route path="/profile" component={Profile} />
           <Route path="/about" component={About} />
@@ -36,6 +41,10 @@ const App = () => {
           <Route path="/vaccine/edit/:id" component={EditVaccine} />
           <Route path="/service/create" component={CreateService} />
           <Route path="/service/edit/:id" component={EditService} />
+
+          {/* Admin User Routes */}
+          <Route path="/admin_services" component={AdminServices} />
+
         </Switch>
       </BrowserRouter>
     </>
