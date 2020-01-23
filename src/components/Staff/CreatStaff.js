@@ -1,19 +1,20 @@
 import React, {Component} from 'react'
 import '../../css/staff.css'
 import axios from 'axios'
+import Nav from '../../components/Nav'
 
 
- class AddStaff extends Component {
+ class CreatStaff extends Component {
   constructor () {
     super();
     this.state = {
       file: null,
       name:"",
-      contentText:''
+      aboutText:''
     };
 
     this.onChangeName = this.onChangeName.bind(this);
-    this.onChangeContentText = this.onChangeContentText.bind(this);
+    this.onChangeAboutText = this.onChangeAboutText.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
@@ -22,21 +23,21 @@ import axios from 'axios'
     this.setState({name: e.target.value})
   }
 
-  onChangeContentText(e) {
-    this.setState({contentText: e.target.value})
+  onChangeAboutText(e) {
+    this.setState({aboutText: e.target.value})
   }
 
   onSubmit(e) {
     e.preventDefault()
     const staffObject = {
       name: this.state.name,
-      contentText: this.state.contentText,
+      aboutText: this.state.aboutText,
     };
     axios.post('http://localhost:5000/admin/add_staff', staffObject)
       .then(res => 
         console.log(res.data));
 
-    this.setState({ name: '', contentText: '' })
+    this.setState({ name: '', aboutText: '' })
   }
 
   // AWS
@@ -62,42 +63,44 @@ import axios from 'axios'
    
   render() {
     return (
-      <div className="add_staff">
       <div>
-        <h1>Add a new Staff Here</h1>
-        <form >
-          <div>
-            <label>Staff Name</label> <br />
-            <input
-              type="text"
-              placeholder="Enter Staff Name"
-              value={this.state.name} 
-              onChange={this.onChangeName}
-            />
-          </div>
-          <div>
-            <label>Staff Introduction</label> <br />
-            <textarea
-              type="text"
-              placeholder="Enter the Staff Information"
-              value={this.state.contentText} 
-              onChange={this.onChangeContentText}
-            />
-          </div>
-          {/* <div onSubmit={this.submitFile}>
-            <input label='upload file' type='file' className="upload-image" onChange={this.handleFileUpload} />
-            <button type='submit' className="upload">Upload Image</button>
-          </div> */}
-             <button type="submit" onSubmit={this.onSubmit}>Submit</button>
-        </form> 
+        <Nav/>
+            <div className="add_staff">
+              <h1>Add a new Staff Here</h1>
+              <form onSubmit={this.onSubmit} >
+                <div>
+                  <label>Staff Name</label> <br />
+                  <input
+                    type="text"
+                    placeholder="Enter Staff Name"
+                    value={this.state.name} 
+                    onChange={this.onChangeName}
+                  />
+                </div>
+                <div>
+                  <label>Staff Introduction</label> <br />
+                  <textarea
+                    type="text"
+                    placeholder="Enter the Staff Information"
+                    value={this.state.aboutText} 
+                    onChange={this.onChangeAboutText}
+                  />
+                </div>
+                {/* <div onSubmit={this.submitFile}>
+                  <input label='upload file' type='file' className="upload-image" onChange={this.handleFileUpload} />
+                  <button type='submit' className="upload">Upload Image</button>
+                </div> */}
+                  <button type="submit" >Submit</button>
+              </form> 
+            </div>
       </div>
-    </div>
+      
       
     )
   }
 }
 
-export default AddStaff
+export default CreatStaff
 
 
 
