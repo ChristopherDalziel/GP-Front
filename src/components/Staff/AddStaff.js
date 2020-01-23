@@ -1,19 +1,26 @@
-import React,{useState} from 'react'
+import React, {Component} from 'react'
 import '../../css/staff.css'
 import ImageUploader from 'react-images-upload';
+import axios from 'axios'
 
-const  AddStaff=()=>{
 
-  const [pictures, setPicture]=useState([])
+ class AddStaff extends Component {
+   constructor(props) {
+     super(props)
+   
+     this.state = {
+     
+     }
+    
+   }
 
+   
   
-  const onDrop=(picture) =>{
-    this.setPicture({
-       pictires: pictures.concat(picture)
-    });
-}
-  return (
-    <div className="add_staff">
+   
+  render() {
+    return (
+
+      <div className="add_staff">
       <div>
         <h1>Add a new Staff Here</h1>
         <form >
@@ -33,21 +40,26 @@ const  AddStaff=()=>{
               name="contentText"
             />
           </div>
-          <ImageUploader
-                withIcon={true}
-                withPreview={true}
-                imgExtension={['.jpg', '.gif', '.png', '.gif']}
-                maxFileSize={5242880}
-                onChange={onDrop}
-            
-            />
-          <button type="submit">Sign Up</button>
+          <form onSubmit={this.submitFile}>
+            <input label='upload file' type='file' onChange={this.handleFileUpload} />
+            <button type='submit'>Send</button>
+          </form>
+          <button type="submit">Submit</button>
 
         </form> 
       </div>
     </div>
-    
-  )
+      
+    )
+  }
 }
 
 export default AddStaff
+
+
+
+
+    
+
+
+    
