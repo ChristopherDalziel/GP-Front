@@ -1,5 +1,5 @@
 import React from "react";
-import CreateServiceForm from "../components/Services/CreateServiceForm";
+import ServiceForm from "../components/Services/ServiceForm";
 import Nav from "../components/Nav";
 import axios from "axios";
 
@@ -20,7 +20,7 @@ class CreateService extends React.Component {
     return (
       <>
         <Nav />
-        <CreateServiceForm onSubmit={this.submit} />
+        <ServiceForm onSubmit={this.submit} {...this.props} />
       </>
     );
   }
