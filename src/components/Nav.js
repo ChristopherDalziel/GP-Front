@@ -5,9 +5,9 @@ import "../css/Nav.css";
 
 const logout = (e) => {
   e.preventDefault()
-  localStorage.removeItem('token');
-  localStorage.removeItem('admin');
-  localStorage.removeItem('loggedIn');
+  sessionStorage.removeItem('token');
+  sessionStorage.removeItem('admin');
+  sessionStorage.removeItem('loggedIn');
   window.location.reload(false)
 }
 
@@ -17,7 +17,7 @@ function Nav() {
   // let admin = localStorage.getItem("admin")
 
 function getAdminStatus() {
-  let adminVal= localStorage.getItem("admin");
+  let adminVal= sessionStorage.getItem("admin");
   if (adminVal == 'true') {
     adminVal = true
   } else {
@@ -27,7 +27,7 @@ function getAdminStatus() {
 }
 
 function getLoggedInStatus() {
-  let loggedInVal= localStorage.getItem("loggedIn");
+  let loggedInVal= sessionStorage.getItem("loggedIn");
   if (loggedInVal == 'true') {
     loggedInVal = true
   } else {

@@ -10,31 +10,6 @@ export default ({
   setPassword,
   setPasswordReset
 }) => (
-<<<<<<< HEAD
-  <div>
-    <h1>Log In</h1>
-    <form onSubmit={onSubmitLoginForm}>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input 
-          type="email"
-          name="email"
-          id="email"
-          //changing the state of email to input value
-          onChange={(e) => setEmail(e.target.value)} />
-      </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          //changing the state of password to input value
-          onChange={(e) => setPassword(e.target.value)} />
-      </div>
-      <div>
-        <button>Submit</button>
-=======
   <div className="signUp">
     <div className="container">
       <div className="imageSignUp"></div>
@@ -77,7 +52,6 @@ export default ({
             <Link to="register"> Sign Up Here</Link>
           </h4>
         </div>
->>>>>>> master
       </div>
     </div>
   </div>
