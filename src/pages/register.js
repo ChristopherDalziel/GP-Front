@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Nav from "../components/Nav";
 import "../css/register.css";
 import axios from "axios";
-import { setLocalStorage, getAdminStatus } from '../utils/local-storage';
+import { setLocalStorage, setAdminStatus } from '../utils/local-storage';
 // import {register} from '../actions/auth'
 // import PropTypes from 'prop-types'
 
@@ -40,18 +40,18 @@ const Register = (props) => {
         password
       };
       try {
-        console.log(newUser);
         await axios.post( process.env.REACT_APP_BACKEND_URL + '/users/register',
           newUser).then((response) => {
-            console.log(response.data)
-            setLocalStorage(response.data)
-            getAdminStatus(response.data)
+            alert("Registration successful")
+            setLocalStorage(response.data)})
+            .then(setAdminStatus());
             //redirecting back to previous page
             props.history.push('/')
             window.location.reload(false)
-          })
+
       } catch (err) {
-        console.log(err.message);
+        console.log(err.message)
+        setError('Registration unsuccessful: An error occurred')
       }
     }
   };
@@ -65,7 +65,7 @@ const Register = (props) => {
           <div className="content-signUp">
             <div>
               <h1>New to Klinic Doctor Leong?</h1>
-              <h1>Sign UP Now</h1>
+              <h1>Sign Up Now</h1>
               <form onSubmit={e => onSubmit(e)}>
                 <div className="input-wrapper-1">
                   <label>First Name</label> <br />
