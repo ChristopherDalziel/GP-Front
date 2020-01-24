@@ -33,7 +33,9 @@ import Nav from '../../components/Nav'
       name: this.state.name,
       aboutText: this.state.aboutText,
     };
-    axios.post('http://localhost:5000/admin/add_staff', staffObject)
+    axios.post('http://localhost:5000/admin/add_staff', staffObject,
+     {headers: {'Authorization': sessionStorage.getItem('token') }})
+    
       .then(res => 
         console.log(res.data));
 
