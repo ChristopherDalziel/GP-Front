@@ -85,36 +85,45 @@ import Nav from '../../components/Nav'
   render() {
     return (
       <div>
-        <Nav/>
-            <div className="add_staff">
-              <h1>Edit Staff Information Here</h1>
-              <form onSubmit={this.onSubmit} >
-                <div>
-                  <label>Staff Name</label> <br />
-                  <input
-                    type="text"
-                    placeholder="Enter Staff Name"
-                    value={this.state.name} 
-                    onChange={this.onChangeName}
-                  />
-                </div>
-                <div>
-                  <label>Staff Introduction</label> <br />
-                  <textarea
-                    type="text"
-                    placeholder="Enter the Staff Information"
-                    value={this.state.aboutText} 
-                    onChange={this.onChangeAboutText}
-                  />
-                </div>
-                {/* <div onSubmit={this.submitFile}>
-                  <input label='upload file' type='file' className="upload-image" onChange={this.handleFileUpload} />
-                  <button type='submit' className="upload">Upload Image</button>
-                </div> */}
-                  <button type="submit" >Submit</button>
-              </form> 
-            </div>
-      </div>
+      <Nav/>
+      <div className="staffs">
+         <div className="staff-infor">
+
+        </div>
+
+        <div className="add_staff">
+            <h1>Edit Staff Information Here</h1>
+            <form onSubmit={this.onSubmit} >
+              <div>
+                <label>Staff Name</label> <br />
+                <input
+                  type="text"
+                  placeholder="Enter Staff Name"
+                  value={this.state.name} 
+                  onChange={this.onChangeName}
+                />
+              </div>
+              <div>
+                <label>Staff Introduction</label> <br />
+                <textarea
+                  type="text"
+                  placeholder="Enter the Staff Information"
+                  value={this.state.aboutText} 
+                  onChange={this.onChangeAboutText}
+                />
+              </div>
+              <div onSubmit={this.submitFile}>
+                <input label='upload file' type='file' className="upload-image" onChange={this.handleFileUpload} />
+                <button type='submit' className="upload">Upload Image</button>
+              </div>
+                <button type="submit" >Submit</button>
+            </form> 
+        </div>
+
+        
+      </div>      
+    </div>
+    
       
       
     )
