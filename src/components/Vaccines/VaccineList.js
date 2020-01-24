@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
 import "../../css/Vaccines.css";
 
 class VaccineList extends React.Component {
@@ -8,6 +6,7 @@ class VaccineList extends React.Component {
     data: null
   };
 
+  // Accessing the vaccines from the backend
   async componentDidMount() {
     const response = await fetch(
       process.env.REACT_APP_BACKEND_URL + "/vaccines"
@@ -22,15 +21,6 @@ class VaccineList extends React.Component {
   render() {
     const { data } = this.state;
 
-    function deleteVaccine(id) {
-      axios
-        .delete(process.env.REACT_APP_BACKEND_URL + `/vaccines/delete/${id}`)
-        .then(response => {
-          window.location.replace("/vaccines");
-          console.log(response.data);
-        });
-    }
-
     return (
       <div className="pageContainer">
         <h1>Vaccines:</h1>
@@ -44,16 +34,6 @@ class VaccineList extends React.Component {
                       <img></img>
                       <p>Description: {vaccine.description}</p>
                       <p>Manufacturer {vaccine.manufacturer}</p>
-                      <button
-                        onClick={() => {
-                          deleteVaccine(vaccine._id);
-                        }}
-                      >
-                        delete
-                      </button>
-                      <Link to={"/vaccine/edit/" + vaccine._id}>
-                        <button>Edit</button>
-                      </Link>
                     </div>
                   </div>
                 </div>

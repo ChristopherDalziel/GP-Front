@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
-import VaccineForm from "../../components/Vaccines/VaccineForm";
 import Nav from "../../components/Nav";
+import VaccineForm from "../../components/Vaccines/VaccineForm";
 import VaccineTable from "../../components/Vaccines/vaccineTable";
 
 class AdminVaccines extends React.Component {

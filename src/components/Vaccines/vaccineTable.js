@@ -26,7 +26,7 @@ class VaccineTable extends React.Component {
       axios
         .delete(process.env.REACT_APP_BACKEND_URL + `/vaccines/delete/${id}`)
         .then(response => {
-          window.location.replace("/vaccines");
+          window.location.replace("/admin_vaccines");
           console.log(response.data);
         });
     }
