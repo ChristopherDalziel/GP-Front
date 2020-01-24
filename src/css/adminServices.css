@@ -1,0 +1,40 @@
+.pageContainer {
+  width: 100vw;
+}
+
+table {
+  height: 100%;
+  width: 50%;
+  border: 1px solid black;
+  background-color: white;
+}
+
+td {
+  height: 25vh;
+  width: 25vw;
+}
+
+th,
+td {
+  padding: 5px;
+  text-align: left;
+  border-bottom: 1px solid black;
+}
+
+/* Changing the background colours of different rows in tables */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+tr:hover {
+  background-color: lightgray;
+}
+
+.adminButton {
+  font-size: 12px;
+  color: white;
+  padding: 0;
+  margin: 0;
+  background: #398ffc;
+  height: 25px;
+  width: 55px;
+}

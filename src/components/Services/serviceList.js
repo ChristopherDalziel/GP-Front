@@ -1,6 +1,4 @@
 import React from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
 
 import "../../css/Services.css";
 
@@ -9,6 +7,7 @@ class serviceList extends React.Component {
     data: null
   };
 
+  // Accessing the services from the backend
   async componentDidMount() {
     const response = await fetch(
       process.env.REACT_APP_BACKEND_URL + "/services"
@@ -23,15 +22,6 @@ class serviceList extends React.Component {
   render() {
     const { data } = this.state;
 
-    function deleteService(id) {
-      axios
-        .delete(process.env.REACT_APP_BACKEND_URL + `/services/delete/${id}`)
-        .then(response => {
-          window.location.replace("/services");
-          console.log(response.data);
-        });
-    }
-
     return (
       <div className="pageContainer">
         <h1>Services:</h1>
@@ -44,16 +34,6 @@ class serviceList extends React.Component {
                       <h3>Brand: {service.serviceName}</h3>
                       <img></img>
                       <p>Description: {service.serviceDescription}</p>
-                      <button
-                        onClick={() => {
-                          deleteService(service._id);
-                        }}
-                      >
-                        delete
-                      </button>
-                      <Link to={"/service/edit/" + service._id}>
-                        <button>Edit</button>
-                      </Link>
                     </div>
                   </div>
                 </div>
