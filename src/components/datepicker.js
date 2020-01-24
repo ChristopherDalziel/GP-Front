@@ -1,17 +1,22 @@
 import React from "react";
-import ReactDatePicker from "react-datepicker";
-
+import ReactDatePicker, {registerLocale} from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import addDays from 'date-fns/addDays'
+import format from 'date-fns/format';
+import enGB from "date-fns/locale/en-GB";
+registerLocale("en-GB", enGB);
+
 
 class DatePicker extends React.Component {
   state = {
-    startDate: new Date()
+    startDate: addDays(new Date(), 1)
   };
 
   handleChange = date => {
     this.setState({ startDate: date });
     //sending the date value to redux form store
-    this.props.input.onChange(date);
+    let dateFormatted = format(date, 'PPPPp')
+    this.props.input.onChange(dateFormatted.toString());
   };
 
   render() {
@@ -25,7 +30,7 @@ class DatePicker extends React.Component {
           showTimeSelect
           timeFormat="hh:mm aa"
           timeIntervals={15}
-          minDate={new Date(new Date().getTime()+(1*24*60*60*1000))}
+          minDate={addDays(new Date(), 1)}
           dateFormat="dd MMMM yyyy hh:mm aa"
           placeholderText="Click to select"
         />

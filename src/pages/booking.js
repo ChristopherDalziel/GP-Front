@@ -2,15 +2,20 @@ import React from "react";
 import axios from "axios";
 import Nav from "../components/Nav";
 import BookingForm from "../components/bookingform";
+import addDays from 'date-fns/addDays'
+import format from 'date-fns/format';
 
 
 import "react-datepicker/dist/react-datepicker.css";
+
+const startDate = addDays(new Date(), 1)
+let startDateFormatted = format(startDate, 'PPPPp')
 
 
 class Booking extends React.Component {
 
   state = {
-    startDate: new Date(new Date().getTime()+(2*24*60*60*1000)),
+    startDate: startDateFormatted.toString(),
     email: null,
     firstName: null,
     lastName: null,
@@ -51,8 +56,14 @@ class Booking extends React.Component {
       console.log(err.message)
     }
     try {
-      await axios.post(process.env.REACT_APP_BACKEND_URL + "/mail/appointment", newBooking)
-      .then(alert('An email has been sent with your appointment details'))
+      await axios.post(process.env.REACT_APP_BACKEND_URL + "/mail/appointment", newBooking).then((response) => {
+        if (response.status === 200) {
+          (alert('An email has been sent with your appointment details'))
+        } else {
+          alert('An error occurred: Your booking could not be submitted. Please phone the clinic directly.')
+        }
+      })
+
     } catch(err) {
       console.log(err.message)
     }
@@ -74,7 +85,7 @@ class Booking extends React.Component {
                 <h3>If there are any issues with your appointment we will contact you within 24 hours.</h3>
                 </div>
                 <div>
-                <BookingForm onSubmit={this.bookingSubmit} initialValues={{firstName: firstName, lastName: lastName, email: email, phone: phone}} />
+                <BookingForm onSubmit={this.bookingSubmit} initialValues={{firstName: firstName, lastName: lastName, email: email, phone: phone, comment:''}} />
               </div>
               <div>
                 <h4>{this.state.errors}</h4>
