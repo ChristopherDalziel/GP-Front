@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios';
-
 import StaffListRow from './StaffListRow';
+import Nav from '../Nav'
 
 
 export default class StaffList extends Component {
@@ -14,7 +14,7 @@ export default class StaffList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/admin/staffs')
+    axios.get('http://localhost:5000/admin/staff')
       .then(res => {
         this.setState({
           staffs: res.data
@@ -34,20 +34,28 @@ export default class StaffList extends Component {
 
   render() {
     return (
-    <div>
-      <table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Introduction</th>
-            
-          </tr>
-        </thead>
-        <tbody>
-          {this.DataTable()}
-        </tbody>
-      </table>
-    </div>
+
+      <div>
+        <Nav/>
+        <div>
+          <table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Introduction</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              {this.DataTable()}
+            </tbody>
+          </table>
+        </div>
+      </div>
+   
     );
   }
 }
+
+
+

@@ -7,10 +7,10 @@
 }
 .staff-infor{
   box-sizing: border-box;
-  margin-top:50px;
   height: 100%;
   width: 50%;
-  background: #e1eeff;
+  background-image: url('../assets/staff.jpg');
+  background-size: cover;
   
 }
 
