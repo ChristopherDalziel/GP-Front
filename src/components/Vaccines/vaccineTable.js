@@ -16,7 +16,6 @@ class VaccineTable extends React.Component {
     this.setState({
       data: data
     });
-    console.log(data);
   }
 
   render() {
@@ -27,7 +26,6 @@ class VaccineTable extends React.Component {
         .delete(process.env.REACT_APP_BACKEND_URL + `/vaccines/delete/${id}`)
         .then(response => {
           window.location.replace("/admin_vaccines");
-          console.log(response.data);
         });
     }
     return (
