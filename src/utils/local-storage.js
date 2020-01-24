@@ -1,16 +1,9 @@
-import axios from "axios";
 
-
-export async function setAdminStatus() {
-  await axios.get(process.env.REACT_APP_BACKEND_URL + '/users/find-user/', { headers: {'Authorization': sessionStorage.getItem('token') } }).then((response) => {
-    let adminStatus = response.data.admin;
-    sessionStorage.setItem('admin', adminStatus);
-  })
-}
-
-export const setLocalStorage = (token) => {
-  sessionStorage.setItem('token', token);
+export const setLocalStorage = (response) => {
+  sessionStorage.setItem('token', response.token);
+  sessionStorage.setItem('admin', response.admin)
   sessionStorage.setItem('loggedIn', true);
+
 }
 
 
