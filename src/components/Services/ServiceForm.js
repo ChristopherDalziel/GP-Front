@@ -5,7 +5,6 @@ import { Field, reduxForm, getFormValues } from "redux-form";
 class ServiceForm extends React.Component {
   onSubmitFunc = (e, props) => {
     e.preventDefault();
-    console.log("testinggg");
     if (this.props.match.path === "/service/edit/:id") {
       this.props.onEditFormSubmit(
         this.props.match.params.id,
