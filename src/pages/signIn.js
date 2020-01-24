@@ -16,17 +16,15 @@ const SignIn = props => {
     try {
       e.preventDefault();
       //response should return a token if successful
-      const response = await axios.post(
-        process.env.REACT_APP_BACKEND_URL + "/users/login",
-        {
+      const response = await axios
+        .post(process.env.REACT_APP_BACKEND_URL + "/users/login", {
           email,
           password
-        }
-      )
-      .then((response) => {
-        setLocalStorage(response.data);
-      })
-      .then(setAdminStatus());
+        })
+        .then(response => {
+          setLocalStorage(response.data);
+        })
+        .then(setAdminStatus());
       //redirecting back to previous page
       props.history.push("/");
       window.location.reload(false);
@@ -37,7 +35,7 @@ const SignIn = props => {
     }
   };
 
-//if the password reset form is submitted
+  //if the password reset form is submitted
   const onSubmitEmailVerificationForm = async e => {
     try {
       e.preventDefault();
