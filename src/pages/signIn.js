@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { setLocalStorage, setAdminStatus } from "../utils/local-storage";
+import { setLocalStorage } from "../utils/local-storage";
 import EmailVerificationForm from "../components/EmailVerificationForm";
 import LoginForm from "../components/loginform";
 import Nav from "../components/Nav";
@@ -20,14 +20,15 @@ const SignIn = props => {
         .post(process.env.REACT_APP_BACKEND_URL + "/users/login", {
           email,
           password
-        })
-        .then(response => {
-          setLocalStorage(response.data);
-        })
-        .then(setAdminStatus());
-      //redirecting back to previous page
-      props.history.push("/");
-      window.location.reload(false);
+        }
+      )
+      .then((response) => {
+        setLocalStorage(response.data);
+        console.log(response.data)
+        props.history.push('/')
+        window.location.reload(false)
+        //redirecting back to previous page
+      })
     } catch (err) {
       setError({
         msg: err.message

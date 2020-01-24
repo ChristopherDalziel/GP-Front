@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Nav from "../components/Nav";
 import "../css/register.css";
 import axios from "axios";
-import { setLocalStorage, setAdminStatus } from '../utils/local-storage';
+import { setLocalStorage } from '../utils/local-storage';
 // import {register} from '../actions/auth'
 // import PropTypes from 'prop-types'
 
@@ -43,12 +43,8 @@ const Register = (props) => {
         await axios.post( process.env.REACT_APP_BACKEND_URL + '/users/register',
           newUser).then((response) => {
             alert("Registration successful")
-            setLocalStorage(response.data)})
-            .then(setAdminStatus());
-            //redirecting back to previous page
-            props.history.push('/')
-            window.location.reload(false)
-
+            setLocalStorage(response.data)
+          })
       } catch (err) {
         console.log(err.message)
         setError('Registration unsuccessful: An error occurred')

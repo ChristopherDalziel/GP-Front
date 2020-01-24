@@ -18,15 +18,15 @@ class Booking extends React.Component {
 
   componentDidMount() {
       if (sessionStorage.getItem('token')) {
-        axios.get(process.env.REACT_APP_BACKEND_URL + '/users/find-user/', { headers: {'Authorization': sessionStorage.getItem('token') } }).then((response) => {
+        axios.get(process.env.REACT_APP_BACKEND_URL + '/users/find-user/', { headers: {'authorization': sessionStorage.getItem('token') } }).then((response) => {
           const user = response.data;
-          console.log(user)
           this.setState({
             email: user.email,
             firstName: user.firstName,
             lastName: user.lastName,
             phone: user.phone
           })
+          console.log(this.state)
         })
       }
   }
