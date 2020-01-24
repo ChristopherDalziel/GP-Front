@@ -19,7 +19,6 @@ class Contact extends React.Component {
           <div className="container-main">
             <div className="container-one">
               <div className="google-map">
-                ``
                 <div className="address-holder">
                   <h3>Our Address:</h3>
                   <p>

@@ -3,8 +3,6 @@ import { Link, withRouter } from "react-router-dom";
 import "../css/Nav.css";
 
 
-
-
 // User to be imported from the schema later..
 const Nav = (props) => {
   
