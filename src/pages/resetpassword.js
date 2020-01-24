@@ -14,7 +14,6 @@ const ResetPassword = props => {
   });
 
   const token = props.match.params.passwordToken;
-  // console.log(token);
 
   useEffect(() => {
     checkPasswordToken(token, setUser);

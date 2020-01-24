@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
+import Nav from "../../components/Nav";
 import ServiceForm from "../../components/Services/ServiceForm";
 import ServiceTable from "../../components/Services/serviceTable";
-import Nav from "../../components/Nav";
 
 class AdminServices extends React.Component {
   submit(serviceData) {
@@ -12,7 +12,9 @@ class AdminServices extends React.Component {
       .then(res => {
         window.location.replace("/admin_services");
       })
-      .catch(error => {});
+      .catch(error => {
+        console.log("There was an error!" + error);
+      });
   }
 
   render() {
