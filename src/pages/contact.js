@@ -3,7 +3,7 @@ import React from "react";
 import Nav from "../components/Nav";
 import ContactForm from "../components/Contact/ContactForm";
 import ContactInfo from "../components/Contact/ToggleDisplay";
-import EmailSubmit from "../components/Contact/emailSubmit";
+import EmailSubmit from "../components/Contact/EmailSubmit";
 import GoogleApiWrapper from "../components/Contact/GoogleMaps";
 
 class Contact extends React.Component {

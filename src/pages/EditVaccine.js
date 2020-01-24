@@ -16,20 +16,18 @@ class EditVaccine extends React.Component {
     });
   }
 
-
   async updateVaccine(id, updatedVaccine, history) {
     try {
       await axios.put(
         process.env.REACT_APP_BACKEND_URL + `/vaccines/update/${id}`,
         updatedVaccine
       );
-      history.push("/vaccines");
+      history.push("/admin_vaccines");
     } catch (err) {
       console.log(err);
     }
   }
 
-  
   render() {
     const { vaccineData } = this.state;
     return vaccineData ? (
