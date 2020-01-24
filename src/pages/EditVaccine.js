@@ -23,8 +23,8 @@ class EditVaccine extends React.Component {
         updatedVaccine
       );
       history.push("/admin_vaccines");
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
     }
   }
 

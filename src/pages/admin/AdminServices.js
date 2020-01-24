@@ -6,7 +6,6 @@ import ServiceTable from "../../components/Services/serviceTable";
 
 class AdminServices extends React.Component {
   submit(serviceData) {
-    console.log(serviceData);
     axios
       .post(process.env.REACT_APP_BACKEND_URL + "/services/create", serviceData)
       .then(res => {
