@@ -16,7 +16,7 @@ const SignIn = props => {
     try {
       e.preventDefault();
       //response should return a token if successful
-      const response = await axios
+      await axios
         .post(process.env.REACT_APP_BACKEND_URL + "/users/login", {
           email,
           password

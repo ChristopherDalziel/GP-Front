@@ -2,23 +2,32 @@ import React from "react";
 import axios from "axios";
 import Nav from "../components/Nav";
 import BookingForm from "../components/bookingform";
+import addDays from 'date-fns/addDays'
+import format from 'date-fns/format';
+
 
 import "react-datepicker/dist/react-datepicker.css";
+
+const startDate = addDays(new Date(), 1)
+let startDateFormatted = format(startDate, 'PPPPp')
 
 
 class Booking extends React.Component {
 
   state = {
-    startDate: new Date(new Date().getTime()+(1*24*60*60*1000)),
+    startDate: startDateFormatted.toString(),
     email: null,
     firstName: null,
     lastName: null,
-    phone: null
+    phone: null,
+    errors: null
   };
 
   componentDidMount() {
-      if (sessionStorage.getItem('token')) {
-        axios.get(process.env.REACT_APP_BACKEND_URL + '/users/find-user/', { headers: {'authorization': sessionStorage.getItem('token') } }).then((response) => {
+    let token = sessionStorage.getItem('token');
+      if (token) {
+       try { axios.get(process.env.REACT_APP_BACKEND_URL + "/users/find-user", { headers: {'Authorization': token } })
+       .then((response) => {
           const user = response.data;
           this.setState({
             email: user.email,
@@ -26,18 +35,43 @@ class Booking extends React.Component {
             lastName: user.lastName,
             phone: user.phone
           })
-          console.log(this.state)
         })
+      } catch(err) {
+        this.setState({errors: err.message})
+        console.log(err.message)
       }
   }
+}
 
-  bookingSubmit = values => {
-    console.log(values);
+  bookingSubmit = async (values) => {
+  
+    const newBooking = values;
+    console.log(newBooking);
+    try {
+      await axios.post(process.env.REACT_APP_BACKEND_URL + "/appointments/new", newBooking)
+      .then((response) => {
+        return <h4>Appointment created: {response.data}</h4>
+      })
+    } catch (err) {
+      console.log(err.message)
+    }
+    try {
+      await axios.post(process.env.REACT_APP_BACKEND_URL + "/mail/appointment", newBooking).then((response) => {
+        if (response.status === 200) {
+          (alert('An email has been sent with your appointment details'))
+        } else {
+          alert('An error occurred: Your booking could not be submitted. Please phone the clinic directly.')
+        }
+      })
+
+    } catch(err) {
+      console.log(err.message)
+    }
+  
   };
 
   render() {
     const {email, firstName, lastName, phone } = this.state;
-    console.log(email)
     return (
       <>
         <Nav />
@@ -47,7 +81,14 @@ class Booking extends React.Component {
             <div className="content-booking">
               <div>
                 <h1>Make An Appointment!</h1>
-                <BookingForm onSubmit={this.bookingSubmit} initialValues={{firstName: firstName, lastName: lastName, email: email, phone: phone}} />
+                <h2>For appointments within 24 hours, please call the clinic directly.</h2>
+                <h3>If there are any issues with your appointment we will contact you within 24 hours.</h3>
+                </div>
+                <div>
+                <BookingForm onSubmit={this.bookingSubmit} initialValues={{firstName: firstName, lastName: lastName, email: email, phone: phone, comment:''}} />
+              </div>
+              <div>
+                <h4>{this.state.errors}</h4>
               </div>
             </div>
           </div>

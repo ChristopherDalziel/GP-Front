@@ -1,13 +1,15 @@
 import "../css/Booking.css";
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-
-import { registerLocale } from "react-datepicker";
+import DatePicker from "./datepicker";
+import {registerLocale} from "react-datepicker";
+import addDays from 'date-fns/addDays'
+import format from 'date-fns/format';
 import "react-datepicker/dist/react-datepicker.css";
 import normalizePhone from "./normalizePhone";
 import enGB from "date-fns/locale/en-GB";
-import DatePicker from "./datepicker";
 registerLocale("en-GB", enGB);
+
 
 //form validation
 function validate(values) {
@@ -30,9 +32,14 @@ function validate(values) {
   return errors;
 }
 
+const startDate = addDays(new Date(), 1)
+let startDateFormatted = format(startDate, 'PPPPp')
+
+
 class BookingForm extends React.Component {
+  
   state = {
-    startDate: new Date(new Date().getTime()+(1*24*60*60*1000)),
+    startDate: startDateFormatted.toString()
   };
 
   render() {
@@ -71,7 +78,7 @@ class BookingForm extends React.Component {
         {/* using the DatePicker component to input the date and time into this field */}
           <Field
             className="input-wrapper---3"
-            name="datetime"
+            name="dateTime"
             component={DatePicker}
           />
         </div>
@@ -79,7 +86,7 @@ class BookingForm extends React.Component {
           <label className="input-wrapper---5" htmlFor="comments">
             Comments
           </label>
-          <Field name="comments" component="input" type="text" />
+          <Field name="comment" component="input" type="text" />
         </div>
         <button
           className="bookingButton"
