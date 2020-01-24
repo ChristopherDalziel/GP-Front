@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { setLocalStorage, getAdminStatus } from "../utils/local-storage";
+import { setLocalStorage, setAdminStatus } from "../utils/local-storage";
 import EmailVerificationForm from "../components/EmailVerificationForm";
 import LoginForm from "../components/loginform";
 import Nav from "../components/Nav";
@@ -22,10 +22,11 @@ const SignIn = props => {
           email,
           password
         }
-      );
-      //storing token in local storage
-      setLocalStorage(response.data);
-      getAdminStatus(response.data);
+      )
+      .then((response) => {
+        setLocalStorage(response.data);
+      })
+      .then(setAdminStatus());
       //redirecting back to previous page
       props.history.push("/");
       window.location.reload(false);
