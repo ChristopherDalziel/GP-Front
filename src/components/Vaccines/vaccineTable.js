@@ -53,6 +53,9 @@ class VaccineTable extends React.Component {
                         <td>{vaccine.description}</td>
                         <td>{vaccine.manufacturer}</td>
                         <td>
+                          <img src={vaccine.imageUrl} />
+                        </td>
+                        <td>
                           {" "}
                           <Link to={"/vaccine/edit/" + vaccine._id}>
                             <button class="adminButton">Edit</button>

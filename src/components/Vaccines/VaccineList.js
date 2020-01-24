@@ -31,7 +31,7 @@ class VaccineList extends React.Component {
                   <div className="productContainer">
                     <div className="productItem" key={index}>
                       <h3>Brand: {vaccine.brand}</h3>
-                      <img></img>
+                      <img src={vaccine.imageUrl}></img>
                       <p>Description: {vaccine.description}</p>
                       <p>Manufacturer {vaccine.manufacturer}</p>
                     </div>
