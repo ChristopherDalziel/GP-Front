@@ -71,7 +71,7 @@ class BookingForm extends React.Component {
         {/* using the DatePicker component to input the date and time into this field */}
           <Field
             className="input-wrapper---3"
-            name="datetime"
+            name="dateTime"
             component={DatePicker}
           />
         </div>
@@ -79,7 +79,7 @@ class BookingForm extends React.Component {
           <label className="input-wrapper---5" htmlFor="comments">
             Comments
           </label>
-          <Field name="comments" component="input" type="text" />
+          <Field name="comment" component="input" type="text" />
         </div>
         <button
           className="bookingButton"
