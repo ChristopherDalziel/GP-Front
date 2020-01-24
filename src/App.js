@@ -13,9 +13,9 @@ import Booking from "./pages/booking";
 
 //Satff
 import Staff from "./pages/staff";
-import StaffList from './components/Staff/StaffList'
-import EditStaff from './components/Staff/EditStaff'
-import CreatStaff from './components/Staff/CreatStaff'
+import StaffList from "./components/Staff/StaffList";
+import EditStaff from "./components/Staff/EditStaff";
+import CreatStaff from "./components/Staff/CreatStaff";
 
 //vaccine
 import CreateVaccine from "./pages/CreateVaccine";
@@ -23,7 +23,8 @@ import EditVaccine from "./pages/EditVaccine";
 import CreateService from "./pages/CreateService";
 import EditService from "./pages/EditService";
 
-import AdminServices from "./pages/admin/AdminServices"
+import AdminServices from "./pages/admin/AdminServices";
+import AdminVaccines from "./pages/admin/AdminVaccines";
 
 const App = () => {
   return (
@@ -56,7 +57,7 @@ const App = () => {
 
           {/* Admin User Routes */}
           <Route path="/admin_services" component={AdminServices} />
-
+          <Route path="/admin_vaccines" component={AdminVaccines} />
         </Switch>
       </BrowserRouter>
     </>
