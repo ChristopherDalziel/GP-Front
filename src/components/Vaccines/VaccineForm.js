@@ -16,19 +16,6 @@ class VaccineForm extends React.Component {
     }
   };
 
-  // checkUploadResult = resultEvent => {
-  //   if (resultEvent === "success") {
-  //     console.log(this.props.currentUser.id);
-  //     this.props
-  //       .postPhoto({
-  //         user_id: this.props.currentUser.id,
-  //         caption: "",
-  //         url: resultEvent.info.secure_url
-  //       })
-  //       .then(this.props.history.push("/"));
-  //   }
-  // };
-
   render() {
     let widget = window.cloudinary.createUploadWidget(
       {
@@ -46,20 +33,11 @@ class VaccineForm extends React.Component {
       widget.open();
     };
 
-    // document.getElementById("upload_widget").addEventListener(
-    //   "click",
-    //   function() {
-    //     widget.open();
-    //   },
-    //   false
-    // );
-
     return (
       <>
         <div>
           <form onSubmit={e => this.onSubmitFunc(e, this.props)}>
             <div>
-              <button onClick={showWidget}>dxfcgvhbjnk</button>
               <label htmlFor="name">Vaccine Brand:</label>
               <Field name="brand" component="input" type="text" />
             </div>
@@ -71,6 +49,7 @@ class VaccineForm extends React.Component {
               <label htmlFor="manufacturer">Vaccine Manufacturer:</label>
               <Field name="manufacturer" component="input" type="text" />
             </div>
+            <button onClick={showWidget}>Upload Image</button> <br></br>
             <button type="submit">Submit</button>
           </form>
         </div>
