@@ -16,12 +16,50 @@ class VaccineForm extends React.Component {
     }
   };
 
+  // checkUploadResult = resultEvent => {
+  //   if (resultEvent === "success") {
+  //     console.log(this.props.currentUser.id);
+  //     this.props
+  //       .postPhoto({
+  //         user_id: this.props.currentUser.id,
+  //         caption: "",
+  //         url: resultEvent.info.secure_url
+  //       })
+  //       .then(this.props.history.push("/"));
+  //   }
+  // };
+
   render() {
+    let widget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: "acloudname10",
+        uploadPreset: "klinik-gp"
+      },
+      (error, result) => {
+        if (!error && result && result.event === "success") {
+          console.log("Done! Here is the image info: ", result.info);
+        }
+      }
+    );
+
+    const showWidget = () => {
+      widget.open();
+    };
+
+    // document.getElementById("upload_widget").addEventListener(
+    //   "click",
+    //   function() {
+    //     widget.open();
+    //   },
+    //   false
+    // );
+
     return (
       <>
         <div>
           <form onSubmit={e => this.onSubmitFunc(e, this.props)}>
             <div>
+              <button onClick={showWidget}>dxfcgvhbjnk</button>
               <label htmlFor="name">Vaccine Brand:</label>
               <Field name="brand" component="input" type="text" />
             </div>
