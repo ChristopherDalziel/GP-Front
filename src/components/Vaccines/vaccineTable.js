@@ -42,6 +42,7 @@ class VaccineTable extends React.Component {
                           <th>Name</th>
                           <th>Description</th>
                           <th>Manufacturer</th>
+                          <th>Image</th>
                           <th>Edit</th>
                           <th>Delete</th>
                         </tr>
@@ -50,6 +51,9 @@ class VaccineTable extends React.Component {
                         <td>{vaccine.brand}</td>
                         <td>{vaccine.description}</td>
                         <td>{vaccine.manufacturer}</td>
+                        <td>
+                          <img src={vaccine.imageUrl}></img>
+                        </td>
                         <td>
                           {" "}
                           <Link to={"/vaccine/edit/" + vaccine._id}>
