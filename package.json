@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.1",
+    "chai": "^4.2.0",
     "date-fns": "^2.9.0",
     "dotenv": "^8.2.0",
     "google-maps-react": "^2.0.2",
@@ -45,6 +46,6 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^3.8.2"
+    "cypress": "^3.8.3"
   }
 }
