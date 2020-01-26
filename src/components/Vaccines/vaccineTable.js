@@ -42,6 +42,7 @@ class VaccineTable extends React.Component {
                           <th>Name</th>
                           <th>Description</th>
                           <th>Manufacturer</th>
+                          <th>Image</th>
                           <th>Edit</th>
                           <th>Delete</th>
                         </tr>
