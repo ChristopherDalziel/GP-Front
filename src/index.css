@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+
+body h1 {
+  font-family: "Raleway", sans-serif;
+}
+
+body h5 {
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+}
