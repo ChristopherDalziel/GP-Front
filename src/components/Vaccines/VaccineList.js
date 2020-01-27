@@ -21,25 +21,31 @@ class VaccineList extends React.Component {
     const { data } = this.state;
 
     return (
-      <div className="pageContainer">
-        <h1>Vaccines:</h1>
+      <>
+        <h1>Vaccines</h1>
         {data
           ? data.map((vaccine, index) => {
               return (
-                <div className="another">
-                  <div className="productContainer">
-                    <div className="productItem" key={index}>
-                      <h3>Brand: {vaccine.brand}</h3>
-                      <img src={vaccine.imageUrl}></img>
-                      <p>Description: {vaccine.description}</p>
-                      <p>Manufacturer {vaccine.manufacturer}</p>
-                    </div>
+                <div className="vaccineContainer">
+                  <div className="singleVaccine" key={index}>
+                    <img src={vaccine.imageUrl}></img>
+                    <p>
+                      <b>Brand: </b>
+                      {vaccine.brand}
+                    </p>
+                    <p>
+                      <b>Manufacturer: </b> {vaccine.manufacturer}
+                    </p>
+                    <p>
+                      <b>Description: </b>
+                      {vaccine.description}
+                    </p>
                   </div>
                 </div>
               );
             })
           : null}
-      </div>
+      </>
     );
   }
 }
