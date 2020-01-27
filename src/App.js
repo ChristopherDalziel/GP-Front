@@ -47,7 +47,7 @@ const App = () => {
         
           <Route path="/admin/staff" component={StaffList} />
           <Route path="/admin/add_staff" component={CreatStaff} />
-          <Route path="/admin/edit_staff/:id" component={EditStaff} />
+          <Route path="/admin/update_staff/:id" component={EditStaff} />
 
           <Route path="/vaccine/create" component={CreateVaccine} />
           <Route path="/vaccine/edit/:id" component={EditVaccine} />

@@ -11,6 +11,7 @@ export default class StaffList extends Component {
     this.state = {
       staffs: []
     };
+   
   }
 
   componentDidMount() {
@@ -27,7 +28,7 @@ export default class StaffList extends Component {
 
   DataTable() {
     return this.state.staffs.map((res, i) => {
-      return <StaffListRow obj={res} key={i} />;
+      return <StaffListRow  obj={res} key={i} />;
     });
   }
 
@@ -37,13 +38,16 @@ export default class StaffList extends Component {
 
       <div>
         <Nav/>
+        <div className="staff-banner">
+         <h1>Staff Management Board</h1>
+        </div>
         <div>
+          
           <table striped bordered hover>
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Introduction</th>
-                
+                <th>Introduction</th>  
               </tr>
             </thead>
             <tbody>

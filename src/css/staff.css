@@ -92,4 +92,20 @@
   margin-bottom:15px !important;
 }
 
+.staff-banner{
+  opacity: .7;
+  font-family: "Raleway", sans-serif;
+  font-size: 28px;
+  box-sizing: border-box;
+  padding-top:100px;
+  text-align: center;
+  height: 30vh;
+  width: 100vw;
+  background-image: url('../assets/banner-staff.jpg');
+  background-size: cover;
+}
+
+
+
+
 

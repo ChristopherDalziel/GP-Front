@@ -5,8 +5,8 @@ import Nav from '../../components/Nav'
 
 
  class CreatStaff extends Component {
-  constructor () {
-    super();
+  constructor (props) {
+    super(props);
     this.state = {
       file: null,
       name:"",
@@ -33,26 +33,29 @@ import Nav from '../../components/Nav'
       name: this.state.name,
       aboutText: this.state.aboutText,
     };
-    axios.post('http://localhost:5000/admin/add_staff', staffObject,
-     {headers: {'Authorization': sessionStorage.getItem('token') }})
-  
+    axios.post('http://localhost:5000/admin/add_staff', staffObject)
+    //  {headers: {'Authorization': sessionStorage.getItem('token') }}
       .then(res => 
         console.log(res.data));
 
     this.setState({ name: '', aboutText: '' })
+
+    this.props.history.push('/admin/staff')
+    window.location.reload(true)
   }
 
-  AWS
+
   submitFile = (event) => {
     event.preventDefault();
     const formData = new FormData();
     formData.append('file', this.state.file[0]);
-    axios.post(process.env.REACT_APP_BACKEND_URL + '/admin/upload_image', formData, {
+    axios.post('http://localhost:5000/admin/upload_image', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
     }).then(response => {
       // handle your response;
+      console.log(response)
     }).catch(error => {
       console.log(error)
       // handle your error
@@ -72,7 +75,7 @@ import Nav from '../../components/Nav'
 
           </div>
 
-          <div className="add_staff">
+          {/* <div className="add_staff">
               <h1>Add a new Staff Here</h1>
               <form onSubmit={this.onSubmit} >
                 <div>
@@ -92,14 +95,14 @@ import Nav from '../../components/Nav'
                     value={this.state.aboutText} 
                     onChange={this.onChangeAboutText}
                   />
-                </div>
-                <div onSubmit={this.submitFile}>
+                </div> */}
+                <form onSubmit={this.submitFile}>
                   <input label='upload file' type='file' className="upload-image" onChange={this.handleFileUpload} />
-                  <button type='submit' className="upload">Upload Image</button>
-                </div>
-                  <button type="submit" >Submit</button>
+                  <button  className="upload">Upload Image</button>
+                </form>
+                  {/* <button type="submit" >Submit</button>
               </form> 
-          </div>
+          </div> */}
 
           
         </div>      
