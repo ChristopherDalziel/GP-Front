@@ -2,6 +2,7 @@ import React from "react";
 import Nav from "../components/Nav";
 
 import "../css/Profile.css";
+import UserAppointments from "../components/users/appointments";
 
 class Profile extends React.Component {
   render() {
@@ -12,7 +13,7 @@ class Profile extends React.Component {
           <div className="container-booking">
             <div className="booking-card">
               <h3>Appointment</h3>
-              <p>Booking info..</p>
+              <UserAppointments />
               <button>Cancel</button>
             </div>
             <div className="booking-card">
