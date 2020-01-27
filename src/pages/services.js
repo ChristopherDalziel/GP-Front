@@ -2,8 +2,6 @@ import React from "react";
 import Nav from "../components/Nav";
 import ServiceList from "../components/Services/serviceList";
 
-import "../css/Services.css";
-
 class Services extends React.Component {
   render() {
     return (
@@ -12,8 +10,8 @@ class Services extends React.Component {
         <div className="services">
           <div className="containerServices">
             <div className="imageServices"></div>
-            <div className="containerServicesCards">
-              <div className="servicesCards">
+            <div className="containerServiceCards">
+              <div className="serviceCards">
                 <ServiceList />
               </div>
             </div>

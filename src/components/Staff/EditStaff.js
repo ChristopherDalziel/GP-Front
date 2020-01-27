@@ -1,11 +1,13 @@
-import React, { Component } from "react";
-import "../../css/staff.css";
-import axios from "axios";
-import Nav from "../../components/Nav";
+import React, {Component} from 'react'
+// import {withRouter} from 'react-router-dom'
+import '../../css/staff.css'
+import axios from 'axios'
+import Nav from '../../components/Nav'
 
-class CreatStaff extends Component {
-  constructor() {
-    super();
+
+ class CreatStaff extends Component {
+  constructor (props) {
+    super(props);
     this.state = {
       file: null,
       name: "",
@@ -29,6 +31,7 @@ class CreatStaff extends Component {
           name: res.data.name,
           aboutText: res.data.aboutText
         });
+     
       })
       .catch(error => {
         console.log(error);
@@ -49,23 +52,18 @@ class CreatStaff extends Component {
       name: this.state.name,
       aboutText: this.state.aboutText
     };
-    axios
-      .put(
-        process.env.REACT_APP_BACKEND_URL +
-          "/admin/upate_staff/" +
-          this.props.match.params.id,
-        staffObject
-      )
-      .then(res => {
-        console.log(res.data);
-        console.log("Staff successfully updated");
+    axios.put('http://localhost:5000/admin/update_staff/' + this.props.match.params.id, staffObject)
+      .then((res) => {
+        console.log(res.data)
+        console.log('Staff successfully updated')
+ 
+      
+      }).catch((error) => {
+        console.log(error)
       })
-      .catch(error => {
-        console.log(error);
-      });
-
-    // Redirect to Staff List
-    this.props.history.push("admin/staff");
+    // Redirect to Staff List 
+    this.props.history.push('/admin/staff')
+    window.location.reload(true)
   }
 
   // AWS
@@ -103,8 +101,8 @@ class CreatStaff extends Component {
                 <label>Staff Name</label> <br />
                 <input
                   type="text"
-                  placeholder="Enter Staff Name"
-                  value={this.state.name}
+                  placeholder={this.state.name}
+                  value={this.state.name} 
                   onChange={this.onChangeName}
                 />
               </div>
@@ -112,27 +110,20 @@ class CreatStaff extends Component {
                 <label>Staff Introduction</label> <br />
                 <textarea
                   type="text"
-                  placeholder="Enter the Staff Information"
-                  value={this.state.aboutText}
+                  placeholder={this.state.aboutText}
+                  value={this.state.aboutText} 
                   onChange={this.onChangeAboutText}
                 />
               </div>
-              <div onSubmit={this.submitFile}>
-                <input
-                  label="upload file"
-                  type="file"
-                  className="upload-image"
-                  onChange={this.handleFileUpload}
-                />
-                <button type="submit" className="upload">
-                  Upload Image
-                </button>
-              </div>
-              <button type="submit">Submit</button>
-            </form>
-          </div>
+              {/* <div onSubmit={this.submitFile}>
+                <input label='upload file' type='file' className="upload-image" onChange={this.handleFileUpload} />
+                <button type='submit' className="upload">Upload Image</button>
+              </div> */}
+                <button type="submit" >Submit</button>
+            </form> 
         </div>
       </div>
+    </div>
     );
   }
 }
