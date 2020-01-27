@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import Nav from "../components/Nav";
 import "../css/register.css";
 import axios from "axios";
-import { setLocalStorage } from '../utils/local-storage';
+import { setLocalStorage } from "../utils/local-storage";
 // import {register} from '../actions/auth'
 // import PropTypes from 'prop-types'
 
-const Register = (props) => {
+const Register = props => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -30,7 +30,7 @@ const Register = (props) => {
   const onSubmit = async e => {
     e.preventDefault();
     if (password !== password2) {
-      setError (<h3 className="error"> "Passwords do not match"</h3>)  
+      setError(<h3 className="error"> "Passwords do not match"</h3>);
     } else {
       const newUser = {
         firstName,
@@ -40,14 +40,15 @@ const Register = (props) => {
         password
       };
       try {
-        await axios.post( process.env.REACT_APP_BACKEND_URL + '/users/register',
-          newUser).then((response) => {
-            alert("Registration successful")
-            setLocalStorage(response.data)
-          })
+        await axios
+          .post(process.env.REACT_APP_BACKEND_URL + "/users/register", newUser)
+          .then(response => {
+            alert("Registration successful");
+            setLocalStorage(response.data);
+          });
       } catch (err) {
-        console.log(err.message)
-        setError('Registration unsuccessful: An error occurred')
+        console.log(err.message);
+        setError("Registration unsuccessful: An error occurred");
       }
     }
   };
@@ -67,7 +68,7 @@ const Register = (props) => {
                   <label>First Name</label> <br />
                   <input
                     type="text"
-                    placeholder="Enter First Name"
+                    placeholder="Enter Your First Name"
                     name="firstName"
                     value={firstName}
                     onChange={e => onChange(e)}
@@ -79,7 +80,7 @@ const Register = (props) => {
                   <br />
                   <input
                     type="text"
-                    placeholder="Enter Last Name"
+                    placeholder="Enter Your Last Name"
                     name="lastName"
                     value={lastName}
                     onChange={e => onChange(e)}
@@ -91,7 +92,7 @@ const Register = (props) => {
                   <br />
                   <input
                     type="text"
-                    placeholder="Enter you Email"
+                    placeholder="Enter Email"
                     name="email"
                     value={email}
                     onChange={e => onChange(e)}
@@ -103,7 +104,7 @@ const Register = (props) => {
                   <br />
                   <input
                     type="text"
-                    placeholder="Enter your Phone Number"
+                    placeholder="Enter Your Phone Number"
                     name="phone"
                     value={phone}
                     onChange={e => onChange(e)}
@@ -115,7 +116,7 @@ const Register = (props) => {
                   <br />
                   <input
                     type="password"
-                    placeholder="Enter the Password"
+                    placeholder="Enter Password"
                     name="password"
                     value={password}
                     onChange={e => onChange(e)}
@@ -127,18 +128,16 @@ const Register = (props) => {
                   <br />
                   <input
                     type="password"
-                    placeholder="confirm the Password"
+                    placeholder="Confirm Password"
                     name="password2"
                     value={password2}
                     onChange={e => onChange(e)}
                     required
                   />
                 </div>
+                <div>{error}</div>
                 <div>
-                  {error}
-                </div>
-                <div>
-                <button type="submit">Sign Up</button>
+                  <button type="submit">Sign Up</button>
                 </div>
                 <h4>
                   Already have an account?
