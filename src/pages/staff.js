@@ -1,26 +1,17 @@
-// import React from 'react'
-// import Nav from '../components/Nav'
-// import '../css/staff.css'
-// import StaffList from '../components/Staff/StaffList'
+// import React from "react";
+// import "../css/staff.css";
+// import StaffList from "../components/Staff/StaffList";
 
-
-
-
-// const  Staff=()=>{
+// const Staff = () => {
 //   return (
 //     <>
-//       <Nav/>
 //       <div className="staffs">
 //         <div className="staff-infor">
-//            <StaffList/>
+//           <StaffList />
 //         </div>
-      
-
 //       </div>
-
 //     </>
-    
-//   )
-// }
+//   );
+// };
 
-// export default Staff
+// export default Staff;

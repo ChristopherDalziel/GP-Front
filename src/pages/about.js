@@ -5,14 +5,6 @@ import "../css/About.css";
 import doctor from "../assets/doctor.jpg";
 
 class About extends React.Component {
-  async componentDidMount() {
-    const response = await fetch(process.env.REACT_APP_BACKEND_URL + "/staffs");
-    const data = await response.json();
-    this.setState({
-      data: data
-    });
-  }
-
   render() {
     return (
       <>
