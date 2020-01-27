@@ -11,16 +11,7 @@ class Profile extends React.Component {
         <Nav />
         <div className="profile">
           <div className="container-booking">
-            <div className="booking-card">
-              <h3>Appointment</h3>
               <UserAppointments />
-              <button>Cancel</button>
-            </div>
-            <div className="booking-card">
-              <h3>Appointment</h3>
-              <p>Booking info..</p>
-              <button>Cancel</button>
-            </div>
           </div>
           <div className="container-profile">
             <div className="content-profile">
