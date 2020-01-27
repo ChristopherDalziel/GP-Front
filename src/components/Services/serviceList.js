@@ -22,24 +22,26 @@ class serviceList extends React.Component {
     const { data } = this.state;
 
     return (
-      <div className="pageContainer">
-        <h1>Services:</h1>
+      <>
+        <h1>Services</h1>
         {data
           ? data.map((service, index) => {
               return (
-                <div className="another">
-                  <div className="productContainer">
-                    <div className="productItem" key={index}>
-                      <h3>Brand: {service.serviceName}</h3>
-                      <img></img>
-                      <p>Description: {service.serviceDescription}</p>
-                    </div>
+                <div className="serviceContainer">
+                  <div className="singleService" key={index}>
+                    <img></img>
+                    <p>
+                      <b>Brand: </b> {service.serviceName}
+                    </p>
+                    <p>
+                      <b>Description: </b> {service.serviceDescription}
+                    </p>
                   </div>
                 </div>
               );
             })
           : null}
-      </div>
+      </>
     );
   }
 }
