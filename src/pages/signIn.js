@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { setLocalStorage } from "../utils/local-storage";
-import EmailVerificationForm from "../components/EmailVerificationForm";
-import LoginForm from "../components/loginform";
+import EmailVerificationForm from "../components/authentication/EmailVerificationForm";
+import LoginForm from "../components/authentication/loginform";
 import Nav from "../components/Nav";
 import "../css/signIn.css";
 
@@ -24,10 +24,9 @@ const SignIn = props => {
       )
       .then((response) => {
         setLocalStorage(response.data);
-        console.log(response.data)
         props.history.push('/')
         window.location.reload(false)
-        //redirecting back to previous page
+        //redirecting back to home page
       })
     } catch (err) {
       setError({

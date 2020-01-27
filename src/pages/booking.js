@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Nav from "../components/Nav";
-import BookingForm from "../components/bookingform";
+import BookingForm from "../components/bookingform/bookingform";
 import addDays from 'date-fns/addDays'
 import format from 'date-fns/format';
 
@@ -44,34 +44,20 @@ class Booking extends React.Component {
 }
 
   bookingSubmit = async (values) => {
-  
+  try {
     const newBooking = values;
-    console.log(newBooking);
-    try {
-      await axios.post(process.env.REACT_APP_BACKEND_URL + "/appointments/new", newBooking)
-      .then((response) => {
-        return <h4>Appointment created: {response.data}</h4>
-      })
-    } catch (err) {
-      console.log(err.message)
-    }
-    try {
-      await axios.post(process.env.REACT_APP_BACKEND_URL + "/mail/appointment", newBooking).then((response) => {
-        if (response.status === 200) {
-          (alert('An email has been sent with your appointment details'))
-        } else {
-          alert('An error occurred: Your booking could not be submitted. Please phone the clinic directly.')
-        }
-      })
+    await axios.post(process.env.REACT_APP_BACKEND_URL + "/appointments/new", newBooking).then((response) => {
+      console.log(response)
+    })
+  } catch (err) {
+    console.log(err)
+  }
 
-    } catch(err) {
-      console.log(err.message)
-    }
-  
-  };
+    // const sendConfirmEmail = axios.post(process.env.REACT_APP_BACKEND_URL + "/mail/appointment", newBooking);
+  }
 
   render() {
-    const {email, firstName, lastName, phone } = this.state;
+    const {email, firstName, lastName, phone, startDate } = this.state;
     return (
       <>
         <Nav />
@@ -85,7 +71,7 @@ class Booking extends React.Component {
                 <h3>If there are any issues with your appointment we will contact you within 24 hours.</h3>
                 </div>
                 <div>
-                <BookingForm onSubmit={this.bookingSubmit} initialValues={{firstName: firstName, lastName: lastName, email: email, phone: phone, comment:''}} />
+                <BookingForm onSubmit={this.bookingSubmit} initialValues={{firstName: firstName, lastName: lastName, email: email, dateTime: startDate, phone: phone, comment:''}} />
               </div>
               <div>
                 <h4>{this.state.errors}</h4>
