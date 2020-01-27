@@ -47,13 +47,16 @@ class Booking extends React.Component {
   try {
     const newBooking = values;
     await axios.post(process.env.REACT_APP_BACKEND_URL + "/appointments/new", newBooking).then((response) => {
-      console.log(response)
+      let bookingDetails = response.data;
+      axios.post(process.env.REACT_APP_BACKEND_URL + "/mail/appointment", bookingDetails).then(
+        this.props.history.push('/success'))
+        .catch((err) => {
+          console.log(err.message)
+        })
     })
   } catch (err) {
     console.log(err)
-  }
-
-    // const sendConfirmEmail = axios.post(process.env.REACT_APP_BACKEND_URL + "/mail/appointment", newBooking);
+    }
   }
 
   render() {

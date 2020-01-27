@@ -10,6 +10,7 @@ import SignIn from "./pages/signIn";
 import Vaccines from "./pages/vaccines";
 import Services from "./pages/services";
 import Booking from "./pages/booking";
+import SuccessPage from "./pages/success";
 
 //Staff
 import Staff from "./pages/staff";
@@ -43,6 +44,7 @@ const App = () => {
           <Route path="/vaccines" component={Vaccines} />
           <Route path="/services" component={Services} />
           <Route path="/booking" component={Booking} />
+          <Route exact path="/success" component={SuccessPage} />
 
           <Route path="/staff" component={Staff} />
           <Route path="/admin/staff" component={StaffList} />
@@ -56,6 +58,7 @@ const App = () => {
 
           <Route path="/vaccine/edit/:id" component={EditVaccine} />
           <Route path="/service/edit/:id" component={EditService} />
+
         </Switch>
       </BrowserRouter>
     </>
