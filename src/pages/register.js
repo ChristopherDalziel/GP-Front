@@ -45,6 +45,7 @@ const Register = props => {
           .then(response => {
             alert("Registration successful");
             setLocalStorage(response.data);
+            props.history.push("/");
           });
       } catch (err) {
         console.log(err.message);
