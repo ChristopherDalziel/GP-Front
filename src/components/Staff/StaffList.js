@@ -1,51 +1,65 @@
 import React, { Component } from "react";
-import axios from "axios";
-import StaffListRow from "./StaffListRow";
-import Nav from "../Nav";
+import axios from 'axios';
+import StaffListRow from './StaffListRow';
+import Nav from '../Nav'
+
 
 export default class StaffList extends Component {
+
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       staffs: []
     };
+   
   }
 
   componentDidMount() {
-    axios
-      .get(process.env.REACT_APP_BACKEND_URL + "/admin/staff")
+    axios.get('http://localhost:5000/admin/staff')
       .then(res => {
         this.setState({
           staffs: res.data
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
-      });
+      })
   }
 
   DataTable() {
     return this.state.staffs.map((res, i) => {
-      return <StaffListRow obj={res} key={i} />;
+      return <StaffListRow  obj={res} key={i} />;
     });
   }
 
+
   render() {
     return (
+
       <div>
-        <Nav />
+        <Nav/>
+        <div className="staff-banner">
+         <h1>Staff Management Board</h1>
+        </div>
         <div>
-          <table striped bordered hover>
+          
+          <table >
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Introduction</th>
+                <th>Introduction</th>  
               </tr>
             </thead>
-            <tbody>{this.DataTable()}</tbody>
+            <tbody>
+              {this.DataTable()}
+            </tbody>
           </table>
         </div>
       </div>
+   
     );
   }
 }
+
+
+

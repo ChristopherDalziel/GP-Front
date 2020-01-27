@@ -47,7 +47,7 @@ const App = () => {
           <Route path="/staff" component={Staff} />
           <Route path="/admin/staff" component={StaffList} />
           <Route path="/admin/add_staff" component={CreatStaff} />
-          <Route path="/admin/edit_staff/:id" component={EditStaff} />
+          <Route path="/admin/update_staff/:id" component={EditStaff} />
 
           {/* Admin User Routes */}
           <Route path="/admin_dashboard" component={AdminDashboard} />
