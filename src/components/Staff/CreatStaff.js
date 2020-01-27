@@ -75,7 +75,7 @@ import Nav from '../../components/Nav'
 
           </div>
 
-          {/* <div className="add_staff">
+          <div className="add_staff">
               <h1>Add a new Staff Here</h1>
               <form onSubmit={this.onSubmit} >
                 <div>
@@ -95,14 +95,14 @@ import Nav from '../../components/Nav'
                     value={this.state.aboutText} 
                     onChange={this.onChangeAboutText}
                   />
-                </div> */}
+                </div>
                 <form onSubmit={this.submitFile}>
                   <input label='upload file' type='file' className="upload-image" onChange={this.handleFileUpload} />
                   <button  className="upload">Upload Image</button>
                 </form>
-                  {/* <button type="submit" >Submit</button>
+                  <button type="submit" >Submit</button>
               </form> 
-          </div> */}
+          </div>
 
           
         </div>      
