@@ -1,5 +1,4 @@
 .nav {
-  padding-top: 8px;
   height: 5vh;
   width: 100%;
   display: flex;
@@ -7,7 +6,6 @@
   align-items: center;
   text-transform: uppercase;
   font-size: 14px;
- 
 }
 
 .nav ul {
@@ -21,7 +19,7 @@
 
 /* Position and spacing for Navigation bar links */
 .nav ul li a {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   padding: 3px 0px;
   margin: 0 28px;
   position: relative;
@@ -58,52 +56,35 @@
   transform: scaleX(1);
 }
 
-.dropdown{
-position:relative;
-display:inline-block;
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.dropdown-content{
-padding:10px;
-cursor: pointer;
-width:120px;
-background: #e1eeff;
-position:absolute;
-display:none;
+.dropdown-content {
+  padding: 10px;
+  cursor: pointer;
+  width: 120px;
+  background: #e1eeff;
+  position: absolute;
+  display: none;
 }
 
-.dropdown-content a{
-width: 120;
-display: inline-block;
-margin-bottom: 8px;
-text-decoration: none;
-font-size: 15px;
-color:black;
-font-family: "Raleway", sans-serif;
-}
-
-
-/* a:hover{
-background: #398ffc;
-} */
-
-.dropdown span{
-font-size: 17px;
-font-family: "Raleway", sans-serif;
-}
-
-.dropdown:hover .dropdown-content{
-display:block;
-}
-
-
-/* Old CSS if we want to revert before end of the project */
-/* Navigation bar add background and change font cover on hover */
-/* .nav ul li a:hover {
-  color: white;
-  background: black;
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out;
+.dropdown-content a {
+  width: 120;
+  display: inline-block;
+  margin-bottom: 8px;
   text-decoration: none;
-} */
+  font-size: 15px;
+  color: black;
+  font-family: "Raleway", sans-serif;
+}
+
+.dropdown span {
+  font-size: 17px;
+  font-family: "Raleway", sans-serif;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

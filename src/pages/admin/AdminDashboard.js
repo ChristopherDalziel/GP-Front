@@ -1,10 +1,15 @@
 import React from "react";
+import StaffList from "../../components/Staff/StaffList";
+import StaffListRow from "../../components/Staff/StaffListRow";
+import EditStaff from "../../components/Staff/EditStaff";
 
 class AdminDashboard extends React.Component {
   render() {
     return (
       <>
-        <h1>admin dash</h1>
+        {/* <EditStaff /> */}
+        <StaffList />
+        {/* <StaffListRow /> */}
       </>
     );
   }

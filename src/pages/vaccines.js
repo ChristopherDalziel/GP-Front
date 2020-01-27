@@ -2,8 +2,6 @@ import React from "react";
 import Nav from "../components/Nav";
 import VaccineList from "../components/Vaccines/VaccineList";
 
-// import "../css/Vaccines.css";
-
 class Vaccines extends React.Component {
   render() {
     return (
@@ -18,7 +16,6 @@ class Vaccines extends React.Component {
               </div>
             </div>
           </div>
-          x
         </div>
       </>
     );

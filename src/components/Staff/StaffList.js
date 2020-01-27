@@ -1,28 +1,27 @@
 import React, { Component } from "react";
-import axios from 'axios';
-import StaffListRow from './StaffListRow';
-import Nav from '../Nav'
-
+import axios from "axios";
+import StaffListRow from "./StaffListRow";
+import Nav from "../Nav";
 
 export default class StaffList extends Component {
-
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       staffs: []
     };
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/admin/staff')
+    axios
+      .get(process.env.REACT_APP_BACKEND_URL + "/admin/staff")
       .then(res => {
         this.setState({
           staffs: res.data
         });
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
-      })
+      });
   }
 
   DataTable() {
@@ -31,31 +30,22 @@ export default class StaffList extends Component {
     });
   }
 
-
   render() {
     return (
-
       <div>
-        <Nav/>
+        <Nav />
         <div>
           <table striped bordered hover>
             <thead>
               <tr>
                 <th>Name</th>
                 <th>Introduction</th>
-                
               </tr>
             </thead>
-            <tbody>
-              {this.DataTable()}
-            </tbody>
+            <tbody>{this.DataTable()}</tbody>
           </table>
         </div>
       </div>
-   
     );
   }
 }
-
-
-
