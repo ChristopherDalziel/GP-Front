@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { setLocalStorage, setAdminStatus } from "../utils/local-storage";
+import { setLocalStorage } from "../utils/local-storage";
 import EmailVerificationForm from "../components/EmailVerificationForm";
 import LoginForm from "../components/loginform";
 import Nav from "../components/Nav";
@@ -16,20 +16,19 @@ const SignIn = props => {
     try {
       e.preventDefault();
       //response should return a token if successful
-      const response = await axios.post(
-        process.env.REACT_APP_BACKEND_URL + "/users/login",
-        {
+      await axios
+        .post(process.env.REACT_APP_BACKEND_URL + "/users/login", {
           email,
           password
         }
       )
       .then((response) => {
         setLocalStorage(response.data);
+        console.log(response.data)
+        props.history.push('/')
+        window.location.reload(false)
+        //redirecting back to previous page
       })
-      .then(setAdminStatus());
-      //redirecting back to previous page
-      props.history.push("/");
-      window.location.reload(false);
     } catch (err) {
       setError({
         msg: err.message
@@ -37,7 +36,7 @@ const SignIn = props => {
     }
   };
 
-//if the password reset form is submitted
+  //if the password reset form is submitted
   const onSubmitEmailVerificationForm = async e => {
     try {
       e.preventDefault();

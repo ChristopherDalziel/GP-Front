@@ -10,8 +10,8 @@ import Nav from '../../components/Nav'
     super(props);
     this.state = {
       file: null,
-      name:"",
-      aboutText:''
+      name: "",
+      aboutText: ""
     };
 
     this.onChangeName = this.onChangeName.bind(this);
@@ -20,32 +20,37 @@ import Nav from '../../components/Nav'
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/admin/edit_staff/' + this.props.match.params.id)
+    axios
+      .get(
+        process.env.REACT_APP_BACKEND_URL +
+          "/admin/edit_staff/" +
+          this.props.match.params.id
+      )
       .then(res => {
         this.setState({
           name: res.data.name,
-          aboutText: res.data.aboutText, 
+          aboutText: res.data.aboutText
         });
      
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
-      })
+      });
   }
 
   onChangeName(e) {
-    this.setState({name: e.target.value})
+    this.setState({ name: e.target.value });
   }
 
   onChangeAboutText(e) {
-    this.setState({aboutText: e.target.value})
+    this.setState({ aboutText: e.target.value });
   }
 
   onSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     const staffObject = {
       name: this.state.name,
-      aboutText: this.state.aboutText,
+      aboutText: this.state.aboutText
     };
     axios.put('http://localhost:5000/admin/update_staff/' + this.props.match.params.id, staffObject)
       .then((res) => {
@@ -60,7 +65,6 @@ import Nav from '../../components/Nav'
     this.props.history.push('/admin/staff')
     window.location.reload(true)
   }
-  
 
   // AWS
   // submitFile = (event) => {
@@ -82,19 +86,17 @@ import Nav from '../../components/Nav'
   // handleFileUpload = (event) => {
   //   this.setState({file: event.target.files});
   // }
-   
+
   render() {
     return (
       <div>
-      <Nav/>
-      <div className="staffs">
-         <div className="staff-infor">
+        <Nav />
+        <div className="staffs">
+          <div className="staff-infor"></div>
 
-        </div>
-
-        <div className="add_staff">
+          <div className="add_staff">
             <h1>Edit Staff Information Here</h1>
-            <form onSubmit={this.onSubmit} >
+            <form onSubmit={this.onSubmit}>
               <div>
                 <label>Staff Name</label> <br />
                 <input
@@ -120,24 +122,10 @@ import Nav from '../../components/Nav'
                 <button type="submit" >Submit</button>
             </form> 
         </div>
-
-        
-      </div>      
+      </div>
     </div>
-    
-      
-      
-    )
+    );
   }
 }
 
-export default CreatStaff
-
-
-
-
-    
-
-
-    
-
+export default CreatStaff;

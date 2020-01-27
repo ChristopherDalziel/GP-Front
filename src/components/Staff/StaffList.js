@@ -43,7 +43,7 @@ export default class StaffList extends Component {
         </div>
         <div>
           
-          <table striped bordered hover>
+          <table >
             <thead>
               <tr>
                 <th>Name</th>

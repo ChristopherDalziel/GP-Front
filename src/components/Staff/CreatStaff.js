@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
-import '../../css/staff.css'
-import axios from 'axios'
-import Nav from '../../components/Nav'
+import React, { Component } from "react";
+import "../../css/staff.css";
+import axios from "axios";
+import Nav from "../../components/Nav";
 
 
  class CreatStaff extends Component {
@@ -9,8 +9,8 @@ import Nav from '../../components/Nav'
     super(props);
     this.state = {
       file: null,
-      name:"",
-      aboutText:''
+      name: "",
+      aboutText: ""
     };
 
     this.onChangeName = this.onChangeName.bind(this);
@@ -18,20 +18,20 @@ import Nav from '../../components/Nav'
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-   // SEND STAFF DATA 
+  // SEND STAFF DATA
   onChangeName(e) {
-    this.setState({name: e.target.value})
+    this.setState({ name: e.target.value });
   }
 
   onChangeAboutText(e) {
-    this.setState({aboutText: e.target.value})
+    this.setState({ aboutText: e.target.value });
   }
 
   onSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     const staffObject = {
       name: this.state.name,
-      aboutText: this.state.aboutText,
+      aboutText: this.state.aboutText
     };
     axios.post('http://localhost:5000/admin/add_staff', staffObject)
     //  {headers: {'Authorization': sessionStorage.getItem('token') }}
@@ -62,18 +62,12 @@ import Nav from '../../components/Nav'
     });
   }
 
-  handleFileUpload = (event) => {
-    this.setState({file: event.target.files});
-  }
-   
   render() {
     return (
       <div>
-        <Nav/>
+        <Nav />
         <div className="staffs">
-           <div className="staff-infor">
-
-          </div>
+          <div className="staff-infor"></div>
 
           <div className="add_staff">
               <h1>Add a new Staff Here</h1>
@@ -103,22 +97,10 @@ import Nav from '../../components/Nav'
                   <button type="submit" >Submit</button>
               </form> 
           </div>
-
-          
-        </div>      
+        </div>
       </div>
-      
-      
-    )
+    );
   }
 }
 
-export default CreatStaff
-
-
-
-
-    
-
-
-    
+export default CreatStaff;

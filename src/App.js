@@ -11,19 +11,19 @@ import Vaccines from "./pages/vaccines";
 import Services from "./pages/services";
 import Booking from "./pages/booking";
 
-//Satff
+//Staff
 import Staff from "./pages/staff";
-import StaffList from './components/Staff/StaffList'
-import EditStaff from './components/Staff/EditStaff'
-import CreatStaff from './components/Staff/CreatStaff'
+import StaffList from "./components/Staff/StaffList";
+import EditStaff from "./components/Staff/EditStaff";
+import CreatStaff from "./components/Staff/CreatStaff";
 
-//vaccine
-import CreateVaccine from "./pages/CreateVaccine";
+// Edit Vaccines & Services (For Admin)
 import EditVaccine from "./pages/EditVaccine";
-import CreateService from "./pages/CreateService";
 import EditService from "./pages/EditService";
 
-import AdminServices from "./pages/admin/AdminServices"
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminServices from "./pages/admin/AdminServices";
+import AdminVaccines from "./pages/admin/AdminVaccines";
 
 const App = () => {
   return (
@@ -44,19 +44,18 @@ const App = () => {
           <Route path="/services" component={Services} />
           <Route path="/booking" component={Booking} />
 
-        
+          <Route path="/staff" component={Staff} />
           <Route path="/admin/staff" component={StaffList} />
           <Route path="/admin/add_staff" component={CreatStaff} />
           <Route path="/admin/update_staff/:id" component={EditStaff} />
 
-          <Route path="/vaccine/create" component={CreateVaccine} />
-          <Route path="/vaccine/edit/:id" component={EditVaccine} />
-          <Route path="/service/create" component={CreateService} />
-          <Route path="/service/edit/:id" component={EditService} />
-
           {/* Admin User Routes */}
+          <Route path="/admin_dashboard" component={AdminDashboard} />
           <Route path="/admin_services" component={AdminServices} />
+          <Route path="/admin_vaccines" component={AdminVaccines} />
 
+          <Route path="/vaccine/edit/:id" component={EditVaccine} />
+          <Route path="/service/edit/:id" component={EditService} />
         </Switch>
       </BrowserRouter>
     </>

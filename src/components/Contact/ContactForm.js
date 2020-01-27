@@ -13,43 +13,30 @@ class ContactForm extends React.Component {
   render() {
     return (
       <>
-        <h1>Contact Us</h1>
+        <h1>Contact Us</h1> <br />
         <form onSubmit={this.handleSubmit}>
-          <div>
-            <label className="input-wrapper--1" htmlFor="first_name">
-              First Name
-            </label>
+          <div className="input-wrapper--1" htmlFor="first_name">
+            <label>First Name</label> <br />
             <Field name="first_name" component="input" type="text" />
           </div>
-          <div>
-            <label className="input-wrapper--1" htmlFor="last_name">
-              Last Name
-            </label>
+          <div className="input-wrapper--1" htmlFor="last_name">
+            <label>Last Name</label> <br />
             <Field name="last_name" component="input" type="text" />
           </div>
-          <div>
-            <label className="input-wrapper--2" htmlFor="contact_number">
-              Contact Number
-            </label>
+          <div className="input-wrapper--2" htmlFor="contact_number">
+            <label>Contact Number</label>
             <Field name="contact_number" component="input" type="text" />
           </div>
-          <div>
-            <label className="input-wrapper--2-5" htmlFor="subject">
-              Subject
-              <br></br>
-            </label>
+          <div className="input-wrapper--2-5" htmlFor="subject">
+            <label>Subject</label> <br />
             <Field name="subject" component="input" type="text" />
           </div>
-          <div>
-            <label className="input-wrapper--3" htmlFor="email">
-              Email Address
-            </label>
+          <div className="input-wrapper--3" htmlFor="email">
+            <label>Email Address</label> <br />
             <Field name="email" component="input" type="text" />
           </div>
-          <div>
-            <label className="input-wrapper--4" htmlFor="message">
-              Message <br></br>
-            </label>
+          <div className="input-wrapper--4" htmlFor="message">
+            <label>Message</label> <br />
             <Field id="message" name="message" component="input" type="text" />
           </div>
           <button type="submit">Submit</button>

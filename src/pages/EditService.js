@@ -23,8 +23,8 @@ class EditService extends React.Component {
         updatedService
       );
       history.push("/services");
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
     }
   }
 
