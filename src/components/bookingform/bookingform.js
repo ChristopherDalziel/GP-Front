@@ -95,7 +95,7 @@ class BookingForm extends React.Component {
         </div>
         <div>
           <label className="input-wrapper---5" htmlFor="comments">
-            Comments
+            Comments (e.g. What is this appointment for?)
           </label>
           <Field name="comment" component={this.renderField} type="text" />
         </div>
