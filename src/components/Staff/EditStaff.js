@@ -51,7 +51,8 @@ class CreatStaff extends Component {
     };
     axios
       .put(
-        "http://localhost:5000/admin/update_staff/" +
+        process.env.REACT_APP_BACKEND_URL +
+          "admin/update_staff/" +
           this.props.match.params.id,
         staffObject
       )
@@ -102,7 +103,7 @@ class CreatStaff extends Component {
                   placeholder={this.state.name}
                   value={this.state.name}
                   onChange={this.onChangeName}
-                />
+                ></input>
               </div>
               <div>
                 <label>Staff Introduction</label> <br />

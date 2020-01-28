@@ -78,6 +78,7 @@ class CreatStaff extends Component {
               <div>
                 <label>Staff Name</label> <br />
                 <input
+                  name="add_staff"
                   type="text"
                   placeholder="Enter Staff Name"
                   value={this.state.name}

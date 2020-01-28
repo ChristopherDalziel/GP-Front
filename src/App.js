@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./pages/home";
+import Nav from "./components/Nav";
 import Contact from "./pages/contact";
 import ResetPassword from "./pages/resetpassword";
 import Profile from "./pages/profile";
@@ -16,16 +17,14 @@ import SuccessPage from "./pages/success";
 import Staff from "./pages/staff";
 import StaffList from "./components/Staff/StaffList";
 import EditStaff from "./components/Staff/EditStaff";
-import CreatStaff from "./components/Staff/CreatStaff";
+import CreateStaff from "./components/Staff/CreateStaff";
 
 // Edit Vaccines & Services (For Admin)
 import EditVaccine from "./pages/EditVaccine";
 import EditService from "./pages/EditService";
 
-import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminServices from "./pages/admin/AdminServices";
 import AdminVaccines from "./pages/admin/AdminVaccines";
-import Nav from "./components/Nav";
 
 const App = () => {
   return (
@@ -50,13 +49,13 @@ const App = () => {
 
           <Route path="/staff" component={Staff} />
           <Route path="/admin/staff" component={StaffList} />
-          <Route path="/admin/add_staff" component={CreatStaff} />
+          <Route path="/admin/add_staff" component={CreateStaff} />
           <Route path="/admin/update_staff/:id" component={EditStaff} />
 
           {/* Admin User Routes */}
-          <Route path="/admin_dashboard" component={AdminDashboard} />
-          <Route path="/admin_services" component={AdminServices} />
-          <Route path="/admin_vaccines" component={AdminVaccines} />
+          {/* <Route path="/admin_dashboard" component={AdminDashboard} /> */}
+          <Route path="/admin/services" component={AdminServices} />
+          <Route path="/admin/vaccines" component={AdminVaccines} />
 
           <Route path="/vaccine/edit/:id" component={EditVaccine} />
           <Route path="/service/edit/:id" component={EditService} />
