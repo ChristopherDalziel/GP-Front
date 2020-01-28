@@ -13,7 +13,7 @@ export default class StaffList extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/admin/staff")
+      .get(process.env.REACT_APP_BACKEND_URL + "/admin/staff")
       .then(res => {
         this.setState({
           staffs: res.data

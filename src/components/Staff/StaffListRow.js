@@ -10,10 +10,14 @@ export default class StaffListRow extends Component {
 
   deleteStaff() {
     axios
-      .delete("http://localhost:5000/admin/delete_staff/" + this.props.obj._id)
+      .delete(
+        process.env.REACT_APP_BACKEND_URL +
+          "/admin/delete_staff/" +
+          this.props.obj._id
+      )
       .then(res => {
         console.log("Staff successfully deleted!");
-        window.location.replace("/admin_dashboard");
+        window.location.replace("/admin/staff");
       })
       .catch(error => {
         console.log(error);
@@ -24,7 +28,9 @@ export default class StaffListRow extends Component {
       <tr>
         <td>{this.props.obj.name}</td>
         <td>{this.props.obj.aboutText}</td>
-        <td><img src={this.props.obj.imageUrl} alt=""/></td>
+        <td>
+          <img src={this.props.obj.imageUrl} alt="" />
+        </td>
 
         <td>
           <Link to={"/admin/update_staff/" + this.props.obj._id}>Edit</Link>

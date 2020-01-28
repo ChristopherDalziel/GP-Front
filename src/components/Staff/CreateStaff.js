@@ -9,7 +9,7 @@ class CreatStaff extends Component {
       file: null,
       name: "",
       aboutText: "",
-      imageUrl:''
+      imageUrl: ""
     };
 
     this.onChangeName = this.onChangeName.bind(this);
@@ -31,11 +31,10 @@ class CreatStaff extends Component {
     const staffObject = {
       name: this.state.name,
       aboutText: this.state.aboutText,
-      imageUrl:this.state.imageUrl
-    
+      imageUrl: this.state.imageUrl
     };
     axios
-      .post("http://localhost:5000/admin/add_staff", staffObject)
+      .post(process.env.REACT_APP_BACKEND_URL + "/admin/add_staff", staffObject)
       //  {headers: {'Authorization': sessionStorage.getItem('token') }}
       .then(res => console.log(res.data));
 
@@ -44,8 +43,6 @@ class CreatStaff extends Component {
     this.props.history.push("/admin/staff");
     window.location.reload(true);
   }
-
-  
 
   render() {
     let widget = window.cloudinary.createUploadWidget(
@@ -56,8 +53,7 @@ class CreatStaff extends Component {
       (error, result) => {
         if (!error && result && result.event === "success") {
           console.log("Done! Here is the image info: ", result.info.url);
-          this.setState({imageUrl:result.info.url})
-
+          this.setState({ imageUrl: result.info.url });
         }
       }
     );
@@ -65,7 +61,6 @@ class CreatStaff extends Component {
     const showWidget = () => {
       widget.open();
     };
-
 
     return (
       <div>
@@ -94,8 +89,8 @@ class CreatStaff extends Component {
                   onChange={this.onChangeAboutText}
                 />
               </div>
-              <a onClick={showWidget}>Upload Image</a> 
-          
+              <a onClick={showWidget}>Upload Image</a>
+
               <button type="submit">Submit</button>
             </form>
           </div>
