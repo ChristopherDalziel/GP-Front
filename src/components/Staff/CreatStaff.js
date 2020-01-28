@@ -8,7 +8,8 @@ class CreatStaff extends Component {
     this.state = {
       file: null,
       name: "",
-      aboutText: ""
+      aboutText: "",
+      imageUrl:''
     };
 
     this.onChangeName = this.onChangeName.bind(this);
@@ -29,7 +30,9 @@ class CreatStaff extends Component {
     e.preventDefault();
     const staffObject = {
       name: this.state.name,
-      aboutText: this.state.aboutText
+      aboutText: this.state.aboutText,
+      imageUrl:this.state.imageUrl
+    
     };
     axios
       .post("http://localhost:5000/admin/add_staff", staffObject)
@@ -42,33 +45,29 @@ class CreatStaff extends Component {
     window.location.reload(true);
   }
 
-  submitFile = event => {
-    event.preventDefault();
-    const formData = new FormData();
-    formData.append("file", this.state.file[0]);
-    axios
-      .post("http://localhost:5000/admin/upload_image", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data"
-        }
-      })
-      .then(response => {
-        // handle your response;
-        console.log(response);
-      })
-      .catch(error => {
-        console.log(error);
-        // handle your error
-      });
-  };
+  
 
   render() {
-    return (
+    let widget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: "acloudname10",
+        uploadPreset: "klinik-gp"
+      },
+      (error, result) => {
+        if (!error && result && result.event === "success") {
+          console.log("Done! Here is the image info: ", result.info.url);
+          this.setState({imageUrl:result.info.url})
 
-    //  <form onSubmit={this.submitFile}>
-    //   <input label='upload file' type='file' className="upload-image" onChange={this.handleFileUpload} />
-    //   <button  className="upload">Upload Image</button>
-    // </form>
+        }
+      }
+    );
+
+    const showWidget = () => {
+      widget.open();
+    };
+
+
+    return (
       <div>
         <div className="staffs">
           <div className="staff-infor"></div>
@@ -94,15 +93,8 @@ class CreatStaff extends Component {
                   onChange={this.onChangeAboutText}
                 />
               </div>
-              <form onSubmit={this.submitFile}>
-                <input
-                  label="upload file"
-                  type="file"
-                  className="upload-image"
-                  onChange={this.handleFileUpload}
-                />
-                <button className="upload">Upload Image</button>
-              </form>
+              <a onClick={showWidget}>Upload Image</a> 
+          
               <button type="submit">Submit</button>
             </form>
           </div>

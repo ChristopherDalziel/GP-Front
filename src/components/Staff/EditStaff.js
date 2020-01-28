@@ -67,28 +67,26 @@ class CreatStaff extends Component {
     window.location.reload(true);
   }
 
-  // AWS
-  // submitFile = (event) => {
-  //   event.preventDefault();
-  //   const formData = new FormData();
-  //   formData.append('file', this.state.file[0]);
-  //   axios.post(process.env.REACT_APP_BACKEND_URL + '/admin/upload_image', formData, {
-  //     headers: {
-  //       'Content-Type': 'multipart/form-data'
-  //     }
-  //   }).then(response => {
-  //     // handle your response;
-  //   }).catch(error => {
-  //     console.log(error)
-  //     // handle your error
-  //   });
-  // }
-
-  // handleFileUpload = (event) => {
-  //   this.setState({file: event.target.files});
-  // }
 
   render() {
+
+    let widget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: "acloudname10",
+        uploadPreset: "klinik-gp"
+      },
+      (error, result) => {
+        if (!error && result && result.event === "success") {
+          console.log("Done! Here is the image info: ", result.info.url);
+          this.setState({imageUrl:result.info.url})
+
+        }
+      }
+    );
+
+    const showWidget = () => {
+      widget.open();
+    };
     return (
       <div>
         <div className="staffs">
@@ -115,10 +113,8 @@ class CreatStaff extends Component {
                   onChange={this.onChangeAboutText}
                 />
               </div>
-              {/* <div onSubmit={this.submitFile}>
-                <input label='upload file' type='file' className="upload-image" onChange={this.handleFileUpload} />
-                <button type='submit' className="upload">Upload Image</button>
-              </div> */}
+              <a onClick={showWidget}>Upload Image</a> 
+             
               <button type="submit">Submit</button>
             </form>
           </div>
