@@ -1,8 +1,7 @@
-// import "../../css/register.css";
 import React from "react";
 import { Field, reduxForm } from "redux-form";
 import normalizePhone from "../normalizePhone";
-
+import "../../css/register.css";
 
 //form validation
 function validate(values) {
@@ -19,37 +18,35 @@ function validate(values) {
   }
 
   if (!values.phone) {
-    errors.phone = "A phone number is required im case the clinic needs to contact you regarding any issues";
+    errors.phone =
+      "A phone number is required im case the clinic needs to contact you regarding any issues";
   }
 
   if (!values.password) {
-    errors.password = "Password required"
+    errors.password = "Password required";
   } else if (values.password.length < 8) {
-    errors.password = "Password must have a minimum of 8 characters"
+    errors.password = "Password must have a minimum of 8 characters";
   }
-
 
   if (!values.password2) {
-    errors.password2 = "Password confirmation required"
+    errors.password2 = "Password confirmation required";
   }
 
-  if (values.password !== values.password2 ) {
-    errors.password2 = "Passwords do not match"
+  if (values.password !== values.password2) {
+    errors.password2 = "Passwords do not match";
   }
 
   return errors;
 }
 class RegistrationForm extends React.Component {
-
-  renderField({input, label, type, meta: {touched, error, warning}}) {
-
-    return(
-        <div>
-          <input {...input} placeholder={label} type={type} label={label} /> 
-          {touched &&
-           ((error && <span style={{color: "red"}}>{error}</span>) ||
-            (warning && <span style={{color: "red"}}>{warning}</span>))}
-        </div>
+  renderField({ input, label, type, meta: { touched, error, warning } }) {
+    return (
+      <div>
+        <input {...input} placeholder={label} type={type} label={label} />
+        {touched &&
+          ((error && <span style={{ color: "red" }}>{error}</span>) ||
+            (warning && <span style={{ color: "red" }}>{warning}</span>))}
+      </div>
     );
   }
 
@@ -86,12 +83,16 @@ class RegistrationForm extends React.Component {
           />
         </div>
         <div>
-          <label className = "input-wrapper-5"> Password</label>
+          <label className="input-wrapper-5"> Password</label>
           <Field name="password" component={this.renderField} type="password" />
         </div>
         <div>
           <label className="input-wrapper-6">Confirm Password</label>
-          <Field name="password2" component={this.renderField} type="password" />
+          <Field
+            name="password2"
+            component={this.renderField}
+            type="password"
+          />
         </div>
 
         <button

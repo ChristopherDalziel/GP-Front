@@ -1,20 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import axios from "axios";
 import { Field, reduxForm, getFormValues } from "redux-form";
 
 class VaccineForm extends React.Component {
-  
-  // async handleImageUpload() {
-  //   const data = new FormData();
-  //   data.append("file", vaccine.imageUrl);
-  //   data.append("upload_preset", "klinik-gp");
-  //   data.append("cloud_name", "acloudname10");
-  //   const response = await axios.post(process.env.CLOUDINARY_URL, data);
-  //   const imageUrl = response.data.url;
-  //   return imageUrl;
-  // }
-
   onSubmitFunc = (e, props) => {
     e.preventDefault();
     if (this.props.match.path === "/vaccine/edit/:id") {
@@ -37,7 +25,6 @@ class VaccineForm extends React.Component {
       (error, result) => {
         if (!error && result && result.event === "success") {
           console.log("Done! Here is the image info: ", result.info.url);
-
         }
       }
     );
