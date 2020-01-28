@@ -77,13 +77,13 @@ const Nav = props => {
     return (
       <>
         <li className="two">
-          <Link to="/admin_dashboard">Admin Dashboard</Link>
+          <Link to="/admin/staff">Admin Dashboard</Link>
         </li>
         <li>
-          <Link to="/admin_services">Admin Services</Link>
+          <Link to="/admin/services">Admin Services</Link>
         </li>
         <li>
-          <Link to="/admin_vaccines">Admin Vaccines</Link>
+          <Link to="/admin/vaccines">Admin Vaccines</Link>
         </li>
       </>
     );

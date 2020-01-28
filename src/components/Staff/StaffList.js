@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import StaffListRow from "./StaffListRow";
 
@@ -46,6 +47,7 @@ export default class StaffList extends Component {
             <tbody>{this.DataTable()}</tbody>
           </table>
         </div>
+        <Link to="/admin/add_staff">Add New Staff Member</Link>
       </div>
     );
   }
