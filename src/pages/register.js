@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 // import {connect} from 'react-redux'
-import Nav from "../components/Nav";
 import "../css/register.css";
 import axios from "axios";
 import { setLocalStorage } from "../utils/local-storage";
@@ -56,7 +55,6 @@ const Register = props => {
 
   return (
     <Fragment>
-      <Nav />
       <div className="signUp">
         <div className="container">
           <div className="imageSignUp"></div>

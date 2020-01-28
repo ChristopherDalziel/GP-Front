@@ -1,12 +1,10 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 // import {withRouter} from 'react-router-dom'
-import '../../css/staff.css'
-import axios from 'axios'
-import Nav from '../../components/Nav'
+import "../../css/staff.css";
+import axios from "axios";
 
-
- class CreatStaff extends Component {
-  constructor (props) {
+class CreatStaff extends Component {
+  constructor(props) {
     super(props);
     this.state = {
       file: null,
@@ -31,7 +29,6 @@ import Nav from '../../components/Nav'
           name: res.data.name,
           aboutText: res.data.aboutText
         });
-     
       })
       .catch(error => {
         console.log(error);
@@ -52,18 +49,22 @@ import Nav from '../../components/Nav'
       name: this.state.name,
       aboutText: this.state.aboutText
     };
-    axios.put('http://localhost:5000/admin/update_staff/' + this.props.match.params.id, staffObject)
-      .then((res) => {
-        console.log(res.data)
-        console.log('Staff successfully updated')
- 
-      
-      }).catch((error) => {
-        console.log(error)
+    axios
+      .put(
+        "http://localhost:5000/admin/update_staff/" +
+          this.props.match.params.id,
+        staffObject
+      )
+      .then(res => {
+        console.log(res.data);
+        console.log("Staff successfully updated");
       })
-    // Redirect to Staff List 
-    this.props.history.push('/admin/staff')
-    window.location.reload(true)
+      .catch(error => {
+        console.log(error);
+      });
+    // Redirect to Staff List
+    this.props.history.push("/admin/staff");
+    window.location.reload(true);
   }
 
   // AWS
@@ -90,7 +91,6 @@ import Nav from '../../components/Nav'
   render() {
     return (
       <div>
-        <Nav />
         <div className="staffs">
           <div className="staff-infor"></div>
 
@@ -102,7 +102,7 @@ import Nav from '../../components/Nav'
                 <input
                   type="text"
                   placeholder={this.state.name}
-                  value={this.state.name} 
+                  value={this.state.name}
                   onChange={this.onChangeName}
                 />
               </div>
@@ -111,7 +111,7 @@ import Nav from '../../components/Nav'
                 <textarea
                   type="text"
                   placeholder={this.state.aboutText}
-                  value={this.state.aboutText} 
+                  value={this.state.aboutText}
                   onChange={this.onChangeAboutText}
                 />
               </div>
@@ -119,11 +119,11 @@ import Nav from '../../components/Nav'
                 <input label='upload file' type='file' className="upload-image" onChange={this.handleFileUpload} />
                 <button type='submit' className="upload">Upload Image</button>
               </div> */}
-                <button type="submit" >Submit</button>
-            </form> 
+              <button type="submit">Submit</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
     );
   }
 }

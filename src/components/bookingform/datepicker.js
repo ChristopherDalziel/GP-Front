@@ -1,11 +1,10 @@
 import React from "react";
-import ReactDatePicker, {registerLocale} from "react-datepicker";
+import ReactDatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import addDays from 'date-fns/addDays'
-import format from 'date-fns/format';
+import addDays from "date-fns/addDays";
+import format from "date-fns/format";
 import enGB from "date-fns/locale/en-GB";
 registerLocale("en-GB", enGB);
-
 
 class DatePicker extends React.Component {
   state = {
@@ -15,14 +14,14 @@ class DatePicker extends React.Component {
   handleChange = date => {
     this.setState({ startDate: date });
     //sending the date value to redux form store
-    let dateFormatted = format(date, 'PPPPp')
+    let dateFormatted = format(date, "PPPPp");
     this.props.input.onChange(dateFormatted.toString());
   };
 
   render() {
     const { touched, error } = this.props;
     return (
-      <div>
+      <div className="date-picker">
         <ReactDatePicker
           selected={this.state.startDate}
           onChange={this.handleChange}

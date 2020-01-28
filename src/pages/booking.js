@@ -1,19 +1,15 @@
 import React from "react";
 import axios from "axios";
-import Nav from "../components/Nav";
 import BookingForm from "../components/bookingform/bookingform";
-import addDays from 'date-fns/addDays'
-import format from 'date-fns/format';
-
+import addDays from "date-fns/addDays";
+import format from "date-fns/format";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-const startDate = addDays(new Date(), 1)
-let startDateFormatted = format(startDate, 'PPPPp')
-
+const startDate = addDays(new Date(), 1);
+let startDateFormatted = format(startDate, "PPPPp");
 
 class Booking extends React.Component {
-
   state = {
     startDate: startDateFormatted.toString(),
     email: null,
@@ -24,57 +20,85 @@ class Booking extends React.Component {
   };
 
   componentDidMount() {
-    let token = sessionStorage.getItem('token');
-      if (token) {
-       try { axios.get(process.env.REACT_APP_BACKEND_URL + "/users/find-user", { headers: {'Authorization': token } })
-       .then((response) => {
-          const user = response.data;
-          this.setState({
-            email: user.email,
-            firstName: user.firstName,
-            lastName: user.lastName,
-            phone: user.phone
+    let token = sessionStorage.getItem("token");
+    if (token) {
+      try {
+        axios
+          .get(process.env.REACT_APP_BACKEND_URL + "/users/find-user", {
+            headers: { Authorization: token }
           })
-        })
-      } catch(err) {
-        this.setState({errors: err.message})
-        console.log(err.message)
+          .then(response => {
+            const user = response.data;
+            this.setState({
+              email: user.email,
+              firstName: user.firstName,
+              lastName: user.lastName,
+              phone: user.phone
+            });
+          });
+      } catch (err) {
+        this.setState({ errors: err.message });
+        console.log(err.message);
       }
-  }
-}
-
-  bookingSubmit = async (values) => {
-  try {
-    const newBooking = values;
-    await axios.post(process.env.REACT_APP_BACKEND_URL + "/appointments/new", newBooking).then((response) => {
-      let bookingDetails = response.data;
-      axios.post(process.env.REACT_APP_BACKEND_URL + "/mail/appointment", bookingDetails).then(
-        this.props.history.push('/success'))
-        .catch((err) => {
-          console.log(err.message)
-        })
-    })
-  } catch (err) {
-    console.log(err)
     }
   }
 
+  bookingSubmit = async values => {
+    try {
+      const newBooking = values;
+      await axios
+        .post(
+          process.env.REACT_APP_BACKEND_URL + "/appointments/new",
+          newBooking
+        )
+        .then(response => {
+          let bookingDetails = response.data;
+          axios
+            .post(
+              process.env.REACT_APP_BACKEND_URL + "/mail/appointment",
+              bookingDetails
+            )
+            .then(this.props.history.push("/success"))
+            .catch(err => {
+              console.log(err.message);
+            });
+        });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   render() {
-    const {email, firstName, lastName, phone, startDate } = this.state;
+    const { email, firstName, lastName, phone, startDate } = this.state;
     return (
       <>
-        <Nav />
         <div className="booking">
           <div className="container">
             <div className="imageBooking"></div>
             <div className="content-booking">
               <div>
                 <h1>Make An Appointment!</h1>
-                <h2>For appointments within 24 hours, please call the clinic directly.</h2>
-                <h3>If there are any issues with your appointment we will contact you within 24 hours.</h3>
-                </div>
-                <div>
-                <BookingForm onSubmit={this.bookingSubmit} initialValues={{firstName: firstName, lastName: lastName, email: email, dateTime: startDate, phone: phone, comment:''}} />
+                <h2>
+                  For appointments within 24 hours, please call the clinic
+                  directly.
+                </h2>
+                <h3>
+                  If there are any issues with your appointment we will contact
+                  you within 24 hours.
+                </h3>
+              </div>
+              <div>
+                <BookingForm
+                  onSubmit={this.bookingSubmit}
+                  initialValues={{
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    dateTime: startDate,
+                    phone: phone,
+                    comment: ""
+                  }}
+                />
               </div>
               <div>
                 <h4>{this.state.errors}</h4>

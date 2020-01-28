@@ -3,7 +3,6 @@ import axios from "axios";
 import { setLocalStorage } from "../utils/local-storage";
 import EmailVerificationForm from "../components/authentication/EmailVerificationForm";
 import LoginForm from "../components/authentication/loginform";
-import Nav from "../components/Nav";
 import "../css/signIn.css";
 
 const SignIn = props => {
@@ -20,14 +19,13 @@ const SignIn = props => {
         .post(process.env.REACT_APP_BACKEND_URL + "/users/login", {
           email,
           password
-        }
-      )
-      .then((response) => {
-        setLocalStorage(response.data);
-        props.history.push('/')
-        window.location.reload(false)
-        //redirecting back to home page
-      })
+        })
+        .then(response => {
+          setLocalStorage(response.data);
+          props.history.push("/");
+          window.location.reload(false);
+          //redirecting back to home page
+        });
     } catch (err) {
       setError({
         msg: err.message
@@ -56,7 +54,6 @@ const SignIn = props => {
   if (passwordReset) {
     return (
       <>
-        <Nav />
         <div>
           <EmailVerificationForm
             onSubmitEmailVerificationForm={onSubmitEmailVerificationForm}
@@ -69,7 +66,6 @@ const SignIn = props => {
   } else {
     return (
       <>
-        <Nav />
         <div>
           <LoginForm
             onSubmitLoginForm={onSubmitLoginForm}
