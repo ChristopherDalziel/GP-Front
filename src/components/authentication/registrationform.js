@@ -1,14 +1,8 @@
 import "../../css/Booking.css";
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-import DatePicker from "./datepicker";
-import { registerLocale } from "react-datepicker";
-import addDays from "date-fns/addDays";
-import format from "date-fns/format";
-import "react-datepicker/dist/react-datepicker.css";
 import normalizePhone from "../normalizePhone";
-import enGB from "date-fns/locale/en-GB";
-registerLocale("en-GB", enGB);
+
 
 //form validation
 function validate(values) {
@@ -25,30 +19,37 @@ function validate(values) {
   }
 
   if (!values.phone) {
-    errors.phone =
-      "A phone number is required im case the clinic needs to contact you regarding any issues";
+    errors.phone = "A phone number is required im case the clinic needs to contact you regarding any issues";
+  }
+
+  if (!values.password) {
+    errors.password = "Password required"
+  } else if (values.password.length < 8) {
+    errors.password = "Password must have a minimum of 8 characters"
+  }
+
+
+  if (!values.password2) {
+    errors.password2 = "Password confirmation required"
+  }
+
+  if (values.password !== values.password2 ) {
+    errors.password2 = "Passwords do not match"
   }
 
   return errors;
 }
+class RegistrationForm extends React.Component {
 
-const startDate = addDays(new Date(), 1);
-let startDateFormatted = format(startDate, "PPPPp");
-
-class BookingForm extends React.Component {
-  state = {
-    startDate: startDateFormatted.toString()
-  };
-
-  renderField({ input, label, type, meta: { touched, error, warning } }) {
+  renderField({input, label, type, meta: {touched, error, warning}}) {
     // console.log(input)
-    return (
-      <div>
-        <input {...input} placeholder={label} type={type} />
-        {touched &&
-          ((error && <span style={{ color: "red" }}>{error}</span>) ||
-            (warning && <span style={{ color: "red" }}>{warning}</span>))}
-      </div>
+    return(
+        <div>
+          <input {...input} placeholder={label} type={type} label={label} /> 
+          {touched &&
+           ((error && <span style={{color: "red"}}>{error}</span>) ||
+            (warning && <span style={{color: "red"}}>{warning}</span>))}
+        </div>
     );
   }
 
@@ -84,21 +85,13 @@ class BookingForm extends React.Component {
             normalize={normalizePhone}
           />
         </div>
-        <div className="input-wrapper---4">
-          <label htmlFor="dateTime">Appointment Time</label>
-          {/* using the DatePicker component to input the date and time into this field */}
-          <Field
-            className="input-wrapper---3"
-            name="dateTime"
-            component={DatePicker}
-          />
+        <div>
+          <Field name="password" component={this.renderField} type="text" label="Password" />
         </div>
         <div>
-          <label className="input-wrapper---5" htmlFor="comments">
-            Comments (e.g. What is this appointment for?)
-          </label>
-          <Field name="comment" component={this.renderField} type="text" />
+          <Field name="password2" component={this.renderField} type="text" label="Confirm Password" />
         </div>
+
         <button
           className="bookingButton"
           type="submit"
@@ -111,9 +104,9 @@ class BookingForm extends React.Component {
   }
 }
 
-BookingForm = reduxForm({
-  form: "booking",
+RegistrationForm = reduxForm({
+  form: "register",
   enableReinitialize: true,
   validate
-})(BookingForm);
-export default BookingForm;
+})(RegistrationForm);
+export default RegistrationForm;

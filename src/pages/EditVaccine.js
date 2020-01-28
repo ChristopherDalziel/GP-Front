@@ -1,5 +1,4 @@
 import React from "react";
-import Nav from "../components/Nav";
 import axios from "axios";
 import VaccineForm from "../components/Vaccines/VaccineForm";
 
@@ -32,7 +31,6 @@ class EditVaccine extends React.Component {
     const { vaccineData } = this.state;
     return vaccineData ? (
       <>
-        <Nav />
         <h1>Vaccine Edit</h1>
         <VaccineForm
           onEditFormSubmit={this.updateVaccine}

@@ -1,8 +1,9 @@
 import React from "react";
 import axios from "axios";
-import Nav from "../../components/Nav";
 import VaccineForm from "../../components/Vaccines/VaccineForm";
 import VaccineTable from "../../components/Vaccines/vaccineTable";
+
+import "../../css/adminServices.css";
 
 class AdminVaccines extends React.Component {
   submit(vaccineData) {
@@ -15,13 +16,20 @@ class AdminVaccines extends React.Component {
         console.log("There was an error!" + error);
       });
   }
+
   render() {
     return (
       <>
-        <Nav />
-        <h1>Create Vaccine</h1>
-        <VaccineForm onSubmit={this.submit} {...this.props} />
-        <VaccineTable />
+        <div className="grid">
+          <div className="table-cont">
+            <VaccineTable />
+          </div>
+          <div className="content-create">
+            <h1>Create New Vaccine:</h1>
+            <VaccineForm onSubmit={this.submit} {...this.props} />
+            <div></div>
+          </div>
+        </div>
       </>
     );
   }

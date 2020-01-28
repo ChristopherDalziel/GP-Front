@@ -21,13 +21,24 @@ class ServiceForm extends React.Component {
       <>
         <div>
           <form onSubmit={e => this.onSubmitFunc(e, this.props)}>
-            <div>
-              <label htmlFor="name">Service Title:</label>
-              <Field name="serviceName" component="input" type="text" />
+            <div className="input-wrapper--1">
+              <label htmlFor="name">Service Title</label> <br />
+              <Field
+                placeholder="Name of Service"
+                name="serviceName"
+                component="input"
+                type="text"
+              />
             </div>
-            <div>
-              <label htmlFor="description">Service Description:</label>
-              <Field name="serviceDescription" component="input" type="text" />
+            <br />
+            <div className="input-wrapper--1">
+              <label htmlFor="description">Service Description</label> <br />
+              <Field
+                placeholder="Description of Service"
+                name="serviceDescription"
+                component="input"
+                type="text"
+              />
             </div>
             <button type="submit">Submit</button>
           </form>

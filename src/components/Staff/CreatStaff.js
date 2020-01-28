@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import "../../css/staff.css";
 import axios from "axios";
-import Nav from "../../components/Nav";
 
-
- class CreatStaff extends Component {
-  constructor (props) {
+class CreatStaff extends Component {
+  constructor(props) {
     super(props);
     this.state = {
       file: null,
@@ -33,34 +31,36 @@ import Nav from "../../components/Nav";
       name: this.state.name,
       aboutText: this.state.aboutText
     };
-    axios.post('http://localhost:5000/admin/add_staff', staffObject)
-    //  {headers: {'Authorization': sessionStorage.getItem('token') }}
-      .then(res => 
-        console.log(res.data));
+    axios
+      .post("http://localhost:5000/admin/add_staff", staffObject)
+      //  {headers: {'Authorization': sessionStorage.getItem('token') }}
+      .then(res => console.log(res.data));
 
-    this.setState({ name: '', aboutText: '' })
+    this.setState({ name: "", aboutText: "" });
 
-    this.props.history.push('/admin/staff')
-    window.location.reload(true)
+    this.props.history.push("/admin/staff");
+    window.location.reload(true);
   }
 
-
-  submitFile = (event) => {
+  submitFile = event => {
     event.preventDefault();
     const formData = new FormData();
-    formData.append('file', this.state.file);
-    axios.post('http://localhost:5000/admin/upload_image', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    }).then(response => {
-      // handle your response;
-      console.log(response)
-    }).catch(error => {
-      console.log(error)
-      // handle your error
-    });
-  }
+    formData.append("file", this.state.file[0]);
+    axios
+      .post("http://localhost:5000/admin/upload_image", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      })
+      .then(response => {
+        // handle your response;
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+        // handle your error
+      });
+  };
 
   render() {
     return (
@@ -70,37 +70,41 @@ import Nav from "../../components/Nav";
     //   <button  className="upload">Upload Image</button>
     // </form>
       <div>
-        <Nav />
         <div className="staffs">
           <div className="staff-infor"></div>
 
           <div className="add_staff">
-              <h1>Add a new Staff Here</h1>
-              <form onSubmit={this.onSubmit} >
-                <div>
-                  <label>Staff Name</label> <br />
-                  <input
-                    type="text"
-                    placeholder="Enter Staff Name"
-                    value={this.state.name} 
-                    onChange={this.onChangeName}
-                  />
-                </div>
-                <div>
-                  <label>Staff Introduction</label> <br />
-                  <textarea
-                    type="text"
-                    placeholder="Enter the Staff Information"
-                    value={this.state.aboutText} 
-                    onChange={this.onChangeAboutText}
-                  />
-                </div>
-                <form onSubmit={this.submitFile}>
-                  <input label='upload file' type='file' className="upload-image" onChange={this.handleFileUpload} />
-                  <button  className="upload">Upload Image</button>
-                </form>
-                  <button type="submit" >Submit</button>
-              </form> 
+            <h1>Add a new Staff Here</h1>
+            <form onSubmit={this.onSubmit}>
+              <div>
+                <label>Staff Name</label> <br />
+                <input
+                  type="text"
+                  placeholder="Enter Staff Name"
+                  value={this.state.name}
+                  onChange={this.onChangeName}
+                />
+              </div>
+              <div>
+                <label>Staff Introduction</label> <br />
+                <textarea
+                  type="text"
+                  placeholder="Enter the Staff Information"
+                  value={this.state.aboutText}
+                  onChange={this.onChangeAboutText}
+                />
+              </div>
+              <form onSubmit={this.submitFile}>
+                <input
+                  label="upload file"
+                  type="file"
+                  className="upload-image"
+                  onChange={this.handleFileUpload}
+                />
+                <button className="upload">Upload Image</button>
+              </form>
+              <button type="submit">Submit</button>
+            </form>
           </div>
         </div>
       </div>
