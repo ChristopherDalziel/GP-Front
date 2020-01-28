@@ -87,11 +87,11 @@ class RegistrationForm extends React.Component {
         </div>
         <div>
           <label className = "input-wrapper-5"> Password</label>
-          <Field name="password" component={this.renderField} type="text" />
+          <Field name="password" component={this.renderField} type="password" />
         </div>
         <div>
           <label className="input-wrapper-6">Confirm Password</label>
-          <Field name="password2" component={this.renderField} type="text" />
+          <Field name="password2" component={this.renderField} type="password" />
         </div>
 
         <button
