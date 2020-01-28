@@ -48,7 +48,7 @@ import Nav from "../../components/Nav";
   submitFile = (event) => {
     event.preventDefault();
     const formData = new FormData();
-    formData.append('file', this.state.file[0]);
+    formData.append('file', this.state.file);
     axios.post('http://localhost:5000/admin/upload_image', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
@@ -64,6 +64,11 @@ import Nav from "../../components/Nav";
 
   render() {
     return (
+
+    //  <form onSubmit={this.submitFile}>
+    //   <input label='upload file' type='file' className="upload-image" onChange={this.handleFileUpload} />
+    //   <button  className="upload">Upload Image</button>
+    // </form>
       <div>
         <Nav />
         <div className="staffs">
