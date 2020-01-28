@@ -13,7 +13,7 @@ export default class StaffListRow extends Component {
       .delete("http://localhost:5000/admin/delete_staff/" + this.props.obj._id)
       .then(res => {
         console.log("Staff successfully deleted!");
-        window.location.replace("/admin_dashboard");
+        window.location.replace("/admin/staff");
       })
       .catch(error => {
         console.log(error);

@@ -9,7 +9,8 @@ class CreateStaff extends Component {
     this.state = {
       file: null,
       name: "",
-      aboutText: ""
+      aboutText: "",
+      imageUrl:''
     };
 
     this.onChangeName = this.onChangeName.bind(this);
@@ -27,7 +28,9 @@ class CreateStaff extends Component {
       .then(res => {
         this.setState({
           name: res.data.name,
-          aboutText: res.data.aboutText
+          aboutText: res.data.aboutText,
+          imageUrl: res.data.imageUrl,
+
         });
       })
       .catch(error => {
@@ -47,7 +50,8 @@ class CreateStaff extends Component {
     e.preventDefault();
     const staffObject = {
       name: this.state.name,
-      aboutText: this.state.aboutText
+      aboutText: this.state.aboutText,
+      imageUrl: this.state.imageUrl,
     };
     axios
       .put(
