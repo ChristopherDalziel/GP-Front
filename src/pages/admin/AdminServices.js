@@ -4,6 +4,8 @@ import Nav from "../../components/Nav";
 import ServiceForm from "../../components/Services/ServiceForm";
 import ServiceTable from "../../components/Services/serviceTable";
 
+import "../../css/adminServices.css";
+
 class AdminServices extends React.Component {
   submit(serviceData) {
     axios
@@ -20,14 +22,14 @@ class AdminServices extends React.Component {
     return (
       <>
         <Nav />
-        <div className="adminServices">
-          <div className="container">
-            <div>
+        <div className="grid">
+          <div className="table-cont">
+            <ServiceTable />
+          </div>
+          <div>
+            <div className="content-create">
               <h1>Create New Service:</h1>
-            </div>
-            <ServiceForm onSubmit={this.submit} {...this.props} />
-            <div className="content-adminServices">
-              <ServiceTable />
+              <ServiceForm onSubmit={this.submit} {...this.props} />
             </div>
           </div>
         </div>

@@ -47,19 +47,35 @@ class VaccineForm extends React.Component {
       <>
         <div>
           <form onSubmit={e => this.onSubmitFunc(e, this.props)}>
-            <div>
-              <label htmlFor="name">Vaccine Brand:</label>
-              <Field name="brand" component="input" type="text" />
+            <div className="input-wrapper--1">
+              <label htmlFor="name">Vaccine Brand</label>
+              <Field
+                placeholder="Enter Vaccine Brand"
+                name="brand"
+                component="input"
+                type="text"
+              />
             </div>
-            <div>
-              <label htmlFor="description">Vaccine Description:</label>
-              <Field name="description" component="input" type="text" />
+            <br />
+            <div className="input-wrapper--1">
+              <label htmlFor="manufacturer">Vaccine Manufacturer</label>
+              <Field
+                placeholder="Enter Vaccine Manufacturer"
+                name="manufacturer"
+                component="input"
+                type="text"
+              />
             </div>
-            <div>
-              <label htmlFor="manufacturer">Vaccine Manufacturer:</label>
-              <Field name="manufacturer" component="input" type="text" />
+            <div className="input-wrapper--1">
+              <label htmlFor="description">Vaccine Description</label>
+              <Field
+                placeholder="Enter Description of Vaccine"
+                name="description"
+                component="input"
+                type="text"
+              />
             </div>
-            <button onClick={showWidget}>upload image</button> <br></br>
+            <button onClick={showWidget}>Upload Image</button> <br></br>
             <button type="submit">Submit</button>
           </form>
         </div>

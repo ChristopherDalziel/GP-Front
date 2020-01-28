@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "../../css/adminServices.css";
 
 class ServiceTable extends React.Component {
   state = {
@@ -29,49 +28,44 @@ class ServiceTable extends React.Component {
         });
     }
     return (
-      <div className="pageContainer">
+      <>
         <h1>Current Services:</h1>
         {data
           ? data.map((service, index) => {
               return (
-                <>
-                  <div class="tableContainer">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Name</th>
-                          <th>Description</th>
-                          <th>Edit</th>
-                          <th>Delete</th>
-                        </tr>
-                      </thead>
-                      <tr>
-                        <td>{service.serviceName}</td>
-                        <td>{service.serviceDescription}</td>
-                        <td>
-                          {" "}
-                          <Link to={"/service/edit/" + service._id}>
-                            <button class="adminButton">Edit</button>
-                          </Link>
-                        </td>
-                        <td>
-                          <button
-                            class="adminButton"
-                            onClick={() => {
-                              deleteService(service._id);
-                            }}
-                          >
-                            delete
-                          </button>
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                </>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Description</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>{service.serviceName}</td>
+                    <td>{service.serviceDescription}</td>
+                    <td>
+                      {" "}
+                      <Link to={"/service/edit/" + service._id}>
+                        <button>Edit</button>
+                      </Link>
+                    </td>
+                    <td>
+                      <button
+                        onClick={() => {
+                          deleteService(service._id);
+                        }}
+                      >
+                        delete
+                      </button>
+                    </td>
+                  </tr>
+                </table>
               );
             })
           : null}
-      </div>
+      </>
     );
   }
 }

@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "../../css/adminServices.css";
 
 class VaccineTable extends React.Component {
   state = {
@@ -29,55 +28,50 @@ class VaccineTable extends React.Component {
         });
     }
     return (
-      <div className="pageContainer">
-        <h1>Current Vaccines::</h1>
+      <>
+        <h1>Current Vaccines:</h1>
         {data
           ? data.map((vaccine, index) => {
               return (
-                <>
-                  <div class="tableContainer">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Name</th>
-                          <th>Description</th>
-                          <th>Manufacturer</th>
-                          <th>Image</th>
-                          <th>Edit</th>
-                          <th>Delete</th>
-                        </tr>
-                      </thead>
-                      <tr>
-                        <td>{vaccine.brand}</td>
-                        <td>{vaccine.description}</td>
-                        <td>{vaccine.manufacturer}</td>
-                        <td>
-                          <img src={vaccine.imageUrl} />
-                        </td>
-                        <td>
-                          {" "}
-                          <Link to={"/vaccine/edit/" + vaccine._id}>
-                            <button class="adminButton">Edit</button>
-                          </Link>
-                        </td>
-                        <td>
-                          <button
-                            class="adminButton"
-                            onClick={() => {
-                              deleteVaccine(vaccine._id);
-                            }}
-                          >
-                            delete
-                          </button>
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                </>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Description</th>
+                      <th>Manufacturer</th>
+                      <th>Image</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>{vaccine.brand}</td>
+                    <td>{vaccine.description}</td>
+                    <td>{vaccine.manufacturer}</td>
+                    <td>
+                      <img src={vaccine.imageUrl} />
+                    </td>
+                    <td>
+                      {" "}
+                      <Link to={"/vaccine/edit/" + vaccine._id}>
+                        <button>Edit</button>
+                      </Link>
+                    </td>
+                    <td>
+                      <button
+                        onClick={() => {
+                          deleteVaccine(vaccine._id);
+                        }}
+                      >
+                        delete
+                      </button>
+                    </td>
+                  </tr>
+                </table>
               );
             })
           : null}
-      </div>
+      </>
     );
   }
 }
