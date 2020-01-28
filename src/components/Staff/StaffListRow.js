@@ -24,6 +24,7 @@ export default class StaffListRow extends Component {
       <tr>
         <td>{this.props.obj.name}</td>
         <td>{this.props.obj.aboutText}</td>
+        <td><img src={this.props.obj.imageUrl} alt=""/></td>
 
         <td>
           <Link to={"/admin/update_staff/" + this.props.obj._id}>Edit</Link>

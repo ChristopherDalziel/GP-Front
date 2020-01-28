@@ -4,6 +4,7 @@ import axios from "axios";
 import { Field, reduxForm, getFormValues } from "redux-form";
 
 class VaccineForm extends React.Component {
+  
   // async handleImageUpload() {
   //   const data = new FormData();
   //   data.append("file", vaccine.imageUrl);
@@ -35,7 +36,8 @@ class VaccineForm extends React.Component {
       },
       (error, result) => {
         if (!error && result && result.event === "success") {
-          console.log("Done! Here is the image info: ", result.info);
+          console.log("Done! Here is the image info: ", result.info.url);
+
         }
       }
     );
