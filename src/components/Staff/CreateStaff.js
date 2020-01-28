@@ -64,11 +64,10 @@ class CreatStaff extends Component {
 
   render() {
     return (
-
-    //  <form onSubmit={this.submitFile}>
-    //   <input label='upload file' type='file' className="upload-image" onChange={this.handleFileUpload} />
-    //   <button  className="upload">Upload Image</button>
-    // </form>
+      //  <form onSubmit={this.submitFile}>
+      //   <input label='upload file' type='file' className="upload-image" onChange={this.handleFileUpload} />
+      //   <button  className="upload">Upload Image</button>
+      // </form>
       <div>
         <div className="staffs">
           <div className="staff-infor"></div>
@@ -79,6 +78,7 @@ class CreatStaff extends Component {
               <div>
                 <label>Staff Name</label> <br />
                 <input
+                  name="add_staff"
                   type="text"
                   placeholder="Enter Staff Name"
                   value={this.state.name}
