@@ -11,9 +11,11 @@ class Profile extends React.Component {
         <Nav />
         <div className="profile">
           <div className="container-booking">
+            <h1> Your Scheduled Appointments</h1>
               <UserAppointments />
           </div>
           <div className="container-profile">
+            Your Information
             <div className="content-profile">
               <h3>Patient Info</h3>
               <p>...</p>
