@@ -1,8 +1,9 @@
 import React from "react";
 import "../css/register.css";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
 import RegistrationForm from "../components/authentication/registrationform";
+import { setLocalStorage } from "../utils/local-storage";
 
 class Registration extends React.Component {
 
@@ -39,17 +40,16 @@ class Registration extends React.Component {
   registrationSubmit = async (values) => {
   try {
     const newUser = values;
-    console.log(newUser)
-    // await axios
-    // .post(process.env.REACT_APP_BACKEND_URL + "/users/register", newUser)
-    // .then(response => {
-    //   alert("Registration successful");
-    //   setLocalStorage(response.data);
-    //   props.history.push("/");
-    // });
+    await axios
+    .post(process.env.REACT_APP_BACKEND_URL + "/users/register", newUser)
+    .then(response => {
+      alert("Registration successful");
+      setLocalStorage(response.data);
+      this.props.history.push("/");
+    });
     } catch (err) {
-      console.log(err.message);
-      // this.setState({error: `Registration unsuccessful: ${response.data}` });
+      console.log(err.response.data.err.message);
+      this.setState({errors: err.response.data.err.message})
     }
   
 }
@@ -65,7 +65,7 @@ class Registration extends React.Component {
               <div>
               <h1>New to Klinic Doctor Leong?</h1>
               <h1>Sign Up Now</h1>
-                <RegistrationForm onSubmit={this.registrationSubmit} initialValues={{firstName: firstName, lastName: lastName, email: email, phone: phone}} />
+                <RegistrationForm onSubmit={this.registrationSubmit} />
               </div>
               <div>
                 <h4>{this.state.errors}</h4>
@@ -77,7 +77,6 @@ class Registration extends React.Component {
                 <Link to="signin"> Sign In Here</Link>
               </h4>
               </div>
-              <div>{this.state.errors}</div>
             </div>
           </div>
         </div>
