@@ -1,6 +1,5 @@
 import React from "react";
 
-import Nav from "../components/Nav";
 import ContactForm from "../components/Contact/ContactForm";
 import ContactInfo from "../components/Contact/ToggleDisplay";
 import EmailSubmit from "../components/Contact/emailSubmit";
@@ -14,7 +13,6 @@ class Contact extends React.Component {
   render() {
     return (
       <>
-        <Nav />
         <div className="contact">
           <div className="container-main">
             <div className="container-one">

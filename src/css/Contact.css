@@ -58,7 +58,6 @@
 }
 
 .signIn h1 {
-  font-family: "Raleway", sans-serif;
   margin-bottom: 30px;
 }
 
@@ -76,16 +75,13 @@
 .contact h5 {
   margin-bottom: 20px;
   font-size: 20px;
-  font-family: "Raleway", sans-serif;
 }
 
 .contact .label {
-  font-family: "Raleway", sans-serif;
   color: #398ffc;
 }
 
 .contact button {
-  font-family: "Raleway", sans-serif;
   margin-top: 10px;
   font-size: 18px;
   color: white;

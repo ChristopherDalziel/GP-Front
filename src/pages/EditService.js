@@ -1,5 +1,4 @@
 import React from "react";
-import Nav from "../components/Nav";
 import axios from "axios";
 import ServiceForm from "../components/Services/ServiceForm";
 
@@ -32,7 +31,6 @@ class EditService extends React.Component {
     const { serviceData } = this.state;
     return serviceData ? (
       <>
-        <Nav />
         <h1>Service Edit</h1>
         <ServiceForm
           onEditFormSubmit={this.updateService}
