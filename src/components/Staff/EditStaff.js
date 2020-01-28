@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import "../../css/staff.css";
 import axios from "axios";
 
-class CreatStaff extends Component {
+class CreateStaff extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +19,7 @@ class CreatStaff extends Component {
 
   componentDidMount() {
     axios
-      .get(
+      .put(
         process.env.REACT_APP_BACKEND_URL +
           "/admin/edit_staff/" +
           this.props.match.params.id
@@ -52,7 +52,7 @@ class CreatStaff extends Component {
     axios
       .put(
         process.env.REACT_APP_BACKEND_URL +
-          "admin/update_staff/" +
+          "/admin/update_staff/" +
           this.props.match.params.id,
         staffObject
       )
@@ -129,4 +129,4 @@ class CreatStaff extends Component {
   }
 }
 
-export default CreatStaff;
+export default CreateStaff;
