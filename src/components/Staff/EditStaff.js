@@ -3,13 +3,14 @@ import React, { Component } from "react";
 import "../../css/staff.css";
 import axios from "axios";
 
-class CreatStaff extends Component {
+class CreateStaff extends Component {
   constructor(props) {
     super(props);
     this.state = {
       file: null,
       name: "",
-      aboutText: ""
+      aboutText: "",
+      imageUrl:''
     };
 
     this.onChangeName = this.onChangeName.bind(this);
@@ -19,7 +20,7 @@ class CreatStaff extends Component {
 
   componentDidMount() {
     axios
-      .get(
+      .put(
         process.env.REACT_APP_BACKEND_URL +
           "/admin/edit_staff/" +
           this.props.match.params.id
@@ -27,7 +28,9 @@ class CreatStaff extends Component {
       .then(res => {
         this.setState({
           name: res.data.name,
-          aboutText: res.data.aboutText
+          aboutText: res.data.aboutText,
+          imageUrl: res.data.imageUrl,
+
         });
       })
       .catch(error => {
@@ -47,12 +50,13 @@ class CreatStaff extends Component {
     e.preventDefault();
     const staffObject = {
       name: this.state.name,
-      aboutText: this.state.aboutText
+      aboutText: this.state.aboutText,
+      imageUrl: this.state.imageUrl,
     };
     axios
       .put(
         process.env.REACT_APP_BACKEND_URL +
-          "admin/update_staff/" +
+          "/admin/update_staff/" +
           this.props.match.params.id,
         staffObject
       )
@@ -125,4 +129,4 @@ class CreatStaff extends Component {
   }
 }
 
-export default CreatStaff;
+export default CreateStaff;

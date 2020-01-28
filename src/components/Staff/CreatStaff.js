@@ -39,7 +39,8 @@ class CreateStaff extends Component {
       //  {headers: {'Authorization': sessionStorage.getItem('token') }}
       .then(res => console.log(res.data));
 
-    this.setState({ name: "", aboutText: "" , imageUrl:""});
+    this.setState({ name: "", aboutText: "" });
+
     this.props.history.push("/admin/staff");
     window.location.reload(true);
   }
@@ -77,7 +78,6 @@ class CreateStaff extends Component {
               <div>
                 <label>Staff Name</label> <br />
                 <input
-                  name="add_staff"
                   type="text"
                   placeholder="Enter Staff Name"
                   value={this.state.name}
