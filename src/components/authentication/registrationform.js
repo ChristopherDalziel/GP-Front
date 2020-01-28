@@ -1,4 +1,4 @@
-import "../../css/register.css";
+// import "../../css/register.css";
 import React from "react";
 import { Field, reduxForm } from "redux-form";
 import normalizePhone from "../normalizePhone";
@@ -42,7 +42,7 @@ function validate(values) {
 class RegistrationForm extends React.Component {
 
   renderField({input, label, type, meta: {touched, error, warning}}) {
-    // console.log(input)
+
     return(
         <div>
           <input {...input} placeholder={label} type={type} label={label} /> 
@@ -99,7 +99,7 @@ class RegistrationForm extends React.Component {
           type="submit"
           disabled={this.props.pristine || this.props.submitting}
         >
-          Sign Up
+          Submit
         </button>
       </form>
     );
