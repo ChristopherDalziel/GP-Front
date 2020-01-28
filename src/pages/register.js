@@ -1,7 +1,7 @@
 import React from "react";
+import "../css/register.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Nav from "../components/Nav";
 import RegistrationForm from "../components/authentication/registrationform";
 
 class Registration extends React.Component {
@@ -58,7 +58,6 @@ class Registration extends React.Component {
     const {email, firstName, lastName, phone } = this.state;
     return (
       <>
-        <Nav />
         <div className="signUp">
         <div className="container">
           <div className="imageSignUp"></div>
@@ -71,18 +70,17 @@ class Registration extends React.Component {
               <div>
                 <h4>{this.state.errors}</h4>
               </div>
+              <div>
+                <br></br>
+              <h4>
+                Already have an account?
+                <Link to="signin"> Sign In Here</Link>
+              </h4>
+              </div>
+              <div>{this.state.errors}</div>
             </div>
           </div>
         </div>
-        <div>{this.state.errors}</div>
-        <div>
-          <button type="submit">Sign Up</button>
-        </div>
-        <h4>
-          Already have an account?
-          <Link to="signin"> Sign In Here</Link>
-        </h4>
-
       </>
     );
   }

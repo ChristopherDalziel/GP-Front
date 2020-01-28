@@ -1,4 +1,4 @@
-import "../../css/Booking.css";
+import "../../css/register.css";
 import React from "react";
 import { Field, reduxForm } from "redux-form";
 import normalizePhone from "../normalizePhone";
@@ -86,10 +86,12 @@ class RegistrationForm extends React.Component {
           />
         </div>
         <div>
-          <Field name="password" component={this.renderField} type="text" label="Password" />
+          <label className = "input-wrapper-5"> Password</label>
+          <Field name="password" component={this.renderField} type="text" />
         </div>
         <div>
-          <Field name="password2" component={this.renderField} type="text" label="Confirm Password" />
+          <label className="input-wrapper-6">Confirm Password</label>
+          <Field name="password2" component={this.renderField} type="text" />
         </div>
 
         <button
@@ -97,7 +99,7 @@ class RegistrationForm extends React.Component {
           type="submit"
           disabled={this.props.pristine || this.props.submitting}
         >
-          Submit
+          Sign Up
         </button>
       </form>
     );
