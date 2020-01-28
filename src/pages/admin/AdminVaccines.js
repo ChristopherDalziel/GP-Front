@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Nav from "../../components/Nav";
 import VaccineForm from "../../components/Vaccines/VaccineForm";
 import VaccineTable from "../../components/Vaccines/vaccineTable";
 
@@ -21,7 +20,6 @@ class AdminVaccines extends React.Component {
   render() {
     return (
       <>
-        <Nav />
         <div className="grid">
           <div className="table-cont">
             <VaccineTable />

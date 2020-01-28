@@ -25,7 +25,8 @@ function validate(values) {
   }
 
   if (!values.phone) {
-    errors.phone = "A phone number is required im case the clinic needs to contact you regarding any issues";
+    errors.phone =
+      "A phone number is required im case the clinic needs to contact you regarding any issues";
   }
 
   return errors;
@@ -39,16 +40,15 @@ class BookingForm extends React.Component {
     startDate: startDateFormatted.toString()
   };
 
-
-  renderField({input, label, type, meta: {touched, error, warning}}) {
+  renderField({ input, label, type, meta: { touched, error, warning } }) {
     // console.log(input)
-    return(
-        <div>
-          <input {...input} placeholder={label} type={type} /> 
-          {touched &&
-           ((error && <span style={{color: "red"}}>{error}</span>) ||
-            (warning && <span style={{color: "red"}}>{warning}</span>))}
-        </div>
+    return (
+      <div>
+        <input {...input} placeholder={label} type={type} />
+        {touched &&
+          ((error && <span style={{ color: "red" }}>{error}</span>) ||
+            (warning && <span style={{ color: "red" }}>{warning}</span>))}
+      </div>
     );
   }
 
@@ -86,7 +86,7 @@ class BookingForm extends React.Component {
         </div>
         <div className="input-wrapper---4">
           <label htmlFor="dateTime">Appointment Time</label>
-        {/* using the DatePicker component to input the date and time into this field */}
+          {/* using the DatePicker component to input the date and time into this field */}
           <Field
             className="input-wrapper---3"
             name="dateTime"

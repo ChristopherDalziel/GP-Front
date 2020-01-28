@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Nav from "../components/Nav";
 
 import "../css/Home.css";
 
@@ -8,7 +7,6 @@ class Home extends React.Component {
   render() {
     return (
       <>
-        <Nav />
         <div className="slider">
           <div className="imageChange"></div>
           <div className="content">

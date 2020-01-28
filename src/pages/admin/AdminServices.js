@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Nav from "../../components/Nav";
 import ServiceForm from "../../components/Services/ServiceForm";
 import ServiceTable from "../../components/Services/serviceTable";
 
@@ -21,7 +20,6 @@ class AdminServices extends React.Component {
   render() {
     return (
       <>
-        <Nav />
         <div className="grid">
           <div className="table-cont">
             <ServiceTable />

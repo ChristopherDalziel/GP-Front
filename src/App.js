@@ -25,11 +25,13 @@ import EditService from "./pages/EditService";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminServices from "./pages/admin/AdminServices";
 import AdminVaccines from "./pages/admin/AdminVaccines";
+import Nav from "./components/Nav";
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
+        <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/register" component={Register} />
@@ -58,7 +60,6 @@ const App = () => {
 
           <Route path="/vaccine/edit/:id" component={EditVaccine} />
           <Route path="/service/edit/:id" component={EditService} />
-
         </Switch>
       </BrowserRouter>
     </>

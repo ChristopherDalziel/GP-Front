@@ -1,5 +1,4 @@
 import React from "react";
-import Nav from "../components/Nav";
 
 import "../css/About.css";
 import doctor from "../assets/doctor.jpg";
@@ -8,7 +7,6 @@ class About extends React.Component {
   render() {
     return (
       <>
-        <Nav />
         <div className="about-us">
           <div className="intro">
             <div className="about-image"></div>
