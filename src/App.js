@@ -14,7 +14,6 @@ import Booking from "./pages/booking";
 import SuccessPage from "./pages/success";
 
 //Staff
-import Staff from "./pages/staff";
 import StaffList from "./components/Staff/StaffList";
 import EditStaff from "./components/Staff/EditStaff";
 import CreateStaff from "./components/Staff/CreateStaff";
@@ -47,13 +46,12 @@ const App = () => {
           <Route path="/booking" component={Booking} />
           <Route exact path="/success" component={SuccessPage} />
 
-          <Route path="/staff" component={Staff} />
+          {/* <Route path="/staff" component={Staff} /> */}
           <Route path="/admin/staff" component={StaffList} />
           <Route path="/admin/add_staff" component={CreateStaff} />
           <Route path="/admin/update_staff/:id" component={EditStaff} />
 
           {/* Admin User Routes */}
-          {/* <Route path="/admin_dashboard" component={AdminDashboard} /> */}
           <Route path="/admin/services" component={AdminServices} />
           <Route path="/admin/vaccines" component={AdminVaccines} />
 
