@@ -6,13 +6,12 @@ import UserAppointments from "../components/users/appointments";
 import RegistrationForm from "../components/authentication/registrationform";
 
 class Profile extends React.Component {
-
   state = {
     firstName: null,
     lastName: null,
     email: null,
     phone: null
-  }
+  };
 
   componentDidMount() {
     let token = sessionStorage.getItem("token");
@@ -28,7 +27,7 @@ class Profile extends React.Component {
               email: user.email,
               firstName: user.firstName,
               lastName: user.lastName,
-              phone: user.phone,
+              phone: user.phone
             });
           });
       } catch (err) {
@@ -45,12 +44,19 @@ class Profile extends React.Component {
         <div className="profile">
           <div className="container-booking">
             <h1> Your Scheduled Appointments</h1>
-              <UserAppointments />
+            <UserAppointments />
           </div>
           <div className="container-profile">
-            Your Information
             <div className="content-profile">
-              <RegistrationForm initialValues={{firstName: firstName, lastName: lastName, email: email, phone: phone}} />
+              <h1>Your Information</h1>
+              <RegistrationForm
+                initialValues={{
+                  firstName: firstName,
+                  lastName: lastName,
+                  email: email,
+                  phone: phone
+                }}
+              />
             </div>
           </div>
         </div>
