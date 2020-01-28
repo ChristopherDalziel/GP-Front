@@ -1,154 +1,91 @@
-import React, { Fragment, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-// import {connect} from 'react-redux'
-import "../css/register.css";
 import axios from "axios";
-import { setLocalStorage } from "../utils/local-storage";
-// import {register} from '../actions/auth'
-// import PropTypes from 'prop-types'
+import Nav from "../components/Nav";
+import RegistrationForm from "../components/authentication/registrationform";
 
-const Register = props => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    password: "",
-    password2: ""
-  });
-  const [error, setError] = useState(null);
+class Registration extends React.Component {
 
-  const { firstName, lastName, email, phone, password, password2 } = formData;
-
-  const onChange = e =>
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-
-  const onSubmit = async e => {
-    e.preventDefault();
-    if (password !== password2) {
-      setError(<h3 className="error"> "Passwords do not match"</h3>);
-    } else {
-      const newUser = {
-        firstName,
-        lastName,
-        email,
-        phone,
-        password
-      };
-      try {
-        await axios
-          .post(process.env.REACT_APP_BACKEND_URL + "/users/register", newUser)
-          .then(response => {
-            alert("Registration successful");
-            setLocalStorage(response.data);
-            props.history.push("/");
-          });
-      } catch (err) {
-        console.log(err.message);
-        setError("Registration unsuccessful: An error occurred");
-      }
-    }
+  state = {
+    email: null,
+    firstName: null,
+    lastName: null,
+    phone: null,
+    password: null,
+    password2: null,
+    errors: null
   };
 
-  return (
-    <Fragment>
-      <div className="signUp">
+  componentDidMount() {
+    let token = sessionStorage.getItem('token');
+      if (token) {
+       try { axios.get(process.env.REACT_APP_BACKEND_URL + "/users/find-user", { headers: {'Authorization': token } })
+       .then((response) => {
+          const user = response.data;
+          this.setState({
+            email: user.email,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            phone: user.phone
+          })
+        })
+      } catch(err) {
+        this.setState({errors: err.message})
+        console.log(err.message)
+      }
+  }
+}
+
+  registrationSubmit = async (values) => {
+  try {
+    const newUser = values;
+    console.log(newUser)
+    // await axios
+    // .post(process.env.REACT_APP_BACKEND_URL + "/users/register", newUser)
+    // .then(response => {
+    //   alert("Registration successful");
+    //   setLocalStorage(response.data);
+    //   props.history.push("/");
+    // });
+    } catch (err) {
+      console.log(err.message);
+      // this.setState({error: `Registration unsuccessful: ${response.data}` });
+    }
+  
+}
+
+  render() {
+    const {email, firstName, lastName, phone } = this.state;
+    return (
+      <>
+        <Nav />
+        <div className="signUp">
         <div className="container">
           <div className="imageSignUp"></div>
           <div className="content-signUp">
-            <div>
+              <div>
               <h1>New to Klinic Doctor Leong?</h1>
               <h1>Sign Up Now</h1>
-              <form onSubmit={e => onSubmit(e)}>
-                <div className="input-wrapper-1">
-                  <label>First Name</label> <br />
-                  <input
-                    type="text"
-                    placeholder="Enter Your First Name"
-                    name="firstName"
-                    value={firstName}
-                    onChange={e => onChange(e)}
-                    required
-                  />
-                </div>
-                <div className="input-wrapper-2">
-                  <label>Last Name</label>
-                  <br />
-                  <input
-                    type="text"
-                    placeholder="Enter Your Last Name"
-                    name="lastName"
-                    value={lastName}
-                    onChange={e => onChange(e)}
-                    required
-                  />
-                </div>
-                <div className="input-wrapper-3">
-                  <label>Email</label>
-                  <br />
-                  <input
-                    type="text"
-                    placeholder="Enter Email"
-                    name="email"
-                    value={email}
-                    onChange={e => onChange(e)}
-                    required
-                  />
-                </div>
-                <div className="input-wrapper-4">
-                  <label>Phone Number</label>
-                  <br />
-                  <input
-                    type="text"
-                    placeholder="Enter Your Phone Number"
-                    name="phone"
-                    value={phone}
-                    onChange={e => onChange(e)}
-                    required
-                  />
-                </div>
-                <div className="input-wrapper-5">
-                  <label>Password</label>
-                  <br />
-                  <input
-                    type="password"
-                    placeholder="Enter Password"
-                    name="password"
-                    value={password}
-                    onChange={e => onChange(e)}
-                    required
-                  />
-                </div>
-                <div className="input-wrapper-6">
-                  <label>Confirm Password</label>
-                  <br />
-                  <input
-                    type="password"
-                    placeholder="Confirm Password"
-                    name="password2"
-                    value={password2}
-                    onChange={e => onChange(e)}
-                    required
-                  />
-                </div>
-                <div>{error}</div>
-                <div>
-                  <button type="submit">Sign Up</button>
-                </div>
-                <h4>
-                  Already have an account?
-                  <Link to="signin"> Sign In Here</Link>
-                </h4>
-              </form>
+                <RegistrationForm onSubmit={this.registrationSubmit} initialValues={{firstName: firstName, lastName: lastName, email: email, phone: phone}} />
+              </div>
+              <div>
+                <h4>{this.state.errors}</h4>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </Fragment>
-  );
-};
+        <div>{this.state.errors}</div>
+        <div>
+          <button type="submit">Sign Up</button>
+        </div>
+        <h4>
+          Already have an account?
+          <Link to="signin"> Sign In Here</Link>
+        </h4>
 
-export default Register;
+      </>
+    );
+  }
+}
+
+export default Registration;
