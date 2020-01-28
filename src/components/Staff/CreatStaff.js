@@ -64,6 +64,11 @@ class CreatStaff extends Component {
 
   render() {
     return (
+
+    //  <form onSubmit={this.submitFile}>
+    //   <input label='upload file' type='file' className="upload-image" onChange={this.handleFileUpload} />
+    //   <button  className="upload">Upload Image</button>
+    // </form>
       <div>
         <div className="staffs">
           <div className="staff-infor"></div>
