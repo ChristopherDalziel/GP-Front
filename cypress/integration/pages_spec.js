@@ -1,4 +1,4 @@
-describe("About Page Testing", function() {
+describe("General Page Tests", function() {
   it("Tests About Page", function() {
     // Tests Go Here
   });
