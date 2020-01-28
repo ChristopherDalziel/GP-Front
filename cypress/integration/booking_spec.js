@@ -1,12 +1,14 @@
 describe("Booking Page Functionality Testing", function() {
-  it("Tests Booking Page", function() {
-    // Testing Booking Now form (Not Logged In)
-
+  it("Tests Booking Functions When A Patient Is Signed In", function() {
     cy.visit("localhost:3000");
+    cy.contains("li", "Log In").click();
+    cy.get("input[name=email]").type("klinikdrleong@gmail.com");
+    cy.get("input[name=password").type("eb08ef45");
+    cy.contains("Submit").click();
+  });
 
+  it("Tests Booking Functions When A Patient Isn't Signed In", function() {
     cy.contains("li", "Book Now").click();
-
-    cy.contains("Book Now").click();
     cy.location("pathname").should("eq", "/booking");
     cy.get("input[name=firstName]").type("test = First Name");
     cy.get("input[name=lastName]").type("test = Last Name");
@@ -22,7 +24,7 @@ describe("Booking Page Functionality Testing", function() {
     cy.get("input[name=comment]").type(
       "comments, are like comments are testing."
     );
-    cy.contains("Submit").click();
+    // cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/success");
   });
 });
