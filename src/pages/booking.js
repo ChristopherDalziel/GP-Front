@@ -42,8 +42,8 @@ class Booking extends React.Component {
         this.setState({ errors: err.message });
         console.log(err.message);
       }
-      this.setState({ loading: false });
     }
+    this.setState({ loading: false });
   }
 
   bookingSubmit = async values => {

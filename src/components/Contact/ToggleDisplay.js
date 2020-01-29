@@ -43,7 +43,6 @@ class ContactInfo extends React.Component {
           <h3>Opening Hours:</h3>
           {data
             ? data.map((hours, index) => {
-                console.log(hours);
                 return (
                   <>
                     <p>
