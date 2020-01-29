@@ -1,3 +1,4 @@
+
 describe("Admin Dashboard Functionality and CRUD Testing", function() {
   it("Tests login of an existing admin user/account", function() {
     cy.visit("localhost:3000");
@@ -10,6 +11,7 @@ describe("Admin Dashboard Functionality and CRUD Testing", function() {
     cy.contains("li", "Admin Dashboard").click();
     cy.location("pathname").should("eq", "/admin/staff");
   });
+
 
   it("Tests creation of a new staff member", function() {
     cy.contains("Add New Staff Member").click();
@@ -29,16 +31,8 @@ describe("Admin Dashboard Functionality and CRUD Testing", function() {
     cy.location("pathname").should("eq", "/admin/staff");
   });
 
-<<<<<<< HEAD:cypress/integration/adminDashboard_spec.js
   it("Tests deleting of an existing staff member", function() {
     cy.contains("Delete").click();
     cy.location("pathname").should("eq", "/admin/staff");
   });
-=======
-  // Creating, Editing, Deletion of Vaccines
-
-  // Creating, Editing, Deletion of Services
-
-  // Creating, Editing, Deleting appointments
->>>>>>> 0ebd82a778e0c2e8cdf2bdf855f19c8c6dc51dcc:cypress/integration/admin_spec.js
 });
