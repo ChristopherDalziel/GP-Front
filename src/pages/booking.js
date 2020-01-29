@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import BookingForm from "../components/bookingform/bookingform";
+import ProgressBar from "../utils/pageLoading";
 import addDays from "date-fns/addDays";
 import format from "date-fns/format";
 
@@ -16,7 +17,8 @@ class Booking extends React.Component {
     firstName: null,
     lastName: null,
     phone: null,
-    errors: null
+    errors: null,
+    loading: true
   };
 
   componentDidMount() {
@@ -41,6 +43,7 @@ class Booking extends React.Component {
         console.log(err.message);
       }
     }
+    this.setState({ loading: false });
   }
 
   bookingSubmit = async values => {
@@ -72,6 +75,7 @@ class Booking extends React.Component {
     const { email, firstName, lastName, phone, startDate } = this.state;
     return (
       <>
+        {this.state.loading && <ProgressBar />}
         <div className="booking">
           <div className="container">
             <div className="imageBooking"></div>

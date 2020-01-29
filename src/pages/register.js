@@ -4,6 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
 import RegistrationForm from "../components/authentication/registrationform";
 import { setLocalStorage } from "../utils/local-storage";
+import ProgressBar from "../utils/pageLoading";
 
 class Registration extends React.Component {
   state = {
@@ -13,7 +14,8 @@ class Registration extends React.Component {
     phone: null,
     password: null,
     password2: null,
-    errors: null
+    errors: null,
+    loading: true
   };
 
   componentDidMount() {
@@ -38,6 +40,7 @@ class Registration extends React.Component {
         console.log(err.message);
       }
     }
+    this.setState({ loading: false });
   }
 
   registrationSubmit = async values => {
@@ -60,6 +63,8 @@ class Registration extends React.Component {
     const { email, firstName, lastName, phone } = this.state;
     return (
       <>
+        {this.state.loading && <ProgressBar />}
+
         <div className="signUp">
           <div className="container">
             <div className="imageSignUp"></div>
@@ -73,7 +78,6 @@ class Registration extends React.Component {
                 <h4>{this.state.errors}</h4>
               </div>
               <div>
-                <br></br>
                 <h4>
                   Already have an account?
                   <Link to="signin"> Sign In Here</Link>

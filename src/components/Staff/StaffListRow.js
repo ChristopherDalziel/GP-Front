@@ -28,6 +28,7 @@ export default class StaffListRow extends Component {
       <tr>
         <td>{this.props.obj.name}</td>
         <td>{this.props.obj.aboutText}</td>
+        <td>{this.props.obj.position}</td>
         <td>
           <img src={this.props.obj.imageUrl} alt="" />
         </td>
