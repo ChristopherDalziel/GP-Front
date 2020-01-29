@@ -1,13 +1,13 @@
 .services {
   width: 100%;
-  min-height: 99vh;
+  min-height: 95vh;
   overflow: hidden;
 }
 
 
 .service-image{
-  height: 34vh;
-  background-image: url(../assets/banner-staff.jpg);
+  height: 50vh;
+  background-image: url(../assets/banner-staff-copy.jpg);
   background-size: cover;
 }
 
@@ -15,7 +15,7 @@
   font-family: "Raleway", sans-serif;
   padding-left:400px;
   padding-right:400px;
-  padding-top:40px;
+  padding-top:120px;
   text-align: center;
 }
 
@@ -42,10 +42,21 @@
 
 
 .singleService{
+  padding-top:30px;
+  padding-left:50px;
+  position: relative;
   box-sizing: border-box;
-  width: 30%;
- margin-right:40px;
- margin-bottom: 60px;
+  width: 25%;
+  height: 40vh;
+  margin-right:40px;
+  margin-bottom: 60px;
+  top:-120px;
+  background: #e1eeff;
+}
+.singleService h1{
+  margin-bottom: 40px;
+  font-size: 20px;
+
 }
 .serviceImage{
   border-radius: 5px;
