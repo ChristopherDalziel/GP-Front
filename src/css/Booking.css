@@ -36,14 +36,18 @@
 }
 
 .booking h1 {
-  font-family: "Raleway", sans-serif;
   margin-bottom: 30px;
 }
 
 .booking h5 {
   margin-bottom: 20px;
   font-size: 20px;
-  font-family: "Raleway", sans-serif;
+}
+
+.booking h2,
+h3 {
+  width: 27vw;
+  margin-bottom: 5px;
 }
 
 .content-booking input {
