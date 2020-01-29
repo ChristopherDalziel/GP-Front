@@ -44,8 +44,14 @@
 .singleService{
   box-sizing: border-box;
   width: 30%;
- margin-right:20px;
+ margin-right:40px;
  margin-bottom: 60px;
+}
+.serviceImage{
+  border-radius: 5px;
+  height: 65%;
+  margin-bottom: 10px;
+
 }
 
 
