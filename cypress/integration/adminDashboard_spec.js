@@ -28,10 +28,4 @@ describe("Admin Functionality Testing", function() {
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/admin/staff");
   });
-
-  // Creating, Editing, Deletion of Vaccines
-
-  // Creating, Editing, Deletion of Services
-
-  // Creating, Editing, Deleting appointments
 });
