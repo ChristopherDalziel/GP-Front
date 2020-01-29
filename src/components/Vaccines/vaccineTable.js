@@ -24,7 +24,7 @@ class VaccineTable extends React.Component {
       axios
         .delete(process.env.REACT_APP_BACKEND_URL + `/vaccines/delete/${id}`)
         .then(response => {
-          window.location.replace("/admin_vaccines");
+          window.location.replace("/admin/vaccines");
         });
     }
     return (
@@ -54,7 +54,7 @@ class VaccineTable extends React.Component {
                     <td>
                       {" "}
                       <Link to={"/vaccine/edit/" + vaccine._id}>
-                        <button>Edit</button>
+                        <button name="Button-Edit">Edit</button>
                       </Link>
                     </td>
                     <td>

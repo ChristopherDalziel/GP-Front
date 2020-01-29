@@ -1,12 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ProgressBar from "../utils/pageLoading";
 
 import "../css/Home.css";
 
 class Home extends React.Component {
+  state = {
+    loading: true
+  };
+
+  componentDidMount() {
+    this.setState({ loading: false });
+  }
   render() {
     return (
       <>
+        {this.state.loading && <ProgressBar />}
+
         <div className="slider">
           <div className="imageChange"></div>
           <div className="content">

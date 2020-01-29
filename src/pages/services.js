@@ -1,10 +1,20 @@
 import React from "react";
 import ServiceList from "../components/Services/serviceList";
+import ProgressBar from "../utils/pageLoading";
 
 class Services extends React.Component {
+  state = {
+    loading: true
+  };
+
+  componentDidMount() {
+    this.setState({ loading: false });
+  }
+
   render() {
     return (
       <>
+        {this.state.loading && <ProgressBar />}
       <div className="services">
         <div className="service-image"></div>
         <div className="title">
