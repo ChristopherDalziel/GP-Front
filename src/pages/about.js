@@ -31,7 +31,7 @@ class About extends React.Component {
         <div className="doctor-card">
           <img src={res.imageUrl} alt="" />
           <h3>{res.name}</h3>
-          <h4>Doctor</h4>
+          <h4>{res.position}</h4>
           <p>{res.aboutText}</p>
         </div>
       )

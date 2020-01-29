@@ -42,6 +42,7 @@ export default class StaffList extends Component {
               <tr>
                 <th>Name</th>
                 <th>Introduction</th>
+                <th>Position</th>
               </tr>
             </thead>
             <tbody>{this.DataTable()}</tbody>
