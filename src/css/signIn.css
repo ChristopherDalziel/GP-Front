@@ -13,7 +13,7 @@
 .imageSignIn {
   width: 50%;
   height: 100%;
-  background-image: url(../assets/sign-in.jpg);
+  background-image: url(../assets/signup-bg.jpg);
   background-size: cover;
 }
 
@@ -68,6 +68,8 @@
   background: #398ffc;
   height: 4vh;
   width: 30vw;
+  margin-bottom: 20px;
+
 }
 
 .input-wrapper1 {
@@ -96,4 +98,22 @@
   left: 10px;
   top: 35px;
   color: #398ffc;
+}
+
+
+.signIn a, .signUp a{
+ 
+  margin-top:10px;
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+
+}
+
+.signIn h4, .signUp h4{
+  margin-top:10px;
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+
 }

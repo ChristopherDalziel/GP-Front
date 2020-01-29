@@ -71,7 +71,6 @@ class Registration extends React.Component {
                 <h4>{this.state.errors}</h4>
               </div>
               <div>
-                <br></br>
               <h4>
                 Already have an account?
                 <Link to="signin"> Sign In Here</Link>

@@ -17,7 +17,7 @@
 .imageSignUp {
   width: 50%;
   height: 100%;
-  background-image: url(../assets/signup-bg.jpg);
+  background-image: url(../assets/sign-up.jpg);
   background-size: cover;
   /* background-repeat: no-repeat; */
 }
@@ -77,6 +77,7 @@
   background: #398ffc;
   height: 4vh;
   width: 30vw;
+  margin-bottom: 10px;
 }
 
 .input-wrapper-1 {
