@@ -2,16 +2,18 @@ import React from "react";
 import axios from "axios";
 
 import "../css/Profile.css";
+import "../css/register.css";
 import UserAppointments from "../components/users/appointments";
-import RegistrationForm from "../components/authentication/registrationform";
+import UserInfoForm from "../components/users/editinfoform";
 
 class Profile extends React.Component {
-
   state = {
+    id: null,
     firstName: null,
     lastName: null,
     email: null,
-    phone: null
+    phone: null,
+    errors: null
   }
 
   componentDidMount() {
@@ -25,10 +27,11 @@ class Profile extends React.Component {
           .then(response => {
             const user = response.data;
             this.setState({
+              id: user.id,
               email: user.email,
               firstName: user.firstName,
               lastName: user.lastName,
-              phone: user.phone,
+              phone: user.phone
             });
           });
       } catch (err) {
@@ -38,6 +41,24 @@ class Profile extends React.Component {
     }
   }
 
+  editInfoSubmit = (values) => {
+    const id = this.state.id;
+    axios.patch(process.env.REACT_APP_BACKEND_URL + `/users/edit/${id}`, values).then((response) => {
+      console.log(response.data)
+      const {email, firstName, lastName, phone} = response.data;
+      this.setState({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        phone: phone
+      })
+    })
+    .catch((err) => {
+      console.log(err.message);
+      this.setState({errors: err.message})
+    })
+  }
+
   render() {
     const { firstName, lastName, email, phone } = this.state;
     return (
@@ -45,13 +66,17 @@ class Profile extends React.Component {
         <div className="profile">
           <div className="container-booking">
             <h1> Your Scheduled Appointments</h1>
-              <UserAppointments />
+            <UserAppointments />
           </div>
           <div className="container-profile">
-            Your Information
-            <div className="content-profile">
-              <RegistrationForm initialValues={{firstName: firstName, lastName: lastName, email: email, phone: phone}} />
-            </div>
+            <div className="content-signUp">
+              <h1>Your Information</h1>
+              <UserInfoForm onSubmit={this.editInfoSubmit} initialValues={{firstName: firstName, lastName: lastName, email: email, phone: phone}} />
+              <div>
+              {this.state.errors}
+              </div>
+              
+              </div>
           </div>
         </div>
       </>

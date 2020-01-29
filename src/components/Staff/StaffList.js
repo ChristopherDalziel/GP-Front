@@ -13,7 +13,7 @@ export default class StaffList extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/admin/staff")
+      .get(process.env.REACT_APP_BACKEND_URL + "/admin/staff")
       .then(res => {
         this.setState({
           staffs: res.data
@@ -47,7 +47,7 @@ export default class StaffList extends Component {
             <tbody>{this.DataTable()}</tbody>
           </table>
         </div>
-        <Link to={"/admin/add_staff"}>Add a new staff</Link>
+        <Link to={"/admin/add_staff"}>Add New Staff Member</Link>
       </div>
     );
   }

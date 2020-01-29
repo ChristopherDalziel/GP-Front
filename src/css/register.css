@@ -10,16 +10,11 @@
   flex-direction: row;
 }
 
-/* .height-container-right {
-  height: 10px;
-} */
-
 .imageSignUp {
   width: 50%;
   height: 100%;
   background-image: url(../assets/sign-up.jpg);
   background-size: cover;
-  /* background-repeat: no-repeat; */
 }
 
 .signUp .image img {
@@ -41,7 +36,6 @@
 }
 
 .signUp h1 {
-  font-family: "Raleway", sans-serif;
   margin-bottom: 30px;
 }
 
@@ -54,6 +48,29 @@
   height: 40px;
   border: none;
   margin-bottom: 4vh;
+}
+
+.content-profile input {
+  box-sizing: border-box;
+  padding-left: 40px;
+  font-size: 12px;
+  margin-top: 10px;
+  width: 27vw;
+  height: 40px;
+  border: none;
+  margin-bottom: 4vh;
+}
+
+.profile button {
+  font-family: "Raleway", sans-serif;
+  margin-top: 10px;
+  font-size: 18px;
+  color: white;
+  padding: 0;
+  margin: 0;
+  background: #398ffc;
+  height: 4vh;
+  width: 27vw;
 }
 
 .signUp h5 {
