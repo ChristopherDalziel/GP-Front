@@ -184,6 +184,11 @@
   background-color: #c4d7ed;
 }
 
+.info-container-fb h5 {
+  margin-left: 50px;
+  margin-top: 7px;
+}
+
 .fb-icon {
   float: left;
 }

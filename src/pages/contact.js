@@ -19,7 +19,6 @@ class Contact extends React.Component {
   }
 
   render() {
-    console.log(ProgressBar);
     return (
       <>
         {this.state.loading && <ProgressBar />}
