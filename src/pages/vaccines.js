@@ -8,7 +8,7 @@ class Vaccines extends React.Component {
         <div className="vaccines">
           <div className="vaccine-image"></div>
           <div className="title">
-            <h1>Check Our Vaccine</h1>
+            <h1>Our Vaccine</h1>
             <p>Medical One GP's are dedicated to providing you the best possible care. On this page you can find a GP by name, gender, location, languages spoken or medial interest.</p>
           </div>
           
@@ -18,8 +18,6 @@ class Vaccines extends React.Component {
                 <VaccineList />
               </div>
            </div>
-
-           
           </div>
         </div>
       </>

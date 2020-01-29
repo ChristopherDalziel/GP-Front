@@ -59,6 +59,12 @@
   border-radius: 5px;
   height: 200px;
   width: 200px;
+  cursor: pointer;
+  transition: all 0.6s;
+
+} 
+.singleVaccine img:hover{
+  transform: scale(1.1);
 } 
 .singleVaccine p {
   font-size: 14px;
