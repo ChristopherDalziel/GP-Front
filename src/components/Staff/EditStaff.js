@@ -9,7 +9,8 @@ class CreateStaff extends Component {
     this.state = {
       file: null,
       name: "",
-      aboutText: ""
+      aboutText: "",
+      imageUrl:''
     };
 
     this.onChangeName = this.onChangeName.bind(this);
@@ -27,7 +28,9 @@ class CreateStaff extends Component {
       .then(res => {
         this.setState({
           name: res.data.name,
-          aboutText: res.data.aboutText
+          aboutText: res.data.aboutText,
+          imageUrl: res.data.imageUrl,
+
         });
       })
       .catch(error => {
@@ -47,7 +50,8 @@ class CreateStaff extends Component {
     e.preventDefault();
     const staffObject = {
       name: this.state.name,
-      aboutText: this.state.aboutText
+      aboutText: this.state.aboutText,
+      imageUrl: this.state.imageUrl,
     };
     axios
       .put(
@@ -68,9 +72,7 @@ class CreateStaff extends Component {
     window.location.reload(true);
   }
 
-
   render() {
-
     let widget = window.cloudinary.createUploadWidget(
       {
         cloudName: "acloudname10",
@@ -79,8 +81,7 @@ class CreateStaff extends Component {
       (error, result) => {
         if (!error && result && result.event === "success") {
           console.log("Done! Here is the image info: ", result.info.url);
-          this.setState({imageUrl:result.info.url})
-
+          this.setState({ imageUrl: result.info.url });
         }
       }
     );
@@ -96,7 +97,7 @@ class CreateStaff extends Component {
           <div className="add_staff">
             <h1>Edit Staff Information Here</h1>
             <form onSubmit={this.onSubmit}>
-              <div>
+              <div className="edit_staff">
                 <label>Staff Name</label> <br />
                 <input
                   type="text"
@@ -114,8 +115,8 @@ class CreateStaff extends Component {
                   onChange={this.onChangeAboutText}
                 />
               </div>
-              <a onClick={showWidget}>Upload Image</a> 
-             
+              <a onClick={showWidget}>Upload Image</a>
+
               <button type="submit">Submit</button>
             </form>
           </div>

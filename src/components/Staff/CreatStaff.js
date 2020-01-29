@@ -9,7 +9,7 @@ class CreateStaff extends Component {
       file: null,
       name: "",
       aboutText: "",
-      imageUrl: ""
+      imageUrl:''
     };
 
     this.onChangeName = this.onChangeName.bind(this);
@@ -31,17 +31,21 @@ class CreateStaff extends Component {
     const staffObject = {
       name: this.state.name,
       aboutText: this.state.aboutText,
-      imageUrl: this.state.imageUrl
+      imageUrl:this.state.imageUrl
+    
     };
     axios
-      .post(process.env.REACT_APP_BACKEND_URL + "/admin/add_staff", staffObject)
+      .post("http://localhost:5000/admin/add_staff", staffObject)
       //  {headers: {'Authorization': sessionStorage.getItem('token') }}
       .then(res => console.log(res.data));
 
-    this.setState({ name: "", aboutText: "" , imageUrl:""});
+    this.setState({ name: "", aboutText: "" });
+
     this.props.history.push("/admin/staff");
     window.location.reload(true);
   }
+
+  
 
   render() {
     let widget = window.cloudinary.createUploadWidget(
@@ -52,7 +56,8 @@ class CreateStaff extends Component {
       (error, result) => {
         if (!error && result && result.event === "success") {
           console.log("Done! Here is the image info: ", result.info.url);
-          this.setState({ imageUrl: result.info.url });
+          this.setState({imageUrl:result.info.url})
+
         }
       }
     );
@@ -60,6 +65,7 @@ class CreateStaff extends Component {
     const showWidget = () => {
       widget.open();
     };
+
 
     return (
       <div>
@@ -72,7 +78,6 @@ class CreateStaff extends Component {
               <div>
                 <label>Staff Name</label> <br />
                 <input
-                  name="add_staff"
                   type="text"
                   placeholder="Enter Staff Name"
                   value={this.state.name}
@@ -88,8 +93,8 @@ class CreateStaff extends Component {
                   onChange={this.onChangeAboutText}
                 />
               </div>
-              <a onClick={showWidget}>Upload Image</a>
-
+              <a onClick={showWidget}>Upload Image</a> 
+          
               <button type="submit">Submit</button>
             </form>
           </div>

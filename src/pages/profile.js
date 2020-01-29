@@ -7,7 +7,6 @@ import UserAppointments from "../components/users/appointments";
 import UserInfoForm from "../components/users/editinfoform";
 
 class Profile extends React.Component {
-
   state = {
     id: null,
     firstName: null,
@@ -32,7 +31,7 @@ class Profile extends React.Component {
               email: user.email,
               firstName: user.firstName,
               lastName: user.lastName,
-              phone: user.phone,
+              phone: user.phone
             });
           });
       } catch (err) {
@@ -67,7 +66,7 @@ class Profile extends React.Component {
         <div className="profile">
           <div className="container-booking">
             <h1> Your Scheduled Appointments</h1>
-              <UserAppointments />
+            <UserAppointments />
           </div>
           <div className="container-profile">
             <div className="content-signUp">
