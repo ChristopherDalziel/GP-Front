@@ -26,7 +26,9 @@ import AdminServices from "./pages/admin/AdminServices";
 import AdminVaccines from "./pages/admin/AdminVaccines";
 
 //Admin Dashboard
-import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminUsers from "./pages/admin/AdminUsers";
+import EditUserInfo from "./components/admin_dashboard/EditUserInfo";
+
 
 const App = () => {
   return (
@@ -55,13 +57,16 @@ const App = () => {
           <Route path="/admin/update_staff/:id" component={EditStaff} />
 
           {/* Admin User Routes */}
-          <Route path="/admin/dashboard" component={AdminDashboard} />
+          <Route path="/admin/users" component={AdminUsers} />
           
           <Route path="/admin/services" component={AdminServices} />
           <Route path="/admin/vaccines" component={AdminVaccines} />
 
           <Route path="/vaccine/edit/:id" component={EditVaccine} />
           <Route path="/service/edit/:id" component={EditService} />
+
+          <Route path="/user/edit/:id" component={EditUserInfo} />
+
         </Switch>
       </BrowserRouter>
     </>

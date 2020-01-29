@@ -1,11 +1,8 @@
 import React from "react";
-import axios from "axios";
 import UsersList from "../../components/admin_dashboard/UsersTable";
 
 
-class AdminDashboard extends React.Component {
-
-
+class AdminUsers extends React.Component {
 
   render() {
     return(
@@ -14,4 +11,4 @@ class AdminDashboard extends React.Component {
   }
 }
 
-export default AdminDashboard
+export default AdminUsers

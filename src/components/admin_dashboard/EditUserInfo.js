@@ -1,14 +1,16 @@
 import React from "react";
 import axios from "axios";
+import UserInfoForm from "../users/editinfoform";
 
-import "../css/Profile.css";
-import "../css/register.css";
+import "../../css/register.css";
 
-import UserInfoForm from "../components/users/editinfoform";
+
 
 class EditUserInfo extends React.Component {
+
+
+
   state = {
-    id: this.props.id,
     firstName: null,
     lastName: null,
     email: null,
@@ -17,17 +19,16 @@ class EditUserInfo extends React.Component {
   }
 
   componentDidMount() {
+    const id = this.props.match.params.id;
     let token = sessionStorage.getItem("token");
-    if (token) {
       try {
         axios
-          .get(process.env.REACT_APP_BACKEND_URL + "/users/find-user", {
+          .get(process.env.REACT_APP_BACKEND_URL + `/admin/user/${id}`, {
             headers: { Authorization: token }
           })
           .then(response => {
             const user = response.data;
             this.setState({
-              id: user.id,
               email: user.email,
               firstName: user.firstName,
               lastName: user.lastName,
@@ -39,10 +40,10 @@ class EditUserInfo extends React.Component {
         console.log(err.message);
       }
     }
-  }
+  
 
   editInfoSubmit = (values) => {
-    const id = this.state.id;
+    const id = this.props.match.params.id;
     axios.patch(process.env.REACT_APP_BACKEND_URL + `/users/edit/${id}`, values).then((response) => {
       console.log(response.data)
       const {email, firstName, lastName, phone} = response.data;
@@ -52,6 +53,7 @@ class EditUserInfo extends React.Component {
         email: email,
         phone: phone
       })
+      window.location.replace('/admin/users')
     })
     .catch((err) => {
       console.log(err.message);
@@ -60,23 +62,18 @@ class EditUserInfo extends React.Component {
   }
 
   render() {
-    const { firstName, lastName, email, phone } = this.state;
+    const {firstName, lastName, email, phone} = this.state;
     return (
       <>
         <div className="profile">
-          <div className="container-booking">
-            <h1> Your Scheduled Appointments</h1>
-            <UserAppointments />
-          </div>
           <div className="container-profile">
             <div className="content-signUp">
-              <h1>Your Information</h1>
+              <h1>Editing Information for {this.state.firstName} {this.state.lastName}</h1>
               <UserInfoForm onSubmit={this.editInfoSubmit} initialValues={{firstName: firstName, lastName: lastName, email: email, phone: phone}} />
               <div>
               {this.state.errors}
               </div>
-              
-              </div>
+            </div>
           </div>
         </div>
       </>
@@ -84,4 +81,5 @@ class EditUserInfo extends React.Component {
   }
 }
 
-export default Profile;
+
+export default EditUserInfo;

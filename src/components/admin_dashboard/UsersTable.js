@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 
@@ -25,18 +26,7 @@ class UsersList extends React.Component {
     }
   }
 
-  editInfoSubmit = (values) => {
-    console.log(values)
-    const id = this.state.id;
-    axios.patch(process.env.REACT_APP_BACKEND_URL + `/users/edit/${id}`, values).then((response) => {
-      console.log(response.data)
-      alert('User information successfully updated. Please close the window.')
-    })
-    .catch((err) => {
-      console.log(err.message);
-      this.setState({errors: err.message})
-    })
-  }
+
 
   renderEachUser = () => {
     const users = this.state.allUsers;
@@ -53,7 +43,7 @@ class UsersList extends React.Component {
             </thead>
             <tbody>
             {users.map((user, index) => {
-              const {lastName, firstName, email, phone} = user;
+              const {_id, lastName, firstName, email, phone} = user;
               return (
                 <>
                   <tr key={index}>
@@ -62,8 +52,8 @@ class UsersList extends React.Component {
                     <td>{email}</td>
                     <td>{phone}</td>
                     <td>
-                    {/* need to add onclick function for edit to load a new page with user info form */}
-                    <button>Edit</button></td>
+                    <Link to={"/user/edit/" + _id}>Edit</Link>
+                    </td>
                   </tr>
                  </>
               )
