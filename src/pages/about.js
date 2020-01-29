@@ -9,7 +9,7 @@ class About extends React.Component {
 
     this.state = {
       staffs: [],
-      loading: false
+      loading: true
     };
   }
 
@@ -24,7 +24,7 @@ class About extends React.Component {
       .catch(error => {
         console.log(error);
       });
-    this.setState({ loading: true });
+    this.setState({ loading: false });
   }
 
   DataTable() {
@@ -36,13 +36,14 @@ class About extends React.Component {
           <h4>{res.position}</h4>
           <p>{res.aboutText}</p>
         </div>
-      )
+      );
     });
   }
 
   render() {
     return (
       <>
+        {this.state.loading && <ProgressBar />}
         <div className="about-us">
           <div className="intro">
             <div className="about-image"></div>
@@ -71,12 +72,8 @@ class About extends React.Component {
               location, languages spoken or medial interest.
             </p>
           </div>
-          <div className="doctors">
-            {this.DataTable()}
-          </div>
+          <div className="doctors">{this.DataTable()}</div>
         </div>
-
-
       </>
     );
   }

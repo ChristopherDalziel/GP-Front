@@ -176,6 +176,24 @@
   background-color: #c4d7ed;
 }
 
+.info-container-fb {
+  margin-top: 10px;
+  padding: 1vh;
+  height: 5vh;
+  width: 29vw;
+  background-color: #c4d7ed;
+}
+
+.fb-icon {
+  float: left;
+}
+
+.fb-icon:after {
+  font-size: 40px;
+  font-family: "FontAwesome";
+  content: "\f082";
+}
+
 .info-container-opening-hours {
   margin-top: 10px;
   padding: 1vh;
