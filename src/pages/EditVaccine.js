@@ -21,7 +21,7 @@ class EditVaccine extends React.Component {
         process.env.REACT_APP_BACKEND_URL + `/vaccines/update/${id}`,
         updatedVaccine
       );
-      history.push("/admin_vaccines");
+      history.push("/admin/vaccines");
     } catch (error) {
       console.log(error);
     }

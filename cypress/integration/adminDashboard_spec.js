@@ -1,5 +1,5 @@
-describe("Admin Functionality Testing", function() {
-  it("Tests Login Of An Existing Admin Account", function() {
+describe("Admin Dashboard Functionality and CRUD Testing", function() {
+  it("Tests login of an existing admin user/account", function() {
     cy.visit("localhost:3000");
 
     cy.contains("li", "Log In").click();
@@ -11,7 +11,7 @@ describe("Admin Functionality Testing", function() {
     cy.location("pathname").should("eq", "/admin/staff");
   });
 
-  it("Tests Creating A New Staff Member", function() {
+  it("Tests creation of a new staff member", function() {
     cy.contains("Add New Staff Member").click();
     cy.location("pathname").should("eq", "/admin/add_staff");
     cy.get("input[name=add_staff]").type("This is a test Doctor");
@@ -20,7 +20,7 @@ describe("Admin Functionality Testing", function() {
     cy.location("pathname").should("eq", "/admin/staff");
   });
 
-  it("Tests Editing Of An Existing Staff Member", function() {
+  it("Tests editing of an existing staff member", function() {
     cy.contains("Edit").click();
     cy.get('[type="text"]').clear();
     cy.get(".edit_staff input").type("This is an edit test Doctor");
@@ -29,9 +29,8 @@ describe("Admin Functionality Testing", function() {
     cy.location("pathname").should("eq", "/admin/staff");
   });
 
-  // Creating, Editing, Deletion of Vaccines
-
-  // Creating, Editing, Deletion of Services
-
-  // Creating, Editing, Deleting appointments
+  it("Tests deleting of an existing staff member", function() {
+    cy.contains("Delete").click();
+    cy.location("pathname").should("eq", "/admin/staff");
+  });
 });

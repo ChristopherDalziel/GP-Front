@@ -10,7 +10,7 @@ class AdminVaccines extends React.Component {
     axios
       .post(process.env.REACT_APP_BACKEND_URL + "/vaccines/create", vaccineData)
       .then(res => {
-        window.location.replace("/admin_vaccines");
+        window.location.replace("/admin/vaccines");
       })
       .catch(error => {
         console.log("There was an error!" + error);
