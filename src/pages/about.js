@@ -30,18 +30,13 @@ class About extends React.Component {
   DataTable() {
     return this.state.staffs.map((res, i) => {
       return (
-        <>
-          {this.state.loading && <ProgressBar />}
-          <div className="doctors">
-            <div className="doctor-card">
-              <img src={res.imageUrl} alt="" />
-              <h3>{res.name}</h3>
-              <h4>Doctor</h4>
-              <p>{res.aboutText}</p>
-            </div>
-          </div>
-        </>
-      );
+        <div className="doctor-card">
+          <img src={res.imageUrl} alt="" />
+          <h3>{res.name}</h3>
+          <h4>{res.position}</h4>
+          <p>{res.aboutText}</p>
+        </div>
+      )
     });
   }
 
@@ -76,8 +71,12 @@ class About extends React.Component {
               location, languages spoken or medial interest.
             </p>
           </div>
-          {this.DataTable()}
+          <div className="doctors">
+            {this.DataTable()}
+          </div>
         </div>
+
+
       </>
     );
   }

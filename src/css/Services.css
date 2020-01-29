@@ -1,65 +1,56 @@
 .services {
   width: 100%;
-  height: 95vh;
+  min-height: 99vh;
   overflow: hidden;
 }
 
-.services .containerServices {
-  width: inherit;
-  height: 95vh;
-  display: flex;
-  flex-direction: row;
-}
 
-.containerServiceCards {
-  margin-top: 10vh;
-  margin-left: 10vh;
-  margin-bottom: 10vh;
-  box-sizing: border-box;
-  width: 40vw;
-  background: #e1eeff;
-}
-
-.imageServices {
-  width: 50%;
-  height: 95vh;
-  background-image: url(../assets/heart-unused.jpg);
-  background-position: center;
+.service-image{
+  height: 34vh;
+  background-image: url(../assets/banner-staff.jpg);
   background-size: cover;
 }
 
-.serviceCards h3 {
-  padding: 10px;
+.title{
+  font-family: "Raleway", sans-serif;
+  padding-left:400px;
+  padding-right:400px;
+  padding-top:40px;
   text-align: center;
 }
 
-.services p {
-  padding: 2.5px 10px;
+.title h1{
+  color:#398ffc;
+  margin-bottom: 20px;
+}
+.title p{
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
-.serviceCards {
-  margin-top: 10vh;
-  margin-left: 10vh;
-  box-sizing: border-box;
-  background: #e1eeff;
-}
+
 
 .serviceContainer {
   display: flex;
-  padding: 10px;
-  width: 30vw;
-  border-bottom: black solid 2px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top:80px !important;
+  padding-left: 120px !important;
   margin: 5px;
+ 
 }
 
-.singleService {
-  width: 30vw;
+
+.singleService{
+  box-sizing: border-box;
+  width: 30%;
+ margin-right:20px;
+ margin-bottom: 60px;
 }
 
-.singleService img {
-  float: left;
-  margin-right: 5px;
-  height: 100px;
-  width: 100px;
-  background-color: black;
-}
+
+
+
+
+
+

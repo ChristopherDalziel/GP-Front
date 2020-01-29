@@ -15,13 +15,18 @@ class Vaccines extends React.Component {
       <>
         {this.state.loading && <ProgressBar />}
         <div className="vaccines">
-          <div className="containerVaccines">
-            <div className="imageVaccines"></div>
-            <div className="containerVaccineCards">
-              <div className="vaccineCards">
+          <div className="vaccine-image"></div>
+          <div className="title">
+            <h1>Our Vaccine</h1>
+            <p>Medical One GP's are dedicated to providing you the best possible care. On this page you can find a GP by name, gender, location, languages spoken or medial interest.</p>
+          </div>
+          
+          <div className="vaccineCards">
+           <div className="cardsContainer">
+              <div className="vaccineContainer">
                 <VaccineList />
               </div>
-            </div>
+           </div>
           </div>
         </div>
       </>

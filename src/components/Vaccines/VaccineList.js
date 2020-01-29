@@ -22,11 +22,11 @@ class VaccineList extends React.Component {
 
     return (
       <>
-        <h1>Vaccines</h1>
+       
         {data
           ? data.map((vaccine, index) => {
               return (
-                <div className="vaccineContainer">
+              
                   <div className="singleVaccine" key={index}>
                     <img src={vaccine.imageUrl}></img>
                     <p>
@@ -41,7 +41,7 @@ class VaccineList extends React.Component {
                       {vaccine.description}
                     </p>
                   </div>
-                </div>
+             
               );
             })
           : null}

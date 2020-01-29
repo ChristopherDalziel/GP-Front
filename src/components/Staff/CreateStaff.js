@@ -6,14 +6,15 @@ class CreateStaff extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      file: null,
       name: "",
       aboutText: "",
+      position:"",
       imageUrl: ""
     };
 
     this.onChangeName = this.onChangeName.bind(this);
     this.onChangeAboutText = this.onChangeAboutText.bind(this);
+    this.onChangePosition = this.onChangePosition.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
@@ -25,12 +26,16 @@ class CreateStaff extends Component {
   onChangeAboutText(e) {
     this.setState({ aboutText: e.target.value });
   }
+  onChangePosition(e) {
+    this.setState({ position: e.target.value });
+  }
 
   onSubmit(e) {
     e.preventDefault();
     const staffObject = {
       name: this.state.name,
       aboutText: this.state.aboutText,
+      position: this.state.position,
       imageUrl: this.state.imageUrl
     };
     axios
@@ -79,6 +84,16 @@ class CreateStaff extends Component {
                   onChange={this.onChangeName}
                 />
               </div>
+
+              <div>
+                <label>Position Title</label> <br />
+                <input
+                  type="position"
+                  placeholder="Enter the Staff's Position"
+                  value={this.state.position}
+                  onChange={this.onChangePosition}
+                />
+              </div>
               <div>
                 <label>Staff Introduction</label> <br />
                 <textarea
@@ -88,6 +103,7 @@ class CreateStaff extends Component {
                   onChange={this.onChangeAboutText}
                 />
               </div>
+             
               <a onClick={showWidget}>Upload Image</a>
 
               <button type="submit">Submit</button>
