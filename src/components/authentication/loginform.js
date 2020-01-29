@@ -10,9 +10,9 @@ export default ({
   setPassword,
   setPasswordReset
 }) => (
-  <div className="signUp">
+  <div className="signIn">
     <div className="container">
-      <div className="imageSignUp"></div>
+      <div className="imageSignIn"></div>
       <div className="content-signUp">
         <div>
           <h1>Sign In</h1>

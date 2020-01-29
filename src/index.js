@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import { render } from "react-dom";
 import "./index.css";
 import store from "./store";
