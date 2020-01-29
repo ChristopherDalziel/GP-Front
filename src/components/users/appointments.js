@@ -27,6 +27,10 @@ class UserAppointments extends React.Component {
 
   cancelAppointment(id) {
     axios.patch(process.env.REACT_APP_BACKEND_URL + `/appointments/${id}`).then((response) => {
+      let appointment = this.state.appointments.find(appt => appt._id == id);
+      axios.post(process.env.REACT_APP_BACKEND_URL + '/mail/cancel_appointment', appointment).catch((error) => {
+        console.log(error)
+      })
       alert(response.data.msg);
       window.location.reload(false);
     }).catch((err) => {

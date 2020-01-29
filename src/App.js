@@ -25,6 +25,9 @@ import EditService from "./pages/EditService";
 import AdminServices from "./pages/admin/AdminServices";
 import AdminVaccines from "./pages/admin/AdminVaccines";
 
+//Admin Dashboard
+import AdminDashboard from "./pages/admin/AdminDashboard";
+
 const App = () => {
   return (
     <>
@@ -52,6 +55,8 @@ const App = () => {
           <Route path="/admin/update_staff/:id" component={EditStaff} />
 
           {/* Admin User Routes */}
+          <Route path="/admin/dashboard" component={AdminDashboard} />
+          
           <Route path="/admin/services" component={AdminServices} />
           <Route path="/admin/vaccines" component={AdminVaccines} />
 
