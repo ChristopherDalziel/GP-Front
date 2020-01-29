@@ -1,4 +1,3 @@
-
 describe("Admin Dashboard Functionality and CRUD Testing", function() {
   it("Tests login of an existing admin user/account", function() {
     cy.visit("localhost:3000");
@@ -11,7 +10,6 @@ describe("Admin Dashboard Functionality and CRUD Testing", function() {
     cy.contains("li", "Admin Dashboard").click();
     cy.location("pathname").should("eq", "/admin/staff");
   });
-
 
   it("Tests creation of a new staff member", function() {
     cy.contains("Add New Staff Member").click();

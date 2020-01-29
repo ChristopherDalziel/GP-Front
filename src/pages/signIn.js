@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { setLocalStorage } from "../utils/local-storage";
 import EmailVerificationForm from "../components/authentication/EmailVerificationForm";
 import LoginForm from "../components/authentication/loginform";
 import "../css/signIn.css";
+import ProgressBar from "../utils/pageLoading";
 
 const SignIn = props => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [error, setError] = useState(null);
   const [passwordReset, setPasswordReset] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
 
   const onSubmitLoginForm = async e => {
     try {
@@ -66,6 +72,8 @@ const SignIn = props => {
   } else {
     return (
       <>
+        {loading && <ProgressBar />}
+
         <div>
           <LoginForm
             onSubmitLoginForm={onSubmitLoginForm}

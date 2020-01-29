@@ -10,7 +10,7 @@ class AdminServices extends React.Component {
     axios
       .post(process.env.REACT_APP_BACKEND_URL + "/services/create", serviceData)
       .then(res => {
-        window.location.replace("/admin_services");
+        window.location.replace("/admin/services");
       })
       .catch(error => {
         console.log("There was an error!" + error);

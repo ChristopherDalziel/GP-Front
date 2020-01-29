@@ -1,20 +1,21 @@
 import React from "react";
 import "../css/About.css";
-import axios from 'axios'
+import axios from "axios";
+import ProgressBar from "../utils/pageLoading";
 
 class About extends React.Component {
-
   constructor(props) {
-    super(props)
-  
+    super(props);
+
     this.state = {
-       staffs: []
-    }
+      staffs: [],
+      loading: false
+    };
   }
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/admin/staff")
+      .get(process.env.REACT_APP_BACKEND_URL + "/admin/staff")
       .then(res => {
         this.setState({
           staffs: res.data
@@ -23,24 +24,27 @@ class About extends React.Component {
       .catch(error => {
         console.log(error);
       });
+    this.setState({ loading: true });
   }
 
   DataTable() {
     return this.state.staffs.map((res, i) => {
       return (
-        <div className="doctors">
-        <div className="doctor-card">
-          <img src={res.imageUrl} alt="" />
-          <h3>{res.name}</h3>
-          <h4>Doctor</h4>
-          <p>{res.aboutText}</p>
-        </div>
-      </div>
-
-      )
+        <>
+          {this.state.loading && <ProgressBar />}
+          <div className="doctors">
+            <div className="doctor-card">
+              <img src={res.imageUrl} alt="" />
+              <h3>{res.name}</h3>
+              <h4>Doctor</h4>
+              <p>{res.aboutText}</p>
+            </div>
+          </div>
+        </>
+      );
     });
   }
-  
+
   render() {
     return (
       <>
@@ -73,8 +77,6 @@ class About extends React.Component {
             </p>
           </div>
           {this.DataTable()}
-
-
         </div>
       </>
     );

@@ -24,7 +24,7 @@ class ServiceTable extends React.Component {
       axios
         .delete(process.env.REACT_APP_BACKEND_URL + `/services/delete/${id}`)
         .then(response => {
-          window.location.replace("/admin_services");
+          window.location.replace("/admin/services");
         });
     }
     return (
