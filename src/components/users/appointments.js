@@ -11,7 +11,6 @@ class UserAppointments extends React.Component {
     if (token) {
     try { axios.get(process.env.REACT_APP_BACKEND_URL + "/appointments/user_appointments", { headers: {'Authorization': token } })
     .then((response) => {
-      console.log(response.data)
       let appointments = response.data;
       if (appointments.length > 0)
         {
@@ -38,7 +37,6 @@ class UserAppointments extends React.Component {
 
   renderAppointments() {
     let appointmentsList = this.state.appointments;
-    console.log(appointmentsList)
     if (appointmentsList === null) {
       return (
       <div className="booking-card">
