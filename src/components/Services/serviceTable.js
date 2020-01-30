@@ -48,11 +48,11 @@ class ServiceTable extends React.Component {
                     <td>
                       {" "}
                       <Link to={"/service/edit/" + service._id}>
-                        <button>Edit</button>
+                        <button name="editService">Edit</button>
                       </Link>
                     </td>
                     <td>
-                      <button
+                      <button name="deleteService"
                         onClick={() => {
                           deleteService(service._id);
                         }}
