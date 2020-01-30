@@ -26,7 +26,7 @@ describe("Admin Vaccines CRUD Testing", function() {
       .last()
       .click();
     cy.get('[type="text"]').clear();
-    cy.get("input[name=brand]").type("Brand Test");
+    cy.get("input[name=brand]").type("Brand Test555");
     cy.get("input[name=manufacturer]").type("Manufacturer Test");
     cy.g;
   });
