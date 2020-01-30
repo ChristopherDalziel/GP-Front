@@ -46,17 +46,8 @@ class ContactInfo extends React.Component {
                 return (
                   <>
                     <p>
-                      <b>{hours.dayOfTheWeek}:</b> {hours.hours}
+                      <b>{hours.dayOfTheWeek}:</b> {hours.openingHours}
                     </p>
-                    {/* <ul>
-                    <li>Monday: {hours.dayOfTheWeek} </li>
-                    <li>Tuesday: 8:30am - 9:30pm</li>
-                    <li>Wednesday: 8:30am - 9:30pm</li>
-                    <li>Thursday: 8:30am - 9:30pm</li>
-                    <li>Friday: 8:30am - 9:30pm</li>
-                    <li>Saturday: 8:30am - 2:00pm</li>
-                    <li>Sunday: Closed</li>
-                  </ul> */}
                   </>
                 );
               })

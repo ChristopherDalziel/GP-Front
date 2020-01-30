@@ -24,6 +24,7 @@ import EditService from "./pages/EditService";
 
 import AdminServices from "./pages/admin/AdminServices";
 import AdminVaccines from "./pages/admin/AdminVaccines";
+import HoursForm from "./components/Contact/openingHoursEdit";
 
 const App = () => {
   return (
@@ -54,9 +55,9 @@ const App = () => {
           {/* Admin User Routes */}
           <Route path="/admin/services" component={AdminServices} />
           <Route path="/admin/vaccines" component={AdminVaccines} />
-
           <Route path="/vaccine/edit/:id" component={EditVaccine} />
           <Route path="/service/edit/:id" component={EditService} />
+          <Route path="/opening-hours" component={HoursForm} />
         </Switch>
       </BrowserRouter>
     </>

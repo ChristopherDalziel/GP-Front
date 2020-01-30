@@ -6,7 +6,8 @@ import VaccineTable from "../../components/Vaccines/vaccineTable";
 import "../../css/adminServices.css";
 
 class AdminVaccines extends React.Component {
-  submit(vaccineData) {
+  submit = vaccineData => {
+    console.log("Vaccine", vaccineData);
     axios
       .post(process.env.REACT_APP_BACKEND_URL + "/vaccines/create", vaccineData)
       .then(res => {
@@ -15,7 +16,7 @@ class AdminVaccines extends React.Component {
       .catch(error => {
         console.log("There was an error!" + error);
       });
-  }
+  };
 
   render() {
     return (
