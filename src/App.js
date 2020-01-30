@@ -28,6 +28,7 @@ import AdminVaccines from "./pages/admin/AdminVaccines";
 //Admin Dashboard
 import AdminUsers from "./pages/admin/AdminUsers";
 import EditUserInfo from "./components/admin_dashboard/EditUserInfo";
+import AppointmentsList from "./components/admin_dashboard/AppointmentsList";
 
 
 const App = () => {
@@ -58,6 +59,7 @@ const App = () => {
 
           {/* Admin User Routes */}
           <Route path="/admin/users" component={AdminUsers} />
+          <Route path="/admin/appointments" component={AppointmentsList} />
           
           <Route path="/admin/services" component={AdminServices} />
           <Route path="/admin/vaccines" component={AdminVaccines} />

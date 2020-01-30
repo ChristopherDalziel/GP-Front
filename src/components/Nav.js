@@ -77,7 +77,10 @@ const Nav = props => {
     return (
       <>
         <li className="two">
-          <Link to="/admin/dashboard">Admin Dashboard</Link>
+          <Link to="/admin/users">Admin Users</Link>
+        </li>
+        <li className="two">
+          <Link to="/admin/appointments">Admin Appointments</Link>
         </li>
         <li className="two">
           <Link to="/admin/staff">Admin Staff</Link>
