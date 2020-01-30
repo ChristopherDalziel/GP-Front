@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import AdminMenu from "../components/admin_dashboard/AdminMenu";
 import "../css/Nav.css";
 
 // User to be imported from the schema later..
@@ -47,7 +48,7 @@ const Nav = props => {
             Logout
           </Link>
         </li>
-        {admin ? adminItems() : userItems()}
+        {admin ? <div className="Nav2">{adminItems()}</div> : userItems()}
       </>
     );
   };
@@ -75,9 +76,16 @@ const Nav = props => {
 
   const adminItems = () => {
     return (
+      // <AdminMenu />
       <>
         <li className="two">
-          <Link to="/admin/staff">Admin Dashboard</Link>
+          <Link to="/admin/users">Admin Users</Link>
+        </li>
+        <li className="two">
+          <Link to="/admin/appointments">Admin Appointments</Link>
+        </li>
+        <li className="two">
+          <Link to="/admin/staff">Admin Staff</Link>
         </li>
         <li>
           <Link to="/admin/services">Admin Services</Link>

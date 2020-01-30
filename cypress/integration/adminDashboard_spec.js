@@ -23,7 +23,7 @@ describe("Admin Dashboard Functionality and CRUD Testing", function() {
   it("Tests editing of an existing staff member", function() {
     cy.contains("Edit").click();
     cy.get('[type="text"]').clear();
-    cy.get(".edit_staff input").type("This is an edit test Doctor");
+    cy.get("input[name=add_staff]").type("This is an edit test Doctor");
     cy.get("textarea").type("This is an edit test Doctor description");
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/admin/staff");

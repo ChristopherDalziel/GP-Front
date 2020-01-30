@@ -26,6 +26,12 @@ import AdminServices from "./pages/admin/AdminServices";
 import AdminVaccines from "./pages/admin/AdminVaccines";
 import HoursForm from "./components/Contact/openingHoursEdit";
 
+//Admin Dashboard
+import AdminUsers from "./pages/admin/AdminUsers";
+import EditUserInfo from "./components/admin_dashboard/EditUserInfo";
+import AppointmentsList from "./components/admin_dashboard/AppointmentsList";
+
+
 const App = () => {
   return (
     <>
@@ -53,11 +59,17 @@ const App = () => {
           <Route path="/admin/update_staff/:id" component={EditStaff} />
 
           {/* Admin User Routes */}
+          <Route path="/admin/users" component={AdminUsers} />
+          <Route path="/admin/appointments" component={AppointmentsList} />
+          
           <Route path="/admin/services" component={AdminServices} />
           <Route path="/admin/vaccines" component={AdminVaccines} />
           <Route path="/vaccine/edit/:id" component={EditVaccine} />
           <Route path="/service/edit/:id" component={EditService} />
           <Route path="/opening-hours" component={HoursForm} />
+
+          <Route path="/user/edit/:id" component={EditUserInfo} />
+
         </Switch>
       </BrowserRouter>
     </>

@@ -2,6 +2,7 @@
   height: 6vh;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   text-transform: uppercase;
@@ -11,6 +12,8 @@
 .nav ul {
   display: flex;
 }
+
+
 
 /* Removal of decimals from un-ordered list */
 .nav ul li {

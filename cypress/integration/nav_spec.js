@@ -43,3 +43,5 @@ describe("Nav Functionality Testing", function() {
     cy.location("pathname").should("eq", "/");
   });
 });
+
+
