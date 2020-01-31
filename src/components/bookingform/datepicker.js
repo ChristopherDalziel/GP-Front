@@ -40,7 +40,16 @@ class DatePicker extends React.Component {
           excludeTimes={[
             setHours(setMinutes(new Date(), 0), 12),
             setHours(setMinutes(new Date(), 15), 12),
-            setHours(setMinutes(new Date(), 30), 12)
+            setHours(setMinutes(new Date(), 30), 12),
+            setHours(setMinutes(new Date(), 45), 12),
+            setHours(setMinutes(new Date(), 0), 13),
+            setHours(setMinutes(new Date(), 15), 13),
+            setHours(setMinutes(new Date(), 30), 13),
+            setHours(setMinutes(new Date(), 45), 13),
+            setHours(setMinutes(new Date(), 0), 14),
+            setHours(setMinutes(new Date(), 15), 14),
+            setHours(setMinutes(new Date(), 30), 14),
+            setHours(setMinutes(new Date(), 45), 14)
           ]}
           placeholderText="Click to select"
         />
