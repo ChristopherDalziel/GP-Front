@@ -13,8 +13,6 @@
   display: flex;
 }
 
-
-
 /* Removal of decimals from un-ordered list */
 .nav ul li {
   list-style: none;
@@ -64,10 +62,16 @@
   display: inline-block;
 }
 
+li p {
+  font-size: 17px;
+  font-family: "Raleway", sans-serif;
+}
+
 .dropdown-content {
   padding: 10px;
   cursor: pointer;
-  width: 120px;
+  width: 15vw;
+  /* border-radius: 7px 0px 0px 0px; */
   background: #e1eeff;
   position: absolute;
   display: none;
@@ -80,12 +84,12 @@
   text-decoration: none;
   font-size: 15px;
   color: black;
-  font-family: "Raleway", sans-serif;
+  /* font-family: "Raleway", sans-serif; */
 }
 
 .dropdown span {
   font-size: 17px;
-  font-family: "Raleway", sans-serif;
+  /* font-family: "Raleway", sans-serif; */
 }
 
 .dropdown:hover .dropdown-content {
