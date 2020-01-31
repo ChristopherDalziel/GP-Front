@@ -26,7 +26,7 @@ function validate(values) {
 
   if (!values.phone) {
     errors.phone =
-      "A phone number is required im case the clinic needs to contact you regarding any issues";
+      "A phone number is required for the clinic to contact you regarding any issues";
   }
 
   return errors;
@@ -46,8 +46,8 @@ class BookingForm extends React.Component {
       <div>
         <input {...input} placeholder={label} type={type} />
         {touched &&
-          ((error && <span style={{ color: "red" }}>{error}</span>) ||
-            (warning && <span style={{ color: "red" }}>{warning}</span>))}
+          ((error && <div style={{ color: "red" }}>{error}</div>) ||
+            (warning && <div style={{ color: "red" }}>{warning}</div>))}
       </div>
     );
   }
