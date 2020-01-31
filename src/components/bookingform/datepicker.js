@@ -11,7 +11,7 @@ registerLocale("en-GB", enGB);
 
 class DatePicker extends React.Component {
   state = {
-    startDate: addDays(new Date(), 1)
+    startDate: null
   };
 
   handleChange = date => {

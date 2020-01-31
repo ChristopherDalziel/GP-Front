@@ -12,7 +12,7 @@ let startDateFormatted = format(startDate, "PPPPp");
 
 class Booking extends React.Component {
   state = {
-    startDate: startDateFormatted.toString(),
+    // startDate: null,
     email: null,
     firstName: null,
     lastName: null,

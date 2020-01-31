@@ -32,12 +32,12 @@ function validate(values) {
   return errors;
 }
 
-const startDate = addDays(new Date(), 1);
-let startDateFormatted = format(startDate, "PPPPp");
+// const startDate = addDays(new Date(), 1);
+// let startDateFormatted = format(startDate, "PPPPp");
 
 class BookingForm extends React.Component {
   state = {
-    startDate: startDateFormatted.toString()
+    startDate: null
   };
 
   renderField({ input, label, type, meta: { touched, error, warning } }) {
