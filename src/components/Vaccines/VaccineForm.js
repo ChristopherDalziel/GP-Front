@@ -16,6 +16,10 @@ class VaccineForm extends React.Component {
     }
   };
 
+  testchange = url => {
+    this.props.change("imageUrl", url);
+  };
+
   render() {
     let widget = window.cloudinary.createUploadWidget(
       {
@@ -25,6 +29,7 @@ class VaccineForm extends React.Component {
       (error, result) => {
         if (!error && result && result.event === "success") {
           console.log("Done! Here is the image info: ", result.info.url);
+          this.testchange(result.info.url);
         }
       }
     );
@@ -32,6 +37,7 @@ class VaccineForm extends React.Component {
     const showWidget = () => {
       widget.open();
     };
+
     return (
       <>
         <div>
@@ -64,7 +70,15 @@ class VaccineForm extends React.Component {
                 type="text"
               />
             </div>
-            <button onClick={showWidget}>Upload Image</button> <br></br>
+            <div>
+              <label htmlFor="imageUrl">Image</label>
+              <Field
+                name="imageUrl"
+                component="input"
+                type="button"
+                onClick={showWidget}
+              ></Field>
+            </div>
             <button type="submit">Submit</button>
           </form>
         </div>
