@@ -67,15 +67,15 @@ const App = () => {
 
           {/* Admin User Routes */}
           <ProtectedAdminRoute path="/admin/users" component={AdminUsers} />
-          <Route path="/admin/appointments" component={AppointmentsList} />
-          <Route path="/admin/services" component={AdminServices} />
-          <Route path="/admin/vaccines" component={AdminVaccines} />
-          <Route path="/vaccine/edit/:id" component={EditVaccine} />
-          <Route path="/service/edit/:id" component={EditService} />
-          <Route path="/user/edit/:id" component={EditUserInfo} />
-          <Route path="/opening-hours" component={HoursForm} />
+          <ProtectedAdminRoute path="/admin/appointments" component={AppointmentsList} />
+          <ProtectedAdminRoute path="/admin/services" component={AdminServices} />
+          <ProtectedAdminRoute path="/admin/vaccines" component={AdminVaccines} />
+          <ProtectedAdminRoute path="/vaccine/edit/:id" component={EditVaccine} />
+          <ProtectedAdminRoute path="/service/edit/:id" component={EditService} />
+          <ProtectedAdminRoute path="/user/edit/:id" component={EditUserInfo} />
+          <ProtectedAdminRoute path="/opening-hours" component={HoursForm} />
           {/* <Route path="/admin_about" component={AboutEdit} /> */}
-          <Route path="/admin/about/update/:id" component={AboutEdit} />
+          <ProtectedAdminRoute path="/admin/about/update/:id" component={AboutEdit} />
         </Switch>
       </BrowserRouter>
     </>
