@@ -24,7 +24,7 @@ class CreateStaff extends Component {
       .put(
         process.env.REACT_APP_BACKEND_URL +
           "/admin/edit_staff/" +
-          this.props.match.params.id
+          this.props.match.params.id, { headers: {'Authorization': sessionStorage.getItem("token") }}
       )
       .then(res => {
         this.setState({
@@ -64,7 +64,7 @@ class CreateStaff extends Component {
         process.env.REACT_APP_BACKEND_URL +
           "/admin/update_staff/" +
           this.props.match.params.id,
-        staffObject
+        staffObject, { headers: {'Authorization': sessionStorage.getItem("token") }}
       )
       .then(res => {
         console.log(res.data);

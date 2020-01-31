@@ -6,11 +6,20 @@ export const checkToken = async (token, setUser) => {
       headers: {
         Authorization: `Bearer ${token}`
       },
-    })
-    setUser({
-      auth: true,
-      loading: false
-    })
+    }).then((response) => {
+      console.log(response.data.success)
+    if (response.data.success === false) {
+      setUser({
+        auth: false,
+        loading: false
+      })
+    } else {
+        setUser({
+        auth: true,
+        loading: false
+      })
+    }
+  })
   } catch (err) {
     setUser({
       auth: false,
