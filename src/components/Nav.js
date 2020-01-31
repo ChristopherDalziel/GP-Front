@@ -54,9 +54,8 @@ const Nav = props => {
             <p>Admin Dashboard</p>
             <div className="dropdown-content">{adminItems()}</div>
           </li>
-        ) : (
-          <li>userItems()</li>
-        )}
+        ) : userItems()
+        }
       </>
     );
   };
