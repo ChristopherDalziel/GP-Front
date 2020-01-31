@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import format from "date-fns/format";
 
 class AppointmentsList extends React.Component {
   state = {
@@ -73,10 +74,11 @@ class AppointmentsList extends React.Component {
               phone,
               dateTime
             } = appointment;
+            const formattedDateTime = format(new Date(dateTime), "PPPPp").toString()
+            
             return (
-              <>
                 <tr key={index}>
-                  <td>{dateTime}</td>
+                  <td>{formattedDateTime}</td>
                   <td>{lastName}</td>
                   <td>{firstName}</td>
                   <td>{email}</td>
@@ -91,7 +93,6 @@ class AppointmentsList extends React.Component {
                     </button>
                   </td>
                 </tr>
-              </>
             );
           })}
         </tbody>

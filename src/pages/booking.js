@@ -3,16 +3,14 @@ import axios from "axios";
 import BookingForm from "../components/bookingform/bookingform";
 import ProgressBar from "../utils/pageLoading";
 import addDays from "date-fns/addDays";
-import format from "date-fns/format";
+
 
 import "react-datepicker/dist/react-datepicker.css";
 
 const startDate = addDays(new Date(), 1);
-let startDateFormatted = format(startDate, "PPPPp");
 
 class Booking extends React.Component {
   state = {
-    // startDate: null,
     email: null,
     firstName: null,
     lastName: null,

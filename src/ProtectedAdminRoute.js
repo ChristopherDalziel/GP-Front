@@ -38,7 +38,6 @@ const ProtectedAdminRoute = ({ component: Component, ...props }) => {
       }
     }, [])
 
-    console.log(admin)
   if (user.loading) {
     return null
   } else if (!user.auth) {
