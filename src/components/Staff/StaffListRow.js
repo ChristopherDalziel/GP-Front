@@ -13,7 +13,7 @@ export default class StaffListRow extends Component {
       .delete(
         process.env.REACT_APP_BACKEND_URL +
           "/admin/delete_staff/" +
-          this.props.obj._id
+          this.props.obj._id, { headers: {'Authorization': sessionStorage.getItem("token") }}
       )
       .then(res => {
         console.log("Staff successfully deleted!");

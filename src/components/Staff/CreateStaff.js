@@ -39,8 +39,7 @@ class CreateStaff extends Component {
       imageUrl: this.state.imageUrl
     };
     axios
-      .post(process.env.REACT_APP_BACKEND_URL + "/admin/add_staff", staffObject)
-      //  {headers: {'Authorization': sessionStorage.getItem('token') }}
+      .post(process.env.REACT_APP_BACKEND_URL + "/admin/add_staff", staffObject, { headers: {'Authorization': sessionStorage.getItem("token") }})
       .then(res => console.log(res.data));
 
     this.setState({ name: "", aboutText: "" , imageUrl:""});

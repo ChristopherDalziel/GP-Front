@@ -1,7 +1,10 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
+
 // Pages
+import ProtectedRoute from './ProtectedRoute';
+import ProtectedAdminRoute from './ProtectedAdminRoute';
 import Home from "./pages/home";
 import Nav from "./components/Nav";
 import Contact from "./pages/contact";
@@ -49,8 +52,8 @@ const App = () => {
             path="/:passwordToken/reset-password"
             component={ResetPassword}
           />
+          <ProtectedRoute path="/profile" component={Profile} />
           <Route path="/contact" component={Contact} />
-          <Route path="/profile" component={Profile} />
           <Route path="/about" component={About} />
           <Route path="/vaccines" component={Vaccines} />
           <Route path="/services" component={Services} />
@@ -58,12 +61,12 @@ const App = () => {
           <Route exact path="/success" component={SuccessPage} />
 
           {/* <Route path="/staff" component={Staff} /> */}
-          <Route path="/admin/staff" component={StaffList} />
-          <Route path="/admin/add_staff" component={CreateStaff} />
-          <Route path="/admin/update_staff/:id" component={EditStaff} />
+          <ProtectedAdminRoute path="/admin/staff" component={StaffList} />
+          <ProtectedAdminRoute path="/admin/add_staff" component={CreateStaff} />
+          <ProtectedAdminRoute path="/admin/update_staff/:id" component={EditStaff} />
 
           {/* Admin User Routes */}
-          <Route path="/admin/users" component={AdminUsers} />
+          <ProtectedAdminRoute path="/admin/users" component={AdminUsers} />
           <Route path="/admin/appointments" component={AppointmentsList} />
           <Route path="/admin/services" component={AdminServices} />
           <Route path="/admin/vaccines" component={AdminVaccines} />
