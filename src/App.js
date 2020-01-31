@@ -72,7 +72,7 @@ const App = () => {
           <ProtectedAdminRoute path="/admin/vaccines" component={AdminVaccines} />
           <ProtectedAdminRoute path="/vaccine/edit/:id" component={EditVaccine} />
           <ProtectedAdminRoute path="/service/edit/:id" component={EditService} />
-          <ProtectedAdminRoute path="/user/edit/:id" component={EditUserInfo} />
+          <Route path="/user/edit/:id" component={EditUserInfo} />
           <ProtectedAdminRoute path="/opening-hours" component={HoursForm} />
           {/* <Route path="/admin_about" component={AboutEdit} /> */}
           <ProtectedAdminRoute path="/admin/about/update/:id" component={AboutEdit} />
