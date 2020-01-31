@@ -12,8 +12,8 @@ class HoursForm extends React.Component {
     const response = await fetch(
       process.env.REACT_APP_BACKEND_URL + "/opening-hours"
     );
+    // Accessing each part of the array in Mongo
     const data = await response.json();
-    console.log(data);
     this.props.initialize({
       Monday: data[0].openingHours,
       Tuesday: data[1].openingHours,
@@ -47,7 +47,7 @@ class HoursForm extends React.Component {
     if (this.state.data.length === 0) {
       return (
         <div>
-          <p>ok</p>
+          <p>Database is disconnected</p>
         </div>
       );
     }
@@ -58,7 +58,6 @@ class HoursForm extends React.Component {
         <form onSubmit={e => this.updateHours(e, this.props)}>
           <div>
             <label htmlFor="name">Monday: </label> <br />
-            {/* <p>{data[0].hours}</p> */}
             <Field
               initialValues={data[0].hours}
               name="Monday"

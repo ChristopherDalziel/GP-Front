@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/About.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import ProgressBar from "../utils/pageLoading";
 
 class About extends React.Component {
@@ -9,11 +10,27 @@ class About extends React.Component {
 
     this.state = {
       staffs: [],
-      loading: true
+      loading: true,
+      about: "",
+      id: ""
     };
   }
 
   componentDidMount() {
+    axios
+      .get(process.env.REACT_APP_BACKEND_URL + "/admin_about")
+      .then(res => {
+        // console.log("res data about", res.data[0].about);
+        this.setState({
+          about: res.data[0].about,
+          drInfo: res.data[0].drInfo,
+          id: res.data[0]._id
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
     axios
       .get(process.env.REACT_APP_BACKEND_URL + "/admin/staff")
       .then(res => {
@@ -41,6 +58,18 @@ class About extends React.Component {
   }
 
   render() {
+    function getAdminStatus() {
+      let adminVal = sessionStorage.getItem("admin");
+      if (adminVal === "true") {
+        adminVal = true;
+      } else {
+        adminVal = false;
+      }
+      return adminVal;
+    }
+
+    let admin = getAdminStatus();
+
     return (
       <>
         {this.state.loading && <ProgressBar />}
@@ -49,28 +78,17 @@ class About extends React.Component {
             <div className="about-image"></div>
             <div className="about-infor">
               <h1>Welcome to Klinic Doctor Leong</h1>
-              <div>
-                <p>
-                  Medical One GP's are dedicated to providing you the best
-                  possible care. On this page you can find a GP by name, gender,
-                  location, languages spoken or medial interest.
-                </p>
-                <p>
-                  {" "}
-                  Medical One GP's are dedicated to providing you the best
-                  possible care. On this page you can find a GP by name, gender,
-                  location, languages spoken or medial interest.
-                </p>
-              </div>
+              <div>{this.state.about !== "" && <p>{this.state.about}</p>}</div>
+              {admin ? (
+                <Link to={"/admin/about/update/" + this.state.id}>
+                  <button name="Button-Edit">Edit</button>
+                </Link>
+              ) : null}
             </div>
           </div>
           <div className="doc-infors">
             <h1>Our Doctors</h1>
-            <p>
-              Klinic Doctor Leong are dedicated to providing you the best
-              possible care. On this page you can find a GP by name, gender,
-              location, languages spoken or medial interest.
-            </p>
+            <div>{this.state.drInfo !== "" && <p>{this.state.drInfo}</p>}</div>
           </div>
           <div className="doctors">{this.DataTable()}</div>
         </div>

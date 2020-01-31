@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+// Width of the map across the screen
 const mapStyles = {
   width: "50%"
 };
@@ -13,10 +14,12 @@ export class MapContainer extends Component {
     super(props);
 
     this.state = {
-      stores: [{ latitude: 3.079274, longitude: 101.58071 }] // This is the 'marked' position on the map thats later called in displayMarkers
+      // This is the 'marked' position on the map thats later called in displayMarkers
+      stores: [{ latitude: 3.079274, longitude: 101.58071 }]
     };
   }
 
+  // This creates the rules for the marked position
   displayMarkers = () => {
     return this.state.stores.map((store, index) => {
       return (
@@ -36,10 +39,12 @@ export class MapContainer extends Component {
   render() {
     return (
       <Map
+        zoom={17}
+        // This zooms in closer to the position stated in initialCenter
         google={this.props.google}
-        zoom={17} // This zooms in closer to the position stated in initialCenter
+        initialCenter={{ lat: 3.080886, lng: 101.580569 }}
+        // This sets where the map is positioned upon page load
         style={mapStyles}
-        initialCenter={{ lat: 3.080886, lng: 101.580569 }} // This sets where the map is positioned upon page load
       >
         {this.displayMarkers()}
       </Map>
