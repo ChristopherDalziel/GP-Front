@@ -48,7 +48,15 @@ const Nav = props => {
             Logout
           </Link>
         </li>
-        {admin ? <div className="Nav2">{adminItems()}</div> : userItems()}
+
+        {admin ? (
+          <li className="dropdown">
+            <p>Admin Dashboard</p>
+            <div className="dropdown-content">{adminItems()}</div>
+          </li>
+        ) : (
+          <li>userItems()</li>
+        )}
       </>
     );
   };
@@ -76,22 +84,21 @@ const Nav = props => {
 
   const adminItems = () => {
     return (
-      // <AdminMenu
       <>
         <li className="two">
-          <Link to="/admin/users">Admin Users</Link>
+          <Link to="/admin/users">Users</Link>
         </li>
         <li className="two">
-          <Link to="/admin/appointments">Admin Appointments</Link>
+          <Link to="/admin/appointments">Appointments</Link>
         </li>
         <li className="two">
-          <Link to="/admin/staff">Admin Staff</Link>
+          <Link to="/admin/staff">Staff</Link>
         </li>
         <li>
-          <Link to="/admin/services">Admin Services</Link>
+          <Link to="/admin/services">Services</Link>
         </li>
         <li>
-          <Link to="/admin/vaccines">Admin Vaccines</Link>
+          <Link to="/admin/vaccines">Vaccines</Link>
         </li>
       </>
     );
