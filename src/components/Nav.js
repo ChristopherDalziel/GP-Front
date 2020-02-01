@@ -41,7 +41,7 @@ const Nav = props => {
 
   const loggedInItems = () => {
     return (
-      <>
+      <ul>
         <li>
           <Link to="/logout" onClick={logout}>
             Logout
@@ -55,20 +55,20 @@ const Nav = props => {
           </li>
         ) : userItems()
         }
-      </>
+      </ul>
     );
   };
 
   const loggedOutItems = () => {
     return (
-      <>
+      <ul>
         <li>
           <Link to="/signin">Log In</Link>
         </li>
         <li>
           <Link to="/register">Sign Up</Link>
         </li>
-      </>
+      </ul>
     );
   };
 
@@ -82,7 +82,7 @@ const Nav = props => {
 
   const adminItems = () => {
     return (
-      <>
+      <ul>
         <li className="two">
           <Link to="/admin/users">Users</Link>
         </li>
@@ -98,7 +98,7 @@ const Nav = props => {
         <li>
           <Link to="/admin/vaccines">Vaccines</Link>
         </li>
-      </>
+      </ul>
     );
   };
 
