@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import AdminMenu from "../components/admin_dashboard/AdminMenu";
 import "../css/Nav.css";
 
 // User to be imported from the schema later..
