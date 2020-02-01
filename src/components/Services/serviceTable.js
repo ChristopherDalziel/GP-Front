@@ -38,6 +38,7 @@ class ServiceTable extends React.Component {
                     <tr>
                       <th>Name</th>
                       <th>Description</th>
+                      <th>Image</th>
                       <th>Edit</th>
                       <th>Delete</th>
                     </tr>
@@ -45,6 +46,9 @@ class ServiceTable extends React.Component {
                   <tr>
                     <td>{service.serviceName}</td>
                     <td>{service.serviceDescription}</td>
+                    <td>
+                      <img src={service.imageUrl} />
+                    </td>
                     <td>
                       {" "}
                       <Link to={"/service/edit/" + service._id}>
