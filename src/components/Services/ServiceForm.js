@@ -16,7 +16,27 @@ class ServiceForm extends React.Component {
     }
   };
 
+  testchange = url => {
+    this.props.change("imageUrl", url);
+  };
+
   render() {
+    let widget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: "acloudname10",
+        uploadPreset: "klinik-gp"
+      },
+      (error, result) => {
+        if (!error && result && result.event === "success") {
+          console.log("Done! Here is the image info: ", result.info.url);
+          this.testchange(result.info.url);
+        }
+      }
+    );
+
+    const showWidget = () => {
+      widget.open();
+    };
     return (
       <>
         <div>
@@ -39,6 +59,15 @@ class ServiceForm extends React.Component {
                 component="input"
                 type="text"
               />
+            </div>
+            <div>
+              <label htmlFor="imageUrl">Image</label>
+              <Field
+                name="imageUrl"
+                component="input"
+                type="button"
+                onClick={showWidget}
+              ></Field>
             </div>
             <button type="submit">Submit</button>
           </form>

@@ -68,7 +68,7 @@ const App = () => {
           {/* Admin User Routes */}
           <ProtectedAdminRoute path="/admin/users" component={AdminUsers} />
           <ProtectedAdminRoute path="/admin/appointments" component={AppointmentsList} />
-          <ProtectedAdminRoute path="/admin/services" component={AdminServices} />
+          <Route path="/admin/services" component={AdminServices} />
           <Route path="/admin/vaccines" component={AdminVaccines} />
           <Route path="/vaccine/edit/:id" component={EditVaccine} />
           <Route path="/service/edit/:id" component={EditService} />

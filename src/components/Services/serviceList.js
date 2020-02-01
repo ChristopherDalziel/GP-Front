@@ -29,7 +29,7 @@ class serviceList extends React.Component {
               return (
               
                   <div className="singleService" key={index}>
-                    {/* <img src={service1} className="serviceImage"></img> */}
+                    <img src={service.imageUrl} className="serviceImage"></img>
                     <h1>
                      {service.serviceName}
                     </h1>
