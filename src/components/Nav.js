@@ -82,7 +82,7 @@ const Nav = props => {
 
   const adminItems = () => {
     return (
-      <ul>
+      <>
         <li className="two">
           <Link to="/admin/users">Users</Link>
         </li>
@@ -98,7 +98,7 @@ const Nav = props => {
         <li>
           <Link to="/admin/vaccines">Vaccines</Link>
         </li>
-      </ul>
+      </>
     );
   };
 

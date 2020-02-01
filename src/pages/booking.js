@@ -81,7 +81,7 @@ class Booking extends React.Component {
               <div>
                 <h1>Make An Appointment!</h1>
                 <h2>
-                  For appointments within 24 hours, please call the clinic
+                  For appointments within 24 hours, please present as a walk-in patient or call the clinic
                   directly.
                 </h2>
                 <h3>
