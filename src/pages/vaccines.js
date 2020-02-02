@@ -17,8 +17,8 @@ class Vaccines extends React.Component {
         <div className="vaccines">
           <div className="vaccine-image"></div>
           <div className="title">
-            <h1>Our Vaccine</h1>
-            <p>Medical One GP's are dedicated to providing you the best possible care. On this page you can find a GP by name, gender, location, languages spoken or medial interest.</p>
+            <h1>Vaccines</h1>
+            <p>We stock a variety of vaccines including the Influenza vaccine. Below are some of the vaccines available from our clinic:</p>
           </div>
           
           <div className="vaccineCards">

@@ -19,8 +19,9 @@
   height: inherit;
 }
 
-.about-image {
-  background-image: url("../assets/5.jpeg");
+
+.about-image{
+  background-image: url('../assets/clinicfront.jpg');
   background-size: cover;
 }
 

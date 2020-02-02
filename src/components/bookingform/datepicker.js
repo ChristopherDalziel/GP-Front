@@ -5,20 +5,19 @@ import addDays from "date-fns/addDays";
 import addMonths from "date-fns/addMonths";
 import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
-import format from "date-fns/format";
 import enGB from "date-fns/locale/en-GB";
 registerLocale("en-GB", enGB);
 
 class DatePicker extends React.Component {
   state = {
-    startDate: addDays(new Date(), 1)
+    startDate: null
   };
 
   handleChange = date => {
     this.setState({ startDate: date });
     //sending the date value to redux form store
-    let dateFormatted = format(date, "PPPPp");
-    this.props.input.onChange(dateFormatted.toString());
+    // let dateFormatted = format(date, "PPPPp");
+    this.props.input.onChange(date);
   };
 
   render() {

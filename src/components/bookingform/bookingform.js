@@ -3,8 +3,6 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 import DatePicker from "./datepicker";
 import { registerLocale } from "react-datepicker";
-import addDays from "date-fns/addDays";
-import format from "date-fns/format";
 import "react-datepicker/dist/react-datepicker.css";
 import normalizePhone from "../normalizePhone";
 import enGB from "date-fns/locale/en-GB";
@@ -32,12 +30,9 @@ function validate(values) {
   return errors;
 }
 
-const startDate = addDays(new Date(), 1);
-let startDateFormatted = format(startDate, "PPPPp");
-
 class BookingForm extends React.Component {
   state = {
-    startDate: startDateFormatted.toString()
+    startDate: null
   };
 
   renderField({ input, label, type, meta: { touched, error, warning } }) {
