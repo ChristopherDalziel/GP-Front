@@ -23,7 +23,7 @@ class AboutEdit extends React.Component {
   render() {
     return (
       <>
-        <h1>test</h1>
+        <h1>Edit About and Doctor Information</h1>
         <AboutForm onSubmit={this.updateAbout} />
       </>
     );

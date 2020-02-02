@@ -1,7 +1,7 @@
 import React from "react";
 
 import "../../css/Services.css";
-import service1 from '../../assets/service1.jpg'
+import service1 from "../../assets/service1.jpg";
 
 class serviceList extends React.Component {
   state = {
@@ -27,17 +27,11 @@ class serviceList extends React.Component {
         {data
           ? data.map((service, index) => {
               return (
-              
-                  <div className="singleService" key={index}>
-                    <img src={service.imageUrl} className="serviceImage"></img>
-                    <h1>
-                     {service.serviceName}
-                    </h1>
-                    <p>
-                      {service.serviceDescription}
-                    </p>
-                  </div>
-        
+                <div className="singleService" key={index}>
+                  <img src={service.imageUrl} className="serviceImage"></img>
+                  <h1>{service.serviceName}</h1>
+                  <p>{service.serviceDescription}</p>
+                </div>
               );
             })
           : null}

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import {withRouter} from 'react-router-dom'
 import "../../css/staff.css";
 import axios from "axios";
 
@@ -9,8 +8,8 @@ class CreateStaff extends Component {
     this.state = {
       name: "",
       aboutText: "",
-      position:"",
-      imageUrl:''
+      position: "",
+      imageUrl: ""
     };
 
     this.onChangeName = this.onChangeName.bind(this);
@@ -24,15 +23,15 @@ class CreateStaff extends Component {
       .put(
         process.env.REACT_APP_BACKEND_URL +
           "/admin/edit_staff/" +
-          this.props.match.params.id, { headers: {'Authorization': sessionStorage.getItem("token") }}
+          this.props.match.params.id,
+        { headers: { Authorization: sessionStorage.getItem("token") } }
       )
       .then(res => {
         this.setState({
           name: res.data.name,
           aboutText: res.data.aboutText,
           position: res.data.position,
-          imageUrl: res.data.imageUrl,
-
+          imageUrl: res.data.imageUrl
         });
       })
       .catch(error => {
@@ -57,14 +56,15 @@ class CreateStaff extends Component {
       name: this.state.name,
       aboutText: this.state.aboutText,
       position: this.state.position,
-      imageUrl: this.state.imageUrl,
+      imageUrl: this.state.imageUrl
     };
     axios
       .put(
         process.env.REACT_APP_BACKEND_URL +
           "/admin/update_staff/" +
           this.props.match.params.id,
-        staffObject, { headers: {'Authorization': sessionStorage.getItem("token") }}
+        staffObject,
+        { headers: { Authorization: sessionStorage.getItem("token") } }
       )
       .then(res => {
         console.log(res.data);
@@ -131,7 +131,7 @@ class CreateStaff extends Component {
                   onChange={this.onChangeAboutText}
                 />
               </div>
-              
+
               <a onClick={showWidget}>Upload Image</a>
 
               <button type="submit">Submit</button>
