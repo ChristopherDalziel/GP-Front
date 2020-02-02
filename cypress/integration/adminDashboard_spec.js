@@ -7,7 +7,8 @@ describe("Admin Dashboard Functionality and CRUD Testing", function() {
     cy.get("input[name=password").type("eb08ef45");
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/");
-    cy.contains("li", "Admin Dashboard").click();
+    cy.get(".dropdown").trigger("mouseover");
+    cy.contains("li .two", "Staff").click();
     cy.location("pathname").should("eq", "/admin/staff");
   });
 

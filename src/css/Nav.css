@@ -58,6 +58,7 @@
 }
 
 .dropdown {
+  z-index: 3;
   position: relative;
   display: inline-block;
 }
@@ -84,12 +85,6 @@ li p {
   text-decoration: none;
   font-size: 15px;
   color: black;
-  /* font-family: "Raleway", sans-serif; */
-}
-
-.dropdown span {
-  font-size: 17px;
-  /* font-family: "Raleway", sans-serif; */
 }
 
 .dropdown:hover .dropdown-content {
