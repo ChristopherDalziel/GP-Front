@@ -8,7 +8,7 @@ class CreateStaff extends Component {
     this.state = {
       name: "",
       aboutText: "",
-      position:"",
+      position: "",
       imageUrl: ""
     };
 
@@ -39,10 +39,14 @@ class CreateStaff extends Component {
       imageUrl: this.state.imageUrl
     };
     axios
-      .post(process.env.REACT_APP_BACKEND_URL + "/admin/add_staff", staffObject, { headers: {'Authorization': sessionStorage.getItem("token") }})
+      .post(
+        process.env.REACT_APP_BACKEND_URL + "/admin/add_staff",
+        staffObject,
+        { headers: { Authorization: sessionStorage.getItem("token") } }
+      )
       .then(res => console.log(res.data));
 
-    this.setState({ name: "", aboutText: "" , imageUrl:""});
+    this.setState({ name: "", aboutText: "", imageUrl: "" });
     this.props.history.push("/admin/staff");
     window.location.reload(true);
   }
@@ -87,6 +91,7 @@ class CreateStaff extends Component {
               <div>
                 <label>Position Title</label> <br />
                 <input
+                  name="position"
                   type="position"
                   placeholder="Enter the Staff's Position"
                   value={this.state.position}
@@ -102,7 +107,7 @@ class CreateStaff extends Component {
                   onChange={this.onChangeAboutText}
                 />
               </div>
-             
+
               <a onClick={showWidget}>Upload Image</a>
 
               <button type="submit">Submit</button>

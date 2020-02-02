@@ -106,6 +106,7 @@ class CreateStaff extends Component {
               <div className="edit_staff">
                 <label>Staff Name</label> <br />
                 <input
+                  name="add_staff"
                   type="text"
                   placeholder={this.state.name}
                   value={this.state.name}
@@ -116,7 +117,8 @@ class CreateStaff extends Component {
               <div className="position">
                 <label>Position Title</label> <br />
                 <input
-                  type="position"
+                  name="position"
+                  type="text"
                   placeholder="Enter the Staff's Position"
                   value={this.state.position}
                   onChange={this.onChangePosition}
