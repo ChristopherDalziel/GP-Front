@@ -8,7 +8,10 @@ describe("Admin Dashboard Functionality and CRUD Testing", function() {
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/");
     cy.get(".dropdown").trigger("mouseover");
-    cy.contains("li .two", "Staff").click();
+    cy.get(".dropdown-content")
+      .invoke("show")
+      .contains("li", "Staff")
+      .click();
     cy.location("pathname").should("eq", "/admin/staff");
   });
 
@@ -16,6 +19,8 @@ describe("Admin Dashboard Functionality and CRUD Testing", function() {
     cy.contains("Add New Staff Member").click();
     cy.location("pathname").should("eq", "/admin/add_staff");
     cy.get("input[name=add_staff]").type("This is a test Doctor");
+    cy.get("input[name=position]").type("Test");
+
     cy.get("textarea").type("This is a test Doctor description");
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/admin/staff");

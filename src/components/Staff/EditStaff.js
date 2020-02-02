@@ -113,7 +113,7 @@ class CreateStaff extends Component {
                 ></input>
               </div>
 
-              <div>
+              <div className="position">
                 <label>Position Title</label> <br />
                 <input
                   type="position"
