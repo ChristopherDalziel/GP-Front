@@ -1,5 +1,5 @@
-describe("Admin Dashboard Functionality and CRUD Testing", function() {
-  it("Tests login of an existing admin user/account", function() {
+describe("Admin Dashboard Staff Functionality and CRUD Testing", function() {
+  it("Tests login of an existing admin account and accesses the staff page", function() {
     cy.visit("localhost:3000");
 
     cy.contains("li", "Log In").click();
@@ -30,6 +30,7 @@ describe("Admin Dashboard Functionality and CRUD Testing", function() {
     cy.contains("Edit").click();
     cy.get('[type="text"]').clear();
     cy.get("input[name=add_staff]").type("This is an edit test Doctor");
+    cy.get("input[name=position]").type("This is an edited position");
     cy.get("textarea").type("This is an edit test Doctor description");
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/admin/staff");

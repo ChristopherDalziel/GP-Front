@@ -51,7 +51,9 @@ class UsersList extends React.Component {
                     <td>{email}</td>
                     <td>{phone}</td>
                     <td>
-                      <Link to={"/user/edit/" + _id}>Edit</Link>
+                      <button>
+                        <Link to={"/user/edit/" + _id}>Edit</Link>
+                      </button>
                     </td>
                   </tr>
                 </>

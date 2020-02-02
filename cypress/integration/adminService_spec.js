@@ -1,5 +1,5 @@
 describe("Admin Vaccines CRUD Testing", function() {
-  it("Logs into an admin account and relocates to the admin services page", function() {
+  it("Logs into an admin account and accesses to the admin services page", function() {
     cy.visit("localhost:3000");
     cy.contains("li", "Log In").click();
     cy.get("input[name=email]").type("klinikdrleong@gmail.com");
@@ -7,7 +7,6 @@ describe("Admin Vaccines CRUD Testing", function() {
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/");
     cy.get(".dropdown").trigger("mouseover");
-    // cy.contains(".two", "Services").click();
     cy.location("pathname").should("eq", "/admin/services");
   });
 
