@@ -2,8 +2,7 @@ import React from "react";
 import axios from "axios";
 import ServiceForm from "../../components/Services/ServiceForm";
 import ServiceTable from "../../components/Services/serviceTable";
-
-import "../../css/adminServices.css";
+import "../../css/adminCrudPages.css";
 
 class AdminServices extends React.Component {
   submit(serviceData) {
@@ -25,10 +24,8 @@ class AdminServices extends React.Component {
             <ServiceTable />
           </div>
           <div>
-            <div className="content-create">
-              <h1>Create New Service:</h1>
-              <ServiceForm onSubmit={this.submit} {...this.props} />
-            </div>
+            <h1>Create New Service:</h1>
+            <ServiceForm onSubmit={this.submit} {...this.props} />
           </div>
         </div>
       </>

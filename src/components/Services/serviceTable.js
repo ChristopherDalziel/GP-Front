@@ -56,7 +56,8 @@ class ServiceTable extends React.Component {
                       </Link>
                     </td>
                     <td>
-                      <button name="deleteService"
+                      <button
+                        name="deleteService"
                         onClick={() => {
                           deleteService(service._id);
                         }}

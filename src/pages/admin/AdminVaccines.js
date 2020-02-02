@@ -3,8 +3,6 @@ import axios from "axios";
 import VaccineForm from "../../components/Vaccines/VaccineForm";
 import VaccineTable from "../../components/Vaccines/vaccineTable";
 
-import "../../css/adminServices.css";
-
 class AdminVaccines extends React.Component {
   submit = vaccineData => {
     console.log("Vaccine", vaccineData);
@@ -25,10 +23,9 @@ class AdminVaccines extends React.Component {
           <div className="table-cont">
             <VaccineTable />
           </div>
-          <div className="content-create">
+          <div>
             <h1>Create New Vaccine:</h1>
             <VaccineForm onSubmit={this.submit} {...this.props} />
-            <div></div>
           </div>
         </div>
       </>

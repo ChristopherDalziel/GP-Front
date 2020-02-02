@@ -4,70 +4,70 @@
   overflow: hidden;
 }
 
-
-.service-image{
+.service-image {
   height: 50vh;
   background-image: url(../assets/banner-staff-copy.jpg);
   background-size: cover;
 }
 
-.services .title{
+.services .title {
   font-family: "Raleway", sans-serif;
-  padding-left:400px;
-  padding-right:400px;
-  padding-top:120px;
+  padding-left: 400px;
+  padding-right: 400px;
+  padding-top: 120px;
   text-align: center;
 }
 
-.title h1{
-  color:#398ffc;
+.title h1 {
+  color: #398ffc;
   margin-bottom: 20px;
 }
-.title p{
+.title p {
   font-size: 18px;
   margin-bottom: 20px;
 }
-
-
 
 .serviceContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-top:80px !important;
+  padding-top: 80px !important;
   padding-left: 120px !important;
   margin: 5px;
- 
 }
 
-
-.singleService{
-  padding-top:30px;
-  padding-left:50px;
+.singleService {
+  padding-top: 30px;
+  padding-left: 50px;
   position: relative;
   box-sizing: border-box;
   width: 25%;
   height: 40vh;
-  margin-right:40px;
+  margin-right: 40px;
   margin-bottom: 60px;
-  top:-120px;
+  top: -120px;
   background: #e1eeff;
 }
-.singleService h1{
+
+.singleService h1 {
   margin-bottom: 40px;
   font-size: 20px;
-
 }
-.serviceImage{
+
+.serviceImage {
   border-radius: 5px;
   height: 65%;
   margin-bottom: 10px;
-
 }
 
-
-
-
-
-
-
+.imageUploadButton {
+  /* margin-top: 10px; */
+  font-size: 18px;
+  color: white;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  background: #398ffc;
+  height: 4vh;
+  width: 100%;
+}

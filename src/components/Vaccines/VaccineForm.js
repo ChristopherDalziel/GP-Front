@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Field, reduxForm, getFormValues } from "redux-form";
+import "../../css/adminCrudForms.css";
 
 class VaccineForm extends React.Component {
   onSubmitFunc = (e, props) => {
@@ -40,7 +41,7 @@ class VaccineForm extends React.Component {
 
     return (
       <>
-        <div>
+        <div className="content-create">
           <form onSubmit={e => this.onSubmitFunc(e, this.props)}>
             <div className="input-wrapper--1">
               <label htmlFor="name">Vaccine Brand</label>
@@ -73,6 +74,7 @@ class VaccineForm extends React.Component {
             <div>
               <label htmlFor="imageUrl">Image</label>
               <Field
+                className="imageUploadButton"
                 name="imageUrl"
                 component="input"
                 type="button"

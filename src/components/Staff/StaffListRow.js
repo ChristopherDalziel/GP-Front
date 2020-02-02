@@ -13,7 +13,8 @@ export default class StaffListRow extends Component {
       .delete(
         process.env.REACT_APP_BACKEND_URL +
           "/admin/delete_staff/" +
-          this.props.obj._id, { headers: {'Authorization': sessionStorage.getItem("token") }}
+          this.props.obj._id,
+        { headers: { Authorization: sessionStorage.getItem("token") } }
       )
       .then(res => {
         console.log("Staff successfully deleted!");
@@ -34,7 +35,9 @@ export default class StaffListRow extends Component {
         </td>
 
         <td>
-          <Link to={"/admin/update_staff/" + this.props.obj._id}>Edit</Link>
+          <button>
+            <Link to={"/admin/update_staff/" + this.props.obj._id}>Edit</Link>
+          </button>
           <button onClick={this.deleteStaff}>Delete</button>
         </td>
       </tr>

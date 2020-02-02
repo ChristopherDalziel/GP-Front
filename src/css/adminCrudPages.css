@@ -1,0 +1,50 @@
+.table-cont {
+  margin: 3vh 0 0 3vh;
+}
+
+.table-cont img {
+  height: 150px;
+}
+
+.tableContainer {
+  height: 95vh;
+  background-color: red;
+}
+
+table {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+td {
+  height: 25vh;
+  width: 25vw;
+}
+
+th,
+td {
+  padding: 5px;
+  text-align: left;
+  border-bottom: 1px solid black;
+}
+
+/* Changing the background colours of different rows in tables */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: lightgray;
+}
+
+.grid {
+  height: 95vh;
+  margin-bottom: 10px;
+  overflow: scroll;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}

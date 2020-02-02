@@ -24,10 +24,10 @@ class Home extends React.Component {
               <h1>Klinik Doctor Leong</h1>
               <p>
                 <Link to="/contact">
-                  <button>Contact Us</button>
+                  <button className="homeButton">Contact Us</button>
                 </Link>
                 <Link to="/booking">
-                  <button>Book Now</button>
+                  <button className="homeButton">Book Now</button>
                 </Link>
               </p>
             </div>

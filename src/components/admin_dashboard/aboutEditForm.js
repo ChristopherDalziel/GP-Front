@@ -1,12 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Field, reduxForm, getFormValues } from "redux-form";
+import "../../css/adminCrudPages.css";
 
 class AboutForm extends React.Component {
   render() {
     return (
       <>
-        <div>
+        <div className="content-create">
           <form onSubmit={this.props.handleSubmit}>
             <div className="input-wrapper--1">
               <label htmlFor="about">About Edit</label> <br />

@@ -31,6 +31,7 @@ class EditService extends React.Component {
     const { serviceData } = this.state;
     return serviceData ? (
       <>
+        {/* <div className="content-create"> */}
         <h1>Service Edit</h1>
         <ServiceForm
           onEditFormSubmit={this.updateService}
@@ -38,6 +39,7 @@ class EditService extends React.Component {
           initialValues={this.state.serviceData}
           {...this.props}
         />
+        {/* </div> */}
       </>
     ) : null;
   }

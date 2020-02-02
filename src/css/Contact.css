@@ -45,16 +45,16 @@
 
 .content-contact {
   width: 50%;
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
   margin-left: 10vh;
   box-sizing: border-box;
   padding-left: 10vh;
-  padding-top: 10vh;
+  padding-top: 5vh;
   padding-bottom: 4vh;
-  height: 75vh;
+  height: 95vh;
   width: 40vw;
   background: #e1eeff;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .signIn h1 {
@@ -69,7 +69,7 @@
   width: 30vw;
   height: 40px;
   border: none;
-  margin-bottom: 4vh;
+  margin-bottom: 2vh;
 }
 
 .contact h5 {

@@ -23,20 +23,20 @@
 }
 
 .content-signUp {
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
   margin-left: 10vh;
   box-sizing: border-box;
   padding-left: 10vh;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
-  height: 75vh;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  height: 95vh;
   width: 40vw;
   background: #e1eeff;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .signUp h1 {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .content-signUp input {
@@ -47,18 +47,18 @@
   width: 30vw;
   height: 40px;
   border: none;
-  margin-bottom: 4vh;
+  margin-bottom: 2.5vh;
 }
 
 .content-profile input {
   box-sizing: border-box;
   padding-left: 40px;
   font-size: 12px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   width: 27vw;
   height: 40px;
   border: none;
-  margin-bottom: 4vh;
+  /* margin-bottom: 4vh; */
 }
 
 .profile button {
