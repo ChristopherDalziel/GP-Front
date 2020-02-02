@@ -1,117 +1,105 @@
-
-
-.about{
+.about {
   width: 100vw;
   height: 95vh;
 }
-.about-us .intro{
+
+.about-us .intro {
   width: 100%;
   display: flex;
-  flex-direction:row;
-  
+  flex-direction: row;
 }
-.about-infor{
+
+.about-infor {
   width: 50%;
   height: 350px;
 }
 
-.about-us .intro .about-image{
+.about-us .intro .about-image {
   width: 50%;
   height: inherit;
 }
+
 
 .about-image{
   background-image: url('../assets/clinicfront.jpg');
   background-size: cover;
 }
-.about-infor{
+
+.about-infor {
   box-sizing: border-box;
-  padding-left:100px;
+  padding-left: 100px;
   padding-right: 100px;
-  padding-top:60px;
+  padding-top: 60px;
   text-align: center;
-  background: #e1eeff
+  background: #e1eeff;
 }
 
-.about-infor h1{
-  color:#398ffc;
+.about-infor h1 {
+  color: #398ffc;
   margin-bottom: 20px;
 }
-.about-infor p{
+
+.about-infor p {
   margin-bottom: 10px;
   font-family: "Raleway", sans-serif;
 }
 
-.doctors{
+.doctors {
   box-sizing: border-box;
-  padding:100px;
+  padding: 100px;
   padding-bottom: 40px;
-  padding-top:40px;
+  padding-top: 40px;
   height: 50%;
   width: 100vw;
   display: flex;
   flex-direction: row;
 }
 
-.doctor-card{
-  padding:20px;
+.doctor-card {
+  padding: 20px;
   width: 30%;
   margin-right: 30px;
 }
 
-.doctor-card img{
+.doctor-card img {
   border-top-left-radius: 100px;
   border-bottom-right-radius: 100px;
   height: 300px;
   width: 300px;
 }
 
-.doctor-card h3{
-  margin-top:15px;
+.doctor-card h3 {
+  margin-top: 15px;
   margin-bottom: 10px;
   font-family: "Raleway", sans-serif;
-  
 }
 
-.doctor-card h4{
+.doctor-card h4 {
   margin-bottom: 10px;
   font-family: "Raleway", sans-serif;
-  
 }
 
-.doctor-card p{
+.doctor-card p {
   font-size: 14px;
-  text-align:justify;
+  text-align: justify;
   font-family: "Raleway", sans-serif;
-  
 }
 
-.doc-infors{
-  
+.doc-infors {
   box-sizing: border-box;
   text-align: center;
-  padding-top:30px;
+  padding-top: 30px;
   padding-left: 300px;
   padding-right: 300px;
 }
 
-.doc-infors h1{
-  color:#398ffc;
+.doc-infors h1 {
+  color: #398ffc;
   margin-bottom: 20px;
 }
-.doc-infors p{
+
+.doc-infors p {
   font-family: "Raleway", sans-serif;
   font-size: 18px;
   margin-bottom: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-

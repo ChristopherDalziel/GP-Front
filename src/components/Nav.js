@@ -92,7 +92,7 @@ const Nav = props => {
         <li className="two">
           <Link to="/admin/staff">Staff</Link>
         </li>
-        <li>
+        <li className="two">
           <Link to="/admin/services">Services</Link>
         </li>
         <li>
