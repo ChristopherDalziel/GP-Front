@@ -32,7 +32,7 @@ class ContactInfo extends React.Component {
           <h5>Find Us on Facebook</h5>
         </div>
         <div className="info-container">
-          <p>Between 9am - 5pm, Monday To Friday</p>
+          <p>Please contact us via phone on:</p>
           <h3>Number:</h3> <h5>+60 3-7498 0117</h5>
         </div>
         <div className="info-container">
