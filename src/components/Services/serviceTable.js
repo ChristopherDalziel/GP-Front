@@ -9,7 +9,7 @@ class ServiceTable extends React.Component {
 
   async componentDidMount() {
     const response = await fetch(
-      process.env.REACT_APP_BACKEND_URL + "/services"
+      process.env.REACT_APP_BACKEND_URL + "/services", { headers: { Authorization: sessionStorage.getItem("token") } }
     );
     const data = await response.json();
     this.setState({
@@ -22,7 +22,7 @@ class ServiceTable extends React.Component {
 
     function deleteService(id) {
       axios
-        .delete(process.env.REACT_APP_BACKEND_URL + `/services/delete/${id}`)
+        .delete(process.env.REACT_APP_BACKEND_URL + `/services/delete/${id}`, { headers: { Authorization: sessionStorage.getItem("token") } })
         .then(response => {
           window.location.replace("/admin/services");
         });

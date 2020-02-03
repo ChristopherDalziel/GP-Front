@@ -13,7 +13,7 @@ class AboutEdit extends React.Component {
       await axios.put(
         process.env.REACT_APP_BACKEND_URL +
           `/admin_about/update/${this.props.match.params.id}`,
-        updatedAbout
+        updatedAbout, { headers: { Authorization: sessionStorage.getItem("token") } }
       );
       this.props.history.push("/about");
     } catch (error) {

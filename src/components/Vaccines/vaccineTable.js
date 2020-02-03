@@ -9,8 +9,9 @@ class VaccineTable extends React.Component {
 
   async componentDidMount() {
     const response = await fetch(
-      process.env.REACT_APP_BACKEND_URL + "/vaccines",
-      { headers: { Authorization: sessionStorage.getItem("token") } }
+
+      process.env.REACT_APP_BACKEND_URL + "/vaccines", { headers: { Authorization: sessionStorage.getItem("token") } }
+
     );
     const data = await response.json();
     this.setState({
@@ -20,9 +21,9 @@ class VaccineTable extends React.Component {
 
   deleteVaccine = id => {
     axios
-      .delete(process.env.REACT_APP_BACKEND_URL + `/vaccines/delete/${id}`, {
-        headers: { Authorization: sessionStorage.getItem("token") }
-      })
+
+      .delete(process.env.REACT_APP_BACKEND_URL + `/vaccines/delete/${id}`, { headers: { Authorization: sessionStorage.getItem("token") } })
+
       .then(response => {
         window.location.replace("/admin/vaccines");
       });
