@@ -1,10 +1,9 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-
 // Pages
-import ProtectedRoute from './ProtectedRoute';
-import ProtectedAdminRoute from './ProtectedAdminRoute';
+import ProtectedRoute from "./ProtectedRoute";
+import ProtectedAdminRoute from "./ProtectedAdminRoute";
 import Home from "./pages/home";
 import Nav from "./components/Nav";
 import Contact from "./pages/contact";
@@ -73,7 +72,7 @@ const App = () => {
           <Route path="/vaccine/edit/:id" component={EditVaccine} />
           <Route path="/service/edit/:id" component={EditService} />
           <Route path="/user/edit/:id" component={EditUserInfo} />
-          <Route path="/opening-hours" component={HoursForm} />
+          <Route path="/admin/opening-hours" component={HoursForm} />
           {/* <Route path="/admin_about" component={AboutEdit} /> */}
           <Route path="/admin/about/update/:id" component={AboutEdit} />
         </Switch>
