@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Redirect } from 'react-router-dom'
-import { useHistory } from 'react-router-dom'
+import { Redirect, useHistory, withRouter } from 'react-router-dom'
 
 const ProtectedAdminRoute = ({ component: Component, ...props }) => {
   let history = useHistory()
@@ -46,8 +45,8 @@ const ProtectedAdminRoute = ({ component: Component, ...props }) => {
     alert('You are not authorized to view this page')
     return <Redirect to="/" />
   } else {
-    return <Component user={user.auth} history={history} {...props} />
+    return <Component user={user.auth} {...props} />
   }
 }
 
-export default ProtectedAdminRoute;
+export default withRouter(ProtectedAdminRoute);

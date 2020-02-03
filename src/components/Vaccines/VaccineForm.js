@@ -38,7 +38,7 @@ class VaccineForm extends React.Component {
     const showWidget = () => {
       widget.open();
     };
-
+    console.log(this.props)
     return (
       <>
         <div className="content-create">
