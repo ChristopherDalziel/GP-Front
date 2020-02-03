@@ -5,16 +5,16 @@
 }
 
 .service-image {
-  height: 50vh;
+  height: 34vh;
   background-image: url(../assets/banner-staff-copy.jpg);
   background-size: cover;
 }
 
-.services .title {
+.title {
   font-family: "Raleway", sans-serif;
   padding-left: 400px;
   padding-right: 400px;
-  padding-top: 120px;
+  padding-top: 60px;
   text-align: center;
 }
 
@@ -22,6 +22,7 @@
   color: #398ffc;
   margin-bottom: 20px;
 }
+
 .title p {
   font-size: 18px;
   margin-bottom: 20px;
@@ -37,16 +38,37 @@
 }
 
 .singleService {
-  padding-top: 30px;
-  padding-left: 50px;
-  position: relative;
   box-sizing: border-box;
-  width: 25%;
-  height: 40vh;
+  width: 20%;
   margin-right: 40px;
-  margin-bottom: 60px;
-  top: -120px;
+  margin-bottom: 30px;
+}
+
+.serviceCards {
+  margin-top: 50px;
+  margin-left: 120px;
+  margin-right: 120px;
+  box-sizing: border-box;
   background: #e1eeff;
+}
+
+.singleService img {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  height: 200px;
+  width: 200px;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+
+.singleService img:hover {
+  transform: scale(1.1);
+}
+
+.singleService p {
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 5px;
 }
 
 .singleService h1 {

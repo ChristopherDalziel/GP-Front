@@ -24,7 +24,6 @@
 
 .content-booking {
   width: 50%;
-  /* margin-top: 10vh; */
   margin-left: 10vh;
   box-sizing: border-box;
   padding-left: 10vh;
@@ -47,6 +46,7 @@
 
 .booking h2,
 h3 {
+  font-size: 15px;
   width: 27vw;
   margin-bottom: 5px;
 }

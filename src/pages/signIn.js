@@ -20,7 +20,7 @@ const SignIn = props => {
   const onSubmitLoginForm = async e => {
     try {
       e.preventDefault();
-      //response should return a token if successful
+      //Response should return a token if successful
       await axios
         .post(process.env.REACT_APP_BACKEND_URL + "/users/login", {
           email,
@@ -30,16 +30,18 @@ const SignIn = props => {
           setLocalStorage(response.data);
           props.history.push("/");
           window.location.reload(false);
-          //redirecting back to home page
+          //Redirecting back to home page
         });
     } catch (err) {
+      console.log(err.message);
       setError({
+        // Currently returns with a 403 error with no explanation if the account that is attempting to sign in doesn't exist.
         msg: err.message
       });
     }
   };
 
-  //if the password reset form is submitted
+  //If the password reset form is submitted
   const onSubmitEmailVerificationForm = async e => {
     try {
       e.preventDefault();
@@ -54,7 +56,7 @@ const SignIn = props => {
       );
     } catch (err) {
       console.log(err.message);
-      setError({msg: err.message})
+      setError({ msg: err.response.data.err.message });
     }
   };
 
