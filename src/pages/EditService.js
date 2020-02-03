@@ -19,9 +19,10 @@ class EditService extends React.Component {
     try {
       await axios.put(
         process.env.REACT_APP_BACKEND_URL + `/services/update/${id}`,
-        updatedService
+        updatedService,
+        { headers: { Authorization: sessionStorage.getItem("token") } }
       );
-      history.push("/services");
+      history.push("/admin/services");
     } catch (error) {
       console.log(error);
     }

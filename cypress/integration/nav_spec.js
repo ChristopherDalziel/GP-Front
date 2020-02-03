@@ -72,5 +72,7 @@ describe("Nav Functionality Testing", function() {
     cy.location("pathname").should("eq", "/profile");
     cy.contains("li", "Logout").click();
     cy.location("pathname").should("eq", "/");
+
+    cy.contains("li", "Logout").click();
   });
 });

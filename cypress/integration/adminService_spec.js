@@ -7,6 +7,10 @@ describe("Admin Vaccines CRUD Testing", function() {
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/");
     cy.get(".dropdown").trigger("mouseover");
+    cy.get(".dropdown-content")
+      .invoke("show")
+      .contains("li", "Services")
+      .click();
     cy.location("pathname").should("eq", "/admin/services");
   });
 
@@ -25,16 +29,17 @@ describe("Admin Vaccines CRUD Testing", function() {
       .last()
       .click();
     cy.get('[type="text"]').clear();
-    cy.get("input[name=serviceName]").type("this is anothe555");
+    cy.get("input[name=serviceName]").type("Service Name Editing Test");
     cy.get("input[name=serviceDescription]").type(
-      "this is another description222"
+      "Service Description Editing Test"
     );
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/admin/services");
   });
 
   it("Checks if an admin user is able to edit a service", function() {
-    cy.contains("Delete").last.click();
+    cy.contains("button", "delete").click();
     cy.location("pathname").should("eq", "/admin/services");
+    cy.contains("li", "Logout").click();
   });
 });

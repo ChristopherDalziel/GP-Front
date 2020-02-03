@@ -19,7 +19,8 @@ class EditVaccine extends React.Component {
     try {
       await axios.put(
         process.env.REACT_APP_BACKEND_URL + `/vaccines/update/${id}`,
-        updatedVaccine
+        updatedVaccine,
+        { headers: { Authorization: sessionStorage.getItem("token") } }
       );
       history.push("/admin/vaccines");
     } catch (error) {

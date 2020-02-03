@@ -5,9 +5,12 @@ import VaccineTable from "../../components/Vaccines/vaccineTable";
 
 class AdminVaccines extends React.Component {
   submit = vaccineData => {
-    console.log("Vaccine", vaccineData);
     axios
-      .post(process.env.REACT_APP_BACKEND_URL + "/vaccines/create", vaccineData)
+      .post(
+        process.env.REACT_APP_BACKEND_URL + "/vaccines/create",
+        vaccineData,
+        { headers: { Authorization: sessionStorage.getItem("token") } }
+      )
       .then(res => {
         window.location.replace("/admin/vaccines");
       })
