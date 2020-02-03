@@ -15,18 +15,21 @@ class Vaccines extends React.Component {
       <>
         {this.state.loading && <ProgressBar />}
         <div className="vaccines">
-          <div className="vaccine-image"></div>
+          <div className="vaccine-image" />
           <div className="title">
-            <h1>Vaccines</h1>
-            <p>We stock a variety of vaccines including the Influenza vaccine. Below are some of the vaccines available from our clinic:</p>
+            <h1> Our Vaccines</h1>
+            <p>
+              We stock a variety of vaccines including the Influenza vaccine.
+              Below are some of the vaccines available from our clinic:
+            </p>
           </div>
-          
+
           <div className="vaccineCards">
-           <div className="cardsContainer">
+            <div className="cardsContainer">
               <div className="vaccineContainer">
                 <VaccineList />
               </div>
-           </div>
+            </div>
           </div>
         </div>
       </>
