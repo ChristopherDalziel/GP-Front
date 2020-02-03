@@ -17,5 +17,7 @@ describe("Admin Dashboard Appointment Functionality", function() {
 
   it("Tests canceling an appointment", function() {
     cy.contains("button", "Cancel").click();
+
+    cy.contains("li", "Logout").click();
   });
 });

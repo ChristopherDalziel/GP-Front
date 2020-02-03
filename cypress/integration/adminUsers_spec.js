@@ -25,5 +25,6 @@ describe("Admin Dashboard Users Functionality and Edit Testing", function() {
     cy.get("input[name=phone]").type("0412345678");
     cy.contains("Update").click();
     cy.location("pathname").should("eq", "/admin/users");
+    cy.contains("li", "Logout").click();
   });
 });
