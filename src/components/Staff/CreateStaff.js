@@ -43,7 +43,7 @@ class CreateStaff extends Component {
       //  {headers: {'Authorization': sessionStorage.getItem('token') }}
       .then(res => console.log(res.data));
 
-    this.setState({ name: "", aboutText: "" , imageUrl:""});
+    this.setState({ name: "", aboutText: "" , position:"", imageUrl:""});
     this.props.history.push("/admin/staff");
     window.location.reload(true);
   }
