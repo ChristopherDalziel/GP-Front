@@ -10,7 +10,7 @@ class HoursForm extends React.Component {
 
   async componentDidMount() {
     const response = await fetch(
-      process.env.REACT_APP_BACKEND_URL + "/opening-hours"
+      process.env.REACT_APP_BACKEND_URL + "/opening-hours", { headers: { Authorization: sessionStorage.getItem("token") } }
     );
     // Accessing each part of the array in Mongo
     const data = await response.json();
@@ -33,7 +33,7 @@ class HoursForm extends React.Component {
     try {
       await axios.put(
         process.env.REACT_APP_BACKEND_URL + `/opening-hours/update`,
-        props.formValues
+        props.formValues, { headers: { Authorization: sessionStorage.getItem("token") } }
       );
       props.history.push("/contact");
     } catch (error) {

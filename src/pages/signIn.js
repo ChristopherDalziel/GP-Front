@@ -20,7 +20,7 @@ const SignIn = props => {
   const onSubmitLoginForm = async e => {
     try {
       e.preventDefault();
-      //response should return a token if successful
+      //Response should return a token if successful
       await axios
         .post(process.env.REACT_APP_BACKEND_URL + "/users/login", {
           email,
@@ -30,16 +30,17 @@ const SignIn = props => {
           setLocalStorage(response.data);
           props.history.push("/");
           window.location.reload(false);
-          //redirecting back to home page
+          //Redirecting back to home page
         });
     } catch (err) {
+      console.log(err.response.data)
       setError({
-        msg: err.response.data.err.message
+        msg: err.response.data
       });
     }
   };
 
-  //if the password reset form is submitted
+  //If the password reset form is submitted
   const onSubmitEmailVerificationForm = async e => {
     try {
       e.preventDefault();
@@ -53,8 +54,8 @@ const SignIn = props => {
         }
       );
     } catch (err) {
-      console.log(err.message);
-      setError({msg: err.response.data.err.message})
+      console.log(err.response.data);
+      setError({ msg: err.response.data });
     }
   };
 

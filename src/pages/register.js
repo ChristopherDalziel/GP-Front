@@ -75,7 +75,7 @@ class Registration extends React.Component {
                 <RegistrationForm onSubmit={this.registrationSubmit} />
               </div>
               <div>
-                <h4>{this.state.errors}</h4>
+                <h4 style={{ color: "red" }}>{this.state.errors}</h4>
               </div>
               <div>
                 <h4>
