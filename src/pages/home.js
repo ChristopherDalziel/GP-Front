@@ -22,13 +22,17 @@ class Home extends React.Component {
           <div className="content">
             <div className="hero">
               <h1>Klinik Doctor Leong</h1>
-              <div className="homeButtonContainer">
-                <Link to="/contact">
-                  <button className="homeButton">Contact Us</button>
-                </Link>
-                <Link to="/booking">
-                  <button className="homeButton">Book Now</button>
-                </Link>
+              <div className="homeButtonsContainer">
+                <div className="homeButtonContainer">
+                  <Link to="/contact">
+                    <button className="homeButton">Contact Us</button>
+                  </Link>
+                </div>
+                <div className="homeButtonContainer">
+                  <Link to="/booking">
+                    <button className="homeButton">Book Now</button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

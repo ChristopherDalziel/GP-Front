@@ -20,7 +20,6 @@ class About extends React.Component {
     axios
       .get(process.env.REACT_APP_BACKEND_URL + "/admin_about")
       .then(res => {
-        // console.log("res data about", res.data[0].about);
         this.setState({
           about: res.data[0].about,
           drInfo: res.data[0].drInfo,
@@ -51,7 +50,7 @@ class About extends React.Component {
           <img src={res.imageUrl} alt="" />
           <h3>{res.name}</h3>
           <h4>{res.position}</h4>
-          <p>{res.aboutText}</p>
+          <p>{res.about}</p>
         </div>
       );
     });

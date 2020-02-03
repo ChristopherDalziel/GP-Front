@@ -97,24 +97,31 @@
   text-decoration: none;
 } */
 
+.homeButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  width: 25vw;
+  margin: auto;
+}
+
 .homeButtonContainer {
+  display: flex;
   background-color: white;
+  align-content: center;
   padding: 20px 0px;
   margin: auto;
-  width: 25vw;
 }
 
 /* Position and spacing for Navigation bar links */
 .homeButton {
   font-family: "Raleway", sans-serif;
   padding: 3px 0px;
-  margin: 0 28px;
+  margin: 0px 28px;
   position: relative;
   letter-spacing: 2px;
   background-color: transparent;
   color: black;
   font-size: 17px;
-  text-decoration: none;
 }
 
 /* On hover text colour change */
