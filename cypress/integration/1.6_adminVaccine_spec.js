@@ -42,5 +42,6 @@ describe("Admin Dashboard Vaccines CRUD Testing", function() {
     cy.contains("button", "delete").click();
     cy.location("pathname").should("eq", "/admin/vaccines");
     cy.contains("li", "Logout").click();
+    cy.location("pathname").should("eq", "/");
   });
 });

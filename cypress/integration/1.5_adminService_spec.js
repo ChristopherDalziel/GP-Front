@@ -37,9 +37,10 @@ describe("Admin Vaccines CRUD Testing", function() {
     cy.location("pathname").should("eq", "/admin/services");
   });
 
-  it("Checks if an admin user is able to edit a service", function() {
+  it("Checks if an admin user is able to delete a service", function() {
     cy.contains("button", "delete").click();
     cy.location("pathname").should("eq", "/admin/services");
     cy.contains("li", "Logout").click();
+    cy.location("pathname").should("eq", "/");
   });
 });

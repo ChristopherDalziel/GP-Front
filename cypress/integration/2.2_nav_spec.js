@@ -64,7 +64,7 @@ describe("Nav Functionality Testing", function() {
 
   it("Logs into a patient/standard user account to check logged in nav buttons", function() {
     cy.contains("Log In").click();
-    cy.get("input[name=email]").type("cypresstest@test.com");
+    cy.get("input[name=email]").type("cypresstestprofileupdate@test.com");
     cy.get("input[name=password").type("testcypress");
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/");
@@ -72,7 +72,5 @@ describe("Nav Functionality Testing", function() {
     cy.location("pathname").should("eq", "/profile");
     cy.contains("li", "Logout").click();
     cy.location("pathname").should("eq", "/");
-
-    cy.contains("li", "Logout").click();
   });
 });
