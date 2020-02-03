@@ -72,7 +72,9 @@
   }
 }
 
-.homeButton {
+/* Old Home Button Styling */
+
+/* .homeButton {
   font-family: "Raleway", sans-serif;
   border: none;
   padding: 15px 32px;
@@ -93,4 +95,51 @@
   -moz-transition: background 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;
   text-decoration: none;
+} */
+
+.homeButtonContainer {
+  background-color: white;
+  padding: 20px 0px;
+  margin: auto;
+  width: 25vw;
+}
+
+/* Position and spacing for Navigation bar links */
+.homeButton {
+  font-family: "Raleway", sans-serif;
+  padding: 3px 0px;
+  margin: 0 28px;
+  position: relative;
+  letter-spacing: 2px;
+  background-color: transparent;
+  color: black;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+/* On hover text colour change */
+.homeButton:hover {
+  color: #293b98;
+}
+
+.homeButton:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #293b98;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+/* Expands line under link */
+.homeButton:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
