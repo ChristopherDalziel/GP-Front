@@ -34,5 +34,6 @@ describe("Profile Page User Account Profile Update and Booking Cancellation Test
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/");
     cy.contains("li", "Logout").click();
+    cy.location("pathname").should("eq", "/");
   });
 });
