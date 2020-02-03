@@ -46,7 +46,7 @@ export default ({
           <Link to="/signin" onClick={() => setPasswordReset(true)}>
             Forgot your password?
           </Link>
-          {error ? <h4>{error.msg}</h4> : null}
+          {error ? <h4 style={{ color: "red" }}>{error.msg}</h4> : null}
           <h4>
             Don't have an account?
             <Link to="register"> Sign Up Here</Link>
