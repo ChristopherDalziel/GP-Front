@@ -12,10 +12,6 @@ describe("Admin About Information EDIT Testing", function() {
 
   it("Checks the Edit button and accesses the form to edit the about and the general doctor information", function() {
     cy.contains("button", "Edit").click();
-    cy.location("pathname").should(
-      "eq",
-      "/admin/about/update/5e33a0e2ae86fadd87091187"
-    );
     cy.get("input[name=about]").type("This about was written in a test");
     cy.get("input[name=drInfo]").type(
       "This doctor information was written in a test"
@@ -27,7 +23,7 @@ describe("Admin About Information EDIT Testing", function() {
   it("Checks the About information was passed from the form onto the about page", function() {
     cy.contains("This about was written in a test");
     cy.contains("This doctor information was written in a test");
-
     cy.contains("li", "Logout").click();
+    cy.location("pathname").should("eq", "/");
   });
 });

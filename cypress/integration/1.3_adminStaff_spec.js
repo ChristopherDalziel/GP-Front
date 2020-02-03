@@ -1,7 +1,6 @@
 describe("Admin Dashboard Staff Functionality and CRUD Testing", function() {
   it("Tests login of an existing admin account and accesses the staff page", function() {
     cy.visit("localhost:3000");
-
     cy.contains("li", "Log In").click();
     cy.get("input[name=email]").type("klinikdrleong@gmail.com");
     cy.get("input[name=password").type("eb08ef45");
@@ -37,8 +36,9 @@ describe("Admin Dashboard Staff Functionality and CRUD Testing", function() {
   });
 
   it("Tests deleting of an existing staff member", function() {
-    cy.contains("Delete").click();
+    cy.contains("button", "Delete").click();
     cy.location("pathname").should("eq", "/admin/staff");
-    cy.contains("li", "Logout").click();
+    // cy.contains("li", "Logout").click();
+    // cy.location("pathname").should("eq", "/");
   });
 });

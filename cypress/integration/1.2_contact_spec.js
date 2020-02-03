@@ -13,6 +13,5 @@ describe("Contact Page Functionality Testing", function() {
     cy.get("input[name=email]").type("test@testeremail.test");
     cy.get("input[name=message]").type("testing, tester, test email test");
     cy.contains("Submit").click();
-    cy.contains("li", "Logout").click();
   });
 });

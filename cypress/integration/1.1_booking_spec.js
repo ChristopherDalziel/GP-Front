@@ -1,5 +1,6 @@
 describe("Booking Page Functionality Testing For Users Who Aren't Signed In", function() {
   it("Tests Booking Functions When A Patient Isn't Signed In", function() {
+    cy.visit("localhost:3000");
     cy.contains("li", "Book Now").click();
     cy.location("pathname").should("eq", "/booking");
     cy.get("input[name=firstName]").type("test = First Name");
