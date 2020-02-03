@@ -18,6 +18,5 @@ describe("Booking Page Functionality Testing For Users Who Aren't Signed In", fu
     );
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/success");
-    cy.contains("li", "Logout").click();
   });
 });
