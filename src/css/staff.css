@@ -18,16 +18,16 @@ img {
 }
 
 .add_staff {
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
   margin-left: 10vh;
   box-sizing: border-box;
   padding-left: 10vh;
   padding-top: 10vh;
   padding-bottom: 10vh;
-  height: 75vh;
+  height: 95vh;
   width: 40vw;
   background: #e1eeff;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 /* add staff */
@@ -47,6 +47,7 @@ img {
   border: none;
   margin-bottom: 4vh;
 }
+
 .add_staff textarea {
   box-sizing: border-box;
   padding-left: 20px;

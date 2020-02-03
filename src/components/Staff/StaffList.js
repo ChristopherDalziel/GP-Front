@@ -13,7 +13,7 @@ export default class StaffList extends Component {
 
   componentDidMount() {
     axios
-      .get(process.env.REACT_APP_BACKEND_URL + "/admin/staff")
+      .get(process.env.REACT_APP_BACKEND_URL + "/admin/staff", { headers: {'Authorization': sessionStorage.getItem("token") }})
       .then(res => {
         this.setState({
           staffs: res.data

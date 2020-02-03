@@ -23,13 +23,14 @@
 }
 
 .content-booking {
-  margin-top: 10vh;
+  width: 50%;
+  /* margin-top: 10vh; */
   margin-left: 10vh;
   box-sizing: border-box;
   padding-left: 10vh;
-  padding-top: 10vh;
+  padding-top: 5vh;
   padding-bottom: 4vh;
-  height: 77vh;
+  height: 95vh;
   width: 40vw;
   background: #e1eeff;
   overflow: scroll;

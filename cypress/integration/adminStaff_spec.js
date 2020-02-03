@@ -1,5 +1,5 @@
-describe("Admin Dashboard Functionality and CRUD Testing", function() {
-  it("Tests login of an existing admin user/account", function() {
+describe("Admin Dashboard Staff Functionality and CRUD Testing", function() {
+  it("Tests login of an existing admin account and accesses the staff page", function() {
     cy.visit("localhost:3000");
 
     cy.contains("li", "Log In").click();
@@ -7,7 +7,11 @@ describe("Admin Dashboard Functionality and CRUD Testing", function() {
     cy.get("input[name=password").type("eb08ef45");
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/");
-    cy.contains("li", "Admin Dashboard").click();
+    cy.get(".dropdown").trigger("mouseover");
+    cy.get(".dropdown-content")
+      .invoke("show")
+      .contains("li", "Staff")
+      .click();
     cy.location("pathname").should("eq", "/admin/staff");
   });
 
@@ -15,6 +19,8 @@ describe("Admin Dashboard Functionality and CRUD Testing", function() {
     cy.contains("Add New Staff Member").click();
     cy.location("pathname").should("eq", "/admin/add_staff");
     cy.get("input[name=add_staff]").type("This is a test Doctor");
+    cy.get("input[name=position]").type("Test");
+
     cy.get("textarea").type("This is a test Doctor description");
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/admin/staff");
@@ -24,6 +30,7 @@ describe("Admin Dashboard Functionality and CRUD Testing", function() {
     cy.contains("Edit").click();
     cy.get('[type="text"]').clear();
     cy.get("input[name=add_staff]").type("This is an edit test Doctor");
+    cy.get("input[name=position]").type("This is an edited position");
     cy.get("textarea").type("This is an edit test Doctor description");
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/admin/staff");

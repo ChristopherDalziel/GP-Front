@@ -33,7 +33,7 @@
 }
 
 .hero h1 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 70px;
   font-weight: 2000;
   margin-bottom: 20px;
@@ -72,8 +72,8 @@
   }
 }
 
-button {
-  font-family: 'Raleway', sans-serif;
+.homeButton {
+  font-family: "Raleway", sans-serif;
   border: none;
   padding: 15px 32px;
   text-align: center;
@@ -86,7 +86,7 @@ button {
   color: black;
 }
 
-button:hover {
+.homeButton:hover {
   color: white;
   background: #293b98;
   -webkit-transition: background 0.3s ease-in-out;

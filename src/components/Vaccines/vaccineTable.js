@@ -17,60 +17,63 @@ class VaccineTable extends React.Component {
     });
   }
 
+  deleteVaccine = (id) => {
+    axios
+      .delete(process.env.REACT_APP_BACKEND_URL + `/vaccines/delete/${id}`)
+      .then(response => {
+        window.location.replace("/admin/vaccines");
+      });
+  }
+
+  renderVaccine = () => {
+    const { data } = this.state;
+        return (<table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Manufacturer</th>
+                    <th>Image</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {data.map((vaccine, index) => {
+                  return (<tr key={index}>
+                          <td>{vaccine.brand}</td>
+                          <td>{vaccine.description}</td>
+                          <td>{vaccine.manufacturer}</td>
+                          <td>
+                            <img src={vaccine.imageUrl} />
+                          </td>
+                          <td>
+                          {" "}
+                          <Link to={"/vaccine/edit/" + vaccine._id}>
+                          <button name="Button-Edit">Edit</button>
+                          </Link>
+                          </td>
+                          <td>
+                          <button
+                          onClick={() => {
+                            this.deleteVaccine(vaccine._id);
+                            }
+                          }> delete</button>
+                          </td>
+                          </tr>)})}
+                </tbody>
+          </table> )
+    } 
+  
+
   render() {
     const { data } = this.state;
-
-    function deleteVaccine(id) {
-      axios
-        .delete(process.env.REACT_APP_BACKEND_URL + `/vaccines/delete/${id}`)
-        .then(response => {
-          window.location.replace("/admin/vaccines");
-        });
-    }
     return (
       <>
         <h1>Current Vaccines:</h1>
-        {data
-          ? data.map((vaccine, index) => {
-              return (
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Description</th>
-                      <th>Manufacturer</th>
-                      <th>Image</th>
-                      <th>Edit</th>
-                      <th>Delete</th>
-                    </tr>
-                  </thead>
-                  <tr>
-                    <td>{vaccine.brand}</td>
-                    <td>{vaccine.description}</td>
-                    <td>{vaccine.manufacturer}</td>
-                    <td>
-                      <img src={vaccine.imageUrl} />
-                    </td>
-                    <td>
-                      {" "}
-                      <Link to={"/vaccine/edit/" + vaccine._id}>
-                        <button name="Button-Edit">Edit</button>
-                      </Link>
-                    </td>
-                    <td>
-                      <button
-                        onClick={() => {
-                          deleteVaccine(vaccine._id);
-                        }}
-                      >
-                        delete
-                      </button>
-                    </td>
-                  </tr>
-                </table>
-              );
-            })
-          : null}
+        { data ? 
+          this.renderVaccine()
+          : 'There are no vaccines to display' }
       </>
     );
   }

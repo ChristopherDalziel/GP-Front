@@ -21,14 +21,45 @@ describe("Nav Functionality Testing", function() {
   });
 
   it("Clicks all admin nav buttons", function() {
-    cy.contains("li", "Admin Dashboard").click();
+    cy.get(".dropdown").trigger("mouseover");
+    cy.get(".dropdown-content")
+      .invoke("show")
+      .contains("li", "Users")
+      .click();
+    cy.location("pathname").should("eq", "/admin/users");
+
+    cy.get(".dropdown").trigger("mouseover");
+    cy.get(".dropdown-content")
+      .invoke("show")
+      .contains("li", "Appointments")
+      .click();
+    cy.location("pathname").should("eq", "/admin/appointments");
+
+    cy.get(".dropdown").trigger("mouseover");
+    cy.get(".dropdown-content")
+      .invoke("show")
+      .contains("li", "Staff")
+      .click();
     cy.location("pathname").should("eq", "/admin/staff");
-    cy.contains("li", "Admin Services").click();
+
+    cy.get(".dropdown").trigger("mouseover");
+    cy.get(".dropdown-content")
+      .invoke("show")
+      .contains("li", "Services")
+      .click();
     cy.location("pathname").should("eq", "/admin/services");
-    cy.contains("li", "Admin Vaccines").click();
+
+    cy.get(".dropdown").trigger("mouseover");
+    cy.get(".dropdown-content")
+      .invoke("show")
+      .contains("li", "Vaccines")
+      .click();
     cy.location("pathname").should("eq", "/admin/vaccines");
-    cy.contains("li", "Logout").click();
+
+    cy.contains("li", "Home").click();
     cy.location("pathname").should("eq", "/");
+
+    cy.contains("li", "Logout").click();
   });
 
   it("Logs into a patient/standard user account to check logged in nav buttons", function() {
@@ -43,5 +74,3 @@ describe("Nav Functionality Testing", function() {
     cy.location("pathname").should("eq", "/");
   });
 });
-
-

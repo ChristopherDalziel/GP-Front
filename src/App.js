@@ -1,9 +1,13 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+
+// Pages
+import ProtectedRoute from './ProtectedRoute';
+import ProtectedAdminRoute from './ProtectedAdminRoute';
 import Home from "./pages/home";
 import Nav from "./components/Nav";
 import Contact from "./pages/contact";
-import ResetPassword from "./pages/resetpassword";
 import Profile from "./pages/profile";
 import About from "./pages/about";
 import Register from "./pages/register";
@@ -13,7 +17,10 @@ import Services from "./pages/services";
 import Booking from "./pages/booking";
 import SuccessPage from "./pages/success";
 
-//Staff
+// Password Reset
+import ResetPassword from "./pages/resetpassword";
+
+// Staff
 import StaffList from "./components/Staff/StaffList";
 import EditStaff from "./components/Staff/EditStaff";
 import CreateStaff from "./components/Staff/CreateStaff";
@@ -21,15 +28,16 @@ import CreateStaff from "./components/Staff/CreateStaff";
 // Edit Vaccines & Services (For Admin)
 import EditVaccine from "./pages/EditVaccine";
 import EditService from "./pages/EditService";
-
 import AdminServices from "./pages/admin/AdminServices";
 import AdminVaccines from "./pages/admin/AdminVaccines";
 
-//Admin Dashboard
+// Admin Dashboard
 import AdminUsers from "./pages/admin/AdminUsers";
+import HoursForm from "./components/Contact/openingHoursEdit";
 import EditUserInfo from "./components/admin_dashboard/EditUserInfo";
 import AppointmentsList from "./components/admin_dashboard/AppointmentsList";
-
+import AboutEdit from "./components/admin_dashboard/EditAbout";
+import AboutForm from "./components/admin_dashboard/aboutEditForm";
 
 const App = () => {
   return (
@@ -44,8 +52,8 @@ const App = () => {
             path="/:passwordToken/reset-password"
             component={ResetPassword}
           />
+          <ProtectedRoute path="/profile" component={Profile} />
           <Route path="/contact" component={Contact} />
-          <Route path="/profile" component={Profile} />
           <Route path="/about" component={About} />
           <Route path="/vaccines" component={Vaccines} />
           <Route path="/services" component={Services} />
@@ -60,15 +68,14 @@ const App = () => {
           {/* Admin User Routes */}
           <Route path="/admin/users" component={AdminUsers} />
           <Route path="/admin/appointments" component={AppointmentsList} />
-          
           <Route path="/admin/services" component={AdminServices} />
           <Route path="/admin/vaccines" component={AdminVaccines} />
-
           <Route path="/vaccine/edit/:id" component={EditVaccine} />
           <Route path="/service/edit/:id" component={EditService} />
-
           <Route path="/user/edit/:id" component={EditUserInfo} />
-
+          <Route path="/opening-hours" component={HoursForm} />
+          {/* <Route path="/admin_about" component={AboutEdit} /> */}
+          <Route path="/admin/about/update/:id" component={AboutEdit} />
         </Switch>
       </BrowserRouter>
     </>

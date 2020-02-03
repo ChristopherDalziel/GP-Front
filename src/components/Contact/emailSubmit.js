@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+// Email submission function
 async function handleSubmit(values) {
   const {
     first_name,

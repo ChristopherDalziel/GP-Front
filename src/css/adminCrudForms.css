@@ -1,51 +1,12 @@
-.table-cont {
-  /* margin-left: 1vh; */
-  margin: 3vh 0 0 3vh;
-}
-
-.table-cont img {
-  height: 150px;
-}
-
 .content-create {
   background-color: #e1eeff;
   height: 100%;
   padding: 10vh 7vh;
   margin: 3vh 3vh 0 0;
 }
+
 .content-create h1 {
   margin: 10px;
-}
-
-.tableContainer {
-  width: 100%;
-}
-
-table {
-  height: 100%;
-  width: 100%;
-  border: 1px solid black;
-  background-color: white;
-}
-
-td {
-  height: 25vh;
-  width: 25vw;
-}
-
-th,
-td {
-  padding: 5px;
-  text-align: left;
-  border-bottom: 1px solid black;
-}
-
-/* Changing the background colours of different rows in tables */
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-tr:hover {
-  background-color: lightgray;
 }
 
 .content-create button {
@@ -70,6 +31,10 @@ tr:hover {
   border: none;
 }
 
+.inputAboutDr {
+  height: 50vh;
+}
+
 .input-wrapper--1 {
   width: 100%;
 }
@@ -82,10 +47,4 @@ tr:hover {
   left: 10px;
   top: 35px;
   color: #398ffc;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
 }

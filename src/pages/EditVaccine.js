@@ -29,6 +29,7 @@ class EditVaccine extends React.Component {
 
   render() {
     const { vaccineData } = this.state;
+    console.log(this.props.match.params.id)
     return vaccineData ? (
       <>
         <h1>Vaccine Edit</h1>

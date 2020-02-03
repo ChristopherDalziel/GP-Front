@@ -3,16 +3,14 @@ import axios from "axios";
 import BookingForm from "../components/bookingform/bookingform";
 import ProgressBar from "../utils/pageLoading";
 import addDays from "date-fns/addDays";
-import format from "date-fns/format";
+
 
 import "react-datepicker/dist/react-datepicker.css";
 
 const startDate = addDays(new Date(), 1);
-let startDateFormatted = format(startDate, "PPPPp");
 
 class Booking extends React.Component {
   state = {
-    startDate: startDateFormatted.toString(),
     email: null,
     firstName: null,
     lastName: null,
@@ -83,7 +81,7 @@ class Booking extends React.Component {
               <div>
                 <h1>Make An Appointment!</h1>
                 <h2>
-                  For appointments within 24 hours, please call the clinic
+                  For appointments within 24 hours, please present as a walk-in patient or call the clinic
                   directly.
                 </h2>
                 <h3>

@@ -1,4 +1,4 @@
-.dropdown {
+/* .dropdown {
   position: relative;
   display: inline-block;
 }
@@ -39,6 +39,7 @@ li:hover {
   border-radius:5px;
   font-weight:bold
 }
+
 .button:before{
   content:"";
   position:absolute;
@@ -48,4 +49,4 @@ li:hover {
   border-color: black transparent transparent transparent;
   right:6px;
   top:18px;
-}
+} */

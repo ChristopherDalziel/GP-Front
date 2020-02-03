@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import AdminMenu from "../components/admin_dashboard/AdminMenu";
 import "../css/Nav.css";
 
 // User to be imported from the schema later..
@@ -42,27 +41,35 @@ const Nav = props => {
 
   const loggedInItems = () => {
     return (
-      <>
+      <ul>
         <li>
           <Link to="/logout" onClick={logout}>
             Logout
           </Link>
         </li>
-        {admin ? <div className="Nav2">{adminItems()}</div> : userItems()}
-      </>
+
+        {admin ? (
+          <li className="dropdown">
+            <p>Admin Dashboard</p>
+            <div className="dropdown-content">{adminItems()}</div>
+          </li>
+        ) : (
+          userItems()
+        )}
+      </ul>
     );
   };
 
   const loggedOutItems = () => {
     return (
-      <>
+      <ul>
         <li>
           <Link to="/signin">Log In</Link>
         </li>
         <li>
           <Link to="/register">Sign Up</Link>
         </li>
-      </>
+      </ul>
     );
   };
 
@@ -76,22 +83,21 @@ const Nav = props => {
 
   const adminItems = () => {
     return (
-      // <AdminMenu />
       <>
         <li className="two">
-          <Link to="/admin/users">Admin Users</Link>
+          <Link to="/admin/users">Users</Link>
         </li>
         <li className="two">
-          <Link to="/admin/appointments">Admin Appointments</Link>
-        </li>
-        <li className="two">
-          <Link to="/admin/staff">Admin Staff</Link>
+          <Link to="/admin/appointments">Appointments</Link>
         </li>
         <li>
-          <Link to="/admin/services">Admin Services</Link>
+          <Link to="/admin/staff">Staff</Link>
         </li>
         <li>
-          <Link to="/admin/vaccines">Admin Vaccines</Link>
+          <Link to="/admin/services">Services</Link>
+        </li>
+        <li>
+          <Link to="/admin/vaccines">Vaccines</Link>
         </li>
       </>
     );

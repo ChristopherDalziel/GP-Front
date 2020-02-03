@@ -15,25 +15,28 @@ class Services extends React.Component {
     return (
       <>
         {this.state.loading && <ProgressBar />}
-      <div className="services">
-        <div className="service-image">
-
+        <div className="services">
+          <div className="service-image">
             <div className="title">
-            <h1>Our Services</h1>
-            <p>Medical One GP's are dedicated to providing you the best possible care. On this page you can find a GP by name, gender, location, languages spoken or medial interest.</p>
+              <h1>Our Services</h1>
+              <p>
+                We provide a range of general practice services throughout the
+                week. A doctor specializing in skin conditions is available for
+                consultation on weekends. Below are some of the services we
+                provide:{" "}
+              </p>
+            </div>
+          </div>
+
+          <div className="serviceCards">
+            <div className="cardsContainer">
+              <div className="serviceContainer">
+                <ServiceList />
+              </div>
+            </div>
           </div>
         </div>
-      
-        
-        <div className="serviceCards">
-         <div className="cardsContainer">
-            <div className="serviceContainer">
-              <ServiceList />
-            </div>
-         </div>
-        </div>
-      </div>
-    </>
+      </>
     );
   }
 }
