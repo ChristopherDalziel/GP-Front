@@ -34,7 +34,7 @@ const SignIn = props => {
         });
     } catch (err) {
       setError({
-        msg: err.response.data.err.message
+        msg: err.message
       });
     }
   };
@@ -54,7 +54,7 @@ const SignIn = props => {
       );
     } catch (err) {
       console.log(err.message);
-      setError({msg: err.response.data.err.message})
+      setError({msg: err.message})
     }
   };
 
