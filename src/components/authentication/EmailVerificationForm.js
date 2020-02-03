@@ -16,6 +16,6 @@ export default ({ onSubmitEmailVerificationForm, setEmail, error}) => (
         <button>Submit</button>
       </div>
     </form>
-    {error ? <h4>{error.msg}</h4> : null}
+    {error ? <h4 style={{ color: "red" }}>{error.msg}</h4> : null}
   </div>
 )

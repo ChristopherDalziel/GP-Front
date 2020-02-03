@@ -33,10 +33,9 @@ const SignIn = props => {
           //Redirecting back to home page
         });
     } catch (err) {
-      console.log(err.message);
+      console.log(err.response.data)
       setError({
-        // Currently returns with a 403 error with no explanation if the account that is attempting to sign in doesn't exist.
-        msg: err.message
+        msg: err.response.data
       });
     }
   };
@@ -55,8 +54,8 @@ const SignIn = props => {
         }
       );
     } catch (err) {
-      console.log(err.message);
-      setError({ msg: err.response.data.err.message });
+      console.log(err.response.data);
+      setError({ msg: err.response.data });
     }
   };
 
