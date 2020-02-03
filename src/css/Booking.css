@@ -24,15 +24,14 @@
 
 .content-booking {
   width: 50%;
-  margin-left: 10vh;
   box-sizing: border-box;
-  padding-left: 10vh;
+  padding-left: 10vw;
   padding-top: 5vh;
   padding-bottom: 4vh;
   height: 95vh;
-  width: 40vw;
+  width: 50vw;
   background: #e1eeff;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .booking h1 {

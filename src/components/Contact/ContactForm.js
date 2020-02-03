@@ -24,7 +24,7 @@ class ContactForm extends React.Component {
             <Field name="last_name" component="input" type="text" />
           </div>
           <div className="input-wrapper--2" htmlFor="contact_number">
-            <label>Contact Number</label>
+            <label>Contact Number</label> <br />
             <Field name="contact_number" component="input" type="text" />
           </div>
           <div className="input-wrapper--2-5" htmlFor="subject">

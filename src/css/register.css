@@ -23,16 +23,15 @@
 }
 
 .content-signUp {
-  /* margin-top: 10vh; */
-  margin-left: 10vh;
+  width: 50%;
   box-sizing: border-box;
-  padding-left: 10vh;
+  padding-left: 10vw;
   padding-top: 5vh;
-  padding-bottom: 5vh;
+  padding-bottom: 4vh;
   height: 95vh;
-  width: 40vw;
+  width: 50vw;
   background: #e1eeff;
-  /* overflow: scroll; */
+  /* overflow: auto; */
 }
 
 .signUp h1 {
@@ -54,11 +53,9 @@
   box-sizing: border-box;
   padding-left: 40px;
   font-size: 12px;
-  /* margin-top: 10px; */
   width: 27vw;
   height: 40px;
   border: none;
-  /* margin-bottom: 4vh; */
 }
 
 .profile button {
