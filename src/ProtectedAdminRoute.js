@@ -45,7 +45,7 @@ const ProtectedAdminRoute = ({ component: Component, ...props }) => {
     alert('You are not authorized to view this page')
     return <Redirect to="/" />
   } else {
-    return <Component user={user.auth} {...props} />
+    return <Component user={user.auth} {...props}  />
   }
 }
 

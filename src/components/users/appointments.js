@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import format from "date-fns/format";
 
 class UserAppointments extends React.Component {
   state = {
@@ -61,9 +62,10 @@ class UserAppointments extends React.Component {
       );
     } else {
       return appointmentsList.map((appointment, i) => {
+        const formattedDateTime = format(new Date(appointment.dateTime), "PPPPp").toString()
         return (
           <div key={i} className="booking-card">
-            <h3>{appointment.dateTime}</h3>
+            <h3>{formattedDateTime}</h3>
             <h5>Your Comments for this appointment:</h5>
             <p>{appointment.comment}</p>
             <button
