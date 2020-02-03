@@ -6,7 +6,11 @@ describe("Admin Vaccines CRUD Testing", function() {
     cy.get("input[name=password").type("eb08ef45");
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/");
-    cy.contains("li", "Admin Vaccines").click();
+    cy.get(".dropdown").trigger("mouseover");
+    cy.get(".dropdown-content")
+      .invoke("show")
+      .contains("li", "Vaccines")
+      .click();
     cy.location("pathname").should("eq", "/admin/vaccines");
   });
 
