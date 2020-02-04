@@ -49,6 +49,7 @@ describe("Admin Vaccines CRUD Testing", function() {
     cy.contains("button", "delete").click();
     cy.location("pathname").should("eq", "/admin/services");
     cy.contains("li", "Logout").click();
+    cy.wait(500);
     cy.location("pathname").should("eq", "/");
   });
 });

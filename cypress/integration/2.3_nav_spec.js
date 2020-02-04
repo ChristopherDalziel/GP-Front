@@ -58,7 +58,8 @@ describe("Nav Functionality Testing", function() {
 
     cy.contains("li", "Home").click();
     cy.location("pathname").should("eq", "/");
-
+    cy.visit("localhost:3000");
+    cy.wait(1000);
     cy.contains("li", "Logout").click();
   });
 
@@ -70,6 +71,8 @@ describe("Nav Functionality Testing", function() {
     cy.location("pathname").should("eq", "/");
     cy.contains("li", "Profile").click();
     cy.location("pathname").should("eq", "/profile");
+    cy.visit("localhost:3000");
+    cy.wait(1000);
     cy.contains("li", "Logout").click();
     cy.location("pathname").should("eq", "/");
   });

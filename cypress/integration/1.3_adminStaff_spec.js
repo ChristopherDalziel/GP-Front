@@ -26,7 +26,7 @@ describe("Admin Dashboard Staff Functionality and CRUD Testing", function() {
   });
 
   it("Tests editing of an existing staff member", function() {
-    cy.contains("Edit").click();
+    cy.contains("button", "Edit").click();
     cy.get('[type="text"]').clear();
     cy.get("input[name=add_staff]").type("This is an edit test Doctor");
     cy.get("input[name=position]").type("This is an edited position");
@@ -38,5 +38,8 @@ describe("Admin Dashboard Staff Functionality and CRUD Testing", function() {
   it("Tests deleting of an existing staff member", function() {
     cy.contains("button", "Delete").click();
     cy.location("pathname").should("eq", "/admin/staff");
+    cy.visit("localhost:3000");
+    cy.wait(1000);
+    cy.contains("li", "Logout").click();
   });
 });
