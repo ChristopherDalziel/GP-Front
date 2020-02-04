@@ -37,8 +37,8 @@ class Booking extends React.Component {
             });
           });
       } catch (err) {
-        this.setState({ errors: err.message });
-        console.log(err.message);
+        this.setState({errors: err.response.data});
+        console.log(err);
       }
     }
     this.setState({ loading: false });
@@ -61,16 +61,18 @@ class Booking extends React.Component {
             )
             .then(this.props.history.push("/success"))
             .catch(err => {
-              console.log(err.message);
+              console.log(err);
+              this.setState({errors: err.response.data})
             });
         });
     } catch (err) {
       console.log(err);
+      this.setState({errors: err.response.data})
     }
   };
 
   render() {
-    const { email, firstName, lastName, phone, startDate } = this.state;
+    const { email, firstName, lastName, phone } = this.state;
     return (
       <>
         {this.state.loading && <ProgressBar />}
@@ -96,14 +98,13 @@ class Booking extends React.Component {
                     firstName: firstName,
                     lastName: lastName,
                     email: email,
-                    dateTime: startDate,
                     phone: phone,
                     comment: ""
                   }}
                 />
               </div>
               <div>
-                <h4>{this.state.errors}</h4>
+                <h4 style={{color: "red"}}>{this.state.errors}</h4>
               </div>
             </div>
           </div>
