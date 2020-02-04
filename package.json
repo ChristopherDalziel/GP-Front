@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@cypress/instrument-cra": "^1.0.0",
     "axios": "^0.19.1",
     "chai": "^4.2.0",
     "date-fns": "^2.9.0",
@@ -24,13 +25,10 @@
     "redux-thunk": "^2.3.0",
     "uid": "0.0.2"
   },
-  "nyc": {
-    "report-dir": "cypress-coverage"
-  },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts -r @cypress/instrument-cra start",
     "build": "react-scripts build",
-    "test": "cypress",
+    "test": "react-scripts test",
     "coverage": "nyc npm run test",
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
