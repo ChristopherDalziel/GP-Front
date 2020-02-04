@@ -43,6 +43,7 @@ describe("Admin About Information EDIT Testing", function() {
       .contains("li", "Klinik Hours")
       .click();
     cy.get('[type="text"]').clear();
+    cy.wait(1000);
     cy.get("input[name=Monday]").type("8:30am - 9:30pm");
     cy.get("input[name=Tuesday]").type("8:30am - 9:30pms");
     cy.get("input[name=Wednesday]").type("8:30am - 9:30pm");

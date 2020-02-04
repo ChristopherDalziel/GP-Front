@@ -2,7 +2,8 @@ describe("Profile Page User Account Profile Update and Booking Cancellation Test
   it("Logs into a standard user/patient account and accesses the profile page", function() {
     cy.visit("localhost:3000");
     cy.contains("li", "Log In").click();
-    cy.get("input[name=email]").type("cypresstest@test.com");
+
+    cy.get("input[name=email]").type("cypresstestTWO@test.com");
     cy.get("input[name=password").type("testcypress");
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/");
@@ -33,6 +34,8 @@ describe("Profile Page User Account Profile Update and Booking Cancellation Test
     cy.get("input[name=password").type("testcypress");
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/");
+    cy.visit("localhost:3000");
+    cy.wait(1000);
     cy.contains("li", "Logout").click();
     cy.location("pathname").should("eq", "/");
   });

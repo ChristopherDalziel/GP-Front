@@ -46,7 +46,8 @@ class RegistrationForm extends React.Component {
   renderField({ input, label, type, meta: { touched, error, warning } }) {
     return (
       <div>
-        <input {...input} placeholder={label} type={type} label={label} />
+        <input {...input} placeholder={label} type={type} label={label} />{" "}
+        <br />
         {touched &&
           ((error && <span style={{ color: "red" }}>{error}</span>) ||
             (warning && <span style={{ color: "red" }}>{warning}</span>))}
