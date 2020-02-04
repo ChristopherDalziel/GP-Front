@@ -17,6 +17,7 @@ const SignIn = props => {
     setLoading(false);
   }, []);
 
+  //if username and password ok, will receive a token and store it in session storage
   const onSubmitLoginForm = async e => {
     try {
       e.preventDefault();

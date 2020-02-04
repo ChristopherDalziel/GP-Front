@@ -2,9 +2,8 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import "../css/Nav.css";
 
-// User to be imported from the schema later..
+
 const Nav = props => {
-  // let admin = localStorage.getItem("admin")
 
   const logout = e => {
     e.preventDefault();

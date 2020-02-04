@@ -4,11 +4,7 @@ import UserInfoForm from "../users/editinfoform";
 
 import "../../css/register.css";
 
-
-
 class EditUserInfo extends React.Component {
-
-
 
   state = {
     firstName: null,
@@ -18,6 +14,7 @@ class EditUserInfo extends React.Component {
     errors: null
   }
 
+  //getting user info and loading it into the form
   componentDidMount() {
     const id = this.props.match.params.id;
     let token = sessionStorage.getItem("token");
@@ -61,6 +58,7 @@ class EditUserInfo extends React.Component {
     })
   }
 
+  //renders the form with the user's existing info as the initial values
   render() {
     const {firstName, lastName, email, phone} = this.state;
     return (
