@@ -38,7 +38,5 @@ describe("Admin Dashboard Staff Functionality and CRUD Testing", function() {
   it("Tests deleting of an existing staff member", function() {
     cy.contains("button", "Delete").click();
     cy.location("pathname").should("eq", "/admin/staff");
-    // cy.contains("li", "Logout").click();
-    // cy.location("pathname").should("eq", "/");
   });
 });

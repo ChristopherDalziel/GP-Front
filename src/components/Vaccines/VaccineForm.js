@@ -72,14 +72,16 @@ class VaccineForm extends React.Component {
               />
             </div>
             <div>
-              <label htmlFor="imageUrl">Image</label>
+              <label htmlFor="imageUrl">Image Upload</label>
               <button
                 className="imageUploadButton"
                 name="imageUrl"
                 component="input"
                 // type="button"
                 onClick={showWidget}
-              ></button>
+              >
+                Image Upload
+              </button>
             </div>
             <button type="submit">Submit</button>
           </form>

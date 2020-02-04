@@ -4,6 +4,10 @@ import VaccineForm from "../../components/Vaccines/VaccineForm";
 import VaccineTable from "../../components/Vaccines/vaccineTable";
 
 class AdminVaccines extends React.Component {
+  state = {
+    error: null
+  };
+
   submit = vaccineData => {
     axios
       .post(
@@ -15,7 +19,10 @@ class AdminVaccines extends React.Component {
         window.location.replace("/admin/vaccines");
       })
       .catch(error => {
-        console.log("There was an error!" + error);
+        console.log(error.response.data.err.errors.brand.message);
+        this.setState({
+          error: error.response.data.err.errors.brand.message
+        });
       });
   };
 
@@ -28,6 +35,9 @@ class AdminVaccines extends React.Component {
           </div>
           <div>
             <h1>Create New Vaccine:</h1>
+            {this.state.error ? (
+              <h4 style={{ color: "red" }}>{this.state.error}</h4>
+            ) : null}
             <VaccineForm onSubmit={this.submit} {...this.props} />
           </div>
         </div>

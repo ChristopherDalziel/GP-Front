@@ -26,6 +26,12 @@ describe("Admin Dashboard Vaccines CRUD Testing", function() {
     cy.location("pathname").should("eq", "/admin/vaccines");
   });
 
+  it("Negative Test: Checks error is display if service name field is not added", function() {
+    cy.get("input[name=manufacturer]").type("Test Did Not Enter A Brand Name");
+    cy.contains("Submit").click();
+    cy.contains("is required");
+  });
+
   it("Checks if an admin user is able to edit a vaccine", function() {
     cy.get("button[name=Button-Edit]")
       .last()
