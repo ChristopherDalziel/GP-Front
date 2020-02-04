@@ -50,7 +50,7 @@ class About extends React.Component {
           <img src={res.imageUrl} alt="" />
           <h3>{res.name}</h3>
           <h4>{res.position}</h4>
-          <p>{res.about}</p>
+          <p>{res.aboutText}</p>
         </div>
       );
     });
