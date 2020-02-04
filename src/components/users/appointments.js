@@ -7,6 +7,7 @@ class UserAppointments extends React.Component {
     appointments: null
   };
 
+  //retrieves a list of user's appointment based on email stored in token
   componentDidMount() {
     let token = sessionStorage.getItem("token");
     if (token) {
@@ -30,6 +31,7 @@ class UserAppointments extends React.Component {
     }
   }
 
+  //updates cancelled boolean to true, if successful, will trigger cancellation email to be sent
   cancelAppointment(id) {
     axios
       .patch(process.env.REACT_APP_BACKEND_URL + `/appointments/${id}`)

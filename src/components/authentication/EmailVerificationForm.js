@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Email verification form, rendered when password reset is requested
 export default ({ onSubmitEmailVerificationForm, setEmail, error}) => (
   <div>
     <h1>Reset Password</h1>

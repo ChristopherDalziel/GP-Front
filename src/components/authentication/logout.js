@@ -1,5 +1,7 @@
 function logout (e, history) {
   e.preventDefault();
-  localStorage.removeItem('token');
+  sessionStorage.removeItem('token');
+  sessionStorage.removeItem('admin');
+  sessionStorage.removeItem('loggedIn');
   return <Redirect to ="/" /> 
 }

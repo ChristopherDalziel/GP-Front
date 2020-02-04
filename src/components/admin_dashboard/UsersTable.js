@@ -9,6 +9,7 @@ class UsersList extends React.Component {
     loading: true
   };
 
+  //getting a list of all users
   async componentDidMount() {
     try {
       let token = sessionStorage.getItem("token");
@@ -26,6 +27,7 @@ class UsersList extends React.Component {
     }
   }
 
+  //rendering the users list as a table
   renderEachUser = () => {
     const users = this.state.allUsers;
     return (

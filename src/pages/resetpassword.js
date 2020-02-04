@@ -12,8 +12,10 @@ const ResetPassword = props => {
     loading: true
   });
 
+  //setting the token to be the value of the token from the url of the reset password link
   const token = props.match.params.passwordToken;
 
+  //checking the password reset token in the url matches value stored in database, if matching then will load password reset form to allow user to set a new password
   useEffect(() => {
     checkPasswordToken(token, setUser);
   }, [token]);
