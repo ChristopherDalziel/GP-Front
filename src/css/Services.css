@@ -92,3 +92,8 @@
   height: 4vh;
   width: 100%;
 }
+
+.imageUploadButton:hover {
+  background-color: #137bf9;
+  color: white;
+}

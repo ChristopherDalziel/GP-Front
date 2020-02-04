@@ -67,7 +67,12 @@
   margin: 0;
   background: #398ffc;
   height: 4vh;
-  width: 27vw;
+  width: 30vw;
+}
+
+.profile button:hover {
+  background-color: #137bf9;
+  color: white;
 }
 
 .signUp h5 {
@@ -92,6 +97,11 @@
   height: 4vh;
   width: 30vw;
   margin-bottom: 10px;
+}
+
+.signUp button:hover {
+  background-color: #137bf9;
+  color: white;
 }
 
 .input-wrapper-1 {
