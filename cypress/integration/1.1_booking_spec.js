@@ -8,6 +8,7 @@ describe("Booking Page Functionality Testing For Users Who Aren't Signed In", fu
     );
     cy.contains("Submit").click();
     cy.contains("First name is required");
+    cy.contains("Last name is required");
     cy.contains("Email is required");
   });
 
@@ -45,6 +46,9 @@ describe("Booking Page Functionality Testing For Users Who Aren't Signed In", fu
       "comments, are like comments are testing."
     );
     cy.contains("Submit").click();
+    cy.contains(
+      "Appointment validation failed: dateTime: Path `dateTime` is required."
+    );
   });
 
   it("Tests Booking Functions When A Patient Isn't Signed In", function() {

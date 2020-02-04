@@ -37,16 +37,21 @@ describe("Admin Dashboard Vaccines CRUD Testing", function() {
       .last()
       .click();
     cy.get('[type="text"]').clear();
-    cy.get("input[name=brand]").type("Brand Editing Test");
-    cy.get("input[name=manufacturer]").type("Manufacturer Editing Test");
-    cy.get("input[name=description]").type("Description Editing Test");
+    cy.wait(500);
+    cy.get("input[name=brand]").type("Brand Test");
+    cy.get("input[name=manufacturer]").type("Manu Test");
+    cy.wait(500);
+    cy.get("input[name=description]").type("Desc Test");
     cy.contains("Submit").click();
+    cy.wait(500);
     cy.location("pathname").should("eq", "/admin/vaccines");
   });
 
   it("Checks if an admin user is able to delete a vaccine", function() {
     cy.contains("button", "delete").click();
     cy.location("pathname").should("eq", "/admin/vaccines");
+    cy.visit("localhost:3000");
+    cy.wait(1000);
     cy.contains("li", "Logout").click();
     cy.location("pathname").should("eq", "/");
   });
