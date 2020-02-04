@@ -20,7 +20,7 @@ class CreateStaff extends Component {
 
   componentDidMount() {
     axios
-      .put(
+      .get(
         process.env.REACT_APP_BACKEND_URL +
           "/admin/edit_staff/" +
           this.props.match.params.id,
@@ -29,7 +29,7 @@ class CreateStaff extends Component {
       .then(res => {
         this.setState({
           name: res.data.name,
-          aboutText: res.data.aboutText,
+          aboutText: res.data.about,
           position: res.data.position,
           imageUrl: res.data.imageUrl
         });
@@ -119,7 +119,7 @@ class CreateStaff extends Component {
                 <input
                   name="position"
                   type="text"
-                  placeholder="Enter the Staff's Position"
+                  placeholder={this.state.position}
                   value={this.state.position}
                   onChange={this.onChangePosition}
                 />
