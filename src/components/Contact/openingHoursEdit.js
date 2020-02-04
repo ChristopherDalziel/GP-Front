@@ -82,7 +82,7 @@ class HoursForm extends React.Component {
               <label htmlFor="name">Wednesday: </label> <br />
               <Field
                 initialValues={data[2].hours}
-                name="Tuesday"
+                name="Wednesday"
                 component="input"
                 type="text"
               />
@@ -91,7 +91,7 @@ class HoursForm extends React.Component {
               <label htmlFor="name">Thursday: </label> <br />
               <Field
                 initialValues={data[3].hours}
-                name="Tuesday"
+                name="Thursday"
                 component="input"
                 type="text"
               />
@@ -100,7 +100,7 @@ class HoursForm extends React.Component {
               <label htmlFor="name">Friday: </label> <br />
               <Field
                 initialValues={data[4].hours}
-                name="Tuesday"
+                name="Friday"
                 component="input"
                 type="text"
               />
@@ -109,7 +109,7 @@ class HoursForm extends React.Component {
               <label htmlFor="name">Saturday: </label> <br />
               <Field
                 initialValues={data[5].hours}
-                name="Tuesday"
+                name="Saturday"
                 component="input"
                 type="text"
               />
@@ -118,7 +118,7 @@ class HoursForm extends React.Component {
               <label htmlFor="name">Sunday: </label> <br />
               <Field
                 initialValues={data[6].hours}
-                name="Tuesday"
+                name="Sunday"
                 component="input"
                 type="text"
               />
