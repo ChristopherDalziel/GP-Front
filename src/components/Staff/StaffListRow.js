@@ -35,9 +35,11 @@ export default class StaffListRow extends Component {
         </td>
 
         <td>
-          <button>
-            <Link to={"/admin/update_staff/" + this.props.obj._id}>Edit</Link>
-          </button>
+          <Link to={"/admin/update_staff/" + this.props.obj._id}>
+            <button>Edit</button>
+          </Link>
+        </td>
+        <td>
           <button onClick={this.deleteStaff}>Delete</button>
         </td>
       </tr>

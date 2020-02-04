@@ -38,7 +38,7 @@ class VaccineForm extends React.Component {
     const showWidget = () => {
       widget.open();
     };
-    console.log(this.props)
+
     return (
       <>
         <div className="content-create">
@@ -73,13 +73,13 @@ class VaccineForm extends React.Component {
             </div>
             <div>
               <label htmlFor="imageUrl">Image</label>
-              <Field
+              <button
                 className="imageUploadButton"
                 name="imageUrl"
                 component="input"
-                type="button"
+                // type="button"
                 onClick={showWidget}
-              ></Field>
+              ></button>
             </div>
             <button type="submit">Submit</button>
           </form>

@@ -23,14 +23,15 @@
 }
 
 .content-signin {
-  margin-top: 10vh;
-  margin-left: 10vh;
+  width: 50%;
   box-sizing: border-box;
-  padding-left: 10vh;
-  padding-top: 10vh;
-  height: 65vh;
-  width: 40vw;
+  padding-left: 10vw;
+  padding-top: 5vh;
+  padding-bottom: 4vh;
+  height: 95vh;
+  width: 50vw;
   background: #e1eeff;
+  /* overflow: auto; */
 }
 .signIn h1 {
   font-family: "Raleway", sans-serif;
@@ -69,7 +70,6 @@
   height: 4vh;
   width: 30vw;
   margin-bottom: 20px;
-
 }
 
 .input-wrapper1 {
@@ -100,20 +100,18 @@
   color: #398ffc;
 }
 
-
-.signIn a, .signUp a{
- 
-  margin-top:10px;
+.signIn a,
+.signUp a {
+  margin-top: 10px;
   text-decoration: none;
   font-family: "Raleway", sans-serif;
   font-size: 16px;
-
 }
 
-.signIn h4, .signUp h4{
-  margin-top:10px;
+.signIn h4,
+.signUp h4 {
+  margin-top: 10px;
   text-decoration: none;
   font-family: "Raleway", sans-serif;
   font-size: 16px;
-
 }
