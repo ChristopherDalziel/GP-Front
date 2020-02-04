@@ -127,6 +127,7 @@
 /* On hover text colour change */
 .homeButton:hover {
   color: #293b98;
+  background-color: transparent;
 }
 
 .homeButton:before {
