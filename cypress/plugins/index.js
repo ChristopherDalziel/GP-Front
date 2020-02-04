@@ -10,8 +10,9 @@
 
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
+// import '@cypress/code-coverage/support';
 
 module.exports = (on, config) => {
   on("task", require("@cypress/code-coverage/task"));
-  on('file:preprocessor', require('@cypress/code-coverage/use-browserify-istanbul'))
+  // on('file:preprocessor', require('@cypress/code-coverage/use-browserify-istanbul'))
 };

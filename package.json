@@ -24,10 +24,13 @@
     "redux-thunk": "^2.3.0",
     "uid": "0.0.2"
   },
+  "nyc": {
+    "report-dir": "cypress-coverage"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "cypress",
     "coverage": "nyc npm run test",
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
@@ -54,13 +57,5 @@
     "cypress": "^3.8.3",
     "istanbul-lib-coverage": "^3.0.0",
     "nyc": "^15.0.0"
-  },
-  "env": {
-    "test": {
-      "plugins": [ "istanbul" ]
-    }
-  },
-  "nyc": {
-    "report-dir": "cypress-coverage"
   }
 }
