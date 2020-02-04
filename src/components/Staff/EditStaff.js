@@ -20,7 +20,7 @@ class CreateStaff extends Component {
 
   componentDidMount() {
     axios
-      .put(
+      .get(
         process.env.REACT_APP_BACKEND_URL +
           "/admin/edit_staff/" +
           this.props.match.params.id,
