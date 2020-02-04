@@ -62,6 +62,14 @@ describe("User Sign Up and Sign in Functionality Testing", function() {
     cy.contains("User validation failed: email: Error: Email already exists");
   });
 
+  it("Negative Test: Fails to sign into an when both form fields aren't entered, or have incorrect information entered (Eg: Incorrect password or email)", function() {
+    cy.visit("localhost:3000");
+    cy.contains("li", "Log In").click();
+    cy.get("input[name=email]").type("cypresstest@test.com");
+    cy.contains("Submit").click();
+    cy.contains("Incorrect email or password");
+  });
+
   it("Signs in the user account that was created by the previous test", function() {
     cy.visit("localhost:3000");
     cy.contains("li", "Log In").click();
