@@ -19,9 +19,8 @@
   height: inherit;
 }
 
-
-.about-image{
-  background-image: url('../assets/clinicfront.jpg');
+.about-image {
+  background-image: url("../assets/clinicfront.jpg");
   background-size: cover;
 }
 
@@ -65,7 +64,7 @@
   border-top-left-radius: 100px;
   border-bottom-right-radius: 100px;
   height: 300px;
-  width: 300px;
+  /* width: 300px; */
 }
 
 .doctor-card h3 {

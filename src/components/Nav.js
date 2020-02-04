@@ -99,6 +99,9 @@ const Nav = props => {
         <li>
           <Link to="/admin/vaccines">Vaccines</Link>
         </li>
+        <li>
+          <Link to="/admin/opening-hours">Klinik Hours</Link>
+        </li>
       </>
     );
   };

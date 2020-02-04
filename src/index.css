@@ -1,16 +1,4 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+/* Setting font styles throughout the app */
 
 body h1,
 h2,
@@ -26,6 +14,25 @@ body p {
 
 label {
   font-family: "Raleway", sans-serif;
+}
+
+table {
+  font-family: "Raleway", sans-serif;
+}
+
+button {
+  background-color: grey;
+  border: none;
+  color: white;
+  padding: 9px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
 }
 
 /* Controlling a-links colours in their different states */

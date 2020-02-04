@@ -39,6 +39,7 @@ class ServiceForm extends React.Component {
     const showWidget = () => {
       widget.open();
     };
+
     return (
       <>
         <div className="content-create">
@@ -63,15 +64,16 @@ class ServiceForm extends React.Component {
               />
             </div>
             <div>
-              <label htmlFor="imageUrl" />
-              <Field
+              <label htmlFor="imageUrl">Upload Image</label> <br />
+              <button
                 className="imageUploadButton"
                 name="imageUrl"
                 component="input"
-                type="button"
+                // type="button"
                 onClick={showWidget}
-                // Need to find away to add text to the button
-              ></Field>
+              >
+                Upload Image
+              </button>
             </div>
             <button type="submit">Submit</button>
           </form>

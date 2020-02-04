@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { Field, reduxForm, getFormValues } from "redux-form";
+import "../../css/adminCrudForms.css";
 
 class HoursForm extends React.Component {
   state = {
@@ -10,7 +11,8 @@ class HoursForm extends React.Component {
 
   async componentDidMount() {
     const response = await fetch(
-      process.env.REACT_APP_BACKEND_URL + "/opening-hours", { headers: { Authorization: sessionStorage.getItem("token") } }
+      process.env.REACT_APP_BACKEND_URL + "/opening-hours",
+      { headers: { Authorization: sessionStorage.getItem("token") } }
     );
     // Accessing each part of the array in Mongo
     const data = await response.json();
@@ -33,7 +35,8 @@ class HoursForm extends React.Component {
     try {
       await axios.put(
         process.env.REACT_APP_BACKEND_URL + `/opening-hours/update`,
-        props.formValues, { headers: { Authorization: sessionStorage.getItem("token") } }
+        props.formValues,
+        { headers: { Authorization: sessionStorage.getItem("token") } }
       );
       props.history.push("/contact");
     } catch (error) {
@@ -54,73 +57,75 @@ class HoursForm extends React.Component {
 
     return (
       <>
-        <h1>Opening Hours Change:</h1>
-        <form onSubmit={e => this.updateHours(e, this.props)}>
-          <div>
-            <label htmlFor="name">Monday: </label> <br />
-            <Field
-              initialValues={data[0].hours}
-              name="Monday"
-              component="input"
-              type="text"
-            />
-          </div>
-          <div>
-            <label htmlFor="name">Tuesday: </label> <br />
-            <Field
-              initialValues={data[1].hours}
-              name="Tuesday"
-              component="input"
-              type="text"
-            />
-          </div>
-          <div>
-            <label htmlFor="name">Wednesday: </label> <br />
-            <Field
-              initialValues={data[2].hours}
-              name="Tuesday"
-              component="input"
-              type="text"
-            />
-          </div>
-          <div>
-            <label htmlFor="name">Thursday: </label> <br />
-            <Field
-              initialValues={data[3].hours}
-              name="Tuesday"
-              component="input"
-              type="text"
-            />
-          </div>
-          <div>
-            <label htmlFor="name">Friday: </label> <br />
-            <Field
-              initialValues={data[4].hours}
-              name="Tuesday"
-              component="input"
-              type="text"
-            />
-          </div>
-          <div>
-            <label htmlFor="name">Saturday: </label> <br />
-            <Field
-              initialValues={data[5].hours}
-              name="Tuesday"
-              component="input"
-              type="text"
-            />
-          </div>
-          <div>
-            <label htmlFor="name">Sunday: </label> <br />
-            <Field
-              initialValues={data[6].hours}
-              name="Tuesday"
-              component="input"
-              type="text"
-            />
-          </div>
-          <button type="submit">Submit</button>
-        </form>
+        <div className="content-create">
+          <h1>Opening Hours Change:</h1>
+          <form onSubmit={e => this.updateHours(e, this.props)}>
+            <div className="input-wrapper---4">
+              <label htmlFor="name">Monday: </label> <br />
+              <Field
+                initialValues={data[0].hours}
+                name="Monday"
+                component="input"
+                type="text"
+              />
+            </div>
+            <div className="input-wrapper---4">
+              <label htmlFor="name">Tuesday: </label> <br />
+              <Field
+                initialValues={data[1].hours}
+                name="Tuesday"
+                component="input"
+                type="text"
+              />
+            </div>
+            <div className="input-wrapper---4">
+              <label htmlFor="name">Wednesday: </label> <br />
+              <Field
+                initialValues={data[2].hours}
+                name="Tuesday"
+                component="input"
+                type="text"
+              />
+            </div>
+            <div className="input-wrapper---4">
+              <label htmlFor="name">Thursday: </label> <br />
+              <Field
+                initialValues={data[3].hours}
+                name="Tuesday"
+                component="input"
+                type="text"
+              />
+            </div>
+            <div className="input-wrapper---4">
+              <label htmlFor="name">Friday: </label> <br />
+              <Field
+                initialValues={data[4].hours}
+                name="Tuesday"
+                component="input"
+                type="text"
+              />
+            </div>
+            <div className="input-wrapper---4">
+              <label htmlFor="name">Saturday: </label> <br />
+              <Field
+                initialValues={data[5].hours}
+                name="Tuesday"
+                component="input"
+                type="text"
+              />
+            </div>
+            <div className="input-wrapper---4">
+              <label htmlFor="name">Sunday: </label> <br />
+              <Field
+                initialValues={data[6].hours}
+                name="Tuesday"
+                component="input"
+                type="text"
+              />
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
       </>
     );
   }
