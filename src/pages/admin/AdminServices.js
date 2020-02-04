@@ -5,16 +5,27 @@ import ServiceTable from "../../components/Services/serviceTable";
 import "../../css/adminCrudPages.css";
 
 class AdminServices extends React.Component {
-  submit(serviceData) {
+  state = {
+    error: null
+  };
+
+  submit = serviceData => {
     axios
-      .post(process.env.REACT_APP_BACKEND_URL + "/services/create", serviceData)
+      .post(
+        process.env.REACT_APP_BACKEND_URL + "/services/create",
+        serviceData,
+        { headers: { Authorization: sessionStorage.getItem("token") } }
+      )
       .then(res => {
         window.location.replace("/admin/services");
       })
       .catch(error => {
-        console.log("There was an error!" + error);
+        console.log(error.response.data.err.errors.serviceName.message);
+        this.setState({
+          error: error.response.data.err.errors.serviceName.message
+        });
       });
-  }
+  };
 
   render() {
     return (
@@ -25,6 +36,9 @@ class AdminServices extends React.Component {
           </div>
           <div>
             <h1>Create New Service:</h1>
+            {this.state.error ? (
+              <h4 style={{ color: "red" }}>{this.state.error}</h4>
+            ) : null}
             <ServiceForm onSubmit={this.submit} {...this.props} />
           </div>
         </div>
