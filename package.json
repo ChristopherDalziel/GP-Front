@@ -28,6 +28,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coverage": "nyc npm run test",
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
     "deploy": "npm run build && netlify deploy --prod --dir=build"
@@ -49,8 +50,17 @@
   },
   "devDependencies": {
     "@cypress/code-coverage": "^1.11.0",
+    "babel-plugin-istanbul": "^6.0.0",
     "cypress": "^3.8.3",
     "istanbul-lib-coverage": "^3.0.0",
     "nyc": "^15.0.0"
+  },
+  "env": {
+    "test": {
+      "plugins": [ "istanbul" ]
+    }
+  },
+  "nyc": {
+    "report-dir": "cypress-coverage"
   }
 }
