@@ -1,5 +1,6 @@
 import React from 'react';
 
+//password reset form, takes in new password as input
 export default ({
   onSubmitPasswordResetForm, setPassword
 }) => (

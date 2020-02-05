@@ -19,6 +19,7 @@ class Booking extends React.Component {
     loading: true
   };
 
+  //checks if user is logged in, and if yes then gets user info to use as initial values for booking form
   componentDidMount() {
     let token = sessionStorage.getItem("token");
     if (token) {
@@ -44,6 +45,7 @@ class Booking extends React.Component {
     this.setState({ loading: false });
   }
 
+  //attempts to create a new booking document, if successful, triggers confirmation email to be sent
   bookingSubmit = async values => {
     try {
       const newBooking = values;

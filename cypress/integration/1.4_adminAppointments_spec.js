@@ -1,7 +1,6 @@
 describe("Admin Dashboard Appointment Functionality", function() {
   it("Tests login of an existing admin account and accesses the appointment page", function() {
     cy.visit("localhost:3000");
-    cy.contains("li", "Logout").click();
     cy.contains("li", "Log In").click();
     cy.get("input[name=email]").type("klinikdrleong@gmail.com");
     cy.get("input[name=password").type("eb08ef45");

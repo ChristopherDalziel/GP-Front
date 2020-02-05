@@ -2,7 +2,7 @@ describe("Booking Page Functionality Testing For Users Who Aren't Signed In", fu
   it("Tests Booking Functions When A Patient Is Signed In And Insures Account Data Is Carried over", function() {
     cy.visit("localhost:3000");
     cy.contains("li", "Log In").click();
-    cy.get("input[name=email]").type("cypresstest@test.com");
+    cy.get("input[name=email]").type("cypresstestTWO@test.com");
     cy.get("input[name=password").type("testcypress");
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/");
@@ -17,8 +17,12 @@ describe("Booking Page Functionality Testing For Users Who Aren't Signed In", fu
     cy.get("input[name=comment]").type(
       "This is a booking made via cypress test"
     );
+    cy.wait(1000);
     cy.contains("Submit").click();
+    cy.wait(2000);
     cy.location("pathname").should("eq", "/success");
+    cy.visit("localhost:3000");
+    cy.wait(1000);
     cy.contains("li", "Logout").click();
     cy.location("pathname").should("eq", "/");
   });

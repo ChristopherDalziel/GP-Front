@@ -9,6 +9,7 @@ class AppointmentsList extends React.Component {
     loading: true
   };
 
+  //get a list of all active appointments
   async componentDidMount() {
     try {
       let token = sessionStorage.getItem("token");
@@ -50,6 +51,7 @@ class AppointmentsList extends React.Component {
       });
   }
 
+  //puts each appointment into a table
   renderEachAppointment = () => {
     const appointments = this.state.allAppointments;
     return (
@@ -100,6 +102,7 @@ class AppointmentsList extends React.Component {
     );
   };
 
+  
   render() {
     const appointments = this.state.allAppointments;
     return (

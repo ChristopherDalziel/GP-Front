@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import "../../css/signIn.css";
 
+//log in form, rendered when user goes to the log in page
 export default ({
   onSubmitLoginForm,
   setEmail,

@@ -18,31 +18,7 @@ class Registration extends React.Component {
     loading: true
   };
 
-  componentDidMount() {
-    let token = sessionStorage.getItem("token");
-    if (token) {
-      try {
-        axios
-          .get(process.env.REACT_APP_BACKEND_URL + "/users/find-user", {
-            headers: { Authorization: token }
-          })
-          .then(response => {
-            const user = response.data;
-            this.setState({
-              email: user.email,
-              firstName: user.firstName,
-              lastName: user.lastName,
-              phone: user.phone
-            });
-          });
-      } catch (err) {
-        this.setState({ errors: err.message });
-        console.log(err.message);
-      }
-    }
-    this.setState({ loading: false });
-  }
-
+  //creates a new user object based on values from registration form
   registrationSubmit = async values => {
     try {
       const newUser = values;
@@ -60,7 +36,7 @@ class Registration extends React.Component {
   };
 
   render() {
-    const { email, firstName, lastName, phone } = this.state;
+
     return (
       <>
         {this.state.loading && <ProgressBar />}

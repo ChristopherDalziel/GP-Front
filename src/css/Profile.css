@@ -17,7 +17,6 @@
 }
 
 .profile .container-profile {
-  /* width: 50vw; */
   height: inherit;
   display: flex;
   flex-direction: row;
@@ -31,12 +30,12 @@
 }
 
 .container-booking h1 {
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
   margin-left: 5vw;
 }
 
 .booking-card h3 {
-  padding: 10px;
+  /* padding: 10px; */
   text-align: center;
 }
 
@@ -50,6 +49,7 @@
 }
 
 .booking-card {
+  padding: 15px;
   margin-top: 7vh;
   margin-left: 10vh;
   box-sizing: border-box;

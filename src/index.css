@@ -31,8 +31,8 @@ button {
 }
 
 button:hover {
-  background-color: white;
-  color: black;
+  background-color: #137bf9;
+  color: white;
 }
 
 /* Controlling a-links colours in their different states */
