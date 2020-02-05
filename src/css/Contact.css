@@ -207,3 +207,51 @@
 .info-container-opening-hours ul li {
   list-style-type: none;
 }
+
+@media only screen and (max-width: 600px) {
+  .address-holder {
+    display: none;
+  }
+
+  .google-map > div > div {
+    display: none;
+    z-index: 0;
+  }
+
+  .contact {
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  .container-main {
+    display: none;
+    width: 100%;
+    float: none;
+    z-index: 0;
+  }
+
+  .content-contact {
+    width: 100vw;
+  }
+
+  .container-one {
+    display: none;
+    float: none;
+  }
+
+  .info-container {
+    width: 80vw;
+  }
+
+  .info-container-opening-hours {
+    width: 80vw;
+  }
+
+  .info-container-fb {
+    width: 80vw;
+  }
+
+  .contact button {
+    width: 80vw;
+  }
+}

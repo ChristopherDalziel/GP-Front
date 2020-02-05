@@ -37,11 +37,13 @@ import EditUserInfo from "./components/admin_dashboard/EditUserInfo";
 import AppointmentsList from "./components/admin_dashboard/AppointmentsList";
 import AboutEdit from "./components/admin_dashboard/EditAbout";
 import AboutForm from "./components/admin_dashboard/aboutEditForm";
+import BurgerNav from "./components/BurgerNav";
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
+        <BurgerNav />
         <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
