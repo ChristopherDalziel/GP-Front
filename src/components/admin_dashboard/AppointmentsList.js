@@ -1,6 +1,9 @@
 import React from "react";
 import axios from "axios";
 import format from "date-fns/format";
+import getAdminStatus from "../../utils/getAdminStatus";
+
+let admin = getAdminStatus();
 
 class AppointmentsList extends React.Component {
   state = {
@@ -55,54 +58,62 @@ class AppointmentsList extends React.Component {
   renderEachAppointment = () => {
     const appointments = this.state.allAppointments;
     return (
-      <table>
-        <thead>
-          <tr>
-            <th>Date and Time</th>
-            <th>Surname</th>
-            <th>First name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Cancel</th>
-          </tr>
-        </thead>
-        <tbody>
-          {appointments.map((appointment, index) => {
-            const {
-              _id,
-              lastName,
-              firstName,
-              email,
-              phone,
-              dateTime
-            } = appointment;
-            const formattedDateTime = format(new Date(dateTime), "PPPPp").toString()
-            
-            return (
-                <tr key={index}>
-                  <td>{formattedDateTime}</td>
-                  <td>{lastName}</td>
-                  <td>{firstName}</td>
-                  <td>{email}</td>
-                  <td>{phone}</td>
-                  <td>
-                    <button
-                      onClick={() => {
-                        this.cancelAppointment(_id);
-                      }}
-                    >
-                      Cancel
-                    </button>
-                  </td>
-                </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <>
+        {admin ? (
+          <table>
+            <thead>
+              <tr>
+                <th>Date and Time</th>
+                <th>Surname</th>
+                <th>First name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Cancel</th>
+              </tr>
+            </thead>
+            <tbody>
+              {appointments.map((appointment, index) => {
+                const {
+                  _id,
+                  lastName,
+                  firstName,
+                  email,
+                  phone,
+                  dateTime
+                } = appointment;
+                const formattedDateTime = format(
+                  new Date(dateTime),
+                  "PPPPp"
+                ).toString();
+
+                return (
+                  <tr key={index}>
+                    <td>{formattedDateTime}</td>
+                    <td>{lastName}</td>
+                    <td>{firstName}</td>
+                    <td>{email}</td>
+                    <td>{phone}</td>
+                    <td>
+                      <button
+                        onClick={() => {
+                          this.cancelAppointment(_id);
+                        }}
+                      >
+                        Cancel
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        ) : (
+          window.location.replace("/")
+        )}
+      </>
     );
   };
 
-  
   render() {
     const appointments = this.state.allAppointments;
     return (
