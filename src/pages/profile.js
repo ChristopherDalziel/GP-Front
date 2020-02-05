@@ -38,7 +38,6 @@ class Profile extends React.Component {
           });
       } catch (err) {
         this.setState({ errors: err.message });
-        console.log(err.message);
       }
       this.setState({ loading: false });
     }
@@ -49,7 +48,6 @@ class Profile extends React.Component {
     axios
       .patch(process.env.REACT_APP_BACKEND_URL + `/users/edit/${id}`, values)
       .then(response => {
-        console.log(response.data);
         const { email, firstName, lastName, phone } = response.data;
         this.setState({
           firstName: firstName,
@@ -59,7 +57,6 @@ class Profile extends React.Component {
         });
       })
       .catch(err => {
-        console.log(err.message);
         this.setState({ errors: err.message });
       });
   };

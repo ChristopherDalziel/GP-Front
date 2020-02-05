@@ -21,11 +21,9 @@ class UsersList extends React.Component {
           headers: { Authorization: token }
         })
         .then(response => {
-          console.log(response.data);
           this.setState({ allUsers: response.data, loading: false });
         });
     } catch (err) {
-      console.log(err.message);
       this.setState({ errors: err.message });
     }
   }
@@ -86,6 +84,7 @@ class UsersList extends React.Component {
         ) : (
           window.location.replace("/")
         )}
+        <div>{this.state.errors}</div>
       </>
     );
   }

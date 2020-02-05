@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
-import { checkToken } from './utils/token'
 import { useHistory } from 'react-router-dom'
 
 const ProtectedRoute = ({ component: Component, ...props }) => {
@@ -13,7 +12,6 @@ const ProtectedRoute = ({ component: Component, ...props }) => {
 
   useEffect(() => {
     const token = sessionStorage.getItem('token');
-    console.log(token)
     if (token) {
       setUser({
         auth: true,
@@ -25,8 +23,6 @@ const ProtectedRoute = ({ component: Component, ...props }) => {
         })
       }
     }, [])
-  console.log(user.auth)
-
   if (user.loading) {
     return null
   } else if (!user.auth) {
