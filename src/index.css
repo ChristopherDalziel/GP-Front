@@ -63,3 +63,10 @@ a:active {
   color: red;
   font-size: 30px;
 }
+
+@media only screen and (max-width: 600px) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+}
