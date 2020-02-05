@@ -35,7 +35,8 @@ class VaccineForm extends React.Component {
       }
     );
 
-    const showWidget = () => {
+    const showWidget = (e) => {
+      e.preventDefault();
       widget.open();
     };
 
