@@ -65,7 +65,8 @@ class CreateStaff extends Component {
       }
     );
 
-    const showWidget = () => {
+    const showWidget = (e) => {
+      e.preventDefault();
       widget.open();
     };
 
