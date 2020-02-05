@@ -148,4 +148,8 @@
     cursor: pointer;
     transition: all 0.6s;
   }
+
+  .title p {
+    margin: 20px;
+  }
 }
