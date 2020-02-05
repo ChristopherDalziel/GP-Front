@@ -44,7 +44,7 @@
     background-image: url("../assets/1.jpeg");
   }
   20% {
-    background-image: url("../assets/2.jpeg");
+    background-image: url("../assets/ecg.jpg");
   }
   20.01% {
     background-image: url("../assets/3.jpeg");
@@ -71,31 +71,6 @@
     background-image: url("../assets/6.jpeg");
   }
 }
-
-/* Old Home Button Styling */
-
-/* .homeButton {
-  font-family: "Raleway", sans-serif;
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 15px;
-  cursor: pointer;
-  letter-spacing: 2px;
-  color: black;
-}
-
-.homeButton:hover {
-  color: white;
-  background: #293b98;
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out;
-  text-decoration: none;
-} */
 
 .homeButtonsContainer {
   display: flex;

@@ -44,6 +44,7 @@ class Contact extends React.Component {
                 )}{" "}
                 <br></br>
                 <button
+                  type="toggle"
                   onClick={() => this.setState({ shown: !this.state.shown })}
                 >
                   {" "}

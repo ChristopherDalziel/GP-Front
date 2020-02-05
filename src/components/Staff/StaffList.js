@@ -58,7 +58,9 @@ export default class StaffList extends Component {
                 <tbody>{this.DataTable()}</tbody>
               </table>
             </div>
-            <Link to={"/admin/add_staff"}>Add New Staff Member</Link>
+            <Link to={"/admin/add_staff"}>
+              <button>Add New Staff Member</button>
+            </Link>
           </div>
         ) : (
           window.location.replace("/")

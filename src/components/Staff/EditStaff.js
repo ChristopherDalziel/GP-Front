@@ -120,7 +120,6 @@ class CreateStaff extends Component {
                         onChange={this.onChangeName}
                       ></input>
                     </div>
-
                     <div className="position">
                       <label>Position Title</label> <br />
                       <input
@@ -140,9 +139,15 @@ class CreateStaff extends Component {
                         onChange={this.onChangeAboutText}
                       />
                     </div>
-
-                    <a onClick={showWidget}>Upload Image</a>
-
+                    <label htmlFor="imageUrl">Upload Image</label> <br />
+                    <button
+                      className="imageUploadButton"
+                      name="imageUrl"
+                      component="input"
+                      onClick={showWidget}
+                    >
+                      Upload Image
+                    </button>
                     <button type="submit">Submit</button>
                   </form>
                 </div>
