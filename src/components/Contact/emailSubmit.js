@@ -14,16 +14,14 @@ async function handleSubmit(values) {
     message
   } = values;
   try {
-    await axios
-      .post(process.env.REACT_APP_BACKEND_URL + "/mail/send", {
-        first_name,
-        last_name,
-        contact_number,
-        subject,
-        email,
-        message
-      })
-      .then(window.location.replace("/contact"));
+    await axios.post(process.env.REACT_APP_BACKEND_URL + "/mail/send", {
+      first_name,
+      last_name,
+      contact_number,
+      subject,
+      email,
+      message
+    });
   } catch (err) {
     console.log(err.message);
   }
