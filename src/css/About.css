@@ -102,3 +102,31 @@
   font-size: 18px;
   margin-bottom: 20px;
 }
+
+@media only screen and (max-width: 600px) {
+  .about {
+    display: none;
+  }
+
+  .about-infor {
+    padding-top: 15vh;
+    width: 100vw;
+  }
+
+  .about-image {
+    display: none;
+  }
+
+  .doc-infors {
+    width: 100vw;
+    padding: 0;
+  }
+
+  .doc-infors h1 {
+    margin-top: 10px;
+  }
+
+  .doctors {
+    width: 100vw;
+  }
+}

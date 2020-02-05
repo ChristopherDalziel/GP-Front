@@ -31,7 +31,7 @@
   height: 95vh;
   width: 50vw;
   background: #e1eeff;
-  overflow: auto;
+  /* overflow: auto; */
 }
 
 .signUp h1 {
@@ -198,8 +198,14 @@
     display: none;
   }
 
+  .signUp input {
+    width: 75vw;
+  }
+
   .content-signUp {
     width: 100%;
-    height: 90vh;
+    height: 100vh;
+    padding-top: 15vh;
+    overflow: scroll;
   }
 }

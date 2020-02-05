@@ -219,6 +219,7 @@
   }
 
   .contact {
+    height: 100vh;
     display: flex;
     flex-flow: column wrap;
   }
@@ -232,6 +233,8 @@
 
   .content-contact {
     width: 100vw;
+    height: 100vh;
+    padding-top: 15vh;
   }
 
   .container-one {
@@ -245,6 +248,7 @@
 
   .info-container-opening-hours {
     width: 80vw;
+    height: 23vh;
   }
 
   .info-container-fb {

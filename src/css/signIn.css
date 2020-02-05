@@ -31,8 +31,8 @@
   height: 95vh;
   width: 50vw;
   background: #e1eeff;
-  /* overflow: auto; */
 }
+
 .signIn h1 {
   font-family: "Raleway", sans-serif;
   margin-bottom: 30px;
@@ -48,6 +48,7 @@
   border: none;
   margin-bottom: 4vh;
 }
+
 .signIn h5 {
   margin-bottom: 20px;
   font-size: 20px;
@@ -130,8 +131,16 @@
     display: none;
   }
 
+  .signIn button {
+    width: 80vw;
+  }
+
+  .content-signin input {
+    width: 80vw;
+  }
+
   .content-signIn {
     width: 100%;
-    height: 90vh;
+    height: 100vh;
   }
 }

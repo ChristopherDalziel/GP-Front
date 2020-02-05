@@ -91,6 +91,7 @@ li p {
   display: block;
 }
 
+/* Hides standard menu at 600px or below */
 @media only screen and (max-width: 600px) {
   .nav {
     height: 0;
