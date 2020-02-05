@@ -33,7 +33,7 @@ class DatePicker extends React.Component {
           timeIntervals={15}
           minDate={addDays(new Date(), 1)}
           maxDate={addMonths(new Date(), 12)}
-          minTime={setHours(setMinutes(new Date(), 30), 8)}
+          minTime={setHours(setMinutes(new Date(), 0), 9)}
           maxTime={setHours(setMinutes(new Date(), 30), 21)}
           dateFormat="dd MMMM yyyy hh:mm aa"
           excludeTimes={[

@@ -9,14 +9,14 @@ const Nav = props => {
     e.preventDefault();
 
     sessionStorage.removeItem("token");
-    sessionStorage.removeItem("admin");
-    sessionStorage.removeItem("loggedIn");
+    sessionStorage.removeItem("val");
+    sessionStorage.removeItem("auth");
     props.history.push("/");
     window.location.reload(false);
   };
 
   function getLoggedInStatus() {
-    let loggedInVal = sessionStorage.getItem("loggedIn");
+    let loggedInVal = sessionStorage.getItem("auth");
     if (loggedInVal === "true") {
       loggedInVal = true;
     } else {
