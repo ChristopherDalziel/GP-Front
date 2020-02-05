@@ -4,7 +4,8 @@ import format from "date-fns/format";
 
 class UserAppointments extends React.Component {
   state = {
-    appointments: null
+    appointments: null,
+    errors: null
   };
 
   //retrieves a list of user's appointment based on email stored in token
@@ -26,7 +27,6 @@ class UserAppointments extends React.Component {
           });
       } catch (err) {
         this.setState({ errors: err.message });
-        console.log(err.message);
       }
     }
   }
@@ -43,13 +43,12 @@ class UserAppointments extends React.Component {
             appointment
           )
           .catch(error => {
-            console.log(error);
+            this.setState({errors: error.message});
           });
         alert(response.data.msg);
         window.location.reload(false);
       })
       .catch(err => {
-        console.log(err);
         alert(`An error occurred: ${err}`);
       });
   }

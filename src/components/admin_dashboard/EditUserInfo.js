@@ -35,7 +35,6 @@ class EditUserInfo extends React.Component {
         });
     } catch (err) {
       this.setState({ errors: err.message });
-      console.log(err.message);
     }
   }
 
@@ -44,7 +43,6 @@ class EditUserInfo extends React.Component {
     axios
       .patch(process.env.REACT_APP_BACKEND_URL + `/users/edit/${id}`, values)
       .then(response => {
-        console.log(response.data);
         const { email, firstName, lastName, phone } = response.data;
         this.setState({
           firstName: firstName,
@@ -55,7 +53,6 @@ class EditUserInfo extends React.Component {
         window.location.replace("/admin/users");
       })
       .catch(err => {
-        console.log(err.message);
         this.setState({ errors: err.message });
       });
   };

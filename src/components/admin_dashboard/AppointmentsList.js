@@ -21,11 +21,9 @@ class AppointmentsList extends React.Component {
           headers: { Authorization: token }
         })
         .then(response => {
-          console.log(response.data);
           this.setState({ allAppointments: response.data, loading: false });
         });
     } catch (err) {
-      console.log(err.message);
       this.setState({ errors: err.message });
     }
   }
@@ -43,13 +41,12 @@ class AppointmentsList extends React.Component {
             appointment
           )
           .catch(error => {
-            console.log(error);
+            this.setState({errors: err.message});
           });
         alert(response.data.msg);
         window.location.reload(false);
       })
       .catch(err => {
-        console.log(err);
         alert(`An error occurred: ${err}`);
       });
   }
@@ -124,6 +121,7 @@ class AppointmentsList extends React.Component {
           : appointments
           ? this.renderEachAppointment()
           : "No appointments to display"}
+          <div>{this.state.errors}</div>
       </>
     );
   }
