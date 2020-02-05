@@ -127,6 +127,11 @@
     display: none;
   }
 
+  .content-signIn {
+    width: 100%;
+    height: 100vh;
+  }
+
   .signIn .image img {
     display: none;
   }
@@ -135,12 +140,16 @@
     width: 80vw;
   }
 
-  .content-signin input {
+  .content-signIn input {
     width: 80vw;
   }
 
-  .content-signIn {
-    width: 100%;
-    height: 100vh;
+  /* Force input field widths */
+  input[type="email"] {
+    width: 80vw;
+  }
+
+  input[type="password"] {
+    width: 80vw;
   }
 }

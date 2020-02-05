@@ -48,16 +48,22 @@ button[type="toggle"]:hover {
 /* Controlling a-links colours in their different states */
 a {
   color: black;
-} /* Unvisited link  */
+}
+
+/* Unvisited link  */
 a:visited {
   color: black;
-} /* Visited link    */
+}
+
+/* Visited link    */
 a:hover {
   color: #398ffc;
-} /* Mouse over link */
+}
+
+/* Mouse over link */
 a:active {
   color: black;
-} /* Selected link   */
+}
 
 .alert {
   color: red;
