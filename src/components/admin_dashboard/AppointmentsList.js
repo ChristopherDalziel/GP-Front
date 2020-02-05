@@ -41,7 +41,7 @@ class AppointmentsList extends React.Component {
             appointment
           )
           .catch(error => {
-            this.setState({errors: err.message});
+            this.setState({errors: error.message});
           });
         alert(response.data.msg);
         window.location.reload(false);
