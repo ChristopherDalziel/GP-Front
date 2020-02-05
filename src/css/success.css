@@ -1,0 +1,10 @@
+.content-success {
+  background-color: #e1eeff;
+  height: 94vh;
+  width: 100vw;
+  padding: 10vh 7vh;
+}
+
+.content-success h1 {
+  margin-bottom: 10px;
+}
