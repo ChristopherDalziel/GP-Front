@@ -91,6 +91,24 @@ li p {
   display: block;
 }
 
+@media only screen and (max-width: 1220px) {
+  .nav ul li a {
+    font-size: 12px;
+  }
+
+  li p {
+    font-size: 12px;
+  }
+}
+
+/* @media only screen and (max-width: 900px) {
+  .nav ul li a {
+    height: 0;
+    width: 0;
+    display: none;
+  }
+} */
+
 /* Hides standard menu at 600px or below */
 @media only screen and (max-width: 600px) {
   .nav {
