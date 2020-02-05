@@ -227,20 +227,18 @@
   .contact {
     height: 100vh;
     display: flex;
-    flex-flow: column wrap;
   }
 
   .container-main {
     display: none;
-    width: 100%;
-    float: none;
     z-index: 0;
   }
 
   .content-contact {
     width: 100vw;
     height: 100vh;
-    padding-top: 15vh;
+    padding-top: 11vh;
+    overflow: scroll;
   }
 
   .container-one {
