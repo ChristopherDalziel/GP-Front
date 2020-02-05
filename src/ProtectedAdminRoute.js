@@ -11,7 +11,7 @@ const ProtectedAdminRoute = ({ component: Component, ...props }) => {
   const [admin, setAdmin] = useState(null)
 
   const getAdminStatus = () => {
-    let adminVal = sessionStorage.getItem("admin");
+    let adminVal = sessionStorage.getItem("val");
     if (adminVal === "true") {
       adminVal = true;
     } else {
