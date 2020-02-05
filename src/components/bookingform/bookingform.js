@@ -40,7 +40,6 @@ class BookingForm extends React.Component {
   };
 
   renderField({ input, label, type, meta: { touched, error, warning } }) {
-
     return (
       <div>
         <input {...input} placeholder={label} type={type} />
