@@ -1,6 +1,6 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-import normalizePhone from "../normalizePhone";
+import normalizePhone from "../../utils/normalizePhone";
 import "../../css/register.css";
 
 //form validation

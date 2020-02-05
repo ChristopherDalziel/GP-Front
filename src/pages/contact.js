@@ -1,5 +1,4 @@
 import React from "react";
-
 import ContactForm from "../components/Contact/ContactForm";
 import ContactInfo from "../components/Contact/ToggleDisplay";
 import EmailSubmit from "../components/Contact/emailSubmit";

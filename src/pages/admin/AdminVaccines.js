@@ -2,6 +2,9 @@ import React from "react";
 import axios from "axios";
 import VaccineForm from "../../components/Vaccines/VaccineForm";
 import VaccineTable from "../../components/Vaccines/vaccineTable";
+import getAdminStatus from "../../utils/getAdminStatus";
+
+let admin = getAdminStatus();
 
 class AdminVaccines extends React.Component {
   state = {
@@ -29,18 +32,22 @@ class AdminVaccines extends React.Component {
   render() {
     return (
       <>
-        <div className="grid">
-          <div className="table-cont">
-            <VaccineTable />
+        {admin ? (
+          <div className="grid">
+            <div className="table-cont">
+              <VaccineTable />
+            </div>
+            <div>
+              <h1>Create New Vaccine:</h1>
+              {this.state.error ? (
+                <h4 style={{ color: "red" }}>{this.state.error}</h4>
+              ) : null}
+              <VaccineForm onSubmit={this.submit} {...this.props} />
+            </div>
           </div>
-          <div>
-            <h1>Create New Vaccine:</h1>
-            {this.state.error ? (
-              <h4 style={{ color: "red" }}>{this.state.error}</h4>
-            ) : null}
-            <VaccineForm onSubmit={this.submit} {...this.props} />
-          </div>
-        </div>
+        ) : (
+          window.location.replace("/")
+        )}
       </>
     );
   }
