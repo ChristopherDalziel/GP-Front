@@ -152,3 +152,25 @@ h3 {
 #comment {
   height: 80px;
 }
+
+@media only screen and (max-width: 600px) {
+  .imageBooking {
+    display: none;
+  }
+
+  .content-booking {
+    padding-top: 11vh;
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+  }
+  .content-booking input {
+    width: 80vw;
+  }
+
+  .booking h2,
+  h3 {
+    width: 80vw;
+    margin-bottom: 5px;
+  }
+}

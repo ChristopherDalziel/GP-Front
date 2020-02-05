@@ -126,3 +126,23 @@
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
+
+@media only screen and (max-width: 600px) {
+  .content {
+    height: 100vh;
+  }
+
+  .slider {
+    height: 100vh;
+  }
+
+  .homeButtonsContainer {
+    display: none;
+  }
+
+  .hero h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 40px;
+    font-weight: 2000;
+  }
+}

@@ -59,6 +59,7 @@
 
 .dropdown {
   z-index: 3;
+  margin: 0 28px;
   position: relative;
   display: inline-block;
 }
@@ -72,7 +73,6 @@ li p {
   padding: 10px;
   cursor: pointer;
   width: 15vw;
-  /* border-radius: 7px 0px 0px 0px; */
   background: #e1eeff;
   position: absolute;
   display: none;
@@ -89,4 +89,43 @@ li p {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+@media only screen and (max-width: 1220px) {
+  .nav ul li a {
+    font-size: 12px;
+  }
+
+  li p {
+    font-size: 12px;
+  }
+}
+
+/* @media only screen and (max-width: 900px) {
+  .nav ul li a {
+    height: 0;
+    width: 0;
+    display: none;
+  }
+} */
+
+/* Hides standard menu at 600px or below */
+@media only screen and (max-width: 600px) {
+  .nav {
+    height: 0;
+    width: 0;
+    display: none;
+  }
+
+  .nav ul {
+    display: none;
+  }
+
+  .nav ul li {
+    display: none;
+  }
+
+  .nav ul a {
+    display: none;
+  }
 }
