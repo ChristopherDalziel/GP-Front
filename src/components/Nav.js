@@ -1,10 +1,9 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import getAdminStatus from "../utils/getAdminStatus";
 import "../css/Nav.css";
 
-
 const Nav = props => {
-
   const logout = e => {
     e.preventDefault();
 
@@ -15,15 +14,15 @@ const Nav = props => {
     window.location.reload(false);
   };
 
-  function getAdminStatus() {
-    let adminVal = sessionStorage.getItem("admin");
-    if (adminVal === "true") {
-      adminVal = true;
-    } else {
-      adminVal = false;
-    }
-    return adminVal;
-  }
+  // function getAdminStatus() {
+  //   let adminVal = sessionStorage.getItem("admin");
+  //   if (adminVal === "true") {
+  //     adminVal = true;
+  //   } else {
+  //     adminVal = false;
+  //   }
+  //   return adminVal;
+  // }
 
   function getLoggedInStatus() {
     let loggedInVal = sessionStorage.getItem("loggedIn");

@@ -1,6 +1,9 @@
 import React from "react";
 import axios from "axios";
 import AboutForm from "./aboutEditForm";
+import getAdminStatus from "../../utils/getAdminStatus";
+
+let admin = getAdminStatus();
 
 class AboutEdit extends React.Component {
   constructor(props) {
@@ -13,18 +16,26 @@ class AboutEdit extends React.Component {
       await axios.put(
         process.env.REACT_APP_BACKEND_URL +
           `/admin_about/update/${this.props.match.params.id}`,
-        updatedAbout, { headers: { Authorization: sessionStorage.getItem("token") } }
+        updatedAbout,
+        { headers: { Authorization: sessionStorage.getItem("token") } }
       );
       this.props.history.push("/about");
     } catch (error) {
       console.log(error);
     }
   }
+
   render() {
     return (
       <>
-        <h1>Edit About and Doctor Information</h1>
-        <AboutForm onSubmit={this.updateAbout} />
+        {admin ? (
+          <>
+            <h1>Edit About and Doctor Information</h1>
+            <AboutForm onSubmit={this.updateAbout} />
+          </>
+        ) : (
+          window.location.replace("/")
+        )}
       </>
     );
   }

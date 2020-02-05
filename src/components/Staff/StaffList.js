@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import StaffListRow from "./StaffListRow";
+import getAdminStatus from "../../utils/getAdminStatus";
+
+let admin = getAdminStatus();
 
 export default class StaffList extends Component {
   constructor(props) {
@@ -34,27 +37,33 @@ export default class StaffList extends Component {
 
   render() {
     return (
-      <div>
-        <div className="staff-banner">
-          <h1>Staff Management Board</h1>
-        </div>
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Introduction</th>
-                <th>Position</th>
-                <th>Image</th>
-                <th>Edit</th>
-                <th>Delete</th>
-              </tr>
-            </thead>
-            <tbody>{this.DataTable()}</tbody>
-          </table>
-        </div>
-        <Link to={"/admin/add_staff"}>Add New Staff Member</Link>
-      </div>
+      <>
+        {admin ? (
+          <div>
+            <div className="staff-banner">
+              <h1>Staff Management Board</h1>
+            </div>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Introduction</th>
+                    <th>Position</th>
+                    <th>Image</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>{this.DataTable()}</tbody>
+              </table>
+            </div>
+            <Link to={"/admin/add_staff"}>Add New Staff Member</Link>
+          </div>
+        ) : (
+          window.location.replace("/")
+        )}
+      </>
     );
   }
 }

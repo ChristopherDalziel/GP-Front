@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "../../css/staff.css";
 import axios from "axios";
+import getAdminStatus from "../../utils/getAdminStatus";
+
+let admin = getAdminStatus();
 
 class CreateStaff extends Component {
   constructor(props) {
@@ -92,56 +95,64 @@ class CreateStaff extends Component {
       }
     );
 
-    const showWidget = (e) => {
+    const showWidget = e => {
       e.preventDefault();
       widget.open();
     };
     return (
-      <div>
-        <div className="staffs">
-          <div className="staff-infor"></div>
+      <>
+        {admin ? (
+          <>
+            <div>
+              <div className="staffs">
+                <div className="staff-infor"></div>
 
-          <div className="add_staff">
-            <h1>Edit Staff Information Here</h1>
-            <form onSubmit={this.onSubmit}>
-              <div className="edit_staff">
-                <label>Staff Name</label> <br />
-                <input
-                  name="add_staff"
-                  type="text"
-                  placeholder={this.state.name}
-                  value={this.state.name}
-                  onChange={this.onChangeName}
-                ></input>
+                <div className="add_staff">
+                  <h1>Edit Staff Information Here</h1>
+                  <form onSubmit={this.onSubmit}>
+                    <div className="edit_staff">
+                      <label>Staff Name</label> <br />
+                      <input
+                        name="add_staff"
+                        type="text"
+                        placeholder={this.state.name}
+                        value={this.state.name}
+                        onChange={this.onChangeName}
+                      ></input>
+                    </div>
+
+                    <div className="position">
+                      <label>Position Title</label> <br />
+                      <input
+                        name="position"
+                        type="text"
+                        placeholder="Enter the Staff's Position"
+                        value={this.state.position}
+                        onChange={this.onChangePosition}
+                      />
+                    </div>
+                    <div>
+                      <label>Staff Introduction</label> <br />
+                      <textarea
+                        type="text"
+                        placeholder={this.state.aboutText}
+                        value={this.state.aboutText}
+                        onChange={this.onChangeAboutText}
+                      />
+                    </div>
+
+                    <a onClick={showWidget}>Upload Image</a>
+
+                    <button type="submit">Submit</button>
+                  </form>
+                </div>
               </div>
-
-              <div className="position">
-                <label>Position Title</label> <br />
-                <input
-                  name="position"
-                  type="text"
-                  placeholder="Enter the Staff's Position"
-                  value={this.state.position}
-                  onChange={this.onChangePosition}
-                />
-              </div>
-              <div>
-                <label>Staff Introduction</label> <br />
-                <textarea
-                  type="text"
-                  placeholder={this.state.aboutText}
-                  value={this.state.aboutText}
-                  onChange={this.onChangeAboutText}
-                />
-              </div>
-
-              <a onClick={showWidget}>Upload Image</a>
-
-              <button type="submit">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
+            </div>
+          </>
+        ) : (
+          window.location.replace("/")
+        )}
+      </>
     );
   }
 }

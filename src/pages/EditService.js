@@ -1,6 +1,9 @@
 import React from "react";
 import axios from "axios";
 import ServiceForm from "../components/Services/ServiceForm";
+import getAdminStatus from "../utils/getAdminStatus";
+
+let admin = getAdminStatus();
 
 class EditService extends React.Component {
   state = { serviceData: null };
@@ -32,13 +35,19 @@ class EditService extends React.Component {
     const { serviceData } = this.state;
     return serviceData ? (
       <>
-        <h1>Service Edit</h1>
-        <ServiceForm
-          onEditFormSubmit={this.updateService}
-          services={this.state}
-          initialValues={this.state.serviceData}
-          {...this.props}
-        />
+        {admin ? (
+          <>
+            <h1>Service Edit</h1>
+            <ServiceForm
+              onEditFormSubmit={this.updateService}
+              services={this.state}
+              initialValues={this.state.serviceData}
+              {...this.props}
+            />
+          </>
+        ) : (
+          window.location.replace("/")
+        )}
       </>
     ) : null;
   }
