@@ -8,7 +8,13 @@
 
 - Front End Commandline Boot: `npm start`
 - Back End Commandline Boot: `nodemon`
-- Cypress Start: `npm run cypress:open`
+- Cypress Start: `npm run cypress:open` <br><br>
+  Your Admin Account:
+
+```
+Email: harrison.malone@coderacademy.edu.au
+Password: password
+```
 
 ## R10 - Link to deployed website
 
