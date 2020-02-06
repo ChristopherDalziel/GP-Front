@@ -107,17 +107,6 @@ class CreateStaff extends Component {
               <div className="staffs">
                 <div className="staff-infor"></div>
 
-<<<<<<< HEAD
-              <div className="position">
-                <label>Position Title</label> <br />
-                <input
-                  name="position"
-                  type="text"
-                  placeholder={this.state.position}
-                  value={this.state.position}
-                  onChange={this.onChangePosition}
-                />
-=======
                 <div className="add_staff">
                   <h1>Edit Staff Information Here</h1>
                   <form onSubmit={this.onSubmit}>
@@ -162,7 +151,6 @@ class CreateStaff extends Component {
                     <button type="submit">Submit</button>
                   </form>
                 </div>
->>>>>>> 7a65a534c57ee49a6b00f46147ad1a23a376ba19
               </div>
             </div>
           </>

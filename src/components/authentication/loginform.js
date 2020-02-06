@@ -14,7 +14,7 @@ export default ({
   <div className="signIn">
     <div className="container">
       <div className="imageSignIn"></div>
-      <div className="content-signUp">
+      <div className="content-signin">
         <div>
           <h1>Sign In</h1>
           <form onSubmit={onSubmitLoginForm}>

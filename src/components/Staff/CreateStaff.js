@@ -49,11 +49,7 @@ class CreateStaff extends Component {
       )
       .then(res => console.log(res.data));
 
-<<<<<<< HEAD
-    this.setState({ name: "", position:"",aboutText: "", imageUrl: "" });
-=======
     this.setState({ name: "", aboutText: "", position: "", imageUrl: "" });
->>>>>>> 7a65a534c57ee49a6b00f46147ad1a23a376ba19
     this.props.history.push("/admin/staff");
     window.location.reload(true);
   }

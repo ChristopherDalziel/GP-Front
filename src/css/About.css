@@ -61,9 +61,11 @@
 }
 
 .doctor-card img {
+  margin-left: 50px;
   border-top-left-radius: 100px;
   border-bottom-right-radius: 100px;
-  height: 300px;
+  width: 80%;
+  height:60%;
 }
 
 .doctor-card h3 {
@@ -108,8 +110,17 @@
   }
 
   .about-infor {
+    padding-left: 30px;
+    padding-right: 30px;
     padding-top: 15vh;
     width: 100vw;
+  }
+
+  .about-infor h1 {
+    font-size:25px;
+  }
+  .about-infor p {
+    font-size:15px;
   }
 
   .about-image {
@@ -122,10 +133,12 @@
   }
 
   .doc-infors h1 {
+    font-size: 20px;
     margin-top: 10px;
   }
 
   .doc-infors p {
+    font-size:15px;
     margin: 20px;
   }
 
@@ -136,6 +149,7 @@
   }
 
   .doctor-card {
+   
     padding: 0;
     margin: 0;
     width: 100vw;
@@ -147,12 +161,24 @@
   }
 
   .doctor-card p {
+    padding-left:30px;
+    padding-right: 30px ;
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 40px;
   }
 
   .doctor-card h3 {
     width: 100vw;
     text-align: center;
   }
+
+
+.doctor-card img {
+  margin-top:60px;
+  margin-left: 10px;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  width: 80%;
+  height:50%;
+}
 }
