@@ -270,4 +270,12 @@
     width: 80vw;
     background-color: #c4d7ed;
   }
+
+  .content-contact{
+    padding-top:120px
+  }
+
+  .content-contact input{
+    width: 88%;
+  }
 }
