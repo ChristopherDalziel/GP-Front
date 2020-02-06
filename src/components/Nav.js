@@ -2,7 +2,6 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import getAdminStatus from "../utils/getAdminStatus";
 import "../css/Nav.css";
-import BurgerNav from "./BurgerNav";
 
 const Nav = props => {
   const logout = e => {

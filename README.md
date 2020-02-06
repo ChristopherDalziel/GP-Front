@@ -93,13 +93,13 @@ Components such as forms are reused where possible, for example, the Services fo
 
 ### Production Environment
 
-#### Manual Production Tests Features
-
-![](./Docs/ProductionTest-Features.png)
-
 #### Manual Production Test Cases
 
 ![](./Docs/ProductionTests-TestsCases.png)
+
+#### Manual Production Tests Features
+
+![](./Docs/ProductionTest-Features.png)
 
 ### Jest Coverage Report
 

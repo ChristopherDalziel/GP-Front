@@ -57,6 +57,7 @@
   transform: scaleX(1);
 }
 
+/* Admin drop down hover menu */
 .dropdown {
   z-index: 3;
   margin: 0 28px;

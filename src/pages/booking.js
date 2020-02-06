@@ -4,7 +4,6 @@ import BookingForm from "../components/bookingform/bookingform";
 import ProgressBar from "../utils/pageLoading";
 import addDays from "date-fns/addDays";
 
-
 import "react-datepicker/dist/react-datepicker.css";
 
 const startDate = addDays(new Date(), 1);
@@ -38,7 +37,7 @@ class Booking extends React.Component {
             });
           });
       } catch (err) {
-        this.setState({errors: err.response.data});
+        this.setState({ errors: err.response.data });
         console.log(err);
       }
     }
@@ -64,12 +63,12 @@ class Booking extends React.Component {
             .then(this.props.history.push("/success"))
             .catch(err => {
               console.log(err);
-              this.setState({errors: err.response.data})
+              this.setState({ errors: err.response.data });
             });
         });
     } catch (err) {
       console.log(err);
-      this.setState({errors: err.response.data})
+      this.setState({ errors: err.response.data });
     }
   };
 
@@ -85,8 +84,8 @@ class Booking extends React.Component {
               <div>
                 <h1>Make An Appointment!</h1>
                 <h2>
-                  For appointments within 24 hours, please present as a walk-in patient or call the clinic
-                  directly.
+                  For appointments within 24 hours, please present as a walk-in
+                  patient or call the clinic directly.
                 </h2>
                 <h3>
                   If there are any issues with your appointment we will contact
@@ -106,7 +105,7 @@ class Booking extends React.Component {
                 />
               </div>
               <div>
-                <h4 style={{color: "red"}}>{this.state.errors}</h4>
+                <h4 style={{ color: "red" }}>{this.state.errors}</h4>
               </div>
             </div>
           </div>

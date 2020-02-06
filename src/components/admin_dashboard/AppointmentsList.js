@@ -41,7 +41,7 @@ class AppointmentsList extends React.Component {
             appointment
           )
           .catch(error => {
-            this.setState({errors: error.message});
+            this.setState({ errors: error.message });
           });
         alert(response.data.msg);
         window.location.reload(false);
@@ -121,7 +121,7 @@ class AppointmentsList extends React.Component {
           : appointments
           ? this.renderEachAppointment()
           : "No appointments to display"}
-          <div>{this.state.errors}</div>
+        <div>{this.state.errors}</div>
       </>
     );
   }

@@ -16,7 +16,6 @@ class DatePicker extends React.Component {
   handleChange = date => {
     this.setState({ startDate: date });
     //sending the date value to redux form store
-    // let dateFormatted = format(date, "PPPPp");
     this.props.input.onChange(date);
   };
 

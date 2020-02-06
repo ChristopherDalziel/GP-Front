@@ -18,7 +18,6 @@ img {
 }
 
 .add_staff {
-  /* margin-top: 10vh; */
   margin-left: 10vh;
   box-sizing: border-box;
   padding-left: 10vh;
@@ -27,11 +26,9 @@ img {
   height: 95vh;
   width: 40vw;
   background: #e1eeff;
-  /* overflow: scroll; */
 }
 
 /* add staff */
-
 .add_staff h1 {
   font-family: "Raleway", sans-serif;
   margin-bottom: 30px;

@@ -37,6 +37,7 @@ class Contact extends React.Component {
             </div>
             <div className="container-two">
               <div className="content-contact">
+                {/* Changes the component that the page displays from the Contact information to the Contact Form */}
                 {this.state.shown ? (
                   <ContactForm onSubmit={EmailSubmit} />
                 ) : (
@@ -48,6 +49,7 @@ class Contact extends React.Component {
                   onClick={() => this.setState({ shown: !this.state.shown })}
                 >
                   {" "}
+                  {/* Changes information displayed on the button */}
                   {this.state.shown
                     ? "Back to Klinik Information"
                     : "Email Us Directly"}

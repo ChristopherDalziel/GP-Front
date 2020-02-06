@@ -43,7 +43,7 @@ class UserAppointments extends React.Component {
             appointment
           )
           .catch(error => {
-            this.setState({errors: error.message});
+            this.setState({ errors: error.message });
           });
         alert(response.data.msg);
         window.location.reload(false);
@@ -63,7 +63,10 @@ class UserAppointments extends React.Component {
       );
     } else {
       return appointmentsList.map((appointment, i) => {
-        const formattedDateTime = format(new Date(appointment.dateTime), "PPPPp").toString()
+        const formattedDateTime = format(
+          new Date(appointment.dateTime),
+          "PPPPp"
+        ).toString();
         return (
           <div key={i} className="booking-card">
             <h3>{formattedDateTime}</h3>
