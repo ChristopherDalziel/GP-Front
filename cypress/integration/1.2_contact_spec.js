@@ -1,7 +1,7 @@
 describe("Contact Page Functionality Testing", function() {
   it("Tests Contact Us Page", function() {
     cy.visit("localhost:3000");
-    cy.contains("li", "Contact Us").click();
+    cy.contains(".navbtn", "Contact Us").click();
     cy.contains("Email Us Directly").click();
     cy.location("pathname").should("eq", "/contact");
     cy.get("input[name=first_name]").type("test = First Name");

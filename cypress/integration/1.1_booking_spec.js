@@ -1,7 +1,7 @@
 describe("Booking Page Functionality Testing For Users Who Aren't Signed In", function() {
   it("Negative Test: Tests error display when no information is inserted into the booking form", function() {
     cy.visit("localhost:3000");
-    cy.contains("li", "Book Now").click();
+    cy.contains(".navbtn", "Book Now").click();
     cy.location("pathname").should("eq", "/booking");
     cy.get("input[name=comment]").type(
       "comments, are like comments are testing."
@@ -14,7 +14,7 @@ describe("Booking Page Functionality Testing For Users Who Aren't Signed In", fu
 
   it("Negative Test: Tests error display when a user inputs an invalid email address", function() {
     cy.visit("localhost:3000");
-    cy.contains("li", "Book Now").click();
+    cy.contains(".navbtn", "Book Now").click();
     cy.location("pathname").should("eq", "/booking");
     cy.get("input[name=firstName]").type("test = First Name");
     cy.get("input[name=lastName]").type("test = Last Name");
@@ -36,7 +36,7 @@ describe("Booking Page Functionality Testing For Users Who Aren't Signed In", fu
 
   it("Negative Test: Tests error display when a user doesn't select an appointment date/time", function() {
     cy.visit("localhost:3000");
-    cy.contains("li", "Book Now").click();
+    cy.contains(".navbtn", "Book Now").click();
     cy.location("pathname").should("eq", "/booking");
     cy.get("input[name=firstName]").type("test = First Name");
     cy.get("input[name=lastName]").type("test = Last Name");
@@ -53,7 +53,7 @@ describe("Booking Page Functionality Testing For Users Who Aren't Signed In", fu
 
   it("Tests Booking Functions When A Patient Isn't Signed In", function() {
     cy.visit("localhost:3000");
-    cy.contains("li", "Book Now").click();
+    cy.contains(".navbtn", "Book Now").click();
     cy.location("pathname").should("eq", "/booking");
     cy.get("input[name=firstName]").type("test = First Name");
     cy.get("input[name=lastName]").type("test = Last Name");

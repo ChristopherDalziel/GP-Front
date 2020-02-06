@@ -31,7 +31,7 @@ const Nav = props => {
   const loggedInItems = () => {
     return (
       <ul>
-        <li>
+        <li className="navbtn">
           <Link to="/logout" onClick={logout}>
             Logout
           </Link>
@@ -52,10 +52,12 @@ const Nav = props => {
   const loggedOutItems = () => {
     return (
       <ul>
-        <li>
-          <Link to="/signin">Log In</Link>
+        <li className="navbtn">
+          <Link className="navbtn" to="/signin">
+            Log In
+          </Link>
         </li>
-        <li>
+        <li className="navbtn">
           <Link to="/register">Sign Up</Link>
         </li>
       </ul>
@@ -64,7 +66,7 @@ const Nav = props => {
 
   const userItems = () => {
     return (
-      <li>
+      <li className="navbtn">
         <Link to="/profile">Profile</Link>
       </li>
     );
@@ -103,19 +105,19 @@ const Nav = props => {
             <Link to="/">Home</Link>
           </li>
           {loggedIn ? loggedInItems() : loggedOutItems()}
-          <li>
+          <li className="navbtn">
             <Link to="/about">About Us</Link>
           </li>
-          <li>
+          <li className="navbtn">
             <Link to="/services">Services</Link>
           </li>
-          <li>
+          <li className="navbtn">
             <Link to="/vaccines">Vaccines</Link>
           </li>
-          <li>
+          <li className="navbtn">
             <Link to="/booking">Book Now</Link>
           </li>
-          <li>
+          <li className="navbtn">
             <Link to="/contact">Contact Us</Link>
           </li>
         </ul>

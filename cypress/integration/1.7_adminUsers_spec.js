@@ -1,7 +1,7 @@
 describe("Admin Dashboard Users Functionality and Edit Testing", function() {
   it("Tests login of an existing admin user/ and accesses the users page", function() {
     cy.visit("localhost:3000");
-    cy.contains("li", "Log In").click();
+    cy.contains(".navbtn", "Log In").click();
     cy.get("input[name=email]").type("klinikdrleong@gmail.com");
     cy.get("input[name=password").type("eb08ef45");
     cy.contains("Submit").click();
@@ -9,7 +9,7 @@ describe("Admin Dashboard Users Functionality and Edit Testing", function() {
     cy.get(".dropdown").trigger("mouseover");
     cy.get(".dropdown-content")
       .invoke("show")
-      .contains("li", "Users")
+      .contains("a", "Users")
       .click();
   });
 
@@ -29,7 +29,7 @@ describe("Admin Dashboard Users Functionality and Edit Testing", function() {
     cy.wait(500);
     cy.visit("localhost:3000");
     cy.wait(1000);
-    cy.contains("li", "Logout").click();
+    cy.contains(".navbtn", "Logout").click();
     cy.location("pathname").should("eq", "/");
   });
 });
