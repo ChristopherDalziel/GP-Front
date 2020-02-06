@@ -42,6 +42,7 @@ function validate(values) {
 
   return errors;
 }
+
 class RegistrationForm extends React.Component {
   renderField({ input, label, type, meta: { touched, error, warning } }) {
     return (

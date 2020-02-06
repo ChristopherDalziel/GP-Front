@@ -233,6 +233,10 @@ During the requirements gathering process, the client emailed us a number of fea
 
 ![](./Docs/ProductionTests-TestsCases.png)
 
+#### Manual Production Tests Features
+
+![](./Docs/ProductionTest-Features.png)
+
 ### Jest Coverage Report
 
 ![](./Docs/Testing_Coverage_Reports/BackEnd_Jest_Coverage.png)

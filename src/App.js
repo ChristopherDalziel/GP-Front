@@ -75,7 +75,6 @@ const App = () => {
           <Route path="/service/edit/:id" component={EditService} />
           <Route path="/user/edit/:id" component={EditUserInfo} />
           <Route path="/admin/opening-hours" component={HoursForm} />
-          {/* <Route path="/admin_about" component={AboutEdit} /> */}
           <Route path="/admin/about/update/:id" component={AboutEdit} />
         </Switch>
       </BrowserRouter>

@@ -34,7 +34,7 @@ const SignIn = props => {
           //Redirecting back to home page
         });
     } catch (err) {
-      console.log(err.response.data)
+      console.log(err.response.data);
       setError({
         msg: err.response.data
       });

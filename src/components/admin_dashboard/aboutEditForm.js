@@ -6,6 +6,7 @@ import getAdminStatus from "../../utils/getAdminStatus";
 
 let admin = getAdminStatus();
 
+// Form to edit About and DrInfo on the "About Page"
 class AboutForm extends React.Component {
   render() {
     return (

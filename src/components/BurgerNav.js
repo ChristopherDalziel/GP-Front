@@ -34,13 +34,7 @@ const BurgerNav = props => {
           <li>Logout</li>
         </Link>
 
-        {admin
-          ? null
-          : // <li>
-            //   <p>Admin Dashboard</p>
-            //   <div>{adminItems()}</div>
-            // </li>
-            userItems()}
+        {admin ? null : userItems()}
       </ul>
     );
   };
@@ -66,31 +60,6 @@ const BurgerNav = props => {
       </Link>
     );
   };
-
-  // const adminItems = () => {
-  //   return (
-  //     <>
-  //       <li>
-  //         <Link to="/admin/users">Users</Link>
-  //       </li>
-  //       <li>
-  //         <Link to="/admin/appointments">Appointments</Link>
-  //       </li>
-  //       <li>
-  //         <Link to="/admin/staff">Staff</Link>
-  //       </li>
-  //       <li>
-  //         <Link to="/admin/services">Services</Link>
-  //       </li>
-  //       <li>
-  //         <Link to="/admin/vaccines">Vaccines</Link>
-  //       </li>
-  //       <li>
-  //         <Link to="/admin/opening-hours">Klinik Hours</Link>
-  //       </li>
-  //     </>
-  //   );
-  // };
 
   return (
     <nav>

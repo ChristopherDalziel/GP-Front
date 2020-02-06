@@ -12,6 +12,7 @@ class Home extends React.Component {
   componentDidMount() {
     this.setState({ loading: false });
   }
+
   render() {
     return (
       <>
