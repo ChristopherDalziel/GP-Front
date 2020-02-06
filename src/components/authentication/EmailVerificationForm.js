@@ -1,12 +1,13 @@
 import React from "react";
+import "../../css/success.css";
 
 //Email verification form, rendered when password reset is requested
 export default ({ onSubmitEmailVerificationForm, setEmail, error }) => (
-  <div>
+  <div className="content-success">
     <h1>Reset Password</h1>
     <form onSubmit={onSubmitEmailVerificationForm}>
       <div>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">Account Email Address</label> <br />
         <input
           type="email"
           name="email"
