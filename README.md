@@ -4,9 +4,15 @@
 
 ## _Part B - Documentation for Coding Component_
 
+#### Run Instructions
+
+- Front End Commandline Boot: `npm start`
+- Back End Commandline Boot: `nodemon`
+- Cypress Start: `npm run cypress:open`
+
 ## R10 - Link to deployed website
 
-[Hosted Site](https://klinik-gp.netlify.com)
+- [Hosted Site](https://klinik-gp.netlify.com)
 
 ## R11 - Link to Github repository
 
@@ -80,6 +86,7 @@ Components such as forms are reused where possible, for example, the Services fo
 - Axios is used to shorten the code required to make HTTP requests.
 
 - Date-fns is used to easily format javascript dates into a user-friendly format to be used to display appointment information to end users. Also, it simplifies the addition and subtraction of dates (e.g. getting the date for yesterday).
+
 - Dotenv is used to load variables from the .env and .env.development files into process.env variables which can be accessed throughout the application.
 
 - Google maps is used to graphically display the location of the clinic.
@@ -223,13 +230,13 @@ During the requirements gathering process, the client emailed us a number of fea
 
 [![UAT](https://img.youtube.com/vi/Brtwdpqltrk/0.jpg)](https://www.youtube.com/watch?v=Brtwdpqltrk&feature=youtu.be "Klinik GP MERN UAT")
 
-#### Manual Production Test Features
+#### Manual Production Tests Features
 
-![](./Docs/ProductionTests-TestsCases.png)
+![](./Docs/ProductionTest-Features.png)
 
 #### Manual Production Test Cases
 
-![](./Docs/ProductionTest-Features.png)
+![](./Docs/ProductionTests-TestsCases.png)
 
 #### Manual Production Tests Features
 
