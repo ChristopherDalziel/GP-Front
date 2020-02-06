@@ -6,13 +6,13 @@
 
 ## R10 - Link to deployed website
 
-The website URL is https://klinik-gp.netlify.com/
+[Hosted Site](https://klinik-gp.netlify.com)
 
 ## R11 - Link to Github repository
 
-- Front end: https://github.com/ChristopherDalziel/GP-Front
+- [Front End Repo](https://github.com/ChristopherDalziel/GP-Front)
 
-- Back end: https://github.com/ChristopherDalziel/GP-Back
+- [Back End Repo](https://github.com/ChristopherDalziel/GP-Back)t
 
 ## R1 - Technology Stack
 
@@ -81,11 +81,54 @@ Components such as forms are reused where possible, for example, the Services fo
 
 ## R8 - Provides Evidence of UAT (User Testing)
 
-#### Development Environment
+### Development Environment
 
-#### Production Environment
+#### UAT Instructions
 
-## R9 Utilises a Form Testing Framework
+![](./Docs/UAT-Admin.png)
+
+#### Klinik GP MERN UAT Video:
+
+[![UAT](https://img.youtube.com/vi/Brtwdpqltrk/0.jpg)](https://www.youtube.com/watch?v=Brtwdpqltrk&feature=youtu.be "Klinik GP MERN UAT")
+
+### Production Environment
+
+#### Manual Production Tests Features
+
+![](./Docs/ProductionTest-Features.png)
+
+#### Manual Production Test Cases
+
+![](./Docs/ProductionTests-TestsCases.png)
+
+### Jest Coverage Report
+
+![](./Docs/Testing_Coverage_Reports/BackEnd_Jest_Coverage.png)
+
+### Cypress Full Test Passing Video
+
+[![Cypress Tests](https://img.youtube.com/vi/VTN7EUwHs80/0.jpg)](https://www.youtube.com/watch?v=VTN7EUwHs80&feature=youtu.be "Klinik GP MERN Cypress Tests")
+
+### Cypress Coverage Report
+
+![](./Docs/CypressCoverageReport.png)
+
+## R9 Utilises a Formal Testing Framework
+
+Unit Testing > System Integration Testing > User Acceptance Testing
+
+Firstly lets talk about the testing frameworks that were used in this project, `Jest` and `Cypress`.
+Jest is a easy to integrate JavaScript testing framework it is very commonly used to test Node, React and Express applications. <br>
+Cypress is primarily a front end testing tool built to test web applications, it can also be used for a large variety of tests including unit tests, system integration tests and end to end tests.
+
+In our project we focused on 3 main testing areas Unit Testing, System Integration Testing and User Acceptance Testing.
+Beginning with Unit testing, Unit Testing is a when individual "units" or components are tested the purpose of these tests is to validate that each component functions as intended before they're integrated further. In our project we used both Jest and Cypress, using Jest we tested backend routes as well as controllers that are used to create, update and delete information from our database and display information to our website. In the frontend we used Cypress to test individual components and ensure that they were loading onto each page as intended for the user.
+
+After Unit Testing we moved onto System Integration Testing also known as SIR in these tests the individual units or components are tested together in a combined test to see if they work as intended or if when they're grouped together faults arise. We used Cypress in these tests to ensure that our front end components were working together as expected, that pages would load the components and display information from our backend/MongoDB Atlas database as intended. We also tested the error handling of our pages, and form components to ensure validation was functioning as expected.
+
+Finally we moved onto Production Testing and User Acceptance Testing, these are generally the final phase of testing.
+Production Testing is performed on the live environment to ensure that to production website functions the same as the development environment. Our production testing was carried out manually using a spread sheet of pre-planned tests where we described the tests we would be performing, the expected result, the actual result and then each test was graded with a pass or fail. We then returned to any failed tets evaluated the problem, repaired and re-tested where possible. We had a generally very good production test result across the board aside from a few small hiccups. <br>
+Lastly User Acceptance Tests is when real users of the software uses the final production website to complete a series of tests that are defined by the developer, these tests are designed to see if the website can support general day to day usage. For our user acceptance tests our client Dr. Leong completed a series of tests that be seen above and provided us feedback.
 
 ## R12 - _Part A - Documentation_
 
