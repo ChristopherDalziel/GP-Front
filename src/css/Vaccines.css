@@ -33,21 +33,21 @@
   flex-direction: row;
   flex-wrap: wrap;
   padding-top: 80px !important;
-  padding-left: 120px !important;
+  padding-left: 100px !important;
   margin: 5px;
 }
 
 .singleVaccine {
   box-sizing: border-box;
   width: 20%;
-  margin-right: 40px;
+  margin-right: 50px;
   margin-bottom: 30px;
 }
 
 .vaccineCards {
   margin-top: 50px;
-  margin-left: 120px;
-  margin-right: 120px;
+  margin-left: 80px;
+  margin-right: 80px;
   box-sizing: border-box;
   background: #e1eeff;
 }
@@ -55,8 +55,8 @@
 .singleVaccine img {
   margin-bottom: 10px;
   border-radius: 5px;
-  height: 200px;
-  width: 200px;
+  height: 220px;
+  width: 220px;
   cursor: pointer;
   transition: all 0.6s;
 }
