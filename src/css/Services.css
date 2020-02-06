@@ -109,10 +109,11 @@
   .title h1 {
     color: #398ffc;
     margin-top: 20px;
+    font-size: 25px;
   }
 
   .title p {
-    font-size: 18px;
+    font-size: 15px;
     margin-bottom: 20px;
   }
 
@@ -127,7 +128,7 @@
 
   .singleService {
     box-sizing: border-box;
-    width: 35%;
+    width: 100%;
     margin: 30px;
     text-align: center;
   }
@@ -143,11 +144,12 @@
   .singleService img {
     margin-bottom: 10px;
     border-radius: 5px;
-    height: 100px;
-    width: 100px;
+    height: 250px;
+    width: 85%;
     cursor: pointer;
     transition: all 0.6s;
   }
+
 
   .title p {
     margin: 20px;

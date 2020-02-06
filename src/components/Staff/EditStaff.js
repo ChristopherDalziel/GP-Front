@@ -32,7 +32,7 @@ class CreateStaff extends Component {
       .then(res => {
         this.setState({
           name: res.data.name,
-          aboutText: res.data.aboutText,
+          aboutText: res.data.about,
           position: res.data.position,
           imageUrl: res.data.imageUrl
         });
