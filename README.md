@@ -12,7 +12,7 @@
 
 - [Front End Repo](https://github.com/ChristopherDalziel/GP-Front)
 
-- [Back End Repo](https://github.com/ChristopherDalziel/GP-Back)t
+- [Back End Repo](https://github.com/ChristopherDalziel/GP-Back)
 
 ## R1 - Technology Stack
 
