@@ -4,9 +4,15 @@
 
 ## _Part B - Documentation for Coding Component_
 
+#### Run Instructions
+
+- Front End Commandline Boot: `npm start`
+- Back End Commandline Boot: `nodemon`
+- Cypress Start: `npm run cypress:open`
+
 ## R10 - Link to deployed website
 
-[Hosted Site](https://klinik-gp.netlify.com)
+- [Hosted Site](https://klinik-gp.netlify.com)
 
 ## R11 - Link to Github repository
 
