@@ -34,7 +34,7 @@ This website uses the following technologies:
 
 **Database and storage:**
 
-- Amazon S3 bucket for storage of static images
+- Cloudinary for user image upload and storing the uploaded images
 - MongoDB Atlas document database
 
 **Hosting:**
@@ -78,7 +78,101 @@ Components such as forms are reused where possible, for example, the Services fo
 
 * Cypress is used for automated integration testing. Its dependencies are @cypress/instrument-cra, @cypress/code-coverage, istanbul-lib-coverage and nyc which allows a code coverage report to be generated after running tests in Cypress.  
 
-* Axios is used 
+* Axios is used to shorted the code required to make HTTP requests.  
+
+* Date-fns is used to easily format javascript dates into a user-friendly format to be used to display appointment information to end users. Also, it simplifies the addition and subtraction of dates (e.g. getting the date for yesterday).  
+* Dotenv is used to load variables from the .env and .env.development files into process.env variables which can be accessed throughout the application.  
+
+* Google maps is used to graphically display the location of the clinic.  
+
+* React-datepicker is incorporated into the appointment booking form to allow users to select an appointment date and time. It enables selected times such as lunch times to be blocked out and a minimum and maximum date range to be applied.  
+
+* React topbar progress indicator allows a progress bar to be displayed to indicate that a page is still loading.  
+
+* Redux-form allows the use of redux forms to simplify the creation and storage of form contents as well as form validation.  
+
+* Bcrypt is used for hashing and salting passwords 
+
+* Cors is used to enable data to be transmitted between the back end and the front end, allowing the use of a custom API.  
+* JSON web token allows the creation of a token based on the user's email and admin status which is used in authentication.  
+
+* Mongoose unique validator is used to allow mongoose to validate if a value is unique. It is used to check the users collection for an existing email address during the registration process, and will throw an error if the email address already exists in the system.  
+
+* Morgan is used to log HTTP requests.  
+
+* Nodemailer is used to send emails to users after a post request. 
+
+* Nodemon is used to allow the express server to restart automatically after each code change.  
+
+* UUIDV1 is used to generate a unique token which is used for validating users when they a password reset is requested. 
+
+* Jest and Supertest is used to unit test end points. The test files are stored in the back end Routes folder and picked up by Jest/Supertest.  
+
+**Code Flow Control**  
+
+During the coding process we used the user stories as a basis for the code control flow. Each function usually contains the expected output in the case of a positive use case, and includes error handling to accommodate for negative use cases.  
+
+For example, this is the user story for making an appointment (from part A): 
+
+![Booking user story](./Docs/booking_user_story.png)  
+
+The resultant code is (see comments included in the code block):
+
+````javascript
+//on submission of the booking form:
+  bookingSubmit = async values => {
+    try {
+      //Attempt to create a new booking by creating a new booking document from the values obtained from the form, then writing this value to the database 
+      const newBooking = values;
+      await axios
+        .post(
+          process.env.REACT_APP_BACKEND_URL + "/appointments/new",
+          newBooking
+        )
+        .then(response => {
+          //if the booking creation is successful, the server will respond with the booking data
+          let bookingDetails = response.data;
+          //the booking data from the server response will be used to send an email to the user to confirm the booking
+          axios
+            .post(
+              process.env.REACT_APP_BACKEND_URL + "/mail/appointment",
+              bookingDetails
+            )
+            //if the email is successfully sent, the user will be redirected to a success page to inform them that the booking is successful and an email has been sent
+            .then(this.props.history.push("/success"))
+            .catch(err => {
+              //if an error occurs during the email process, the error message will be displayed
+              console.log(err);
+              this.setState({errors: err.response.data})
+            });
+        });
+        //if an error occurs during the booking submission process, an error message will be displayed. 
+    } catch (err) {
+      console.log(err);
+      this.setState({errors: err.response.data})
+    }
+  };
+````
+
+**Applies Object Oriented (OO) principles/patterns**  
+
+Classes and objects are used extensively throughout the application. Each component has its own class and each page is written as a class with the functionality for that page contained in various class methods. The following structure is usually followed:
+
+a) Class Name  
+b) A state object containing the keys with values that are subject to change  
+c) A componentDidMount function to fetch data from the MongoDB database and render it on the page  
+d) Functions to control page functionality. For example, if a page contains a form component, there is a function to handle the form submission.  
+e) A render function to display the contents of the page
+
+For example, when a booking form is completed in the front end, a new booking object is created from the values of the form. The object is then saved as a document in the corresponding collection via a HTTP request to the back end.  
+
+
+
+
+
+
+
+
 
 
 
