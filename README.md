@@ -154,7 +154,7 @@ The resultant code is (see comments included in the code block):
   };
 ````
 
-**Applies Object Oriented (OO) principles/patterns**  
+**Applies Object Oriented (OO) principles/patterns and uses appropriate data structures**  
 
 Classes and objects are used extensively throughout the application. Each component has its own class and each page is written as a class with the functionality for that page contained in various class methods. The following structure is usually followed:
 
@@ -166,28 +166,50 @@ e) A render function to display the contents of the page
 
 For example, when a booking form is completed in the front end, a new booking object is created from the values of the form. The object is then saved as a document in the corresponding collection via a HTTP request to the back end.  
 
+## R3 - Employ and utilise proper source control methodology (Git)   
+Git and Github were tools used for source control. The team worked off three branches - one for each member, and used the comments to specify what changes were made at each commit. We committed the changes and pushed to our own branches on Github whenever significant changes to the code was made or when a feature or function was completed. After pushing to Github, we create pull requests to merge the changes to the master branch. Where merge conflicts arises we will verbally check with the person whose code is causing the conflicts to determine the resolution.  
 
+ We decided against making a branch for each feature as there were occasions where two people were working on different parts of the same features. Two feature branches were made for testing purposes: one was for the Cypress code coverage report set up as many packages were installed during this process but the report was failing to generate. To reduce the number of unnecessary packages in the master branch, a separate branch was created.   
+The second feature branch created was used to test how a rewrite of the getAdminStatus function would affect the application without affecting the main source code in the master branch. As the new code resulted in the application not working as intended, the branch was not merged with the master branch. 
 
+![Front end repository branches](./Docs/frontend_repo.png)  
 
+## R4 - Project Management & Task Delegation Methodology  
 
+For Part B, we used a GANTT chart to break down each task and set the timelines for each task. The GANTT chart allowed us to view the timeline visually to determine if we were on track. It was also useful for task delegation and progress updates as it was loaded onto Google Sheets as a shared document, and each member of the team was able to assign themselves their desired tasks and update the progress of their work daily to avoid task duplication. We also had regular meetings each day to update each other on our progress from the day before, and what we will be working on for the current day. The chart was updated together during our meetings and completed tasks were highlighted in blue. There were occasions where one member would start on a feature but when they were unable to complete it the task was reassigned to another member to complete, such as the registration component.  
 
+Link to the GANTT chart: https://drive.google.com/file/d/1aOBmitjLujQz2aw10USYwxp5Jru9RyVi/view?usp=sharing  
 
+![GANTT chart screenshot](./Docs/gantt-screenshot.png)  
 
+A Trello board was used to track miscellaneous tasks and store the link to the GANTT chart:  
 
+![Trello screenshot](./Docs/trello_partb.png)  
 
+## R5 - Produce a working application that meets client and user needs  
 
+During the requirements gathering process, the client emailed us a number of features and services she would like to be included in the site:    
 
+### Online appointments
+* Online appointment that generates an email to both the person making the appointment and the clinic: This will supplement their current workflow of taking appointments over the phone then keying it into the clinic software. It will be another avenue where staff can receive appointment requests and will be minimally disruptive to their current workflow. For users, it will be a convenient way for them to make appointments as it can be done at any time without regards to clinic hours.  
 
+![Booking Form](./Docs/booking_form.png)  
 
+![Confirmation email](./Docs/confirm_email.png)  
 
+### Services list
+* A list of services that the clinic provides, including pictures as she wishes to provide before/after photos of skin conditions successfully treated at the clinic. She also requested to include the Influenza test specifically as they are the only clinic in the area that offers the Influenza test and treatment. We have included a services page to inform users of all the services the clinic provides, and created an admin dashboard for the services page to enable content on this page to be created, updated and deleted.   
 
+![Services page](./Docs/services.png)  
 
+![Admin services page](./Docs/admin_services.png)  
 
+### Vaccines list
+* The client request us to include a list of vaccines with an accompanying short description and picture as the clinic stocks a wide variety of vaccines. To meet this requirement, we created a stand-alone vaccines page as well as an admin vaccines page to enable the client to create, edit and delete vaccines.  
 
+![Vaccines page](./Docs/vaccines.png)  
 
-
-
-
+![Admin vaccines page](./Docs/admin_vaccines.png)
 
 
 ## R12 - *Part A - Documentation*
