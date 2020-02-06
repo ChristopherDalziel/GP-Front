@@ -1,7 +1,7 @@
 describe("Admin Vaccines CRUD Testing", function() {
   it("Logs into an admin account and accesses to the admin services page", function() {
     cy.visit("localhost:3000");
-    cy.contains("li", "Log In").click();
+    cy.contains(".navbtn", "Log In").click();
     cy.get("input[name=email]").type("klinikdrleong@gmail.com");
     cy.get("input[name=password]").type("eb08ef45");
     cy.contains("Submit").click();
@@ -9,7 +9,7 @@ describe("Admin Vaccines CRUD Testing", function() {
     cy.get(".dropdown").trigger("mouseover");
     cy.get(".dropdown-content")
       .invoke("show")
-      .contains("li", "Services")
+      .contains("a", "Services")
       .click();
     cy.location("pathname").should("eq", "/admin/services");
   });
@@ -48,7 +48,7 @@ describe("Admin Vaccines CRUD Testing", function() {
   it("Checks if an admin user is able to delete a service", function() {
     cy.contains("button", "delete").click();
     cy.location("pathname").should("eq", "/admin/services");
-    cy.contains("li", "Logout").click();
+    cy.contains(".navbtn", "Logout").click();
     cy.wait(500);
     cy.location("pathname").should("eq", "/");
   });

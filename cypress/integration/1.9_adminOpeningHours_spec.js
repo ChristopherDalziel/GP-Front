@@ -1,7 +1,7 @@
 describe("Admin About Information EDIT Testing", function() {
   it("Logs into an admin account and accesses to the opening hours page", function() {
     cy.visit("localhost:3000");
-    cy.contains("li", "Log In").click();
+    cy.contains(".navbtn", "Log In").click();
     cy.get("input[name=email]").type("klinikdrleong@gmail.com");
     cy.get("input[name=password]").type("eb08ef45");
     cy.contains("Submit").click();
@@ -9,7 +9,7 @@ describe("Admin About Information EDIT Testing", function() {
     cy.get(".dropdown").trigger("mouseover");
     cy.get(".dropdown-content")
       .invoke("show")
-      .contains("li", "Klinik Hours")
+      .contains("a", "Klinik Hours")
       .click();
   });
 
@@ -40,7 +40,7 @@ describe("Admin About Information EDIT Testing", function() {
     cy.get(".dropdown").trigger("mouseover");
     cy.get(".dropdown-content")
       .invoke("show")
-      .contains("li", "Klinik Hours")
+      .contains("a", "Klinik Hours")
       .click();
     cy.get('[type="text"]').clear();
     cy.wait(1000);
@@ -53,7 +53,7 @@ describe("Admin About Information EDIT Testing", function() {
     cy.get("input[name=Sunday]").type("8:30am - 2pm");
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/contact");
-    cy.contains("li", "Logout").click();
+    cy.contains(".navbtn", "Logout").click();
     cy.location("pathname").should("eq", "/");
   });
 });

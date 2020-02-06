@@ -1,13 +1,13 @@
 describe("Profile Page User Account Profile Update and Booking Cancellation Testing ", function() {
   it("Logs into a standard user/patient account and accesses the profile page", function() {
     cy.visit("localhost:3000");
-    cy.contains("li", "Log In").click();
+    cy.contains(".navbtn", "Log In").click();
 
     cy.get("input[name=email]").type("cypresstestTWO@test.com");
     cy.get("input[name=password").type("testcypress");
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/");
-    cy.contains("li", "Profile").click();
+    cy.contains(".navbtn", "Profile").click();
     cy.location("pathname").should("eq", "/profile");
   });
 
@@ -24,19 +24,19 @@ describe("Profile Page User Account Profile Update and Booking Cancellation Test
     cy.get("input[name=phone]").type("0412121121");
     cy.contains("button", "Update").click();
     cy.location("pathname").should("eq", "/profile");
-    cy.contains("li", "Logout").click();
+    cy.contains(".navbtn", "Logout").click();
     cy.location("pathname").should("eq", "/");
   });
 
   it("Tests the updates were successful by re-logging into the account with the new information", function() {
-    cy.contains("li", "Log In").click();
+    cy.contains(".navbtn", "Log In").click();
     cy.get("input[name=email]").type("cypresstestPROFILEUPDATE@test.com");
     cy.get("input[name=password").type("testcypress");
     cy.contains("Submit").click();
     cy.location("pathname").should("eq", "/");
     cy.visit("localhost:3000");
     cy.wait(1000);
-    cy.contains("li", "Logout").click();
+    cy.contains(".navbtn", "Logout").click();
     cy.location("pathname").should("eq", "/");
   });
 });

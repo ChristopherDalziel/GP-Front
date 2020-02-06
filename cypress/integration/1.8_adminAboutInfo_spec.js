@@ -1,7 +1,7 @@
 describe("Admin About Information EDIT Testing", function() {
   it("Logs into an admin account and accesses to the about page", function() {
     cy.visit("localhost:3000");
-    cy.contains("li", "Log In").click();
+    cy.contains(".navbtn", "Log In").click();
     cy.get("input[name=email]").type("klinikdrleong@gmail.com");
     cy.get("input[name=password]").type("eb08ef45");
     cy.contains("Submit").click();
@@ -27,7 +27,7 @@ describe("Admin About Information EDIT Testing", function() {
     cy.contains("This doctor information was written in a test");
     cy.visit("localhost:3000");
     cy.wait(1000);
-    cy.contains("li", "Logout").click();
+    cy.contains(".navbtn", "Logout").click();
     cy.location("pathname").should("eq", "/");
   });
 });
