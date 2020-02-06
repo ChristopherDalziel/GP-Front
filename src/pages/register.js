@@ -35,12 +35,14 @@ class Registration extends React.Component {
     }
   };
 
-  render() {
+  componentDidMount() {
+    this.setState({ loading: false });
+  }
 
+  render() {
     return (
       <>
         {this.state.loading && <ProgressBar />}
-
         <div className="signUp">
           <div className="container">
             <div className="imageSignUp"></div>

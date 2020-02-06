@@ -64,7 +64,6 @@
   border-top-left-radius: 100px;
   border-bottom-right-radius: 100px;
   height: 300px;
-  /* width: 300px; */
 }
 
 .doctor-card h3 {
@@ -101,4 +100,59 @@
   font-family: "Raleway", sans-serif;
   font-size: 18px;
   margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .about {
+    display: none;
+  }
+
+  .about-infor {
+    padding-top: 15vh;
+    width: 100vw;
+  }
+
+  .about-image {
+    display: none;
+  }
+
+  .doc-infors {
+    width: 100vw;
+    padding: 0;
+  }
+
+  .doc-infors h1 {
+    margin-top: 10px;
+  }
+
+  .doc-infors p {
+    margin: 20px;
+  }
+
+  .doctors {
+    width: 100vw;
+    padding: 0;
+    background-color: #e1eeff;
+  }
+
+  .doctor-card {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    text-align: center;
+  }
+
+  .doctor-card img {
+    padding-top: 10px;
+  }
+
+  .doctor-card p {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .doctor-card h3 {
+    width: 100vw;
+    text-align: center;
+  }
 }

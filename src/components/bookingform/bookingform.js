@@ -4,7 +4,7 @@ import { Field, reduxForm } from "redux-form";
 import DatePicker from "./datepicker";
 import { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import normalizePhone from "../normalizePhone";
+import normalizePhone from "../../utils/normalizePhone";
 import enGB from "date-fns/locale/en-GB";
 registerLocale("en-GB", enGB);
 
@@ -40,7 +40,6 @@ class BookingForm extends React.Component {
   };
 
   renderField({ input, label, type, meta: { touched, error, warning } }) {
-    // console.log(input)
     return (
       <div>
         <input {...input} placeholder={label} type={type} />

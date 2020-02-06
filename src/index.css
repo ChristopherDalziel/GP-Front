@@ -35,21 +35,44 @@ button:hover {
   color: white;
 }
 
+button[type="submit"]:hover {
+  background-color: #137bf9;
+  color: white;
+}
+
+button[type="toggle"]:hover {
+  background-color: #137bf9;
+  color: white;
+}
+
 /* Controlling a-links colours in their different states */
 a {
   color: black;
-} /* Unvisited link  */
+}
+
+/* Unvisited link  */
 a:visited {
   color: black;
-} /* Visited link    */
+}
+
+/* Visited link    */
 a:hover {
   color: #398ffc;
-} /* Mouse over link */
+}
+
+/* Mouse over link */
 a:active {
   color: black;
-} /* Selected link   */
+}
 
 .alert {
   color: red;
   font-size: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
 }

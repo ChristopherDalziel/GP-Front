@@ -7,7 +7,6 @@ export const checkToken = async (token, setUser) => {
         Authorization: `Bearer ${token}`
       },
     }).then((response) => {
-      console.log(response.data.success)
     if (response.data.success === false) {
       setUser({
         auth: false,

@@ -1,6 +1,9 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import getAdminStatus from "../../utils/getAdminStatus";
+
+let admin = getAdminStatus();
 
 class UsersList extends React.Component {
   state = {
@@ -18,11 +21,9 @@ class UsersList extends React.Component {
           headers: { Authorization: token }
         })
         .then(response => {
-          console.log(response.data);
           this.setState({ allUsers: response.data, loading: false });
         });
     } catch (err) {
-      console.log(err.message);
       this.setState({ errors: err.message });
     }
   }
@@ -71,12 +72,19 @@ class UsersList extends React.Component {
     const users = this.state.allUsers;
     return (
       <>
-        <h1>All Registered Users</h1>
-        {this.state.loading
-          ? "Loading users list..."
-          : users
-          ? this.renderEachUser()
-          : "no users to display"}
+        {admin ? (
+          <>
+            <h1>All Registered Users</h1>
+            {this.state.loading
+              ? "Loading users list..."
+              : users
+              ? this.renderEachUser()
+              : "no users to display"}
+          </>
+        ) : (
+          window.location.replace("/")
+        )}
+        <div>{this.state.errors}</div>
       </>
     );
   }

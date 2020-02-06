@@ -58,7 +58,7 @@ class About extends React.Component {
 
   render() {
     function getAdminStatus() {
-      let adminVal = sessionStorage.getItem("admin");
+      let adminVal = sessionStorage.getItem("val");
       if (adminVal === "true") {
         adminVal = true;
       } else {

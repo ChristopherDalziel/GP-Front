@@ -36,7 +36,7 @@ class ServiceForm extends React.Component {
       }
     );
 
-    const showWidget = (e) => {
+    const showWidget = e => {
       e.preventDefault();
       widget.open();
     };
@@ -70,7 +70,6 @@ class ServiceForm extends React.Component {
                 className="imageUploadButton"
                 name="imageUrl"
                 component="input"
-                // type="button"
                 onClick={showWidget}
               >
                 Upload Image

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import getAdminStatus from "../../utils/getAdminStatus";
+
+let admin = getAdminStatus();
 
 export default class StaffListRow extends Component {
   constructor(props) {
@@ -26,23 +29,29 @@ export default class StaffListRow extends Component {
   }
   render() {
     return (
-      <tr>
-        <td>{this.props.obj.name}</td>
-        <td>{this.props.obj.aboutText}</td>
-        <td>{this.props.obj.position}</td>
-        <td>
-          <img src={this.props.obj.imageUrl} alt="" />
-        </td>
+      <>
+        {admin ? (
+          <tr>
+            <td>{this.props.obj.name}</td>
+            <td>{this.props.obj.aboutText}</td>
+            <td>{this.props.obj.position}</td>
+            <td>
+              <img src={this.props.obj.imageUrl} alt="" />
+            </td>
 
-        <td>
-          <Link to={"/admin/update_staff/" + this.props.obj._id}>
-            <button>Edit</button>
-          </Link>
-        </td>
-        <td>
-          <button onClick={this.deleteStaff}>Delete</button>
-        </td>
-      </tr>
+            <td>
+              <Link to={"/admin/update_staff/" + this.props.obj._id}>
+                <button>Edit</button>
+              </Link>
+            </td>
+            <td>
+              <button onClick={this.deleteStaff}>Delete</button>
+            </td>
+          </tr>
+        ) : (
+          window.location.replace("/")
+        )}
+      </>
     );
   }
 }

@@ -24,10 +24,16 @@ class ContactInfo extends React.Component {
       <>
         <h1>Contact Us</h1>
         <div className="info-container">
-          <h3>Telephone:</h3> <a href="tel:+60374980117"><h5>+603-7498 0117</h5></a>
+          <h3>Telephone:</h3>{" "}
+          <a href="tel:+60374980117">
+            <h5>+603-7498 0117</h5>
+          </a>
         </div>
         <div className="info-container">
-          <h3>Email:</h3> <a href="mailto:klinikdrleong@gmail.com"><h5>klinikdrleong@gmail.com</h5></a>
+          <h3>Email:</h3>{" "}
+          <a href="mailto:klinikdrleong@gmail.com">
+            <h5>klinikdrleong@gmail.com</h5>
+          </a>
         </div>
         <div className="info-container-opening-hours">
           <h3>Opening Hours:</h3>
@@ -42,6 +48,14 @@ class ContactInfo extends React.Component {
                 );
               })
             : null}
+        </div>
+        <div className="info-container-address">
+          <h3>Address:</h3>
+          <h5>
+            <a href="http://maps.google.com/?q=1200 19, Wisma Dicor, Jalan SS17/1A (3,962.72 mi) Subang Jaya 47500">
+              19, Wisma Dicor, Jalan SS17/1A (3,962.72 mi) Subang Jaya 47500
+            </a>
+          </h5>
         </div>
         <div className="info-container-fb">
           <a

@@ -1,6 +1,9 @@
 import React from "react";
 import axios from "axios";
 import VaccineForm from "../components/Vaccines/VaccineForm";
+import getAdminStatus from "../utils/getAdminStatus";
+
+let admin = getAdminStatus();
 
 class EditVaccine extends React.Component {
   state = { vaccineData: null };
@@ -30,16 +33,22 @@ class EditVaccine extends React.Component {
 
   render() {
     const { vaccineData } = this.state;
-    console.log(this.props.match.params.id)
+    console.log(this.props.match.params.id);
     return vaccineData ? (
       <>
-        <h1>Vaccine Edit</h1>
-        <VaccineForm
-          onEditFormSubmit={this.updateVaccine}
-          vaccines={this.state}
-          initialValues={this.state.vaccineData}
-          {...this.props}
-        />
+        {admin ? (
+          <>
+            <h1>Vaccine Edit</h1>
+            <VaccineForm
+              onEditFormSubmit={this.updateVaccine}
+              vaccines={this.state}
+              initialValues={this.state.vaccineData}
+              {...this.props}
+            />
+          </>
+        ) : (
+          window.location.replace("/")
+        )}
       </>
     ) : null;
   }

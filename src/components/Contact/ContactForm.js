@@ -1,15 +1,12 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-
 import "../../css/Contact.css";
-
 class ContactForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.handleSubmit();
     this.props.reset();
   };
-
   render() {
     return (
       <>
@@ -45,7 +42,5 @@ class ContactForm extends React.Component {
     );
   }
 }
-
 ContactForm = reduxForm({ form: "ContactForm" })(ContactForm);
-
 export default ContactForm;

@@ -1,32 +1,22 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import getAdminStatus from "../utils/getAdminStatus";
 import "../css/Nav.css";
-
+import BurgerNav from "./BurgerNav";
 
 const Nav = props => {
-
   const logout = e => {
     e.preventDefault();
 
     sessionStorage.removeItem("token");
-    sessionStorage.removeItem("admin");
-    sessionStorage.removeItem("loggedIn");
+    sessionStorage.removeItem("val");
+    sessionStorage.removeItem("auth");
     props.history.push("/");
     window.location.reload(false);
   };
 
-  function getAdminStatus() {
-    let adminVal = sessionStorage.getItem("admin");
-    if (adminVal === "true") {
-      adminVal = true;
-    } else {
-      adminVal = false;
-    }
-    return adminVal;
-  }
-
   function getLoggedInStatus() {
-    let loggedInVal = sessionStorage.getItem("loggedIn");
+    let loggedInVal = sessionStorage.getItem("auth");
     if (loggedInVal === "true") {
       loggedInVal = true;
     } else {
@@ -106,29 +96,31 @@ const Nav = props => {
   };
 
   return (
-    <div className="nav">
-      <ul>
-        <li className="one">
-          <Link to="/">Home</Link>
-        </li>
-        {loggedIn ? loggedInItems() : loggedOutItems()}
-        <li>
-          <Link to="/about">About Us</Link>
-        </li>
-        <li>
-          <Link to="/services">Services</Link>
-        </li>
-        <li>
-          <Link to="/vaccines">Vaccines</Link>
-        </li>
-        <li>
-          <Link to="/booking">Book Now</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact Us</Link>
-        </li>
-      </ul>
-    </div>
+    <>
+      <div className="nav">
+        <ul>
+          <li className="one">
+            <Link to="/">Home</Link>
+          </li>
+          {loggedIn ? loggedInItems() : loggedOutItems()}
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
+          <li>
+            <Link to="/services">Services</Link>
+          </li>
+          <li>
+            <Link to="/vaccines">Vaccines</Link>
+          </li>
+          <li>
+            <Link to="/booking">Book Now</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact Us</Link>
+          </li>
+        </ul>
+      </div>
+    </>
   );
 };
 

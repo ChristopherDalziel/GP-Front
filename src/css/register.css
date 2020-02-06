@@ -31,7 +31,7 @@
   height: 95vh;
   width: 50vw;
   background: #e1eeff;
-  overflow: auto;
+  /* overflow: auto; */
 }
 
 .signUp h1 {
@@ -108,6 +108,7 @@
   display: inline-block;
   position: relative;
 }
+
 .input-wrapper-1:after {
   font-size: 22px;
   font-family: "FontAwesome";
@@ -186,4 +187,25 @@
   left: 10px;
   top: 35px;
   color: #398ffc;
+}
+
+@media only screen and (max-width: 600px) {
+  .imageSignUp {
+    display: none;
+  }
+
+  .signUp .image img {
+    display: none;
+  }
+
+  .signUp input {
+    width: 80vw;
+  }
+
+  .content-signUp {
+    width: 100%;
+    height: 100vh;
+    padding-top: 11vh;
+    overflow: scroll;
+  }
 }
